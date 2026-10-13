@@ -4,7 +4,7 @@ set -euo pipefail
 MANIP_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 if [[ -f "$MANIP_ROOT/.env.local" ]]; then source "$MANIP_ROOT/.env.local"; fi
 : "${ISAACGYM_PATH:?Set ISAACGYM_PATH in .env.local or your environment}"
-MANIP_CONDA_PREFIX="${MANIP_CONDA_PREFIX:-/root/conda_envs/inhand_manip}"
+MANIP_CONDA_PREFIX="${MANIP_CONDA_PREFIX:-/root/conda_envs/inhand_hoi}"
 MANIP_PYTHON="${MANIP_PYTHON:-$MANIP_CONDA_PREFIX/bin/python}"
 if [[ ! -x "$MANIP_PYTHON" ]]; then
     echo "Project Python missing: $MANIP_PYTHON. See docs/environment.md." >&2

@@ -21,6 +21,8 @@
 球体、立方体、胶囊体各自训练独立 Z 轴策略的配置和日志位置见
 [单物体并行实验](docs/parallel_object_experiments.md)。
 将代码、权重和抓取缓存迁移到本地的说明见 [本地迁移](docs/local_transfer.md)。
+查看已训练教师的动作见 [本地教师可视化](docs/teacher_visualization.md)，入口为
+`bash scripts/vis_manip.sh --object sphere55 --checkpoint best`；需要单独取得回放权重和抓取缓存。
 
 ## 模型的重要边界
 
@@ -33,12 +35,13 @@
 
 ## 环境
 
-当前使用独立 Conda 环境 `/root/conda_envs/inhand_manip`，由 `active3d` 完整复制后适配。
+当前使用项目共享 Conda 环境 `/root/conda_envs/inhand_hoi`，由 `active3d` 完整复制后适配，原名为 `inhand_manip`。
+该环境面向操作、重建及后续集成；已包含部分重建依赖，但完整重建链路尚未验证。
 Python 3.8.20、PyTorch 2.0.1 / CUDA 11.8、NumPy 1.23.5；不再依赖项目 `.venv`。
 Isaac Gym Preview 4 的本地安装包仍由 `ISAACGYM_PATH` 指定。
 
 ```bash
-conda activate /root/conda_envs/inhand_manip
+conda activate /root/conda_envs/inhand_hoi
 # 项目依赖受 constraints-manip.txt 约束：
 python -m pip install -r requirements-manip.txt
 # 添加包时也使用约束，并把最终版本记录到 requirements-manip.txt：

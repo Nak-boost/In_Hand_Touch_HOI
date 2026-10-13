@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-13",
+  "checks": {
+    "sphere55": {
+      "checkpoint": "best",
+      "steps": 620,
+      "num_envs": 1,
+      "headless": true,
+      "completed_episodes": 1,
+      "failed_episodes": 0
+    },
+    "box50": {
+      "checkpoint": "last",
+      "steps": 620,
+      "num_envs": 1,
+      "headless": true,
+      "completed_episodes": 1,
+      "failed_episodes": 1
+    },
+    "capsule70": {
+      "checkpoint": "last",
+      "steps": 620,
+      "num_envs": 1,
+      "headless": true,
+      "completed_episodes": 1,
+      "failed_episodes": 0
+    }
+  },
+  "limitations": [
+    "Only headless inference and reset behavior verified on server; local GUI and GTX 1650 remain unverified.",
+    "Small smoke rollouts are not policy performance evaluations."
+  ]
+}

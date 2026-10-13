@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-13",
+  "previous_prefix": "/root/conda_envs/inhand_manip",
+  "current_prefix": "/root/conda_envs/inhand_hoi",
+  "method": "conda-pack relocation of existing files; filter nonexistent stale metadata paths",
+  "package_comparison": {
+    "context": "Both prefixes queried through scripts/python_manip.sh with identical external SDK PYTHONPATH",
+    "count": 294,
+    "versions_unchanged": true,
+    "stale_missing_paths_skipped": 750
+  },
+  "pip_check": "No broken requirements found",
+  "pytest": "11 passed",
+  "cuda_checks": ["Isaac Gym import", "PyTorch3D KNN on CUDA"],
+  "other_import_checks": ["torchvision", "numpy", "scipy", "trimesh", "cv2", "pyembree.rtcore_scene"],
+  "smoke": {
+    "num_envs": 6,
+    "steps": 30,
+    "status": "passed",
+    "run": "runs/manip/environment_rename_inhand_hoi_smoke"
+  },
+  "old_prefix_symlink_references": 0,
+  "old_prefix_shebang_references": 0,
+  "old_environment_removed": true,
+  "temporary_archive_removed": true,
+  "limitations": ["No full reconstruction pipeline validation", "Local workstation environment was not modified remotely"]
+}

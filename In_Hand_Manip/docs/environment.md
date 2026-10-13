@@ -2,7 +2,8 @@
 
 ## 当前环境
 
-本项目使用 `/root/conda_envs/inhand_manip`，是独立 Conda 环境。
+本项目使用 `/root/conda_envs/inhand_hoi`，是操作、重建及后续集成共用的独立 Conda 环境。
+2026-10-13 从原名 `inhand_manip` 迁移，保留已安装包版本。完整重建链路仍需后续验证。
 源环境是 `/root/conda_envs/active3d`；源环境和 TouchFM 代码未修改。
 旧项目 `.venv` 已于 2026-10-12 删除，启动脚本使用独立 Conda 环境。
 
@@ -34,6 +35,28 @@ tar -xf /tmp/inhand_manip_clone.tar -C /root/conda_envs/inhand_manip
 原环境的旧 pterotactyl editable 引用指向不存在的外部源码目录，未将该项目源码复制进来；
 当前操作策略和已验证的 TouchFM 编码器不依赖该 editable 引用。
 
+## 项目环境名称与本地改名
+
+统一使用 `inhand_hoi`，表示操作、重建与集成共用的项目环境。
+环境名不改变依赖覆盖范围：本地新装的操作依赖仍需后续补齐重建依赖。
+
+本地按安装步骤新建的命名环境可以在退出该环境后改名：
+
+```bash
+conda deactivate
+conda rename -n inhand_manip inhand_hoi
+conda activate inhand_hoi
+```
+
+更新本地 `In_Hand_Manip/.env.local` 中的 `MANIP_CONDA_PREFIX` 为激活后的
+`$CONDA_PREFIX`，`ISAACGYM_PATH` 保留本地 SDK 路径。改名后运行 `pip check`、
+项目测试和少量环境的 smoke；旧绝对路径的 editable 安装可能需要重新注册。
+
+服务器环境具有历史 Conda 元数据与 pip 覆盖层，因此此次使用 conda-pack
+重定位实际存在的文件到 `/root/conda_envs/inhand_hoi`，不重新安装旧 Conda 包。
+历史元数据中缺失的旧版本文件不会重新补回；迁移前后实际 Python 包列表必须一致。
+原始复制命令与旧验证记录保留当时的路径，不能当成当前启动路径。
+
 ## 冲突处理原则与实际调整
 
 优先保证当前 HORA/Isaac Gym 训练链路，同时保留 TouchFM 可兼容的依赖。
@@ -61,7 +84,7 @@ tar -xf /tmp/inhand_manip_clone.tar -C /root/conda_envs/inhand_manip
 
 ```bash
 cd /root/In_Hand_Reconstruction/In_Hand_Manip
-conda activate /root/conda_envs/inhand_manip
+conda activate /root/conda_envs/inhand_hoi
 python -m pip install -c constraints-manip.txt 'package==version'
 python -m pip check
 ```

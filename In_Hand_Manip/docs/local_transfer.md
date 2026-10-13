@@ -59,13 +59,12 @@ NVIDIA GPU/驱动，以及已安装的 Isaac Gym SDK。Windows/macOS 不能按�
 `constraints-manip.txt`。`environment/` 是服务器环境审计记录，含本机路径，
 不是本地一键安装文件。
 
-在本地仓库根目录创建不提交 Git 的 `.env.local`，填入本地真实路径：
+在本地操作模块目录 `In_Hand_Manip/` 创建不提交 Git 的 `.env.local`，填入本地真实路径：
 
 ```bash
 ISAACGYM_PATH=/your/local/path/isaacgym
-MANIP_CONDA_PREFIX=/your/local/path/conda/envs/inhand_manip
+MANIP_CONDA_PREFIX=/your/local/path/conda/envs/inhand_hoi
 ```
 
-先用 `scripts/python_manip.sh -m pytest -q tests` 检查环境。当前迁移准备
-不意味着已经验证本地 GUI、相机视角或教师可视化入口；后续回放应加载结果包
-中保存的训练配置，保留手模型与碰撞签名检查，并明确标记特权教师身份。
+先用 `scripts/python_manip.sh -m pytest -q tests` 检查环境。
+教师回放入口、较小的专用回放文件包及验证范围见 [本地教师可视化](teacher_visualization.md)。

@@ -1,9 +1,9 @@
 {
-  "recorded_at": "2026-10-12T06:44:02.002206+00:00",
+  "recorded_at": "2026-10-13T07:19:10.159448+00:00",
   "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:52:49) \n[GCC 13.3.0]",
-  "executable": "/root/conda_envs/inhand_manip/bin/python",
-  "prefix": "/root/conda_envs/inhand_manip",
-  "base_prefix": "/root/conda_envs/inhand_manip",
+  "executable": "/root/conda_envs/inhand_hoi/bin/python",
+  "prefix": "/root/conda_envs/inhand_hoi",
+  "base_prefix": "/root/conda_envs/inhand_hoi",
   "isaacgym_path": "/remote-home/ums_hanminghao/Software/isaacgym",
   "note": "Conda explicit records its managed packages; pip overlays are listed separately. Local build URLs in pip-freeze are provenance, not portable download locations."
 }

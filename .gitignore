@@ -1,40 +1,34 @@
-*.egg-info
-/.vs
-/.vscode
-/_package
-/shaders
-._tmptext.txt
-__pycache__/
-/tools/format/.lastrun
-*.pyc
-_doxygen
-*.pxd2
-/tests/logs
-
-.idea
-outputs/
-*.hydra*
-# generated grasp files
-*.npy
-
-outputs
-cache
+# Local environments, credentials and generated Python files.
+.env
+.env.*
+!.env.example
 .venv/
-.env.local
+__pycache__/
+*.py[cod]
 .pytest_cache/
-runs/
+.cache/
+*.egg-info/
+.idea/
+.vscode/
 
-# Generated model checkpoints, caches and training logs stay on the server.
+# Large/generated experiment artifacts stay on the server.
+runs/
+outputs/
+cache/
+checkpoints/
+transfers/
 *.pt
 *.pth
 *.ckpt
 *.safetensors
+*.npy
 *.npz
-.cache/
-checkpoints/
+*.tfevents.*
+*.log
 wandb/
 lightning_logs/
 tensorboard/
-*.tfevents.*
-*.console.log
-transfers/
+
+# Downloaded literature caches and full training scalar exports.
+/research/**/sources/
+/research/**/*_scalars.csv

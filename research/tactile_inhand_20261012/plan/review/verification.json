@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-12",
+  "sources": 13,
+  "claim_snippet_checks": [
+    "GEL",
+    "GSR",
+    "TA",
+    "TACTFUL",
+    "AURORA",
+    "PTLD",
+    "PHYS",
+    "NF"
+  ],
+  "neuralfeels_publication_date": "2024-11-13",
+  "report_characters": 5534,
+  "status": "passed",
+  "scope": "Local full-text/source consistency checks; not exhaustive literature coverage or experiment replication"
+}

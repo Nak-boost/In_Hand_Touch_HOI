@@ -1,6 +1,7 @@
 # 将代码与当前训练结果迁移到本地
 
-当前代码分支为 `feature/allegro-digit-two-axis`。代码基于 HORA，保留其
+Git 根目录现为整个 `In_Hand_Reconstruction/`，主分支为 `main`，操作模块是
+其中的 `In_Hand_Manip/` 子目录。代码基于 HORA，保留其
 LICENSE 与上游历史。`scripts/vis_s1.sh` 是上游任务入口，不能直接用于当前
 Allegro + DIGIT 教师。本项目的 `stage=evaluate` 入口只接受学生权重；
 当前三组正式结果均为特权教师，尚无收敛的学生策略。
@@ -30,8 +31,13 @@ Git 保存代码、手模型、配置、依赖清单及验证文档。
 
 ## 本地目录
 
-在本地创建父目录 `In_Hand_Reconstruction`，从自己的 GitHub 仓库克隆此分支到
-`In_Hand_Reconstruction/In_Hand_Manip`。下载结果包及校验文件到父目录后：
+在本地克隆整个项目（不要再把仓库克隆到操作模块子目录）：
+
+```bash
+git clone https://github.com/Nak-boost/In_Hand_Touch_HOI.git In_Hand_Reconstruction
+```
+
+若后续决定单独传输结果包，将它和校验文件放到仓库根目录后：
 
 ```bash
 cd In_Hand_Reconstruction

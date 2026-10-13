@@ -1,0 +1,60 @@
+{
+  "object": "sphere55",
+  "checkpoint": "last",
+  "n": 64,
+  "method": "GPU PhysX, CPU contact API, first episode only, contact lambda>0",
+  "active_frames": 31806,
+  "frame_fractions": {
+    "object_palm": 0.06313274224988996,
+    "object_housing": 0.4215871219266805,
+    "object_gel": 0.19958498396528956,
+    "object_gel_ge2": 0.03882915173237754,
+    "object_non_gel": 0.9942463686096963,
+    "hand_self_contact": 0.9682449852229139
+  },
+  "object_contact_body_fraction": {
+    "digit_index_housing": 0.0887882789410803,
+    "digit_ring_housing": 0.009243538954914168,
+    "digit_middle_housing": 0.16135320379802554,
+    "digit_thumb_gel": 0.04822989373074263,
+    "digit_index_gel": 0.06351002955417216,
+    "digit_ring_gel": 0.003395585738539898,
+    "digit_middle_gel": 0.08444947494183487,
+    "digit_thumb_housing": 0.28485191473306926,
+    "link_6.0": 0.7033892976168019,
+    "link_10.0": 0.09724580267873986,
+    "link_11.0": 0.06640256555366912,
+    "link_2.0": 0.46173677922404577,
+    "link_3.0": 0.033515688863736404,
+    "link_7.0": 0.06891781424888385,
+    "base_link": 0.06313274224988996,
+    "link_15.0": 0.45541721687731873,
+    "link_14.0": 0.26293781047601084,
+    "link_9.0": 0.017292334779601334,
+    "link_5.0": 0.033264163994214925,
+    "link_12.0": 0.0448971892095831,
+    "link_1.0": 0.26551594038860593
+  },
+  "trace": [
+    {
+      "seconds": 1.0000000521540642,
+      "remaining": 63,
+      "mean_object_z": 0.6125604510307312
+    },
+    {
+      "seconds": 5.000000260770321,
+      "remaining": 52,
+      "mean_object_z": 0.572845995426178
+    },
+    {
+      "seconds": 15.000000782310963,
+      "remaining": 52,
+      "mean_object_z": 0.5603183507919312
+    },
+    {
+      "seconds": 30.000001564621925,
+      "remaining": 0,
+      "mean_object_z": null
+    }
+  ]
+}

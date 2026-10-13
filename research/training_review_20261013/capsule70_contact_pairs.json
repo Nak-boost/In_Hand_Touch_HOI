@@ -1,0 +1,60 @@
+{
+  "object": "capsule70",
+  "checkpoint": "last",
+  "n": 64,
+  "method": "GPU PhysX, CPU contact API, first episode only, contact lambda>0",
+  "active_frames": 36279,
+  "frame_fractions": {
+    "object_palm": 0.11342650017916701,
+    "object_housing": 0.6193390115493812,
+    "object_gel": 0.49893878001047437,
+    "object_gel_ge2": 0.06036550070288597,
+    "object_non_gel": 0.9883679263485763,
+    "hand_self_contact": 0.9673640398026406
+  },
+  "object_contact_body_fraction": {
+    "digit_ring_gel": 0.009399377050084071,
+    "digit_thumb_gel": 0.0815347721822542,
+    "digit_index_gel": 0.3834174040078282,
+    "digit_middle_housing": 0.19068882824774663,
+    "digit_middle_gel": 0.02458722677030789,
+    "digit_thumb_housing": 0.37539623473634887,
+    "digit_ring_housing": 0.10245596626147357,
+    "digit_index_housing": 0.33099038010970533,
+    "link_11.0": 0.1334105129689352,
+    "link_3.0": 0.029521210617712727,
+    "link_7.0": 0.029659031395573198,
+    "link_10.0": 0.42084952727473196,
+    "link_6.0": 0.16830673392320628,
+    "link_2.0": 0.06546486948372336,
+    "link_12.0": 0.07717963560186333,
+    "link_14.0": 0.48708619311447393,
+    "link_1.0": 0.2738223214531823,
+    "link_15.0": 0.13793103448275862,
+    "base_link": 0.11342650017916701,
+    "link_4.0": 0.016097466854102925,
+    "link_0.0": 0.009785275228093387
+  },
+  "trace": [
+    {
+      "seconds": 1.0000000521540642,
+      "remaining": 64,
+      "mean_object_z": 0.6167476773262024
+    },
+    {
+      "seconds": 5.000000260770321,
+      "remaining": 60,
+      "mean_object_z": 0.5741904377937317
+    },
+    {
+      "seconds": 15.000000782310963,
+      "remaining": 60,
+      "mean_object_z": 0.5618833303451538
+    },
+    {
+      "seconds": 30.000001564621925,
+      "remaining": 0,
+      "mean_object_z": null
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "object": "box50",
+  "checkpoint": "last",
+  "n": 64,
+  "method": "GPU PhysX, CPU contact API, first episode only, contact lambda>0",
+  "active_frames": 28205,
+  "frame_fractions": {
+    "object_palm": 0.12079418542811558,
+    "object_housing": 0.6715475979436271,
+    "object_gel": 0.20276546711575963,
+    "object_gel_ge2": 0.036979258996631806,
+    "object_non_gel": 0.9859953908881404,
+    "hand_self_contact": 0.9864563020741003
+  },
+  "object_contact_body_fraction": {
+    "digit_middle_housing": 0.23421379188087219,
+    "digit_thumb_gel": 0.038361992554511615,
+    "digit_index_gel": 0.09260769367133487,
+    "digit_middle_gel": 0.03541925190569048,
+    "digit_ring_gel": 0.03637652898422265,
+    "digit_ring_housing": 0.12061691189505407,
+    "digit_thumb_housing": 0.22900195000886367,
+    "digit_index_housing": 0.35397979081723097,
+    "link_11.0": 0.04775748980677185,
+    "link_10.0": 0.024534656975713526,
+    "link_7.0": 0.1781953554334338,
+    "link_6.0": 0.46470483956745257,
+    "link_15.0": 0.489345860663003,
+    "link_9.0": 0.02063463924836022,
+    "base_link": 0.12079418542811558,
+    "link_5.0": 0.026342847012940967,
+    "link_3.0": 0.16674348519766,
+    "link_8.0": 0.032334692430420135,
+    "link_14.0": 0.43790108136855166,
+    "link_2.0": 0.11505052295692253,
+    "link_12.0": 0.04141109732316965,
+    "link_4.0": 0.0190746321574189,
+    "link_1.0": 0.0801985463570289
+  },
+  "trace": [
+    {
+      "seconds": 1.0000000521540642,
+      "remaining": 62,
+      "mean_object_z": 0.6101542115211487
+    },
+    {
+      "seconds": 5.000000260770321,
+      "remaining": 50,
+      "mean_object_z": 0.5745872855186462
+    },
+    {
+      "seconds": 15.000000782310963,
+      "remaining": 46,
+      "mean_object_z": 0.5749606490135193
+    },
+    {
+      "seconds": 30.000001564621925,
+      "remaining": 0,
+      "mean_object_z": null
+    }
+  ]
+}

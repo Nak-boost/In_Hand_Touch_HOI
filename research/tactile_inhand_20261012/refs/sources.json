@@ -1,0 +1,145 @@
+[
+  {
+    "id": "NF",
+    "title": "NeuralFeels with neural fields: Visuotactile perception for in-hand manipulation",
+    "date": "2023 preprint; 2024-11-13 Science Robotics",
+    "url": "https://arxiv.org/abs/2312.13469",
+    "source_type": "paper full text",
+    "claim": "手内视触觉形状/位姿联合估计；论文明确提出预训练形状先验和感知驱动规划作为后续方向",
+    "boundary": "主系统融合外部RGB-D；S4为本体驱动旋转，非重建驱动动作规划",
+    "section": "4.1, 4.6–4.7, Discussion, S4",
+    "local_source": "sources/NF.txt"
+  },
+  {
+    "id": "NFLOW",
+    "title": "NormalFlow: Fast, Robust, and Accurate Contact-based Object 6DoF Pose Tracking with Vision-based Tactile Sensors",
+    "date": "2024 preprint; RA-L 10(1), January 2025",
+    "url": "https://arxiv.org/html/2412.09617v2",
+    "source_type": "paper full text",
+    "claim": "触觉法向图可用于未知对象6DoF相对跟踪，并支持几何重建",
+    "boundary": "不是自主多指探索控制系统；不把论文低纹理例子解释为所有对称表面都可观",
+    "section": "Method and experiments",
+    "local_source": "sources/NFLOW.html"
+  },
+  {
+    "id": "GEL",
+    "title": "GelSLAM: A Real-time, High-Fidelity, and Robust 3D Tactile SLAM System",
+    "date": "2025 preprint; 2026 version/project T-RO",
+    "url": "https://arxiv.org/html/2508.15990v2",
+    "source_type": "paper full text",
+    "claim": "纯触觉相对位姿跟踪、闭环检测、重定位和全局几何重建已存在",
+    "boundary": "问题设置为手持传感器/物体；量化数据包含固定物体+运动传感器；不含机器人自主手内旋转策略",
+    "section": "III, IV, V",
+    "local_source": "sources/GEL.html"
+  },
+  {
+    "id": "T2S",
+    "title": "Touch2Shape: Touch-Conditioned 3D Diffusion for Shape Exploration and Reconstruction",
+    "date": "2025-05 preprint",
+    "url": "https://arxiv.org/html/2505.13091v1",
+    "source_type": "paper full text",
+    "claim": "触觉条件扩散补全和以生成潜变量指导RL触碰选择已经提出",
+    "boundary": "仿真触碰采样、球面50个候选动作；不是连续运动物体的触觉SLAM验证",
+    "section": "3.1–3.3, 4",
+    "local_source": "sources/T2S.html"
+  },
+  {
+    "id": "TA",
+    "title": "TouchAnything: Diffusion-Guided 3D Reconstruction from Sparse Robot Touches",
+    "date": "2026-04 preprint",
+    "url": "https://arxiv.org/html/2604.08945v1",
+    "source_type": "paper full text",
+    "claim": "预训练大规模视觉扩散先验可用于稀疏触觉约束的3D重建",
+    "boundary": "明确假设机器人运动学给出接触位置，并提供类别级文本；不等价于无类别提示的未知动态位姿重建",
+    "section": "3 Problem formulation and method",
+    "local_source": "sources/TA.html"
+  },
+  {
+    "id": "GSR",
+    "title": "Grasp, Slide, Roll: Comparative Analysis of Contact Modes for Tactile-Based Shape Reconstruction",
+    "date": "2026-02 preprint",
+    "url": "https://arxiv.org/html/2602.23206v1",
+    "source_type": "paper full text",
+    "claim": "扩散补全、信息导向接触选择、多种接触模式已有真实多指手验证",
+    "boundary": "九个物体固定在机器人基座坐标系；palm-rolling为手掌在固定物体上滚动，不是物体在单手中自由翻转",
+    "section": "IV, V-B",
+    "local_source": "sources/GSR.html"
+  },
+  {
+    "id": "TACTFUL",
+    "title": "TACTFUL: Tactile-Driven Exploration For Object Localization and Identification in Confined Environments",
+    "date": "2026-06 preprint",
+    "url": "https://arxiv.org/html/2606.24712",
+    "source_type": "paper full text",
+    "claim": "真实机器人无视觉主动探索、触觉点云补全和识别已有工作",
+    "boundary": "已知三对象库，正文限制明确为静态对象；不是通用未知物体的动态手内SLAM",
+    "section": "III, IV, Limitations",
+    "local_source": "sources/TACTFUL.html"
+  },
+  {
+    "id": "DPOSE",
+    "title": "Object Pose Estimation through Dexterous Touch",
+    "date": "2025-09 preprint",
+    "url": "https://arxiv.org/html/2509.13591v1",
+    "source_type": "paper full text",
+    "claim": "双手分工的纯触觉主动探索和物体位姿估计已有研究",
+    "boundary": "一手稳定物体另一手探索；仿真实验；位姿后端明确使用FoundationPose model-based assumptions，不能按摘要宣称完全无模型SLAM",
+    "section": "III, IV-A, V",
+    "local_source": "sources/DPOSE.html"
+  },
+  {
+    "id": "AURORA",
+    "title": "AURORA: Active Uncertainty-Driven Re-Orientation for In-Hand Reconstruction",
+    "date": "2026-09 preprint",
+    "url": "https://arxiv.org/html/2609.08493v1",
+    "source_type": "paper full text",
+    "claim": "重建不确定性指导下一手内旋转轴的闭环系统已经提出",
+    "boundary": "重建与CAD-free位姿跟踪使用RGB-D；并非纯触觉重建",
+    "section": "III, Limitations, Appendices A/D",
+    "local_source": "sources/AURORA.html"
+  },
+  {
+    "id": "PHYS",
+    "title": "Physically Grounded 3D Generative Reconstruction under Hand Occlusion using Proprioception and Multi-Contact Touch",
+    "date": "2026-04 preprint; v2 June",
+    "url": "https://arxiv.org/html/2604.09100v2",
+    "source_type": "paper full text",
+    "claim": "生成式形状先验与多接触/手部非穿透约束结合已有工作",
+    "boundary": "依赖RGB与可见性mask；单次相机对齐表示不等价于连续纯触觉对象SLAM",
+    "section": "3, Limitations",
+    "local_source": "sources/PHYS.html"
+  },
+  {
+    "id": "PTLD",
+    "title": "PTLD: Sim-to-Real Privileged Tactile Latent Distillation for Dexterous Manipulation",
+    "date": "2026-03 preprint; v3 June",
+    "url": "https://arxiv.org/html/2603.04531v3",
+    "source_type": "paper full text",
+    "claim": "NeuralFeels部分共同作者仍研究真实触觉操作和潜变量蒸馏",
+    "boundary": "控制工作；真实特权数据采集有相机/标记和已知形状，不是未知物体重建",
+    "section": "Method, A.1",
+    "local_source": "sources/PTLD.html"
+  },
+  {
+    "id": "TSLAM",
+    "title": "Curiosity Driven Self-supervised Tactile Exploration of Unknown Objects",
+    "date": "2022 preprint",
+    "url": "https://arxiv.org/html/2204.00035",
+    "source_type": "paper full text",
+    "claim": "纯触觉主动探索加形状推断早于NeuralFeels已有研究",
+    "boundary": "仿真ADROIT；探索后重建两阶段；局限中明确运动物体接触配准困难",
+    "section": "Method, limitations",
+    "local_source": "sources/TSLAM.html"
+  },
+  {
+    "id": "ACT",
+    "title": "AcTExplore: Active Tactile Exploration on Unknown Objects",
+    "date": "2023 preprint; revised 2024",
+    "url": "https://arxiv.org/html/2310.08745v2",
+    "source_type": "paper full text",
+    "claim": "RL主动触觉表面探索和重建已有研究",
+    "boundary": "邻接的触觉探测任务，不能据此视为解决动态手内抓持与联合SLAM",
+    "section": "Method, experiments",
+    "local_source": "sources/ACT.html"
+  }
+]

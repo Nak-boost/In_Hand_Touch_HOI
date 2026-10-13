@@ -19,7 +19,7 @@ task:
     episodeLength: 600
     envSpacing: 0.4
     asset:
-      handAsset: assets/allegro/allegro_digit_aligned.urdf
+      handAsset: assets/allegro/allegro_digit_official.urdf
     controller:
       pgain: 3.0
       dgain: 0.1
@@ -59,7 +59,7 @@ task:
       # Different rigid object identities; per-asset cache prevents cross-shape resets.
       - {name: sphere55, shape: sphere, size: [0.055, 0.055, 0.055]}
     grasp:
-      cache: cache/digit_sphere55_aligned_grasps.pt
+      cache: cache/digit_sphere55_official_grasps.pt
       required_per_object: 64
       candidate_steps: 80
       warmup_steps: 25

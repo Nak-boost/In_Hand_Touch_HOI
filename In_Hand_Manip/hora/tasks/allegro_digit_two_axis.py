@@ -16,6 +16,7 @@ from .manipulation_math import (OBS_DIM, PRIV_DIM, build_observation, append_his
                                 rotation_increment, rotation_terms)
 from hora.utils.hand_collision import (collision_spec, collision_signature, configure_asset_collisions,
                              verify_actor_collisions, require_collision_signature)
+from hora.utils.asset_geometry import verify_geometry_manifest
 
 ROOT = Path(__file__).resolve().parents[2]
 FINGERS = ('index', 'middle', 'ring', 'thumb')
@@ -35,7 +36,8 @@ class AllegroDigitTwoAxis(VecTask):
             raise ValueError('Object names must be nonempty and unique')
         asset_path = ROOT / config['env']['asset']['handAsset']
         if not asset_path.is_file():
-            raise FileNotFoundError('Run scripts/build_digit_asset.py first: %s' % asset_path)
+            raise FileNotFoundError('Missing hand asset; see docs/official_digit.md for the matching builder: %s' % asset_path)
+        verify_geometry_manifest(asset_path)
         self.asset_hash = hashlib.sha256(asset_path.read_bytes()).hexdigest()
         self.collision_spec = collision_spec(asset_path)
         self.collision_hash = collision_signature(self.collision_spec)

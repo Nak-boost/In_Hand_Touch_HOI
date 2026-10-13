@@ -1,19 +1,10 @@
-# Aligned rigid approximation, NOT measured Allegro/DIGIT CAD. See docs/digit_mount.md.
-# Keep the old URDF for old checkpoint replay; new experiments use this new asset.
-output_asset: assets/allegro/allegro_digit_aligned.urdf
-# Local +X is the distal palmar normal, +Z runs along the distal finger.
-# Dimensions [normal thickness, width, length], metres. Masses unchanged from v1.
-housing_size: [0.016, 0.020, 0.027]
-housing_mass: 0.020
-gel_size: [0.002, 0.016, 0.020]
-gel_mass: 0.002
-# All original distal meshes have front envelope x=+0.0098 m.
-# x + housing_thickness/2 + 0.0001 gap + gel_thickness = 0.0098.
-# Housing lower end abuts the existing distal collision end (26.7 / 42.3 mm).
-# Show the already-collidable 11 mm connector beyond the distal visual mesh.
-show_distal_connector: true
-mounts:
-  index: {xyz: [-0.0003, 0.0, 0.0402], rpy: [0.0, 0.0, 0.0]}
-  middle: {xyz: [-0.0003, 0.0, 0.0402], rpy: [0.0, 0.0, 0.0]}
-  ring: {xyz: [-0.0003, 0.0, 0.0402], rpy: [0.0, 0.0, 0.0]}
-  thumb: {xyz: [-0.0003, 0.0, 0.0558], rpy: [0.0, 0.0, 0.0]}
+# Pinned official TACTO assembly geometry; see docs/official_digit.md.
+output_asset: assets/allegro/allegro_digit_official.urdf
+source_assembly: assets/allegro/official_digit/source/tacto_left_digit.urdf
+mesh_manifest: assets/allegro/official_digit/mesh_manifest.json
+# This profile preserves the existing RIGHT-hand kinematics and uses TACTO's
+# identical distal-local mounting transforms (no world-frame left/right copy).
+mount_profile: tacto_straight
+# Published original DIGIT nominal mass, not a measured mass of this CAD revision.
+# Inertia distribution is an explicit uniform-density envelope approximation.
+sensor_nominal_mass: 0.020

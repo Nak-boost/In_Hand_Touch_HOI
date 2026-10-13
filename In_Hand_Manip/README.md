@@ -7,7 +7,7 @@
 
 ## 当前范围
 
-- Allegro 右手 16 DOF，加四个参数化 DIGIT 刚体近似；胶面与外壳是独立碰撞部件。
+- Allegro 右手 16 DOF，加四个官方来源的 DIGIT 弧面网格及刚体碰撞近似；胶面与外壳是独立碰撞部件。
 - 默认所有并行环境使用同一种 55 mm 球体，无尺寸随机化；质量、摩擦、重心随机化，重置时随机化 PD 增益。
 - 20 Hz 策略输出关节目标增量，120 Hz 限力矩 PD 控制。
 - 默认仅 +Z 轴（掌心朝上时水平旋转），不换轴；`manip_two_axis` 配置保留 +Z/+X 每 8 秒切换。
@@ -18,10 +18,10 @@
 
 **状态：实现与短程验证结果见 `docs/validation.md`。不将短程检查权重视为已学会旋转的策略。**
 
-**装配更新：** 新实验配置使用 `allegro_digit_aligned.urdf`，取消未经标定的指尖安装偏转，
-胶面与末节指腹参考平面对齐。旧资产保留用于旧实验回放。新抓取缓存尚未生成；
-张手/半握检查发现原掌部碰撞盒与拇指部件重叠，尚不能认为整手几何已通过验收。
-修改依据、三姿态检查图与无需权重的预览命令见 [DIGIT 装配检查](docs/digit_mount.md)。
+**装配更新：** 新实验配置使用 `allegro_digit_official.urdf`，采用TACTO官方弧面DIGIT网格、
+公开直线安装变换和网格凸分解；原掌部碰撞盒的穿插问题已修复。
+三姿态静态/PhysX检查通过，自碰撞仍然启用。旧资产保留用于历史回放，新抓取缓存尚未生成。
+来源、精度限制与无需权重的预览命令见 [官方几何装配](docs/official_digit.md)。
 
 球体、立方体、胶囊体各自训练独立 Z 轴策略的配置和日志位置见
 [单物体并行实验](docs/parallel_object_experiments.md)。
@@ -32,8 +32,8 @@
 
 ## 模型的重要边界
 
-`configs/digit_mount.yaml` 是可修改的工程起点，尺寸、质量、安装角度和接触阈值没有做实物标定。
-胶面是刚体薄盒，既不是光学渲染，也不是弹性摩擦仿真。已启用跨手指、跨 DIGIT 及非相邻部件碰撞，仅排除相邻连接和同一固定组件内部。
+`configs/digit_mount.yaml` 绑定官方来源的网格和安装变换；质量/惯量及接触阈值尚未实物标定。
+胶面是有厚度的弧面刚体凸近似，既不是光学渲染，也不是弹性摩擦仿真。已启用跨手指、跨 DIGIT 及非相邻部件碰撞，仅排除相邻连接和同一固定组件内部。
 手部重力仍沿用 HORA 的关闭设置；其他未标定假设及改动责任见 [实现审计](docs/implementation_audit_20261012.md)。
 教师采用沿轴累计角度的增量目标奖励，未照搬 AnyRotate 的完整 keypoint 目标和重力课程。
 当前默认仅一个球体；备用两轴配置使用球、盒子、胶囊体三个原型，均不构成广泛未知物体泛化证据。
@@ -65,42 +65,42 @@ python -m pip check
 
 ## 从头运行
 
-默认球体缓存为 `cache/digit_sphere55_self_collision_grasps.pt`；首次运行需完成第 3 步，缓存存在时可直接从第 4 步开始。
+默认球体缓存为 `cache/digit_sphere55_official_grasps.pt`；首次运行需完成第 3 步，缓存存在时可直接从第 4 步开始。
 验证用短程权重不代表旋转已经学会；请为正式训练创建新的 run_name。
 
 ```bash
 cd /root/In_Hand_Reconstruction/In_Hand_Manip
 
-# 1. 生成手模型；修改安装配置后必须重新生成模型与抓取缓存。
-scripts/python_manip.sh scripts/build_digit_asset.py
+# 1. 仓库已包含模型，无需重复生成；以下用于修改后重建，需 requirements-geometry.txt。
+scripts/python_manip.sh scripts/build_official_digit_asset.py
 
 # 2. 仿真检查，不要求抓取缓存；它只检查运行与数值，不验证旋转成功。
 scripts/run_manip.sh stage=smoke num_envs=6 evaluation_steps=30
 
 # 3. 为当前 DIGIT 模型生成稳定初始抓取。GPU PhysX + CPU 数据接口读取接触双方身份。
 # 仅保留经过重力、PD、接触和低速度筛选的状态；不同物体分别保存。
-# 若 cache/digit_sphere55_self_collision_grasps.pt 已存在，使用另一个 cache 路径，程序不会覆盖它。
+# 若 cache/digit_sphere55_official_grasps.pt 已存在，使用另一个 cache 路径，程序不会覆盖它。
 OMP_NUM_THREADS=1 scripts/run_manip.sh stage=grasps num_envs=256 pipeline=cpu rl_device=cpu
 
 # 4. 单球体、+Z 轴教师 PPO。运行结束后使用对应 run 目录里的 stage1_nn/last.pth。
-scripts/run_manip.sh stage=teacher num_envs=1024 run_name=teacher_sphere55_z_self_collision_v1
+scripts/run_manip.sh stage=teacher num_envs=1024 run_name=teacher_sphere55_z_official_v1
 
 # 5. 从训练好的教师蒸馏学生。下面路径仅对应上一个命令的 run_name。
-scripts/run_manip.sh stage=student num_envs=1024 run_name=student_sphere55_z_self_collision_v1 \
-  teacher_checkpoint=/root/In_Hand_Reconstruction/runs/manip/teacher_sphere55_z_self_collision_v1/stage1_nn/last.pth
+scripts/run_manip.sh stage=student num_envs=1024 run_name=student_sphere55_z_official_v1 \
+  teacher_checkpoint=/root/In_Hand_Reconstruction/runs/manip/teacher_sphere55_z_official_v1/stage1_nn/last.pth
 
 # 6. 只评估学生，不把特权教师当作可部署策略。
 scripts/run_manip.sh stage=evaluate num_envs=96 evaluation_steps=600 \
-  student_checkpoint=/root/In_Hand_Reconstruction/runs/manip/student_sphere55_z_self_collision_v1/stage2_nn/last.pth
+  student_checkpoint=/root/In_Hand_Reconstruction/runs/manip/student_sphere55_z_official_v1/stage2_nn/last.pth
 ```
 
 每次执行自动生成唯一 run 目录；显式指定的 `run_name` 若已存在会报错。
 默认输出位于 `../runs/manip/`，记录有效配置、Git 版本、代码快照和阶段检查点。
 
 当前默认就是单球体、单轴。后续用 `scripts/run_manip.sh --config-name=manip_two_axis ...`
-切回三物体、两轴配置，其抓取缓存为原来的 `cache/digit_two_axis_self_collision_grasps.pt`。可指定
+切回三物体、两轴配置，其新抓取缓存为 `cache/digit_two_axis_official_grasps.pt`。可指定
 `checkpoint=/path/to/teacher.pth` 继续 PPO，网络观测维度不变。碰撞签名不兼容的旧缓存和旧权重会被拒绝；
-本轮开启自碰撞后的训练从头开始。
+更换官方几何后的训练需要新抓取并从头开始；本次尚未启动。
 `max_agent_steps` 是累计预算，恢复时应设更大的预算。
 评估报告用 `commanded_axes` 标识轴，`all_axes_one_turn_rate` 表示所有指定轴均累计转满一圈且回合结束时未失败的比例。
 学生恢复用 `student_checkpoint=...`，同时指定原教师；`distill.steps` 也是累计预算。

@@ -16,6 +16,7 @@ Git 根目录为 `In_Hand_Reconstruction/`；各模块是普通子目录，不�
 [训练复盘](research/training_review_20261013/report.md)。
 最新代码已修正 PPO 动作边界惩罚，现有训练权重来自修正之前的运行。
 完整操作—重建闭环尚未实现。
+当前新实验使用[官方来源的弧面 DIGIT 装配](In_Hand_Manip/docs/official_digit.md)，尚未生成新几何的抓取或训练权重。
 
 ## 克隆与运行
 
@@ -34,3 +35,5 @@ cd In_Hand_Reconstruction/In_Hand_Manip
 操作模块基于 [HORA](https://github.com/HaozhiQi/hora)，保留原有提交历史、
 [MIT License](In_Hand_Manip/LICENSE) 和版权声明。
 `upstream` 指向 HORA，`origin` 指向本项目 GitHub 仓库。
+
+新增DIGIT/Allegro第三方模型的来源与许可证分别保留，见[资产说明](In_Hand_Manip/assets/allegro/official_digit/README.md)。

@@ -8,4 +8,4 @@ task:
     objects:
       - {name: box50, shape: box, size: [0.050, 0.050, 0.050]}
     grasp:
-      cache: cache/digit_box50_aligned_grasps.pt
+      cache: cache/digit_box50_official_grasps.pt

@@ -67,7 +67,7 @@ def run(disabled):
                             pairs.add(pair)
                             if pair in excluded:
                                 forbidden.add(pair)
-        return dict(disabled=disabled, hand_contact_pairs=sorted(pairs),
+        return dict(asset_sha256=env.asset_hash, disabled=disabled, hand_contact_pairs=sorted(pairs),
                     forbidden_pairs=sorted(forbidden), max_hand_contact_force=max_force)
     finally:
         env.close()

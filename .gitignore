@@ -32,3 +32,6 @@ tensorboard/
 # Downloaded literature caches and full training scalar exports.
 /research/**/sources/
 /research/**/*_scalars.csv
+
+# Offline convex decomposition scratch files; final meshes are versioned.
+/In_Hand_Manip/assets/allegro/official_digit/build_cache/

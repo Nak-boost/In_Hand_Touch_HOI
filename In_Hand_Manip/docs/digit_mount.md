@@ -1,3 +1,8 @@
+> **历史记录：本页描述已被替代的方盒代理方案。** 当前默认已切换到[官方网格装配](official_digit.md)。
+> 本次已取得FeelSight资产并核验；下文“未取得”是前次检查时的情况。旧掌部穿插已在新资产中修复。
+> 旧参数移至 `configs/digit_mount_aligned_proxy.yaml`；此页数值和测试只适用于 `allegro_digit_aligned.urdf`。
+> 静态复查旧模型请显式指定 `--asset assets/allegro/allegro_digit_aligned.urdf`；默认预览现在显示新模型。
+
 # DIGIT 直线装配修正与验收边界
 
 ## 硬件依据

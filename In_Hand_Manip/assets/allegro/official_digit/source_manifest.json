@@ -1,0 +1,90 @@
+{
+  "retrieved": "2026-10-13",
+  "files": {
+    "digit_LICENSE": {
+      "sha256": "d70f572869ebd5ca039d3b3173d6af68406669fd04201dd2ad12f8b5a5f8475d",
+      "url": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/LICENSE"
+    },
+    "digit_adapter_main.stl": {
+      "sha256": "e04f54da7dee7243496ffedbee61e266c2e29510a75f82e5064a69fc3df6c4a6",
+      "url": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/DIGIT/adaptors/Allegro/DIGIT-Allegro-main-V1.stl"
+    },
+    "digit_adapter_side.stl": {
+      "sha256": "2698ff3d67e3689f79c2eec0a90b2b468da663fbb2871c286b0a8bf94906d150",
+      "url": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/DIGIT/adaptors/Allegro/DIGIT-Allegro-side-V1.stl"
+    },
+    "digit_gel.step": {
+      "sha256": "63387d4344930c5430bfb571936596522caa4a2b2d687efbabd2696cf35f919d",
+      "url": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/DIGIT/gel/Digit%20Gel.STEP"
+    },
+    "feelsight_README.md": {
+      "sha256": "3e4adb5186ba0beda0935786dcaf576e647cd4aa1aeafe506640d52d2918addb",
+      "url": "https://huggingface.co/datasets/suddhu/Feelsight/raw/main/README.md"
+    },
+    "neuralfeels_digit.obj": {
+      "sha256": "87603cb320842b77e61fb3cb9db0647e04791bf2e457f481db5e55a3026e697a",
+      "url": "https://huggingface.co/datasets/suddhu/Feelsight/resolve/main/assets.tar.gz",
+      "archive_sha256": "52b1afc63d64d69ffb88667a4ec5dd4d92a05cd4740d9d274d81c369a4a3090f",
+      "archive_path": "assets/allegro/meshes/allegro/digit.obj"
+    },
+    "neuralfeels_left_ball.urdf": {
+      "sha256": "d788b69dac9a1f3fab74dfba2a63220ad24f4bbfb65a61b28b925edf89758758",
+      "url": "https://huggingface.co/datasets/suddhu/Feelsight/resolve/main/assets.tar.gz",
+      "archive_sha256": "52b1afc63d64d69ffb88667a4ec5dd4d92a05cd4740d9d274d81c369a4a3090f",
+      "archive_path": "assets/allegro/allegro_digit_left_ball.urdf"
+    },
+    "neuralfeels_right.urdf": {
+      "sha256": "2058ef9b1da5ebc7ff92b31fe5ebc82245ee0f5f1d78f00712be35d78ecced51",
+      "url": "https://huggingface.co/datasets/suddhu/Feelsight/resolve/main/assets.tar.gz",
+      "archive_sha256": "52b1afc63d64d69ffb88667a4ec5dd4d92a05cd4740d9d274d81c369a4a3090f",
+      "archive_path": "assets/allegro/allegro_digit_right.urdf"
+    },
+    "tacto_LICENSE": {
+      "sha256": "a80c79b8f80e824c8ea0612b7abadb9c92c48673cf0adc20b2a7f43e2b19faa0",
+      "url": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/LICENSE"
+    },
+    "tacto_digit.stl": {
+      "sha256": "7ea789c949a371d68b2e8b33cc1c999bc495680b15c5f84a3765aec5f96c9f06",
+      "url": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/examples/allegro_hand_description/meshes/digit.STL"
+    },
+    "tacto_hand_LICENSE": {
+      "sha256": "c4b54834984b7131eed80f8b5351966a9cc923481d22c81c509feeac069f3740",
+      "url": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/examples/allegro_hand_description/LICENSE"
+    },
+    "tacto_left_digit.urdf": {
+      "sha256": "812c9460e6844f9258ad4c6331229c4714177f455ef794494d3dc14ee7453767",
+      "url": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/examples/allegro_hand_description/allegro_hand_description_left_digit.urdf"
+    },
+    "vendor_LICENSE": {
+      "sha256": "09c187439ecece8b00330e71eb988d3d30f29373c580dc31ab54200d0aa4deb4",
+      "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/LICENSE"
+    },
+    "vendor_base.stl": {
+      "sha256": "4060e1ae52bca21367e15a1dfab16bc7c2e81849566631b7f55e2cf376b7bc85",
+      "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/base_link.STL"
+    },
+    "vendor_right.urdf": {
+      "sha256": "89e05c62828be6e3f6ddf83e08b454833856c21a0dac2063c732bcce7dfb5d83",
+      "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/allegro_hand_description_right.urdf"
+    }
+  },
+  "additional_references": {
+    "tacto_left_digit.urdf": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/examples/allegro_hand_description/allegro_hand_description_left_digit.urdf",
+    "tacto_digit.stl": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/examples/allegro_hand_description/meshes/digit.STL",
+    "tacto_digit.urdf": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/meshes/digit.urdf",
+    "tacto_config_digit.yml": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/tacto/config_digit.yml",
+    "tacto_hand_LICENSE": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/examples/allegro_hand_description/LICENSE",
+    "tacto_LICENSE": "https://raw.githubusercontent.com/facebookresearch/tacto/a21d0c4626d74a546d94859226c2fea348babb6a/LICENSE",
+    "digit_gel.step": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/DIGIT/gel/Digit%20Gel.STEP",
+    "digit_enclosure.step": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/DIGIT/mechanical/EnclosureAssy_IM_Final.STEP",
+    "digit_acrylic.step": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/DIGIT/mechanical/Acrylic_Final.STEP",
+    "digit_adapter_main.stl": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/DIGIT/adaptors/Allegro/DIGIT-Allegro-main-V1.stl",
+    "digit_adapter_side.stl": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/DIGIT/adaptors/Allegro/DIGIT-Allegro-side-V1.stl",
+    "digit_quick_start.pdf": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/DIGIT/DIGIT_Quick_Start_Guide.pdf",
+    "digit_LICENSE": "https://raw.githubusercontent.com/facebookresearch/digit-design/de292229d43eed1deba58b856b2fe1ee04097631/LICENSE",
+    "vendor_right.urdf": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/allegro_hand_description_right.urdf",
+    "vendor_right.pdf": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/allegro_hand_right.pdf",
+    "vendor_LICENSE": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/LICENSE",
+    "vendor_base.stl": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/base_link.STL"
+  }
+}

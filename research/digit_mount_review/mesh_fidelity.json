@@ -1,0 +1,172 @@
+{
+  "manifest_sha256": "80794f976d6efcb273a4e31f42624c4139c06f4269bfad67e4c83962daff04a8",
+  "method": "Seed 42, vertices plus 3000 area-uniform samples; distances to triangle surfaces. Sampled, not an analytic Hausdorff bound.",
+  "parts": {
+    "digit_gel": {
+      "hulls": 1,
+      "surface_to_collision": {
+        "mean_mm": 0.09767499172647368,
+        "p95_mm": 0.17141032604781264,
+        "max_mm": 0.2248885586529595
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.19728056928690996,
+        "p95_mm": 0.2397631229665863,
+        "max_mm": 0.25392713928732946
+      }
+    },
+    "digit_housing": {
+      "hulls": 1,
+      "surface_to_collision": {
+        "mean_mm": 0.2785359528449526,
+        "p95_mm": 0.4266867106885649,
+        "max_mm": 0.5286257734044733
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.5363225708085598,
+        "p95_mm": 0.6255366059317395,
+        "max_mm": 0.6508917856875727
+      }
+    },
+    "base_link": {
+      "hulls": 23,
+      "surface_to_collision": {
+        "mean_mm": 1.1758476362738781,
+        "p95_mm": 3.2584345617108394,
+        "max_mm": 6.011643797136132
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.7592667724912675,
+        "p95_mm": 1.1150354315446946,
+        "max_mm": 1.2423239491585882
+      }
+    },
+    "link_0.0": {
+      "hulls": 4,
+      "surface_to_collision": {
+        "mean_mm": 0.2431349735340971,
+        "p95_mm": 0.6858579538645724,
+        "max_mm": 0.9502823847348658
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.25307318303137605,
+        "p95_mm": 0.316853073315026,
+        "max_mm": 0.33393459180457324
+      }
+    },
+    "link_1.0": {
+      "hulls": 1,
+      "surface_to_collision": {
+        "mean_mm": 0.6771459188858132,
+        "p95_mm": 2.2982284503212025,
+        "max_mm": 3.3137499999999998
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.5690012455466736,
+        "p95_mm": 0.6879325017472724,
+        "max_mm": 0.6973696827723442
+      }
+    },
+    "link_2.0": {
+      "hulls": 4,
+      "surface_to_collision": {
+        "mean_mm": 0.5109429235539443,
+        "p95_mm": 1.945198179453023,
+        "max_mm": 2.883315774991926
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.41998275697232107,
+        "p95_mm": 0.5119347818855471,
+        "max_mm": 0.5486122799707012
+      }
+    },
+    "link_3.0": {
+      "hulls": 5,
+      "surface_to_collision": {
+        "mean_mm": 0.19917568451863968,
+        "p95_mm": 0.5776500000000008,
+        "max_mm": 2.218529867555521
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.2631224360528592,
+        "p95_mm": 0.347835589682659,
+        "max_mm": 0.3833240416410114
+      }
+    },
+    "link_12.0_right": {
+      "hulls": 3,
+      "surface_to_collision": {
+        "mean_mm": 1.0445115628292927,
+        "p95_mm": 3.112962851055788,
+        "max_mm": 5.0524999999999975
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.5742470425703632,
+        "p95_mm": 0.6998175779731621,
+        "max_mm": 0.7590853018427633
+      }
+    },
+    "link_13.0": {
+      "hulls": 4,
+      "surface_to_collision": {
+        "mean_mm": 0.23504729473742944,
+        "p95_mm": 0.6093373450085944,
+        "max_mm": 0.949916868550935
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.2548657564624829,
+        "p95_mm": 0.31468166877345066,
+        "max_mm": 0.3366515026938155
+      }
+    },
+    "link_14.0": {
+      "hulls": 4,
+      "surface_to_collision": {
+        "mean_mm": 0.520379891102073,
+        "p95_mm": 1.900840000000001,
+        "max_mm": 2.884777536246608
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.4368860191377678,
+        "p95_mm": 0.54252583043631,
+        "max_mm": 0.5939078974740465
+      }
+    },
+    "link_15.0": {
+      "hulls": 1,
+      "surface_to_collision": {
+        "mean_mm": 0.614999264834699,
+        "p95_mm": 2.388594986707662,
+        "max_mm": 3.263128162589382
+      },
+      "hull_vertices_to_source": {
+        "mean_mm": 0.46174435385328055,
+        "p95_mm": 0.551586165381708,
+        "max_mm": 0.5587792472246886
+      }
+    }
+  },
+  "neuralfeels_vs_tacto_vertices": {
+    "mean_mm": 0.0005066609386374223,
+    "p95_mm": 0.0006799832775416019,
+    "max_mm": 0.0008329631822871002
+  },
+  "gel_cad_crosscheck": {
+    "axis_permutation": [
+      2,
+      0,
+      1
+    ],
+    "translation_m": [
+      0.01191832,
+      0,
+      0.022
+    ],
+    "registration_note": "Derived coordinate-frame registration, not a published mounting transform",
+    "cad_vertices_to_tacto_surface": {
+      "mean_mm": 0.03070461342704398,
+      "p95_mm": 0.09370600376595249,
+      "max_mm": 0.20363153828308306
+    }
+  }
+}

@@ -4,6 +4,21 @@
 它读取实验保存的配置，只做推理，不启动训练。`replay_teacher.py` 保留为兼容入口。
 当前三组正式实验是特权教师，不能作为纯触觉学生部署；学生入口仅通过短程验证权重测试。
 
+## 查看当前官方来源装配（不需要权重）
+
+Git已包含网格、URDF和检查脚本。配置好本地环境后执行：
+
+```bash
+bash scripts/python_manip.sh scripts/inspect_digit_mount_sim.py --pose opposition
+# 还可选择 open / half_closed / all。
+```
+
+来源、胶体弧面、碰撞近似和三姿态检查见[官方几何装配](official_digit.md)。
+现有旧权重使用旧几何；新资产需要重新生成抓取和训练，不能用旧checkpoint验证新装配的旋转能力。
+本次任务源码增加了外部网格哈希核验，历史权重的源码快照检查可能报差异。
+严格复现旧实验请使用匹配的Git版本；理解该变更后可显式使用`--allow-source-mismatch`，
+但不要将旧实验配置里的资产替换成新URDF，该参数也不会绕过资产哈希检查。
+
 ## 本地环境（首次配置）
 
 在本地 Linux + NVIDIA 电脑上执行；假定已安装项目依赖。SDK 使用 Isaac Gym Preview 4。

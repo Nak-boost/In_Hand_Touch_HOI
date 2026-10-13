@@ -1,0 +1,9 @@
+# Optional offline mesh generation/inspection, Python 3.8.
+# Runtime preview with Isaac Gym uses checked-in assets without these packages.
+-c constraints-manip.txt
+trimesh==3.23.5
+scipy==1.10.1
+pybullet==3.2.7
+matplotlib==3.7.5
+rtree==1.3.0
+PyYAML==6.0.2

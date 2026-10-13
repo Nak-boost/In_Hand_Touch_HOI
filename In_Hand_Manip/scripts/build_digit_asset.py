@@ -77,7 +77,7 @@ def build(config_path, output_path=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', default=str(ROOT/'configs/digit_mount.yaml'))
+    parser.add_argument('--config', default=str(ROOT/'configs/digit_mount_aligned_proxy.yaml'))
     parser.add_argument('--output', type=Path, help='Optional output path; otherwise use output_asset from config')
     args = parser.parse_args()
     build(args.config, args.output)

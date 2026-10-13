@@ -1,0 +1,11 @@
+# Python 3.8 + Isaac Gym Preview 4 compatibility boundary.
+# Constraints do not install packages; use with every pip install (-c).
+torch==2.0.1
+torchvision==0.15.2
+numpy==1.23.5
+typing-extensions==4.13.2
+# Preserve cloned pyembree 0.2.11 and satisfy its runtime metadata.
+setuptools==60.10.0
+wheel==0.37.1
+# Preserve active3d's cryptography; typing-extensions 4.13.2 supports Python 3.8.
+cryptography==47.0.0

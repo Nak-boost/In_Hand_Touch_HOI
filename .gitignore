@@ -19,3 +19,7 @@ outputs/
 
 outputs
 cache
+.venv/
+.env.local
+.pytest_cache/
+runs/

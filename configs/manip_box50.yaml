@@ -1,0 +1,11 @@
+# Independent single-object +Z experiment; identical control/reward/collision setup.
+defaults:
+  - manip
+  - _self_
+
+task:
+  env:
+    objects:
+      - {name: box50, shape: box, size: [0.050, 0.050, 0.050]}
+    grasp:
+      cache: cache/digit_box50_self_collision_grasps.pt

@@ -1,0 +1,11 @@
+# PhysX capsule: total length 70 mm, diameter 50 mm, initial long axis along X.
+defaults:
+  - manip
+  - _self_
+
+task:
+  env:
+    objects:
+      - {name: capsule70, shape: capsule, size: [0.070, 0.050, 0.050]}
+    grasp:
+      cache: cache/digit_capsule70_self_collision_grasps.pt

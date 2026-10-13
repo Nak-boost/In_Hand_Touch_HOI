@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-12",
+  "environment": "/root/conda_envs/inhand_manip",
+  "pip_check": "No broken requirements found",
+  "pytest": "5 passed",
+  "duplicate_distribution_metadata": false,
+  "prefix_equals_base_prefix": true,
+  "source_environment_symlinks": [],
+  "python_and_libtorch_are_independent_copies": true,
+  "smoke": {
+    "num_envs": 6,
+    "steps": 30,
+    "status": "passed",
+    "run": "/root/In_Hand_Reconstruction/runs/manip/conda_migration_smoke"
+  },
+  "ppo": {
+    "transitions": 384,
+    "status": "passed",
+    "run": "/root/In_Hand_Reconstruction/runs/manip/conda_migration_teacher"
+  },
+  "student": {
+    "updates": 2,
+    "status": "passed",
+    "run": "/root/In_Hand_Reconstruction/runs/manip/conda_migration_student"
+  },
+  "reconstruction_compatibility": {
+    "touchfm_masked_encoder_cuda_forward_shape": [
+      2,
+      1,
+      32
+    ],
+    "pytorch3d_cuda_knn": "passed",
+    "imports": [
+      "touch_fm.dataset",
+      "trimesh",
+      "scipy",
+      "pyembree.rtcore_scene",
+      "cv2"
+    ]
+  },
+  "limitations": [
+    "No full TouchFM/TRELLIS reconstruction experiment",
+    "No converged manipulation policy or real hardware test",
+    "Original pterotactyl editable source is absent; no editable project source was copied"
+  ]
+}

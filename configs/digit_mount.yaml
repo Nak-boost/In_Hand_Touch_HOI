@@ -1,0 +1,11 @@
+# Engineering starting values, NOT a measured DIGIT assembly. Calibrate before hardware use.
+# Housing local +X faces the object; dimensions [normal thickness, width, length], metres.
+housing_size: [0.016, 0.020, 0.027]
+housing_mass: 0.020
+gel_size: [0.002, 0.016, 0.020]
+gel_mass: 0.002
+mounts:
+  index: {xyz: [0.0, 0.0, 0.032], rpy: [0.0, -0.7, -0.785398]}
+  middle: {xyz: [0.0, 0.0, 0.032], rpy: [0.0, -1.0, 0.0]}
+  ring: {xyz: [0.0, 0.0, 0.032], rpy: [0.0, -0.7, 0.785398]}
+  thumb: {xyz: [0.0, 0.0, 0.047], rpy: [0.0, -1.0, -1.570796]}

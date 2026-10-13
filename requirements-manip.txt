@@ -1,0 +1,15 @@
+# Python 3.8; install CUDA-enabled PyTorch and licensed Isaac Gym Preview 4 separately.
+-c constraints-manip.txt
+numpy==1.23.5
+hydra-core==1.3.2
+gym==0.23.1
+tensorboardX==2.6.2.2
+termcolor==2.4.0
+ninja==1.13.0
+pytest==8.3.5
+# Repair inherited dependency conflicts without changing the source environment.
+cmake==3.31.6
+cryptography==47.0.0
+typing-extensions==4.13.2
+setuptools==60.10.0
+wheel==0.37.1

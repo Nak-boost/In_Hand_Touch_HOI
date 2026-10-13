@@ -1,0 +1,27 @@
+[
+  {
+    "seconds": 0.05000000260770321,
+    "retained": 64,
+    "mean_gel_contacts": 1.84375
+  },
+  {
+    "seconds": 1.0000000521540642,
+    "retained": 63,
+    "mean_gel_contacts": 1.90625
+  },
+  {
+    "seconds": 2.0000001043081284,
+    "retained": 63,
+    "mean_gel_contacts": 1.90625
+  },
+  {
+    "seconds": 4.000000208616257,
+    "retained": 63,
+    "mean_gel_contacts": 1.859375
+  },
+  {
+    "seconds": 5.000000260770321,
+    "retained": 63,
+    "mean_gel_contacts": 1.875
+  }
+]

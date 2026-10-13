@@ -1,0 +1,15 @@
+{
+  "enabled_contact_pair_count": 79,
+  "disabled_contact_pair_count": 0,
+  "excluded_contact_pair_count": 0,
+  "grasp_candidates": 73,
+  "grasps_saved": 64,
+  "grasp_batches": 3,
+  "grasp_envs": 256,
+  "pytest_passed": 7,
+  "teacher_transitions": 1536,
+  "student_updates": 40,
+  "evaluation_steps": 64,
+  "evaluation_completed_episodes": 49,
+  "all_axes_one_turn_rate": 0.0
+}

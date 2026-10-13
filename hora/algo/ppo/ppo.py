@@ -23,6 +23,13 @@ from hora.utils.misc import AverageScalarMeter
 from tensorboardX import SummaryWriter
 
 
+def action_bounds_loss(mu, soft_bound):
+    """Per-sample symmetric penalty outside the action-mean soft bounds."""
+    high = torch.relu(mu - soft_bound).square()
+    low = torch.relu(-mu - soft_bound).square()
+    return (high + low).sum(dim=-1)
+
+
 class PPO(object):
     def __init__(self, env, output_dif, full_config):
         self.device = full_config['rl_device']
@@ -72,6 +79,7 @@ class PPO(object):
         self.entropy_coef = self.ppo_config['entropy_coef']
         self.critic_coef = self.ppo_config['critic_coef']
         self.bounds_loss_coef = self.ppo_config['bounds_loss_coef']
+        self.bounds_loss_soft_bound = self.ppo_config.get('bounds_loss_soft_bound', 1.1)
         self.gamma = self.ppo_config['gamma']
         self.tau = self.ppo_config['tau']
         self.truncate_grads = self.ppo_config['truncate_grads']
@@ -163,7 +171,7 @@ class PPO(object):
         _t = time.time()
         _last_t = time.time()
         self.obs = self.env.reset()
-        self.agent_steps = self.batch_size
+        # Preserve restored progress and do not count an uncollected initial rollout.
 
         while self.agent_steps < self.max_agent_steps:
             self.epoch_num += 1
@@ -277,12 +285,9 @@ class PPO(object):
                 c_loss = torch.max(value_losses, value_losses_clipped)
                 # bounded loss
                 if self.bounds_loss_coef > 0:
-                    soft_bound = 1.1
-                    mu_loss_high = torch.clamp_max(mu - soft_bound, 0.0) ** 2
-                    mu_loss_low = torch.clamp_max(-mu + soft_bound, 0.0) ** 2
-                    b_loss = (mu_loss_low + mu_loss_high).sum(axis=-1)
+                    b_loss = action_bounds_loss(mu, self.bounds_loss_soft_bound)
                 else:
-                    b_loss = 0
+                    b_loss = mu.new_zeros(mu.shape[0])
                 a_loss, c_loss, entropy, b_loss = [torch.mean(loss) for loss in [a_loss, c_loss, entropy, b_loss]]
 
                 loss = a_loss + 0.5 * c_loss * self.critic_coef - entropy * self.entropy_coef + b_loss * self.bounds_loss_coef

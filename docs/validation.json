@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-12",
+  "upstream": "410d95824dd28b198f6d6910cb4c09330a6303be",
+  "unit_tests_passed": 5,
+  "grasp_states": {
+    "sphere55": 64,
+    "box50": 64,
+    "capsule70": 64
+  },
+  "teacher_environment_transitions": 1536,
+  "student_updates": 40,
+  "evaluation_completed_episodes": 50,
+  "short_check_retention_rate": 0.66,
+  "short_check_both_axes_one_turn_rate": 0.0,
+  "claim": "Pipeline validation only. Not a converged rotation policy or hardware validation."
+}

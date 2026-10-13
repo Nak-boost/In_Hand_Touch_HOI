@@ -14,4 +14,4 @@ task:
       - {name: box50, shape: box, size: [0.050, 0.050, 0.050]}
       - {name: capsule70, shape: capsule, size: [0.070, 0.050, 0.050]}
     grasp:
-      cache: cache/digit_two_axis_self_collision_grasps.pt
+      cache: cache/digit_two_axis_aligned_grasps.pt

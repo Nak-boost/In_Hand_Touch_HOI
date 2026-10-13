@@ -1,0 +1,536 @@
+{
+  "asset": "allegro_digit.urdf",
+  "postures": {
+    "open": {
+      "joint_angles": [
+        0,
+        0.05,
+        0.05,
+        0.05,
+        0,
+        0.05,
+        0.05,
+        0.05,
+        0,
+        0.05,
+        0.05,
+        0.05,
+        0.3,
+        0.05,
+        0.05,
+        0.05
+      ],
+      "alignment": {
+        "index": {
+          "normal_deviation_deg": 57.26016951628389,
+          "long_axis_deviation_deg": 40.1070456591576,
+          "front_plane_offset_mm": -4.337665626087948
+        },
+        "middle": {
+          "normal_deviation_deg": 57.295779513082316,
+          "long_axis_deviation_deg": 57.29577951308231,
+          "front_plane_offset_mm": -4.3429467107317885
+        },
+        "ring": {
+          "normal_deviation_deg": 57.26016951628389,
+          "long_axis_deviation_deg": 40.1070456591576,
+          "front_plane_offset_mm": -4.337665626087948
+        },
+        "thumb": {
+          "normal_deviation_deg": 89.99998988339672,
+          "long_axis_deviation_deg": 57.29577951308231,
+          "front_plane_offset_mm": -9.799998216662836
+        }
+      },
+      "enabled_collision_overlaps": [
+        {
+          "bodies": [
+            "base_link",
+            "link_13.0"
+          ],
+          "min_projection_overlap_mm": 7.498039138227948
+        }
+      ],
+      "excluded_assembly_overlaps": [
+        {
+          "bodies": [
+            "base_link",
+            "link_0.0"
+          ],
+          "min_projection_overlap_mm": 2.6691568795398632
+        },
+        {
+          "bodies": [
+            "base_link",
+            "link_8.0"
+          ],
+          "min_projection_overlap_mm": 2.6691568795398632
+        },
+        {
+          "bodies": [
+            "base_link",
+            "link_12.0"
+          ],
+          "min_projection_overlap_mm": 39.38073361304222
+        },
+        {
+          "bodies": [
+            "link_0.0",
+            "link_1.0"
+          ],
+          "min_projection_overlap_mm": 0.489795858852643
+        },
+        {
+          "bodies": [
+            "link_1.0",
+            "link_2.0"
+          ],
+          "min_projection_overlap_mm": 0.48979585885263605
+        },
+        {
+          "bodies": [
+            "link_2.0",
+            "link_3.0"
+          ],
+          "min_projection_overlap_mm": 0.4498125234361078
+        },
+        {
+          "bodies": [
+            "digit_index_housing",
+            "link_3.0"
+          ],
+          "min_projection_overlap_mm": 10.179111026242106
+        },
+        {
+          "bodies": [
+            "link_4.0",
+            "link_5.0"
+          ],
+          "min_projection_overlap_mm": 0.489795858852643
+        },
+        {
+          "bodies": [
+            "link_5.0",
+            "link_6.0"
+          ],
+          "min_projection_overlap_mm": 0.48979585885263605
+        },
+        {
+          "bodies": [
+            "link_6.0",
+            "link_7.0"
+          ],
+          "min_projection_overlap_mm": 0.44981252343610084
+        },
+        {
+          "bodies": [
+            "digit_middle_housing",
+            "link_7.0"
+          ],
+          "min_projection_overlap_mm": 8.40292453333142
+        },
+        {
+          "bodies": [
+            "link_8.0",
+            "link_9.0"
+          ],
+          "min_projection_overlap_mm": 0.489795858852643
+        },
+        {
+          "bodies": [
+            "link_10.0",
+            "link_9.0"
+          ],
+          "min_projection_overlap_mm": 0.48979585885263605
+        },
+        {
+          "bodies": [
+            "link_10.0",
+            "link_11.0"
+          ],
+          "min_projection_overlap_mm": 0.4498125234361078
+        },
+        {
+          "bodies": [
+            "digit_ring_housing",
+            "link_11.0"
+          ],
+          "min_projection_overlap_mm": 10.179111026242106
+        },
+        {
+          "bodies": [
+            "link_13.0",
+            "link_14.0"
+          ],
+          "min_projection_overlap_mm": 0.4897958588526499
+        },
+        {
+          "bodies": [
+            "link_14.0",
+            "link_15.0"
+          ],
+          "min_projection_overlap_mm": 0.4498125234361078
+        },
+        {
+          "bodies": [
+            "digit_thumb_housing",
+            "link_15.0"
+          ],
+          "min_projection_overlap_mm": 8.907808713328198
+        }
+      ]
+    },
+    "half_closed": {
+      "joint_angles": [
+        0,
+        0.5,
+        0.35,
+        0.25,
+        0,
+        0.5,
+        0.35,
+        0.25,
+        0,
+        0.5,
+        0.35,
+        0.25,
+        0.9,
+        0.3,
+        0.4,
+        0.3
+      ],
+      "alignment": {
+        "index": {
+          "normal_deviation_deg": 57.2601695162839,
+          "long_axis_deviation_deg": 40.10704565915763,
+          "front_plane_offset_mm": -4.337665626087928
+        },
+        "middle": {
+          "normal_deviation_deg": 57.29577951308232,
+          "long_axis_deviation_deg": 57.29577951308232,
+          "front_plane_offset_mm": -4.3429467107317965
+        },
+        "ring": {
+          "normal_deviation_deg": 57.2601695162839,
+          "long_axis_deviation_deg": 40.10704565915763,
+          "front_plane_offset_mm": -4.337665626087928
+        },
+        "thumb": {
+          "normal_deviation_deg": 89.99998988339672,
+          "long_axis_deviation_deg": 57.29577951308232,
+          "front_plane_offset_mm": -9.799998216662834
+        }
+      },
+      "enabled_collision_overlaps": [
+        {
+          "bodies": [
+            "base_link",
+            "link_13.0"
+          ],
+          "min_projection_overlap_mm": 4.902841807940768
+        }
+      ],
+      "excluded_assembly_overlaps": [
+        {
+          "bodies": [
+            "base_link",
+            "link_0.0"
+          ],
+          "min_projection_overlap_mm": 2.6691568795398632
+        },
+        {
+          "bodies": [
+            "base_link",
+            "link_8.0"
+          ],
+          "min_projection_overlap_mm": 2.6691568795398632
+        },
+        {
+          "bodies": [
+            "base_link",
+            "link_12.0"
+          ],
+          "min_projection_overlap_mm": 40.73532675160688
+        },
+        {
+          "bodies": [
+            "link_0.0",
+            "link_1.0"
+          ],
+          "min_projection_overlap_mm": 4.698370278321186
+        },
+        {
+          "bodies": [
+            "link_1.0",
+            "link_2.0"
+          ],
+          "min_projection_overlap_mm": 3.3603985130634255
+        },
+        {
+          "bodies": [
+            "link_2.0",
+            "link_3.0"
+          ],
+          "min_projection_overlap_mm": 2.2266356332906883
+        },
+        {
+          "bodies": [
+            "digit_index_housing",
+            "link_3.0"
+          ],
+          "min_projection_overlap_mm": 10.179111026242124
+        },
+        {
+          "bodies": [
+            "link_4.0",
+            "link_5.0"
+          ],
+          "min_projection_overlap_mm": 4.698370278321179
+        },
+        {
+          "bodies": [
+            "link_5.0",
+            "link_6.0"
+          ],
+          "min_projection_overlap_mm": 3.3603985130634255
+        },
+        {
+          "bodies": [
+            "link_6.0",
+            "link_7.0"
+          ],
+          "min_projection_overlap_mm": 2.2266356332907025
+        },
+        {
+          "bodies": [
+            "digit_middle_housing",
+            "link_7.0"
+          ],
+          "min_projection_overlap_mm": 8.40292453333141
+        },
+        {
+          "bodies": [
+            "link_8.0",
+            "link_9.0"
+          ],
+          "min_projection_overlap_mm": 4.698370278321186
+        },
+        {
+          "bodies": [
+            "link_10.0",
+            "link_9.0"
+          ],
+          "min_projection_overlap_mm": 3.3603985130634255
+        },
+        {
+          "bodies": [
+            "link_10.0",
+            "link_11.0"
+          ],
+          "min_projection_overlap_mm": 2.2266356332906883
+        },
+        {
+          "bodies": [
+            "digit_ring_housing",
+            "link_11.0"
+          ],
+          "min_projection_overlap_mm": 10.179111026242124
+        },
+        {
+          "bodies": [
+            "link_13.0",
+            "link_14.0"
+          ],
+          "min_projection_overlap_mm": 3.8162997546247746
+        },
+        {
+          "bodies": [
+            "link_14.0",
+            "link_15.0"
+          ],
+          "min_projection_overlap_mm": 2.659681859952058
+        },
+        {
+          "bodies": [
+            "digit_thumb_housing",
+            "link_15.0"
+          ],
+          "min_projection_overlap_mm": 8.907808713328212
+        }
+      ]
+    },
+    "opposition": {
+      "joint_angles": [
+        0.08,
+        1.1,
+        0.4,
+        0.35,
+        0,
+        1.1,
+        0.4,
+        0.35,
+        0,
+        1.1,
+        0.4,
+        0.35,
+        1.1,
+        1,
+        0.8,
+        0.4
+      ],
+      "alignment": {
+        "index": {
+          "normal_deviation_deg": 57.260169516283895,
+          "long_axis_deviation_deg": 40.10704565915761,
+          "front_plane_offset_mm": -4.337665626087948
+        },
+        "middle": {
+          "normal_deviation_deg": 57.295779513082316,
+          "long_axis_deviation_deg": 57.295779513082316,
+          "front_plane_offset_mm": -4.342946710731788
+        },
+        "ring": {
+          "normal_deviation_deg": 57.260169516283895,
+          "long_axis_deviation_deg": 40.10704565915761,
+          "front_plane_offset_mm": -4.337665626087946
+        },
+        "thumb": {
+          "normal_deviation_deg": 89.99998988339672,
+          "long_axis_deviation_deg": 57.295779513082294,
+          "front_plane_offset_mm": -9.79999821666282
+        }
+      },
+      "enabled_collision_overlaps": [],
+      "excluded_assembly_overlaps": [
+        {
+          "bodies": [
+            "base_link",
+            "link_0.0"
+          ],
+          "min_projection_overlap_mm": 2.6691568795398566
+        },
+        {
+          "bodies": [
+            "base_link",
+            "link_8.0"
+          ],
+          "min_projection_overlap_mm": 2.6691568795398632
+        },
+        {
+          "bodies": [
+            "base_link",
+            "link_12.0"
+          ],
+          "min_projection_overlap_mm": 40.281229694931376
+        },
+        {
+          "bodies": [
+            "link_0.0",
+            "link_1.0"
+          ],
+          "min_projection_overlap_mm": 8.73383212860207
+        },
+        {
+          "bodies": [
+            "link_1.0",
+            "link_2.0"
+          ],
+          "min_projection_overlap_mm": 3.8162997546247746
+        },
+        {
+          "bodies": [
+            "link_2.0",
+            "link_3.0"
+          ],
+          "min_projection_overlap_mm": 3.0860802670990632
+        },
+        {
+          "bodies": [
+            "digit_index_housing",
+            "link_3.0"
+          ],
+          "min_projection_overlap_mm": 10.179111026242127
+        },
+        {
+          "bodies": [
+            "link_4.0",
+            "link_5.0"
+          ],
+          "min_projection_overlap_mm": 8.733832128602064
+        },
+        {
+          "bodies": [
+            "link_5.0",
+            "link_6.0"
+          ],
+          "min_projection_overlap_mm": 3.816299754624761
+        },
+        {
+          "bodies": [
+            "link_6.0",
+            "link_7.0"
+          ],
+          "min_projection_overlap_mm": 3.0860802670990632
+        },
+        {
+          "bodies": [
+            "digit_middle_housing",
+            "link_7.0"
+          ],
+          "min_projection_overlap_mm": 8.402924533331399
+        },
+        {
+          "bodies": [
+            "link_8.0",
+            "link_9.0"
+          ],
+          "min_projection_overlap_mm": 8.733832128602064
+        },
+        {
+          "bodies": [
+            "link_10.0",
+            "link_9.0"
+          ],
+          "min_projection_overlap_mm": 3.816299754624761
+        },
+        {
+          "bodies": [
+            "link_10.0",
+            "link_11.0"
+          ],
+          "min_projection_overlap_mm": 3.086080267099056
+        },
+        {
+          "bodies": [
+            "digit_ring_housing",
+            "link_11.0"
+          ],
+          "min_projection_overlap_mm": 10.179111026242113
+        },
+        {
+          "bodies": [
+            "link_13.0",
+            "link_14.0"
+          ],
+          "min_projection_overlap_mm": 7.030089690815318
+        },
+        {
+          "bodies": [
+            "link_14.0",
+            "link_15.0"
+          ],
+          "min_projection_overlap_mm": 3.5047650807778568
+        },
+        {
+          "bodies": [
+            "digit_thumb_housing",
+            "link_15.0"
+          ],
+          "min_projection_overlap_mm": 8.907808713328219
+        }
+      ]
+    }
+  },
+  "asset_sha256": "2e2c4efd33d6d9d93e9dc29961746b4e6e85e1dbfc3bebeb4c05cf7255fe1927",
+  "method": "URDF FK, box separating-axis tests; not a dynamics or hardware validation"
+}

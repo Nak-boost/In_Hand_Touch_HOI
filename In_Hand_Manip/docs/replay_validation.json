@@ -29,5 +29,42 @@
   "limitations": [
     "Only headless inference and reset behavior verified on server; local GUI and GTX 1650 remain unverified.",
     "Small smoke rollouts are not policy performance evaluations."
-  ]
+  ],
+  "generalized_replay": {
+    "entrypoint": "replay_policy.py",
+    "unit_tests": {
+      "passed": 15
+    },
+    "teacher": {
+      "run": "teacher_sphere55_z_self_collision_v1",
+      "checkpoint": "best",
+      "steps": 620,
+      "num_envs": 1,
+      "headless": true,
+      "completed_episodes": 1,
+      "failed_episodes": 0
+    },
+    "student": {
+      "run": "validation_self_collision_student",
+      "checkpoint": "last",
+      "steps": 80,
+      "num_envs": 1,
+      "headless": true,
+      "completed_episodes": 2,
+      "failed_episodes": 0,
+      "note": "Short validation weight, not a converged student"
+    },
+    "project_relative_run_path": {
+      "steps": 20,
+      "exit_code": 0
+    },
+    "rsync_manifest": {
+      "run": "teacher_sphere55_z_self_collision_v1",
+      "checkpoint": "best",
+      "files": 49,
+      "bytes": 1844696,
+      "verification": "Local rsync copy; every file SHA256 matches; last.pth excluded"
+    },
+    "logs": "transfers/reusable_{teacher,student,root_path}_replay.log (ignored)"
+  }
 }

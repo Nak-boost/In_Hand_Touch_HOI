@@ -21,8 +21,9 @@
 球体、立方体、胶囊体各自训练独立 Z 轴策略的配置和日志位置见
 [单物体并行实验](docs/parallel_object_experiments.md)。
 将代码、权重和抓取缓存迁移到本地的说明见 [本地迁移](docs/local_transfer.md)。
-查看已训练教师的动作见 [本地教师可视化](docs/teacher_visualization.md)，入口为
-`bash scripts/vis_manip.sh --object sphere55 --checkpoint best`；需要单独取得回放权重和抓取缓存。
+教师和学生的通用回放见 [策略可视化](docs/visualization.md)，入口为
+`bash scripts/vis_manip.sh --object sphere55 --checkpoint best`。
+后续实验使用 `--run-dir runs/manip/实验名`（相对整个项目根目录）；文档包含按实验自动选择权重和抓取缓存的 rsync 命令。
 
 ## 模型的重要边界
 

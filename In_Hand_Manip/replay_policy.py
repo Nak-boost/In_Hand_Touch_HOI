@@ -114,13 +114,17 @@ def main():
             model = TactileStudent(checkpoint['network'], checkpoint['history_dim'])
         else:
             model = ActorCritic(network_spec(cfg, env.num_obs))
-        model = model.to(env.device).eval()
+        # _observe returns tensors on rl_device even when PhysX uses a CPU
+        # tensor pipeline. Keep both teacher/student inference on that device;
+        # pre_physics_step already transfers actions back to env.device.
+        model = model.to(env.rl_device).eval()
         model.load_state_dict(checkpoint['model'])
-        normalizer = RunningMeanStd((env.num_obs,)).to(env.device).eval()
+        normalizer = RunningMeanStd((env.num_obs,)).to(env.rl_device).eval()
         normalizer.load_state_dict(checkpoint['running_mean_std'])
         axes = gymutil.AxesGeometry(0.045)
         obs = env.reset()
         print('TACTILE STUDENT REPLAY:' if student else 'PRIVILEGED TEACHER REPLAY:', checkpoint_path, flush=True)
+        print('Physics tensor device:', env.device, '| policy/observation device:', env.rl_device, flush=True)
         print('Objects:', [obj['name'] for obj in env.catalog],
               '| actions:', 'sampled' if args.sampled else 'mean',
               '| Esc / Ctrl-C: exit | RGB axes: object local X/Y/Z', flush=True)

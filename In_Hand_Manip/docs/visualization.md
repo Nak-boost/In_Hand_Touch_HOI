@@ -100,6 +100,10 @@ bash scripts/vis_manip.sh --object capsule70 --checkpoint last
 - 球体没有纹理，默认叠加随物体转动的红/绿/蓝局部 X/Y/Z 坐标轴；`--no-axes` 隐藏。
 - `--headless --steps 620` 检查无窗口推理；不会弹出窗口。
 - `--device cuda:0` 和 `--graphics-device-id 0` 分别选择计算和图形设备。
+- CPU数据管线与GPU推理可以同时使用：物理张量位于`env.device`，观测、策略网络和归一化器
+  均位于`env.rl_device`。`GPU Pipeline: disabled`不表示GPU PhysX或GPU推理被关闭。
+  回放脚本已修复将网络错误放到物理张量设备、导致`cuda:0 and cpu`混用的错误；
+  遇到该错误应更新回放脚本，无需重装环境、重传权重或修改训练配置的管线设置。
 - `--grasp-cache /absolute/path/cache.pt` 可重定位抓取缓存；兼容性校验仍执行。
 
 终端输出回合时长、绕目标轴净旋转圈数和失败标志。净圈数不是完整姿态覆盖率。
@@ -115,5 +119,7 @@ bash scripts/vis_manip.sh --object capsule70 --checkpoint last
 服务器验证：15项测试通过；通用入口完成球体教师620步和学生80步的GPU无窗口推理及自动重置；
 传输清单另做rsync副本逐文件SHA256检查。详见 `replay_validation.json`。
 服务器没有图形桌面，GUI及本地GTX1650实际显示尚未验证。
+2026-10-18设备修复验证：先用悬空609M检查点复现设备混用错误；修复后，
+悬空609M和桌面786M检查点各完成单环境620控制步GPU无窗口回放，包含30秒回合结束及自动重置，均正常退出。
 当前三组正式权重训练于动作边界惩罚修正前，未学出可靠持续旋转，可能停转；
 安装与推理成功不等于策略已收敛。

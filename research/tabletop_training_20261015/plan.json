@@ -1,0 +1,33 @@
+{
+  "gpus": [
+    1
+  ],
+  "max_jobs_per_gpu": 3,
+  "minimum_free_mb": 12000,
+  "minimum_checked_grasps": 16,
+  "num_envs": 256,
+  "max_agent_steps": 10000000,
+  "experiments": [
+    {
+      "object": "box45",
+      "config": "manip_tabletop_box45",
+      "run_name": "tabletop_box45_z_seed42_20261015",
+      "seed": 42,
+      "quality_report": "/root/In_Hand_Reconstruction/research/tabletop_training_20261015/grasp_quality.json"
+    },
+    {
+      "object": "box45",
+      "config": "manip_tabletop_box45",
+      "run_name": "tabletop_box45_z_seed43_20261015",
+      "seed": 43,
+      "quality_report": "/root/In_Hand_Reconstruction/research/tabletop_training_20261015/grasp_quality.json"
+    },
+    {
+      "object": "box45",
+      "config": "manip_tabletop_box45",
+      "run_name": "tabletop_box45_z_seed44_20261015",
+      "seed": 44,
+      "quality_report": "/root/In_Hand_Reconstruction/research/tabletop_training_20261015/grasp_quality.json"
+    }
+  ]
+}

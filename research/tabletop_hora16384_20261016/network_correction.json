@@ -1,0 +1,23 @@
+{
+  "reason": "User clarified: HORA training hyperparameters only, not network architecture",
+  "actor": [
+    256,
+    256,
+    128
+  ],
+  "privileged_encoder": [
+    128,
+    64,
+    8
+  ],
+  "discarded_profiles": [
+    "sphere55_profile16384",
+    "box45_profile16384"
+  ],
+  "value_bootstrap": false,
+  "superseded_bootstrap_profiles": [
+    "sphere55_profile_current_network",
+    "box45_profile_current_network"
+  ],
+  "final_configuration_report": "configuration_check.json"
+}

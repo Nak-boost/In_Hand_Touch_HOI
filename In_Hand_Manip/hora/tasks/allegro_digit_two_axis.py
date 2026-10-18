@@ -5,6 +5,7 @@ The rigid proxy and binary tactile model require calibration before real hardwar
 """
 import hashlib
 import json
+import time
 from pathlib import Path
 
 import numpy as np
@@ -13,7 +14,11 @@ from isaacgym import gymapi, gymtorch
 
 from .base.vec_task import VecTask
 from .manipulation_math import (OBS_DIM, PRIV_DIM, build_observation, append_history,
-                                rotation_increment, rotation_terms)
+                                rotation_increment, rotation_terms, joint_pose_deviation,
+                                bounded_quadratic_cost, blocked_target_command, fingertip_proximity_reward,
+                                rotation_contact_multipliers, contact_conditioned_rotation)
+from hora.utils.manip_control import action_reference, joint_targets, tracking_action
+from hora.utils.object_contacts import GelObjectContactReader, validate_object_contact_filter
 from hora.utils.hand_collision import (collision_spec, collision_signature, configure_asset_collisions,
                              verify_actor_collisions, require_collision_signature)
 from hora.utils.asset_geometry import verify_geometry_manifest
@@ -26,6 +31,13 @@ class AllegroDigitTwoAxis(VecTask):
     def __init__(self, config, sim_device, graphics_device_id, headless):
         self.config = config
         self.cfg = config['env']['manipulation']
+        self.action_reference = action_reference(self.cfg)
+        self.object_contact_filter = self.cfg.get('object_contact_filter', False)
+        validate_object_contact_filter(self.object_contact_filter, config['sim'])
+        self.rotation_contact_multipliers = rotation_contact_multipliers(self.cfg)
+        distance_weight = self.cfg.get('fingertip_distance_weight', 0.0)
+        if not np.isfinite(distance_weight) or distance_weight < 0:
+            raise ValueError('fingertip_distance_weight must be finite and nonnegative')
         self.stage = config.get('stage', 'teacher')
         self.max_episode_length = config['env']['episodeLength']
         self.up_axis = 'z'
@@ -39,7 +51,7 @@ class AllegroDigitTwoAxis(VecTask):
             raise FileNotFoundError('Missing hand asset; see docs/official_digit.md for the matching builder: %s' % asset_path)
         verify_geometry_manifest(asset_path)
         self.asset_hash = hashlib.sha256(asset_path.read_bytes()).hexdigest()
-        self.collision_spec = collision_spec(asset_path)
+        self.collision_spec = self._collision_spec(asset_path)
         self.collision_hash = collision_signature(self.collision_spec)
         self.cache_path = ROOT / config['env']['grasp']['cache']
         self.grasp_cache = None
@@ -54,6 +66,9 @@ class AllegroDigitTwoAxis(VecTask):
                 states = self.grasp_cache['states'].get(obj['name'])
                 if states is None or len(states) == 0 or states.shape[1] != 23 or not torch.isfinite(states).all():
                     raise ValueError('Invalid or empty grasp cache for '+obj['name'])
+                targets = self.grasp_cache.get('targets', {}).get(obj['name'])
+                if targets is not None and (targets.shape != (len(states), 16) or not torch.isfinite(targets).all()):
+                    raise ValueError('Invalid paired grasp targets for '+obj['name'])
         super().__init__(config, sim_device, graphics_device_id, headless)
         if self.grasp_cache is not None and self.grasp_cache.get('joint_names') != self.joint_names:
             raise ValueError('Grasp cache joint order mismatch; regenerate with current asset/Isaac Gym')
@@ -65,6 +80,7 @@ class AllegroDigitTwoAxis(VecTask):
         self.contact_forces = gymtorch.wrap_tensor(self.gym.acquire_net_contact_force_tensor(self.sim)).view(self.num_envs, -1, 3)
         self.q, self.qdot = self.dof_states[..., 0], self.dof_states[..., 1]
         self.targets = torch.zeros_like(self.q)
+        self.initial_q = torch.zeros_like(self.q)
         self.actions = torch.zeros_like(self.q)
         self.last_actions = torch.zeros_like(self.q)
         self.torques = torch.zeros_like(self.q)
@@ -88,6 +104,7 @@ class AllegroDigitTwoAxis(VecTask):
         self.raw_housing = torch.zeros_like(self.raw_contacts)
         self.kp = torch.ones_like(self.q)*config['env']['controller']['pgain']
         self.kd = torch.ones_like(self.q)*config['env']['controller']['dgain']
+        self.object_contact_reader = GelObjectContactReader(self) if self.object_contact_filter else None
         if self.viewer:
             self.gym.viewer_camera_look_at(self.viewer, self.envs[0], gymapi.Vec3(0.5, 0.4, 0.95), gymapi.Vec3(0, 0, 0.6))
         self._refresh()
@@ -95,6 +112,29 @@ class AllegroDigitTwoAxis(VecTask):
     def _allocate_task_buffer(self, num_envs):
         self.priv_info_buf = torch.zeros(num_envs, PRIV_DIM, device=self.device)
         self.proprio_hist_buf = torch.zeros(num_envs, self.prop_hist_len, OBS_DIM, device=self.device)
+
+    def _collision_spec(self, asset_path):
+        return collision_spec(asset_path)
+
+    def _create_scene_assets(self):
+        pass
+
+    def _create_scene_actor(self, env, env_id):
+        pass
+
+    def _hand_pose(self):
+        pose = gymapi.Transform()
+        pose.p = gymapi.Vec3(0, 0, 0.5)
+        pose.r = gymapi.Quat.from_axis_angle(gymapi.Vec3(0, 1, 0), -np.pi/2) * gymapi.Quat.from_axis_angle(gymapi.Vec3(1, 0, 0), np.pi/2)
+        return pose
+
+    def _set_actor_friction(self, env, hand, obj, friction):
+        for actor in [hand, obj]:
+            shapes = self.gym.get_actor_rigid_shape_properties(env, actor)
+            for shape in shapes:
+                shape.friction = friction
+                shape.restitution = 0
+            self.gym.set_actor_rigid_shape_properties(env, actor, shapes)
 
     def _create_envs(self, num_envs, spacing, num_per_row):
         if num_envs < len(self.catalog):
@@ -141,9 +181,8 @@ class AllegroDigitTwoAxis(VecTask):
             else:
                 raise ValueError('Unsupported primitive: '+obj['shape'])
             assets.append(asset)
-        hand_pose = gymapi.Transform()
-        hand_pose.p = gymapi.Vec3(0, 0, 0.5)
-        hand_pose.r = gymapi.Quat.from_axis_angle(gymapi.Vec3(0, 1, 0), -np.pi/2) * gymapi.Quat.from_axis_angle(gymapi.Vec3(1, 0, 0), np.pi/2)
+        self._create_scene_assets()
+        hand_pose = self._hand_pose()
         obj_pose = gymapi.Transform()
         obj_pose.p = gymapi.Vec3(*self.config['env']['grasp']['object_position'])
         self.envs, hand_indices, object_indices = [], [], []
@@ -158,12 +197,8 @@ class AllegroDigitTwoAxis(VecTask):
             oid = i % len(assets)
             obj = self.gym.create_actor(env, assets[oid], obj_pose, 'object', i, 0, 0)
             friction = float(np.random.uniform(*domain['friction']))
-            for actor in [hand, obj]:
-                shapes = self.gym.get_actor_rigid_shape_properties(env, actor)
-                for shape in shapes:
-                    shape.friction = friction
-                    shape.restitution = 0
-                self.gym.set_actor_rigid_shape_properties(env, actor, shapes)
+            self._set_actor_friction(env, hand, obj, friction)
+            self._create_scene_actor(env, i)
             verify_actor_collisions(self.gym, env, hand, self.collision_spec)
             mass = float(np.random.uniform(*domain['mass']))
             com = np.random.uniform(-domain['com'], domain['com'], 3)
@@ -192,11 +227,22 @@ class AllegroDigitTwoAxis(VecTask):
         self.gym.refresh_net_contact_force_tensor(self.sim)
         self.object_state = self.root_states[self.object_indices]
 
+    def _reset_task_state(self, ids):
+        pass
+
+    def _failure_conditions(self, gel, displacement, finite):
+        return ((self.object_state[:, 2] < self.cfg['min_height']) |
+                (displacement > self.cfg['max_displacement']) | ~finite)
+
+    def _task_extras(self):
+        return {}
+
     def reset_idx(self, ids):
         if len(ids) == 0:
             return
         grasp = self.config['env']['grasp']
         poses = torch.zeros(len(ids), 23, device=self.device)
+        reset_targets = torch.zeros(len(ids), 16, device=self.device)
         if self.grasp_cache is None:
             # Config is numeric joint_0..15 order; PhysX may reorder the kinematic tree.
             poses[:, :16] = torch.tensor(grasp['canonical_q'], device=self.device)[self.canonical_order]
@@ -204,18 +250,23 @@ class AllegroDigitTwoAxis(VecTask):
             poses[:, 16:19] = torch.tensor(grasp['object_position'], device=self.device)
             poses[:, 16:18] += (torch.rand(len(ids), 2, device=self.device)*2-1)*0.004
             poses[:, 22] = 1
+            reset_targets.copy_(poses[:, :16])
         else:
             for oid, obj in enumerate(self.catalog):
                 mask = self.object_ids[ids] == oid
                 count = int(mask.sum())
                 if count:
                     bank = self.grasp_cache['states'][obj['name']]
-                    sampled = bank[torch.randint(len(bank), (count,))]
+                    sample_ids = torch.randint(len(bank), (count,))
+                    sampled = bank[sample_ids]
                     poses[mask] = sampled.to(self.device)
+                    target_bank = self.grasp_cache.get('targets', {}).get(obj['name'], bank[:, :16])
+                    reset_targets[mask] = target_bank[sample_ids].to(self.device)
         poses[:, :16] = torch.max(torch.min(poses[:, :16], self.upper), self.lower)
         self.q[ids] = poses[:, :16]
+        self.initial_q[ids] = poses[:, :16]
         self.qdot[ids] = 0
-        self.targets[ids] = poses[:, :16]
+        self.targets[ids] = torch.max(torch.min(reset_targets, self.upper), self.lower)
         self.actions[ids] = 0
         self.last_actions[ids] = 0
         self.root_states[self.object_indices[ids], :7] = poses[:, 16:23]
@@ -238,6 +289,7 @@ class AllegroDigitTwoAxis(VecTask):
         self.progress_buf[ids] = 0
         self.proprio_hist_buf[ids] = 0
         self.at_reset_buf[ids] = 1
+        self._reset_task_state(ids)
         hi, oi = self.hand_indices[ids].to(torch.int32), self.object_indices[ids].to(torch.int32)
         self.gym.set_dof_state_tensor_indexed(self.sim, gymtorch.unwrap_tensor(self.dof_states), gymtorch.unwrap_tensor(hi), len(hi))
         self.gym.set_actor_root_state_tensor_indexed(self.sim, gymtorch.unwrap_tensor(self.root_states), gymtorch.unwrap_tensor(oi), len(oi))
@@ -246,8 +298,13 @@ class AllegroDigitTwoAxis(VecTask):
         self.last_actions.copy_(self.actions)
         alpha = self.cfg['action_smoothing']
         self.actions.copy_(alpha*actions.to(self.device)+(1-alpha)*self.actions)
-        self.targets.add_(self.cfg['action_scale']*self.actions)
-        self.targets.copy_(torch.max(torch.min(self.targets, self.upper), self.lower))
+        requested = self.cfg['action_scale']*self.actions
+        targets, applied = joint_targets(self.q, self.targets, requested,
+                                         self.lower, self.upper, self.action_reference)
+        self.targets.copy_(targets)
+        self.target_increment_lost = (requested-applied).abs().sum(-1)/requested.abs().sum(-1).clamp_min(1e-8)
+        self.blocked_target_command = blocked_target_command(
+            requested, applied, self.cfg['action_scale'])
         self.prev_pose.copy_(self.object_state[:, :7])
 
     def update_low_level_control(self):
@@ -294,29 +351,76 @@ class AllegroDigitTwoAxis(VecTask):
         hit = self.segment_angle >= self.next_goal-tolerance
         self.next_goal += hit*self.cfg['goal_increment']
         self.goal_hits += hit
-        gel = self.contact_forces[:, self.gel_ids].norm(dim=-1) > self.config['env']['digit']['contact_threshold']
+        raw_gel = self.contact_forces[:, self.gel_ids].norm(dim=-1) > self.config['env']['digit']['contact_threshold']
+        gel = raw_gel
+        if self.object_contact_reader is not None:
+            self.object_gel_normal_force = self.object_contact_reader.refresh(self)
+            gel = self.object_gel_normal_force > self.config['env']['digit']['contact_threshold']
+        # Privileged task signals only: _observe still reads unfiltered net forces.
+        # The same mask feeds both contact reward and tabletop contact-loss failure.
+        self.task_gel_contacts = gel
+        contact_rot, contact_rotation_scale = contact_conditioned_rotation(
+            rot, gel, self.rotation_contact_multipliers)
         housing = self.contact_forces[:, self.housing_ids].norm(dim=-1) > self.config['env']['digit']['contact_threshold']
         displacement = (self.object_state[:, :3]-self.initial_position).norm(dim=-1)
-        failed = (self.object_state[:, 2] < self.cfg['min_height']) | (displacement > self.cfg['max_displacement'])
+        # Official DIGIT gel link frames are at the sensing-surface apex.
+        # Simulation truth is used only for reward/diagnostics, never actor observations.
+        fingertip_distance = (self.bodies[:, self.gel_ids, :3] -
+                              self.object_state[:, None, :3]).norm(dim=-1)
+        pose_penalty = self.cfg.get('pose_weight', 0.0)*joint_pose_deviation(self.q, self.initial_q)
         finite = torch.isfinite(self.object_state).all(-1) & torch.isfinite(self.q).all(-1)
-        failed |= ~finite
+        failed = self._failure_conditions(gel, displacement, finite)
         timeout = self.progress_buf >= self.max_episode_length
-        reward = (self.cfg['rotation_weight']*rot-self.cfg['off_axis_weight']*off
-                  -self.cfg['overspeed_weight']*fast+self.cfg['goal_weight']*hit
-                  +self.cfg['contact_weight']*(gel.sum(-1)>=2)
-                  -self.cfg['housing_weight']*housing.float().mean(-1)
-                  -self.cfg['position_weight']*displacement
-                  -self.cfg['linear_velocity_weight']*self.object_state[:, 7:10].norm(dim=-1)
-                  -self.cfg['action_rate_weight']*(self.actions-self.last_actions).square().sum(-1)
-                  -self.cfg['torque_weight']*self.torques.square().sum(-1)
-                  -self.cfg['drop_penalty']*failed)
+        self.reward_diagnostics = {'off_axis_squared': off, 'overspeed_squared': fast,
+                                   'rotation_unconditioned': self.cfg['rotation_weight']*rot,
+                                   'rotation_contact_scale': contact_rotation_scale}
+        # Keep per-environment components before auto-reset for scale diagnostics.
+        # Caps/weights default to legacy behavior for old saved configurations.
+        self.reward_terms = {
+            'rotation': self.cfg['rotation_weight']*contact_rot,
+            'off_axis_penalty': -bounded_quadratic_cost(off, self.cfg['off_axis_weight'],
+                                                       self.cfg.get('off_axis_cost_cap', 0.0)),
+            'overspeed_penalty': -bounded_quadratic_cost(fast, self.cfg['overspeed_weight'],
+                                                        self.cfg.get('overspeed_cost_cap', 0.0)),
+            'goal': self.cfg['goal_weight']*hit,
+            'contact': self.cfg['contact_weight']*(gel.sum(-1)>=2),
+            'fingertip_distance': self.cfg.get('fingertip_distance_weight', 0.0)*fingertip_proximity_reward(fingertip_distance),
+            'housing_penalty': -self.cfg['housing_weight']*housing.float().mean(-1),
+            'position_penalty': -self.cfg['position_weight']*displacement,
+            'linear_velocity_penalty': -self.cfg['linear_velocity_weight']*self.object_state[:, 7:10].norm(dim=-1),
+            'action_rate_penalty': -self.cfg['action_rate_weight']*(self.actions-self.last_actions).square().sum(-1),
+            'torque_penalty': -self.cfg['torque_weight']*self.torques.square().sum(-1),
+            'pose_penalty': -pose_penalty,
+            'limit_push_penalty': -self.cfg.get('limit_push_weight', 0.0)*self.blocked_target_command,
+            'failure_penalty': -self.cfg['drop_penalty']*failed,
+        }
+        reward = sum(self.reward_terms.values())
         self.rew_buf.copy_(torch.nan_to_num(reward, nan=-self.cfg['drop_penalty']))
         self.reset_buf.copy_((failed | timeout).long())
         self.extras = {'rotation/speed': along.mean(), 'rotation/off_axis': off.mean(),
-                       'contact/gel_count': gel.float().sum(-1).mean(),
+                       'rotation/contact_multiplier': contact_rotation_scale.mean(),
+                       'rotation/unconditioned_reward': (self.cfg['rotation_weight']*rot).mean(),
+                       'rotation/contact_reward_reduction': (self.cfg['rotation_weight']*(rot-contact_rot)).mean(),
+                       'contact/gel_count': raw_gel.float().sum(-1).mean(),
+                       'contact/task_gel_count': gel.float().sum(-1).mean(),
                        'contact/housing_count': housing.float().sum(-1).mean(),
+                       'contact/gel_object_center_distance_m': fingertip_distance.mean(),
                        'episode/failed': failed.float().mean(),
                        'episode/time_limit': timeout.float().mean()}
+        if self.object_contact_reader is not None:
+            self.extras.update({
+                'contact/object_gel_count': gel.float().sum(-1).mean(),
+                'contact/object_gel_normal_force_N': self.object_gel_normal_force.mean(),
+                'contact/raw_without_object': (raw_gel.any(-1) & ~gel.any(-1)).float().mean(),
+            })
+        self.extras.update({'reward/pose_penalty': -pose_penalty.mean(),
+                            'reward/total': self.rew_buf.mean(),
+                            'control/blocked_target_command': self.blocked_target_command.mean(),
+                            'control/target_increment_lost': self.target_increment_lost.mean(),
+                            'control/target_at_limit': ((self.targets-self.lower<.001)|(self.upper-self.targets<.001)).float().mean(),
+                            'control/torque_at_limit': (self.torques.abs()>=self.effort-1e-5).float().mean()})
+        self.extras.update({'reward/'+name: value.mean() for name, value in self.reward_terms.items()})
+        self.extras.update(self._task_extras())
         # Terminal metrics are captured before auto-reset; evaluator consumes these separately.
         self.terminal = {'done': self.reset_buf.bool().clone(), 'failed': failed.clone(),
                          'angles': self.total_angle.clone(), 'length': self.progress_buf.clone()}
@@ -343,8 +447,22 @@ class AllegroDigitTwoAxis(VecTask):
         return self._observations()
 
     def step(self, actions):
+        measured = self.object_contact_reader is not None
+        if measured:
+            started = time.perf_counter_ns()
         _, reward, done, info = super().step(actions)
-        return self._observations(), reward, done, info
+        observations = self._observations()
+        if measured:
+            step_ms = (time.perf_counter_ns() - started) / 1e6
+            reader = self.object_contact_reader
+            info.update({
+                'performance/contact_pair_wall_ms': reader.last_wall_ms,
+                'performance/contact_pair_cpu_ms': reader.last_cpu_ms,
+                'performance/contact_pair_wall_fraction': reader.last_wall_ms / max(step_ms, 1e-9),
+                'performance/contact_env_step_wall_ms': step_ms,
+                'performance/contact_pair_wall_us_per_env': reader.last_wall_ms * 1000 / self.num_envs,
+            })
+        return observations, reward, done, info
 
     def generate_grasps(self):
         if self.sim_params.use_gpu_pipeline:
@@ -353,12 +471,14 @@ class AllegroDigitTwoAxis(VecTask):
         object_bodies = [self.gym.get_actor_rigid_body_index(env, 1, 0, gymapi.DOMAIN_ENV)
                          for env in self.envs]
         banks = {obj['name']: [] for obj in self.catalog}
+        target_banks = {obj['name']: [] for obj in self.catalog}
         counts = {name: 0 for name in banks}
         for batch in range(cfg['max_batches']):
             self.reset()
+            desired = self.targets.clone()
             valid = torch.ones(self.num_envs, dtype=torch.bool, device=self.device)
             for t in range(cfg['candidate_steps']):
-                self.step(torch.zeros_like(self.actions))
+                self.step(tracking_action(self.q, self.targets, desired, self.actions, self.cfg))
                 if t >= cfg['warmup_steps']:
                     # Net force alone cannot identify the other body now that
                     # fingers can collide. Use real PhysX pairs for cache filtering.
@@ -375,8 +495,10 @@ class AllegroDigitTwoAxis(VecTask):
                               & (self.object_state[:, 10:13].norm(dim=-1) < 1.0))
             states = torch.cat((self.q, self.object_state[:, :7]), -1).detach().cpu()
             for oid, obj in enumerate(self.catalog):
-                selected = states[(valid & (self.object_ids == oid)).cpu()]
+                selected_mask = (valid & (self.object_ids == oid)).cpu()
+                selected = states[selected_mask]
                 banks[obj['name']].append(selected)
+                target_banks[obj['name']].append(self.targets.detach().cpu()[selected_mask].clone())
                 counts[obj['name']] += len(selected)
             print('grasp batch', batch+1, counts, flush=True)
             if min(counts.values()) >= cfg['required_per_object']:
@@ -385,8 +507,11 @@ class AllegroDigitTwoAxis(VecTask):
                     raise FileExistsError('Refusing to overwrite existing grasp cache: '+str(self.cache_path))
                 torch.save({'asset_sha256': self.asset_hash, 'collision_sha256': self.collision_hash,
                             'grasp_contact_validation': 'physx_body_pairs_v1',
+                            'generation_action_reference': self.action_reference,
+                            'generation_controller': 'bounded_target_tracking_v1',
                             'objects': self.catalog,
                             'joint_names': self.joint_names,
+                            'targets': {k: torch.cat(v)[:cfg['required_per_object']] for k, v in target_banks.items()},
                             'states': {k: torch.cat(v)[:cfg['required_per_object']] for k, v in banks.items()}}, self.cache_path)
                 return counts
         raise RuntimeError('Not enough stable gel-contact grasps. Inspect geometry/initial pose; no cache saved. Counts: '+json.dumps(counts))

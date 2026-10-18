@@ -1,0 +1,54 @@
+{
+  "config": "manip_official_capsule80",
+  "count": 57,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 48,
+      "total": 56,
+      "retained": 57,
+      "two_gel": 48,
+      "non_gel_free": 48
+    },
+    {
+      "batch": 2,
+      "accepted": 9,
+      "total": 65,
+      "retained": 17,
+      "two_gel": 9,
+      "non_gel_free": 9
+    },
+    {
+      "batch": 3,
+      "accepted": 0,
+      "total": 65,
+      "retained": 12,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 4,
+      "accepted": 0,
+      "total": 65,
+      "retained": 8,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 5,
+      "accepted": 0,
+      "total": 65,
+      "retained": 7,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 6,
+      "accepted": 0,
+      "total": 65,
+      "retained": 8,
+      "two_gel": 0,
+      "non_gel_free": 0
+    }
+  ]
+}

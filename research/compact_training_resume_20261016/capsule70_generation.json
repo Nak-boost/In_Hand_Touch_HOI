@@ -1,0 +1,38 @@
+{
+  "config": "manip_compact27_capsule70_resume20261016",
+  "count": 128,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 7,
+      "total": 7,
+      "retained": 72,
+      "two_gel": 7,
+      "non_gel_free": 7
+    },
+    {
+      "batch": 2,
+      "accepted": 31,
+      "total": 38,
+      "retained": 87,
+      "two_gel": 31,
+      "non_gel_free": 31
+    },
+    {
+      "batch": 3,
+      "accepted": 53,
+      "total": 91,
+      "retained": 102,
+      "two_gel": 54,
+      "non_gel_free": 53
+    },
+    {
+      "batch": 4,
+      "accepted": 54,
+      "total": 145,
+      "retained": 103,
+      "two_gel": 54,
+      "non_gel_free": 54
+    }
+  ]
+}

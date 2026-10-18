@@ -1,0 +1,271 @@
+{
+  "last_metrics": {
+    "performance/RLTrainFPS": {
+      "step": 29360128,
+      "value": 1464931.0
+    },
+    "performance/EnvStepFPS": {
+      "step": 29360128,
+      "value": 9355.3857421875
+    },
+    "losses/actor_loss": {
+      "step": 29360128,
+      "value": -0.0002750660933088511
+    },
+    "losses/bounds_loss": {
+      "step": 29360128,
+      "value": 0.025984127074480057
+    },
+    "losses/critic_loss": {
+      "step": 29360128,
+      "value": 0.16184251010417938
+    },
+    "losses/entropy": {
+      "step": 29360128,
+      "value": 19.457216262817383
+    },
+    "info/last_lr": {
+      "step": 29360128,
+      "value": 0.00043895747512578964
+    },
+    "info/e_clip": {
+      "step": 29360128,
+      "value": 0.20000000298023224
+    },
+    "info/kl": {
+      "step": 29360128,
+      "value": 0.036243926733732224
+    },
+    "rotation/speed": {
+      "step": 29360128,
+      "value": 0.062873974442482
+    },
+    "rotation/off_axis": {
+      "step": 29360128,
+      "value": 0.00017019553342834115
+    },
+    "contact/gel_count": {
+      "step": 29360128,
+      "value": 0.7469482421875
+    },
+    "contact/task_gel_count": {
+      "step": 29360128,
+      "value": 0.4718017578125
+    },
+    "contact/housing_count": {
+      "step": 29360128,
+      "value": 0.363037109375
+    },
+    "contact/gel_object_center_distance_m": {
+      "step": 29360128,
+      "value": 0.0533469021320343
+    },
+    "episode/failed": {
+      "step": 29360128,
+      "value": 0.00634765625
+    },
+    "episode/time_limit": {
+      "step": 29360128,
+      "value": 0.0
+    },
+    "contact/object_gel_count": {
+      "step": 29229056,
+      "value": 0.4581298828125
+    },
+    "contact/object_gel_normal_force_N": {
+      "step": 29229056,
+      "value": 0.04164465144276619
+    },
+    "contact/raw_without_object": {
+      "step": 29229056,
+      "value": 0.197998046875
+    },
+    "reward/pose_penalty": {
+      "step": 29229056,
+      "value": -0.034354161471128464
+    },
+    "reward/total": {
+      "step": 29229056,
+      "value": -1.5333476066589355
+    },
+    "control/blocked_target_command": {
+      "step": 29229056,
+      "value": 0.04298172891139984
+    },
+    "control/target_increment_lost": {
+      "step": 29229056,
+      "value": 0.12224067002534866
+    },
+    "control/target_at_limit": {
+      "step": 29229056,
+      "value": 0.07809257507324219
+    },
+    "control/torque_at_limit": {
+      "step": 29229056,
+      "value": 0.0
+    },
+    "reward/rotation": {
+      "step": 29229056,
+      "value": 0.11109427362680435
+    },
+    "reward/off_axis_penalty": {
+      "step": 29229056,
+      "value": 0.0
+    },
+    "reward/overspeed_penalty": {
+      "step": 29229056,
+      "value": 0.0
+    },
+    "reward/goal": {
+      "step": 29229056,
+      "value": 0.00164794921875
+    },
+    "reward/contact": {
+      "step": 29229056,
+      "value": 0.00731239328160882
+    },
+    "reward/fingertip_distance": {
+      "step": 29229056,
+      "value": 0.045536257326602936
+    },
+    "reward/housing_penalty": {
+      "step": 29229056,
+      "value": -0.004928779788315296
+    },
+    "reward/position_penalty": {
+      "step": 29229056,
+      "value": -0.049415167421102524
+    },
+    "reward/linear_velocity_penalty": {
+      "step": 29229056,
+      "value": -0.0007520838989876211
+    },
+    "reward/action_rate_penalty": {
+      "step": 29229056,
+      "value": -0.04805024713277817
+    },
+    "reward/torque_penalty": {
+      "step": 29229056,
+      "value": -1.821334990381729e-05
+    },
+    "reward/limit_push_penalty": {
+      "step": 29229056,
+      "value": -0.01074543222784996
+    },
+    "reward/failure_penalty": {
+      "step": 29229056,
+      "value": -1.5506744384765625
+    },
+    "episode/outside_workspace": {
+      "step": 29229056,
+      "value": 0.0
+    },
+    "episode/contact_lost": {
+      "step": 29229056,
+      "value": 0.00738525390625
+    },
+    "contact/missing_seconds": {
+      "step": 29229056,
+      "value": 0.3805389702320099
+    },
+    "performance/contact_pair_wall_ms": {
+      "step": 29229056,
+      "value": 655.5863037109375
+    },
+    "performance/contact_pair_cpu_ms": {
+      "step": 29229056,
+      "value": 610.4939575195312
+    },
+    "performance/contact_pair_wall_fraction": {
+      "step": 29229056,
+      "value": 0.22992418706417084
+    },
+    "performance/contact_env_step_wall_ms": {
+      "step": 29229056,
+      "value": 2861.328125
+    },
+    "performance/contact_pair_wall_us_per_env": {
+      "step": 29229056,
+      "value": 40.01381301879883
+    },
+    "episode_rewards/step": {
+      "step": 29229056,
+      "value": -244.53439331054688
+    },
+    "episode_lengths/step": {
+      "step": 29229056,
+      "value": 119.32231140136719
+    }
+  },
+  "nonfinite_scalar_tags": {},
+  "last_resource_samples": [
+    {
+      "time": "2026-10-17T14:24:18.804685+08:00",
+      "process_memory_mb": 6440,
+      "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+      "total_mb": 24564,
+      "used_mb": 11646,
+      "utilization": 38
+    },
+    {
+      "time": "2026-10-17T14:24:24.108603+08:00",
+      "process_memory_mb": 6440,
+      "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+      "total_mb": 24564,
+      "used_mb": 11646,
+      "utilization": 26
+    },
+    {
+      "time": "2026-10-17T14:24:29.384631+08:00",
+      "process_memory_mb": 6440,
+      "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+      "total_mb": 24564,
+      "used_mb": 11646,
+      "utilization": 37
+    },
+    {
+      "time": "2026-10-17T14:24:34.744670+08:00",
+      "process_memory_mb": 6440,
+      "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+      "total_mb": 24564,
+      "used_mb": 11646,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-17T14:24:40.150683+08:00",
+      "process_memory_mb": 6440,
+      "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+      "total_mb": 24564,
+      "used_mb": 11646,
+      "utilization": 31
+    },
+    {
+      "time": "2026-10-17T14:24:45.458758+08:00",
+      "process_memory_mb": 6440,
+      "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+      "total_mb": 24564,
+      "used_mb": 11646,
+      "utilization": 10
+    },
+    {
+      "time": "2026-10-17T14:24:50.756765+08:00",
+      "process_memory_mb": 6440,
+      "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+      "total_mb": 24564,
+      "used_mb": 11646,
+      "utilization": 53
+    },
+    {
+      "time": "2026-10-17T14:24:56.087883+08:00",
+      "process_memory_mb": 0,
+      "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+      "total_mb": 24564,
+      "used_mb": 5201,
+      "utilization": 0
+    }
+  ],
+  "minimum_free_mib_last5min": 12918,
+  "failed_stage_checkpoint_files": [],
+  "kernel_log_access": "denied",
+  "native_backtrace_available": false
+}

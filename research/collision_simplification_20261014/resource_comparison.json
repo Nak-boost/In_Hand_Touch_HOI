@@ -1,0 +1,29 @@
+{
+  "official": {
+    "steps": 2000,
+    "n_envs": 256,
+    "physical_seconds": 100.00000521540642,
+    "elapsed_seconds": 493.6035950749647,
+    "actual_rigid_shapes": 85,
+    "torch_allocated_mib": 4.259765625,
+    "torch_reserved_mib": 22.0,
+    "peak_process_mib": 6134,
+    "median_step_ms": 223.412009421736,
+    "last60_mean_step_ms": 313.3458591687183,
+    "finite": true
+  },
+  "compact": {
+    "steps": 2000,
+    "n_envs": 256,
+    "physical_seconds": 100.00000521540642,
+    "elapsed_seconds": 69.73390957596712,
+    "actual_rigid_shapes": 27,
+    "torch_allocated_mib": 4.259765625,
+    "torch_reserved_mib": 22.0,
+    "peak_process_mib": 2756,
+    "median_step_ms": 34.39750045072287,
+    "last60_mean_step_ms": 31.84039997480189,
+    "finite": true
+  },
+  "method": "Same 256 envs, donor grasp state fixtures, seed14, 2000 scripted control steps with auto-reset. Independent RTX4090 physical GPUs2/3; CPU shared and some time overlap. No PPO. Geometries yield different contact trajectories. Not long-run training validation."
+}

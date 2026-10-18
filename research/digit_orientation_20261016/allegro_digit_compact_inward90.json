@@ -1,0 +1,172 @@
+{
+  "asset": "allegro_digit_compact_inward90.urdf",
+  "method": "URDF FK and PyBullet zero-margin convex closest-point queries",
+  "postures": {
+    "open": {
+      "joint_angles": [
+        0,
+        0.05,
+        0.05,
+        0.05,
+        0,
+        0.05,
+        0.05,
+        0.05,
+        0,
+        0.05,
+        0.05,
+        0.05,
+        0.3,
+        0.05,
+        0.05,
+        0.05
+      ],
+      "alignment": {
+        "index": {
+          "housing_origin_in_distal_m": [
+            0.0,
+            0.0,
+            0.01469999999999999
+          ],
+          "normal_deviation_deg": 90.00000000000003
+        },
+        "middle": {
+          "housing_origin_in_distal_m": [
+            -1.734723475976807e-18,
+            0.0,
+            0.014700000000000005
+          ],
+          "normal_deviation_deg": 0.0
+        },
+        "ring": {
+          "housing_origin_in_distal_m": [
+            0.0,
+            0.0,
+            0.01469999999999999
+          ],
+          "normal_deviation_deg": 90.00000000000003
+        },
+        "thumb": {
+          "housing_origin_in_distal_m": [
+            0.0,
+            -3.469446951953614e-18,
+            0.030299999999999994
+          ],
+          "normal_deviation_deg": 0.0
+        }
+      },
+      "enabled_collision_overlaps": []
+    },
+    "half_closed": {
+      "joint_angles": [
+        0,
+        0.5,
+        0.35,
+        0.25,
+        0,
+        0.5,
+        0.35,
+        0.25,
+        0,
+        0.5,
+        0.35,
+        0.25,
+        0.9,
+        0.3,
+        0.4,
+        0.3
+      ],
+      "alignment": {
+        "index": {
+          "housing_origin_in_distal_m": [
+            0.0,
+            6.938893903907228e-18,
+            0.01469999999999999
+          ],
+          "normal_deviation_deg": 90.00000000000003
+        },
+        "middle": {
+          "housing_origin_in_distal_m": [
+            -1.3877787807814457e-17,
+            0.0,
+            0.01469999999999999
+          ],
+          "normal_deviation_deg": 8.537736462515939e-07
+        },
+        "ring": {
+          "housing_origin_in_distal_m": [
+            0.0,
+            -6.938893903907228e-18,
+            0.01469999999999999
+          ],
+          "normal_deviation_deg": 90.00000000000003
+        },
+        "thumb": {
+          "housing_origin_in_distal_m": [
+            0.0,
+            1.3010426069826053e-17,
+            0.030300000000000007
+          ],
+          "normal_deviation_deg": 0.0
+        }
+      },
+      "enabled_collision_overlaps": []
+    },
+    "opposition": {
+      "joint_angles": [
+        0.08,
+        1.1,
+        0.4,
+        0.35,
+        0,
+        1.1,
+        0.4,
+        0.35,
+        0,
+        1.1,
+        0.4,
+        0.35,
+        1.1,
+        1,
+        0.8,
+        0.4
+      ],
+      "alignment": {
+        "index": {
+          "housing_origin_in_distal_m": [
+            1.3877787807814457e-17,
+            0.0,
+            0.014700000000000005
+          ],
+          "normal_deviation_deg": 90.00000000000003
+        },
+        "middle": {
+          "housing_origin_in_distal_m": [
+            0.0,
+            0.0,
+            0.014700000000000019
+          ],
+          "normal_deviation_deg": 0.0
+        },
+        "ring": {
+          "housing_origin_in_distal_m": [
+            1.3877787807814457e-17,
+            0.0,
+            0.014700000000000005
+          ],
+          "normal_deviation_deg": 90.00000000000003
+        },
+        "thumb": {
+          "housing_origin_in_distal_m": [
+            1.3877787807814457e-17,
+            -1.3877787807814457e-17,
+            0.030300000000000018
+          ],
+          "normal_deviation_deg": 0.0
+        }
+      },
+      "enabled_collision_overlaps": []
+    }
+  },
+  "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24"
+}

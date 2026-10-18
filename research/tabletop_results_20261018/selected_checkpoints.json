@@ -1,0 +1,14 @@
+[
+  {
+    "object": "sphere55",
+    "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m",
+    "checkpoint": "ep_4500_step_0589M_reward_445.64",
+    "steps": 589824000
+  },
+  {
+    "object": "box45",
+    "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m",
+    "checkpoint": "ep_4000_step_0524M_reward_-196.45",
+    "steps": 524288000
+  }
+]

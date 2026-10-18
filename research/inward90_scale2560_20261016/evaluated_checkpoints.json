@@ -1,0 +1,19 @@
+[
+  {
+    "object": "sphere55",
+    "agent_steps": 327680,
+    "checkpoint": "/root/In_Hand_Reconstruction/research/inward90_scale2560_20261016/sphere55_profile2560/runs/resource_probe/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": 0.0,
+    "frame_means": {
+      "object_gel_count": 0.6216736694677871,
+      "two_object_gels": 0.14233193277310924,
+      "any_object_gel": 0.47811624649859946,
+      "target_increment_lost": 0.17425321242162606,
+      "raw_action_clipped": 0.000273546918767507,
+      "off_axis_squared": 0.5259894687364123,
+      "reward": -2.3566769048655067
+    }
+  }
+]

@@ -1,0 +1,499 @@
+{
+  "updated": "2026-10-15T18:36:54.284479+08:00",
+  "supervisor_pid": 110056,
+  "allowed_gpus": [
+    2,
+    3
+  ],
+  "gpu_snapshot": {
+    "0": {
+      "uuid": "GPU-fb826cc1-700d-41ee-b5fa-a29619b96195",
+      "total_mb": 24564,
+      "used_mb": 16040,
+      "utilization": 72
+    },
+    "1": {
+      "uuid": "GPU-90a24841-4ca6-bae5-8c5e-d58970023b27",
+      "total_mb": 24564,
+      "used_mb": 23725,
+      "utilization": 0
+    },
+    "2": {
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 23783,
+      "utilization": 0
+    },
+    "3": {
+      "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+      "total_mb": 24564,
+      "used_mb": 23477,
+      "utilization": 95
+    }
+  },
+  "monitor_error": null,
+  "jobs": [
+    {
+      "object": "sphere55",
+      "config": "manip_compact27_sphere55",
+      "run_name": "teacher_sphere55_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_sphere55",
+            "--output-cache",
+            "cache/digit_sphere55_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_sphere55",
+            "--cache",
+            "cache/digit_sphere55_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_quality.json",
+            "--output-cache",
+            "cache/digit_sphere55_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_sphere55",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_sphere55",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_sphere55_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_train.log"
+        }
+      ],
+      "status": "waiting",
+      "stage_index": 0
+    },
+    {
+      "object": "box45",
+      "config": "manip_compact27_box45",
+      "run_name": "teacher_box45_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_box45",
+            "--output-cache",
+            "cache/digit_box45_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_box45",
+            "--cache",
+            "cache/digit_box45_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_quality.json",
+            "--output-cache",
+            "cache/digit_box45_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_box45",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_box45",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_box45_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_train.log"
+        }
+      ],
+      "status": "waiting",
+      "stage_index": 0
+    },
+    {
+      "object": "sphere65",
+      "config": "manip_compact27_sphere65",
+      "run_name": "teacher_sphere65_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_sphere65",
+            "--output-cache",
+            "cache/digit_sphere65_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_sphere65",
+            "--cache",
+            "cache/digit_sphere65_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_quality.json",
+            "--output-cache",
+            "cache/digit_sphere65_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_sphere65",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_sphere65",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_sphere65_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_train.log"
+        }
+      ],
+      "status": "waiting",
+      "stage_index": 0
+    },
+    {
+      "object": "capsule70",
+      "config": "manip_compact27_capsule70",
+      "run_name": "teacher_capsule70_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_capsule70",
+            "--output-cache",
+            "cache/digit_capsule70_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_capsule70",
+            "--cache",
+            "cache/digit_capsule70_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_quality.json",
+            "--output-cache",
+            "cache/digit_capsule70_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_capsule70",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_capsule70",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_capsule70_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_train.log"
+        }
+      ],
+      "status": "waiting",
+      "stage_index": 0
+    },
+    {
+      "object": "box55",
+      "config": "manip_compact27_box55",
+      "run_name": "teacher_box55_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_box55",
+            "--output-cache",
+            "cache/digit_box55_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_box55",
+            "--cache",
+            "cache/digit_box55_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_quality.json",
+            "--output-cache",
+            "cache/digit_box55_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_box55",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_box55",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_box55_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_train.log"
+        }
+      ],
+      "status": "waiting",
+      "stage_index": 0
+    },
+    {
+      "object": "capsule80",
+      "config": "manip_compact27_capsule80",
+      "run_name": "teacher_capsule80_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_capsule80",
+            "--output-cache",
+            "cache/digit_capsule80_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_capsule80",
+            "--cache",
+            "cache/digit_capsule80_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_quality.json",
+            "--output-cache",
+            "cache/digit_capsule80_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_capsule80",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_capsule80",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_capsule80_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_train.log"
+        }
+      ],
+      "status": "waiting",
+      "stage_index": 0
+    }
+  ]
+}

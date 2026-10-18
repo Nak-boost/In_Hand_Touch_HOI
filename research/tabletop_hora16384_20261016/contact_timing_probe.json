@@ -1,0 +1,56 @@
+{
+  "sphere55": {
+    "performance/contact_pair_wall_ms": {
+      "samples": 4,
+      "mean": 552.8707733154297,
+      "last": 562.7968139648438
+    },
+    "performance/contact_pair_cpu_ms": {
+      "samples": 4,
+      "mean": 552.6784820556641,
+      "last": 561.7484130859375
+    },
+    "performance/contact_pair_wall_fraction": {
+      "samples": 4,
+      "mean": 0.2823592722415924,
+      "last": 0.2669411301612854
+    },
+    "performance/contact_env_step_wall_ms": {
+      "samples": 4,
+      "mean": 1966.0687255859375,
+      "last": 2117.895263671875
+    },
+    "performance/contact_pair_wall_us_per_env": {
+      "samples": 4,
+      "mean": 33.74455547332764,
+      "last": 34.35039138793945
+    }
+  },
+  "box45": {
+    "performance/contact_pair_wall_ms": {
+      "samples": 4,
+      "mean": 566.0962829589844,
+      "last": 571.7349853515625
+    },
+    "performance/contact_pair_cpu_ms": {
+      "samples": 4,
+      "mean": 564.2704315185547,
+      "last": 568.3358154296875
+    },
+    "performance/contact_pair_wall_fraction": {
+      "samples": 4,
+      "mean": 0.25242944806814194,
+      "last": 0.2467488795518875
+    },
+    "performance/contact_env_step_wall_ms": {
+      "samples": 4,
+      "mean": 2252.9573364257812,
+      "last": 2320.7998046875
+    },
+    "performance/contact_pair_wall_us_per_env": {
+      "samples": 4,
+      "mean": 34.55177402496338,
+      "last": 34.89593505859375
+    }
+  }
+}

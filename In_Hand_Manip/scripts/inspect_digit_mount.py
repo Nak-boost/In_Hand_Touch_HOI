@@ -94,7 +94,7 @@ def render(asset, output):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--asset', type=Path, default=Path('assets/allegro/allegro_digit_official.urdf'), help='Absolute path or relative to In_Hand_Manip')
+    parser.add_argument('--asset', type=Path, default=Path('assets/allegro/allegro_digit_official_inward90.urdf'), help='Absolute path or relative to In_Hand_Manip')
     parser.add_argument('--output-dir', type=Path, default=ROOT.parent/'research/digit_mount_review')
     parser.add_argument('--no-plot', action='store_true')
     args=parser.parse_args()

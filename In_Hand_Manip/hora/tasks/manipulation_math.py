@@ -1,9 +1,72 @@
 """Simulator-independent conventions for the palm-up, two-axis task (SI, xyzw)."""
+import math
 import torch
 
 OBS_DIM = 71  # q, qdot, q_target, previous action, four contacts, commanded axis
 HISTORY_DIM = OBS_DIM
 PRIV_DIM = 23  # position, quaternion, linear/angular velocity, dimensions, mass, friction, COM, goal phase
+
+
+def rotation_contact_multipliers(config):
+    """Missing setting preserves historical rewards; enabled mode requires pair filtering."""
+    values = config.get('rotation_contact_multipliers')
+    if values is None:
+        return None
+    try:
+        values = tuple(float(x) for x in values)
+    except (TypeError, ValueError):
+        raise ValueError('rotation_contact_multipliers must contain three finite values')
+    if (len(values) != 3 or not all(math.isfinite(x) and 0 <= x <= 1 for x in values)
+            or not values[0] <= values[1] <= values[2]):
+        raise ValueError('rotation_contact_multipliers requires 0 <= zero <= one <= two_or_more <= 1')
+    if config.get('object_contact_filter') is not True:
+        raise ValueError('rotation_contact_multipliers requires object_contact_filter=true')
+    return values
+
+
+def contact_conditioned_rotation(progress, object_gel_contacts, multipliers=None):
+    """Scale positive progress only, using the filtered 0/1/2+ gel contact count."""
+    if multipliers is None:
+        return progress, torch.ones_like(progress)
+    count = object_gel_contacts.long().sum(-1).clamp_max(2)
+    scale = progress.new_tensor(multipliers)[count]
+    return progress.clamp_min(0)*scale + progress.clamp_max(0), scale
+
+
+def fingertip_proximity_reward(distances):
+    """Mean proximity score from Rotating without Seeing, Appendix D (meters).
+
+    Distances are gel reference point to object center, not surface clearance.
+    Output is in [0, 1]; the task applies its configurable reward weight.
+    """
+    return (0.1 / (0.02 + 4.0 * distances)).clamp(0.0, 1.0).mean(dim=-1)
+
+
+def bounded_quadratic_cost(squared_error, weight, cap=0.0):
+    """Preserve the small-error slope; smoothly bound large-error cost.
+
+    A zero cap selects the historical quadratic cost for controlled ablations.
+    """
+    if weight < 0 or cap < 0:
+        raise ValueError('Cost weight and cap must be nonnegative')
+    cost = weight * squared_error
+    return cost if cap == 0 else cap * (cost / (cap + cost))
+
+
+def blocked_target_command(requested, applied, action_scale):
+    """Mean outward command lost at joint limits, in full-action units.
+
+    Unlike a lost/requested fraction, small blocked commands receive small costs.
+    Legal inward/retraction commands have zero cost (up to float roundoff).
+    """
+    if action_scale <= 0:
+        raise ValueError('action_scale must be positive')
+    return ((requested-applied).abs()-1e-7).clamp_min(0).mean(-1)/action_scale
+
+
+def joint_pose_deviation(q, initial_q):
+    """Per-environment squared joint displacement from the episode's initial grasp."""
+    return (q - initial_q).square().sum(dim=-1)
 
 
 def quat_mul(a, b):

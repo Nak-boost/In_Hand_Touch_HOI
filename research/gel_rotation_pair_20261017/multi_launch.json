@@ -1,0 +1,25 @@
+{
+  "pid": 210097,
+  "command": [
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/scripts/python_manip.sh",
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/scripts/monitor_manip.py",
+    "--config",
+    "manip_hora16384_six_objects_gel_rotation",
+    "--gpu",
+    "0",
+    "--output",
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/multi_monitor",
+    "--run-prefix",
+    "teacher_six_objects_gel16384_20261017",
+    "--max-steps",
+    "1500000000",
+    "--save-frequency",
+    "50",
+    "--max-restarts",
+    "2",
+    "--start-free-mib",
+    "10000"
+  ],
+  "time": "2026-10-17T13:59:13.582492",
+  "start_memory_reason": "16384 single run about 6 GiB, prior baseline peak about 7.4 GiB; require 10000 MiB free at launch and 2048 MiB while running"
+}

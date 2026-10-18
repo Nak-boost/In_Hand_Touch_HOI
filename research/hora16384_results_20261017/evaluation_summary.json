@@ -1,0 +1,44 @@
+[
+  {
+    "checkpoint": "best",
+    "mode": "mean",
+    "seed": 215,
+    "retained_30s": 0.9471544623374939,
+    "one_turn_retained": 0.9065040946006775,
+    "mean_turns": 1.9545788764953613,
+    "mean_return": 77.97441864013672,
+    "last5s_speed": 0.16620499529221935
+  },
+  {
+    "checkpoint": "best",
+    "mode": "mean",
+    "seed": 216,
+    "retained_30s": 0.9471544623374939,
+    "one_turn_retained": 0.8902438879013062,
+    "mean_turns": 1.885223388671875,
+    "mean_return": 65.96653747558594,
+    "last5s_speed": 0.1470790619554397,
+    "survivors_with_abs_late_net_speed_below_0p05": 0.33905579399141633
+  },
+  {
+    "checkpoint": "last",
+    "mode": "mean",
+    "seed": 215,
+    "retained_30s": 0.9186992049217224,
+    "one_turn_retained": 0.8739837408065796,
+    "mean_turns": 1.8180848360061646,
+    "mean_return": 44.978973388671875,
+    "last5s_speed": 0.06756769354498038
+  },
+  {
+    "checkpoint": "best",
+    "mode": "sampled",
+    "seed": 215,
+    "retained_30s": 0.934959352016449,
+    "one_turn_retained": 0.9146341681480408,
+    "mean_turns": 1.9834424257278442,
+    "mean_return": 78.04022216796875,
+    "last5s_speed": 0.20363235252675962,
+    "survivors_with_abs_late_net_speed_below_0p05": 0.2565217391304348
+  }
+]

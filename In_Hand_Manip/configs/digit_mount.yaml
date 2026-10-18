@@ -1,4 +1,5 @@
 # Pinned official TACTO assembly geometry; see docs/official_digit.md.
+# Straight source baseline; current inward mounts are built via digit_mount_inward.yaml.
 output_asset: assets/allegro/allegro_digit_official.urdf
 source_assembly: assets/allegro/official_digit/source/tacto_left_digit.urdf
 mesh_manifest: assets/allegro/official_digit/mesh_manifest.json

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "sphere55",
+    "shape": "sphere",
+    "size": [
+      0.055,
+      0.055,
+      0.055
+    ]
+  },
+  {
+    "name": "sphere65",
+    "shape": "sphere",
+    "size": [
+      0.065,
+      0.065,
+      0.065
+    ]
+  },
+  {
+    "name": "box45",
+    "shape": "box",
+    "size": [
+      0.045,
+      0.045,
+      0.045
+    ]
+  },
+  {
+    "name": "box55",
+    "shape": "box",
+    "size": [
+      0.055,
+      0.055,
+      0.055
+    ]
+  },
+  {
+    "name": "capsule70",
+    "shape": "capsule",
+    "size": [
+      0.07,
+      0.05,
+      0.05
+    ]
+  },
+  {
+    "name": "capsule80",
+    "shape": "capsule",
+    "size": [
+      0.08,
+      0.06,
+      0.06
+    ]
+  }
+]

@@ -1,0 +1,1311 @@
+{
+  "mode": "compact",
+  "asset_hash": "b9e1e7b56ca63c4ee06ecc819dadc43262427a502cb71d3afef00d0047b15e5c",
+  "n_envs": 211,
+  "steps": 120,
+  "physical_seconds": 1.0000000521540642,
+  "elapsed_seconds": 2.526979518122971,
+  "actual_rigid_shapes": 27,
+  "torch_allocated_mib": 0.0,
+  "torch_reserved_mib": 0.0,
+  "samples": [
+    {
+      "step": 0,
+      "torch_allocated_mib": 0.0,
+      "torch_reserved_mib": 0.0,
+      "process_mib": 1874
+    },
+    {
+      "step": 60,
+      "torch_allocated_mib": 0.0,
+      "torch_reserved_mib": 0.0,
+      "process_mib": 1874
+    }
+  ],
+  "memory": [
+    {
+      "time": 1791962891.4586465,
+      "mib": 1874
+    },
+    {
+      "time": 1791962892.609696,
+      "mib": 1874
+    },
+    {
+      "time": 1791962893.8118176,
+      "mib": 1874
+    }
+  ],
+  "peak_process_mib": 1874,
+  "median_step_ms": 4.582792636938393,
+  "last60_mean_step_ms": 5.244366401651253,
+  "finite": true,
+  "postures": {
+    "0": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "1": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "2": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "3": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "4": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "5": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "6": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "7": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "8": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "9": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "10": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "11": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "12": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "13": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "14": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "15": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "16": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "17": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "18": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "19": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "20": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "21": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "22": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "23": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "24": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "25": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "26": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "27": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "28": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "29": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "30": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "31": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "32": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "33": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "34": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "35": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "36": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "37": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "38": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "39": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "40": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "41": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "42": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "43": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "44": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "45": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "46": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "47": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "48": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "49": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "50": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "51": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "52": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "53": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "54": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "55": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "56": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "57": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "58": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "59": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "60": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "61": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "62": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "63": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "64": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "65": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "66": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "67": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "68": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "69": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "70": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "71": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "72": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "73": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "74": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "75": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "76": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "77": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "78": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "79": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "80": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "81": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "82": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "83": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "84": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "85": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "86": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "87": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "88": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "89": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "90": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "91": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "92": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "93": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "94": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "95": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "96": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "97": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "98": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "99": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "100": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "101": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "102": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "103": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "104": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "105": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "106": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "107": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "108": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "109": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "110": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "111": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "112": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "113": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "114": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "115": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "116": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "117": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "118": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "119": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "120": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "121": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "122": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "123": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "124": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "125": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "126": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "127": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "128": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "129": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "130": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "131": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "132": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "133": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "134": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "135": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "136": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "137": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "138": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "139": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "140": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "141": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "142": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "143": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "144": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "145": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "146": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "147": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "148": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "149": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "150": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "151": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "152": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "153": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "154": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "155": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "156": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "157": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "158": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "159": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "160": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "161": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "162": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "163": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "164": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "165": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "166": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "167": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "168": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "169": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "170": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "171": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "172": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "173": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "174": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "175": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "176": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "177": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "178": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "179": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "180": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "181": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "182": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "183": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "184": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "185": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "186": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "187": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "188": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "189": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "190": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "191": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "192": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "193": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "194": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "195": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "196": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "197": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "198": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "199": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "200": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "201": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "202": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "203": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "204": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "205": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "206": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "207": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "208": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "209": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "210": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    }
+  }
+}

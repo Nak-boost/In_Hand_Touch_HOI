@@ -1,0 +1,47 @@
+[
+  {
+    "seed": 43,
+    "mode": "mean",
+    "pid": 131886,
+    "exit": -15,
+    "json_written": true,
+    "seconds": 28.21871852874756,
+    "close_hang": true
+  },
+  {
+    "seed": 44,
+    "mode": "mean",
+    "pid": 131984,
+    "exit": -15,
+    "json_written": true,
+    "seconds": 30.16902756690979,
+    "close_hang": true
+  },
+  {
+    "seed": 42,
+    "mode": "sampled",
+    "pid": 132114,
+    "exit": -15,
+    "json_written": true,
+    "seconds": 11.218437671661377,
+    "close_hang": true
+  },
+  {
+    "seed": 43,
+    "mode": "sampled",
+    "pid": 132206,
+    "exit": -15,
+    "json_written": true,
+    "seconds": 29.21957230567932,
+    "close_hang": true
+  },
+  {
+    "seed": 44,
+    "mode": "sampled",
+    "pid": 132432,
+    "exit": -15,
+    "json_written": true,
+    "seconds": 30.270158767700195,
+    "close_hang": true
+  }
+]

@@ -34,7 +34,10 @@ def inspect_mesh_asset(asset):
             overlaps=[]
             for a,b in itertools.combinations(sorted(links),2):
                 if (a,b) in excluded:continue
-                contacts=pb.getClosestPoints(hand,hand,0,linkIndexA=links[a],linkIndexB=links[b],physicsClientId=client)
+                # PyBullet can return an empty result at exactly distance=0 even
+                # for penetrating shapes. Query a positive neighborhood, then
+                # classify overlap using the signed distance below.
+                contacts=pb.getClosestPoints(hand,hand,1e-4,linkIndexA=links[a],linkIndexB=links[b],physicsClientId=client)
                 deepest=min([c[8] for c in contacts]+[0])
                 if deepest < -1e-6:overlaps.append({'bodies':[a,b],'penetration_mm':float(-deepest*1000)})
             report['postures'][name]={'joint_angles':q,'alignment':alignment,'enabled_collision_overlaps':overlaps}

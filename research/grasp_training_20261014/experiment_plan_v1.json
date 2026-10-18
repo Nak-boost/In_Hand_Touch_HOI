@@ -1,0 +1,54 @@
+{
+  "gpus": [
+    1
+  ],
+  "max_jobs_per_gpu": 2,
+  "minimum_free_mb": 7000,
+  "minimum_checked_grasps": 16,
+  "num_envs": 512,
+  "max_agent_steps": 10000000,
+  "experiments": [
+    {
+      "object": "sphere55",
+      "config": "manip_official_sphere55",
+      "run_name": "teacher_sphere55_z_official_pose03_20261014_v1",
+      "seed": 42,
+      "quality_report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/sphere55_quality.json"
+    },
+    {
+      "object": "sphere65",
+      "config": "manip_official_sphere65",
+      "run_name": "teacher_sphere65_z_official_pose03_20261014_v1",
+      "seed": 42,
+      "quality_report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/sphere65_quality.json"
+    },
+    {
+      "object": "box45",
+      "config": "manip_official_box45",
+      "run_name": "teacher_box45_z_official_pose03_20261014_v1",
+      "seed": 42,
+      "quality_report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/box45_quality_v2.json"
+    },
+    {
+      "object": "box55",
+      "config": "manip_official_box55",
+      "run_name": "teacher_box55_z_official_pose03_20261014_v1",
+      "seed": 42,
+      "quality_report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/box55_quality.json"
+    },
+    {
+      "object": "capsule70",
+      "config": "manip_official_capsule70",
+      "run_name": "teacher_capsule70_z_official_pose03_20261014_v1",
+      "seed": 42,
+      "quality_report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/capsule70_quality.json"
+    },
+    {
+      "object": "capsule80",
+      "config": "manip_official_capsule80",
+      "run_name": "teacher_capsule80_z_official_pose03_20261014_v1",
+      "seed": 42,
+      "quality_report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/capsule80_quality_v2.json"
+    }
+  ]
+}

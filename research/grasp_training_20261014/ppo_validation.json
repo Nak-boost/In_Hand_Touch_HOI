@@ -1,0 +1,12 @@
+{
+  "agent_steps": 1024,
+  "kind": "privileged_teacher",
+  "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+  "finite_weights": true,
+  "metrics": {
+    "reward/pose_penalty": -0.050110362470149994,
+    "control/target_increment_lost": 0.017619522288441658,
+    "control/target_at_limit": 0.021484375,
+    "control/torque_at_limit": 0.001953125
+  }
+}

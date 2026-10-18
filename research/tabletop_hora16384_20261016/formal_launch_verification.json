@@ -1,0 +1,47 @@
+{
+  "observed_at": "2026-10-17T13:00:57.428639+08:00",
+  "jobs": [
+    {
+      "object": "sphere55",
+      "gpu": 2,
+      "status": "running",
+      "pid": 197682,
+      "process_peak_mb": 5922,
+      "metrics": {
+        "performance/contact_pair_cpu_ms": {
+          "step": 131072,
+          "value": 578.1142578125
+        },
+        "performance/contact_pair_wall_ms": {
+          "step": 131072,
+          "value": 596.3416748046875
+        },
+        "performance/contact_pair_wall_fraction": {
+          "step": 131072,
+          "value": 0.2613682448863983
+        }
+      }
+    },
+    {
+      "object": "box45",
+      "gpu": 3,
+      "status": "running",
+      "pid": 197375,
+      "process_peak_mb": 5902,
+      "metrics": {
+        "performance/contact_pair_cpu_ms": {
+          "step": 262144,
+          "value": 695.4168701171875
+        },
+        "performance/contact_pair_wall_ms": {
+          "step": 262144,
+          "value": 711.664306640625
+        },
+        "performance/contact_pair_wall_fraction": {
+          "step": 262144,
+          "value": 0.23115117847919464
+        }
+      }
+    }
+  ]
+}

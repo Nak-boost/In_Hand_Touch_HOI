@@ -1,0 +1,184 @@
+{
+  "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+  "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+  "collision_spec": {
+    "version": "adjacent_and_fixed_assembly_v1",
+    "excluded_pairs": [
+      [
+        "base_link",
+        "link_0.0"
+      ],
+      [
+        "base_link",
+        "link_12.0"
+      ],
+      [
+        "base_link",
+        "link_4.0"
+      ],
+      [
+        "base_link",
+        "link_8.0"
+      ],
+      [
+        "digit_index_gel",
+        "digit_index_housing"
+      ],
+      [
+        "digit_index_gel",
+        "link_3.0"
+      ],
+      [
+        "digit_index_housing",
+        "link_3.0"
+      ],
+      [
+        "digit_middle_gel",
+        "digit_middle_housing"
+      ],
+      [
+        "digit_middle_gel",
+        "link_7.0"
+      ],
+      [
+        "digit_middle_housing",
+        "link_7.0"
+      ],
+      [
+        "digit_ring_gel",
+        "digit_ring_housing"
+      ],
+      [
+        "digit_ring_gel",
+        "link_11.0"
+      ],
+      [
+        "digit_ring_housing",
+        "link_11.0"
+      ],
+      [
+        "digit_thumb_gel",
+        "digit_thumb_housing"
+      ],
+      [
+        "digit_thumb_gel",
+        "link_15.0"
+      ],
+      [
+        "digit_thumb_housing",
+        "link_15.0"
+      ],
+      [
+        "link_0.0",
+        "link_1.0"
+      ],
+      [
+        "link_1.0",
+        "link_2.0"
+      ],
+      [
+        "link_10.0",
+        "link_11.0"
+      ],
+      [
+        "link_10.0",
+        "link_9.0"
+      ],
+      [
+        "link_12.0",
+        "link_13.0"
+      ],
+      [
+        "link_13.0",
+        "link_14.0"
+      ],
+      [
+        "link_14.0",
+        "link_15.0"
+      ],
+      [
+        "link_2.0",
+        "link_3.0"
+      ],
+      [
+        "link_4.0",
+        "link_5.0"
+      ],
+      [
+        "link_5.0",
+        "link_6.0"
+      ],
+      [
+        "link_6.0",
+        "link_7.0"
+      ],
+      [
+        "link_8.0",
+        "link_9.0"
+      ]
+    ],
+    "body_masks": {
+      "base_link": 15,
+      "digit_index_gel": 48,
+      "digit_index_housing": 80,
+      "digit_middle_gel": 384,
+      "digit_middle_housing": 640,
+      "digit_ring_gel": 3072,
+      "digit_ring_housing": 5120,
+      "digit_thumb_gel": 24576,
+      "digit_thumb_housing": 40960,
+      "link_0.0": 65537,
+      "link_1.0": 196608,
+      "link_10.0": 786432,
+      "link_11.0": 268288,
+      "link_12.0": 1048578,
+      "link_13.0": 3145728,
+      "link_14.0": 6291456,
+      "link_15.0": 4243456,
+      "link_2.0": 8519680,
+      "link_3.0": 8388704,
+      "link_4.0": 16777220,
+      "link_5.0": 50331648,
+      "link_6.0": 100663296,
+      "link_7.0": 67109632,
+      "link_8.0": 134217736,
+      "link_9.0": 134742016
+    }
+  },
+  "joint_names": [
+    "joint_0.0",
+    "joint_1.0",
+    "joint_2.0",
+    "joint_3.0",
+    "joint_12.0",
+    "joint_13.0",
+    "joint_14.0",
+    "joint_15.0",
+    "joint_4.0",
+    "joint_5.0",
+    "joint_6.0",
+    "joint_7.0",
+    "joint_8.0",
+    "joint_9.0",
+    "joint_10.0",
+    "joint_11.0"
+  ],
+  "fingers": [
+    "index",
+    "middle",
+    "ring",
+    "thumb"
+  ],
+  "control_dt": 0.05000000260770321,
+  "objects": [
+    {
+      "name": "sphere65",
+      "shape": "sphere",
+      "size": [
+        0.065,
+        0.065,
+        0.065
+      ]
+    }
+  ]
+}

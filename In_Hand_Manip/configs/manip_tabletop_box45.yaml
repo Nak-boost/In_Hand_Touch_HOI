@@ -1,0 +1,39 @@
+defaults:
+  - manip_official_box45
+  - _self_
+num_envs: 256
+task:
+  name: AllegroDigitTabletop
+  env:
+    envSpacing: 0.55
+    asset:
+      handAsset: assets/allegro/allegro_digit_compact_inward90.urdf
+    tabletop:
+      size: [0.8, 0.8, 0.04]
+      surface_height: 0.5
+      friction: 0.1
+      gel_friction: 1.0
+      hand_friction: 0.6
+      hand_position: [-0.03075675614, -0.01401577895, 0.67373061667]
+      workspace_center: [0.0, 0.0]
+      workspace_radius: 0.10
+      contact_loss_seconds: 2.0
+      initialization:
+        close_steps: 30
+        hold_steps: 60
+        opening_delta: 0.12
+        min_gel_force: 0.15  # acceptance margin above the 0.10 N sensing threshold
+        max_gel_force: 2.0
+    domain:
+      friction: [0.1, 0.1]  # low object and table friction; gels have a separate material
+    grasp:
+      cache: cache/digit_tabletop_box45_actual_checked_v3_inward90.pt
+      object_position: [0.0, 0.0, 0.5235]
+      q_noise: 0.015
+      required_per_object: 64
+      max_batches: 20
+    manipulation:
+      off_axis_weight: 0.0
+      overspeed_weight: 0.0
+      # Other reward terms inherit the existing baseline, including joint-pose regularization.
+      # No tipping/orientation penalty or termination; episode time limit is a truncation.

@@ -1,0 +1,23 @@
+{
+  "requested_at": "2026-10-14T19:25:45.030717+08:00",
+  "reason": "User requested analysis and stop of 85-shape training experiments",
+  "actions": [
+    {
+      "pid": 70366,
+      "role": "queue",
+      "signal": "SIGTERM",
+      "command": "/usr/bin/python3 /root/In_Hand_Reconstruction/In_Hand_Manip/scripts/run_experiment_queue.py --plan /root/In_Hand_Reconstruction/research/grasp_training_20261014/experiment_plan.json "
+    },
+    {
+      "pid": 74851,
+      "role": "box45",
+      "signal": "SIGINT",
+      "command": "/root/conda_envs/inhand_hoi/bin/python /root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py --config-name manip_official_box45 stage=teacher num_envs=256 graphics_device_id=-1 run_name=teacher_box45_z_official_pose03_20261014_v2_env256 train.ppo.max_agent_steps=10000000 seed=42 "
+    }
+  ],
+  "checked_at": "2026-10-14T19:25:53.537510+08:00",
+  "remaining_commands": {
+    "70366": "",
+    "74851": ""
+  }
+}

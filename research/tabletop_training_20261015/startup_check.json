@@ -1,0 +1,483 @@
+{
+  "checked_at": "2026-10-15T00:42:49.372653+08:00",
+  "gpu1_used_free_utilization": "8555 MiB, 15536 MiB, 99 %",
+  "jobs": [
+    {
+      "seed": 42,
+      "pid": 103926,
+      "run_name": "tabletop_box45_z_seed42_20261015",
+      "metrics": {
+        "performance/RLTrainFPS": {
+          "step": 155648,
+          "value": 154754.625
+        },
+        "performance/EnvStepFPS": {
+          "step": 155648,
+          "value": 4700.05029296875
+        },
+        "losses/actor_loss": {
+          "step": 155648,
+          "value": 0.0055824145674705505
+        },
+        "losses/bounds_loss": {
+          "step": 155648,
+          "value": 2.3507089614868164
+        },
+        "losses/critic_loss": {
+          "step": 155648,
+          "value": 0.5065500736236572
+        },
+        "losses/entropy": {
+          "step": 155648,
+          "value": 23.17612648010254
+        },
+        "info/last_lr": {
+          "step": 155648,
+          "value": 0.001316872425377369
+        },
+        "info/e_clip": {
+          "step": 155648,
+          "value": 0.20000000298023224
+        },
+        "info/kl": {
+          "step": 155648,
+          "value": 0.03134126216173172
+        },
+        "rotation/speed": {
+          "step": 155648,
+          "value": 0.24870094656944275
+        },
+        "rotation/off_axis": {
+          "step": 155648,
+          "value": 0.01927236095070839
+        },
+        "contact/gel_count": {
+          "step": 155648,
+          "value": 0.35546875
+        },
+        "contact/housing_count": {
+          "step": 155648,
+          "value": 0.21875
+        },
+        "episode/failed": {
+          "step": 155648,
+          "value": 0.0078125
+        },
+        "episode/time_limit": {
+          "step": 155648,
+          "value": 0.0
+        },
+        "reward/pose_penalty": {
+          "step": 155648,
+          "value": -0.10687202960252762
+        },
+        "reward/total": {
+          "step": 155648,
+          "value": -4.051690101623535
+        },
+        "control/blocked_target_command": {
+          "step": 155648,
+          "value": 0.13051900267601013
+        },
+        "control/target_increment_lost": {
+          "step": 155648,
+          "value": 0.2239198088645935
+        },
+        "control/target_at_limit": {
+          "step": 155648,
+          "value": 0.1803741455078125
+        },
+        "control/torque_at_limit": {
+          "step": 155648,
+          "value": 0.0206146240234375
+        },
+        "reward/rotation": {
+          "step": 155648,
+          "value": 0.1478346586227417
+        },
+        "reward/off_axis_penalty": {
+          "step": 155648,
+          "value": 0.0
+        },
+        "reward/overspeed_penalty": {
+          "step": 155648,
+          "value": 0.0
+        },
+        "reward/goal": {
+          "step": 155648,
+          "value": 0.0048828125
+        },
+        "reward/contact": {
+          "step": 155648,
+          "value": 0.004760742653161287
+        },
+        "reward/housing_penalty": {
+          "step": 155648,
+          "value": -0.0029174804221838713
+        },
+        "reward/position_penalty": {
+          "step": 155648,
+          "value": -0.05572888255119324
+        },
+        "reward/linear_velocity_penalty": {
+          "step": 155648,
+          "value": -0.0014212774112820625
+        },
+        "reward/action_rate_penalty": {
+          "step": 155648,
+          "value": -0.04165613651275635
+        },
+        "reward/torque_penalty": {
+          "step": 155648,
+          "value": -0.0006576099549420178
+        },
+        "reward/limit_push_penalty": {
+          "step": 155648,
+          "value": -0.03262975066900253
+        },
+        "reward/failure_penalty": {
+          "step": 155648,
+          "value": -3.96728515625
+        },
+        "episode/outside_workspace": {
+          "step": 155648,
+          "value": 0.0
+        },
+        "episode/contact_lost": {
+          "step": 155648,
+          "value": 0.0078125
+        },
+        "contact/missing_seconds": {
+          "step": 155648,
+          "value": 0.7951172590255737
+        },
+        "episode_rewards/step": {
+          "step": 151552,
+          "value": -256.8943176269531
+        },
+        "episode_lengths/step": {
+          "step": 151552,
+          "value": 64.13287353515625
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "pid": 103973,
+      "run_name": "tabletop_box45_z_seed43_20261015",
+      "metrics": {
+        "performance/RLTrainFPS": {
+          "step": 77824,
+          "value": 137560.8125
+        },
+        "performance/EnvStepFPS": {
+          "step": 77824,
+          "value": 3488.065185546875
+        },
+        "losses/actor_loss": {
+          "step": 77824,
+          "value": 0.0032716102432459593
+        },
+        "losses/bounds_loss": {
+          "step": 73728,
+          "value": 0.4026448726654053
+        },
+        "losses/critic_loss": {
+          "step": 73728,
+          "value": 0.1348835825920105
+        },
+        "losses/entropy": {
+          "step": 73728,
+          "value": 23.09050750732422
+        },
+        "info/last_lr": {
+          "step": 73728,
+          "value": 0.00296296295709908
+        },
+        "info/e_clip": {
+          "step": 73728,
+          "value": 0.20000000298023224
+        },
+        "info/kl": {
+          "step": 73728,
+          "value": 0.0209130197763443
+        },
+        "rotation/speed": {
+          "step": 73728,
+          "value": -0.010591404512524605
+        },
+        "rotation/off_axis": {
+          "step": 73728,
+          "value": 0.13594409823417664
+        },
+        "contact/gel_count": {
+          "step": 73728,
+          "value": 0.625
+        },
+        "contact/housing_count": {
+          "step": 73728,
+          "value": 1.11328125
+        },
+        "episode/failed": {
+          "step": 73728,
+          "value": 0.0078125
+        },
+        "episode/time_limit": {
+          "step": 73728,
+          "value": 0.0
+        },
+        "reward/pose_penalty": {
+          "step": 73728,
+          "value": -0.11907165497541428
+        },
+        "reward/total": {
+          "step": 73728,
+          "value": -2.176682949066162
+        },
+        "control/blocked_target_command": {
+          "step": 73728,
+          "value": 0.10851824283599854
+        },
+        "control/target_increment_lost": {
+          "step": 73728,
+          "value": 0.21316634118556976
+        },
+        "control/target_at_limit": {
+          "step": 73728,
+          "value": 0.1802825927734375
+        },
+        "control/torque_at_limit": {
+          "step": 73728,
+          "value": 0.059112548828125
+        },
+        "reward/rotation": {
+          "step": 73728,
+          "value": 0.03291281685233116
+        },
+        "reward/off_axis_penalty": {
+          "step": 73728,
+          "value": 0.0
+        },
+        "reward/overspeed_penalty": {
+          "step": 73728,
+          "value": 0.0
+        },
+        "reward/goal": {
+          "step": 73728,
+          "value": 0.0020751953125
+        },
+        "reward/contact": {
+          "step": 73728,
+          "value": 0.0068603516556322575
+        },
+        "reward/housing_penalty": {
+          "step": 73728,
+          "value": -0.01351318508386612
+        },
+        "reward/position_penalty": {
+          "step": 73728,
+          "value": -0.054892174899578094
+        },
+        "reward/linear_velocity_penalty": {
+          "step": 73728,
+          "value": -0.001306013436987996
+        },
+        "reward/action_rate_penalty": {
+          "step": 73728,
+          "value": -0.04746128246188164
+        },
+        "reward/torque_penalty": {
+          "step": 73728,
+          "value": -0.002032357035204768
+        },
+        "reward/limit_push_penalty": {
+          "step": 73728,
+          "value": -0.027129560708999634
+        },
+        "reward/failure_penalty": {
+          "step": 73728,
+          "value": -1.953125
+        },
+        "episode/outside_workspace": {
+          "step": 73728,
+          "value": 0.0
+        },
+        "episode/contact_lost": {
+          "step": 73728,
+          "value": 0.0078125
+        },
+        "contact/missing_seconds": {
+          "step": 73728,
+          "value": 0.46406254172325134
+        },
+        "episode_rewards/step": {
+          "step": 73728,
+          "value": -256.4535217285156
+        },
+        "episode_lengths/step": {
+          "step": 73728,
+          "value": 80.25405883789062
+        }
+      }
+    },
+    {
+      "seed": 44,
+      "pid": 104056,
+      "run_name": "tabletop_box45_z_seed44_20261015",
+      "metrics": {
+        "performance/RLTrainFPS": {
+          "step": 32768,
+          "value": 113933.546875
+        },
+        "performance/EnvStepFPS": {
+          "step": 32768,
+          "value": 2919.37060546875
+        },
+        "losses/actor_loss": {
+          "step": 32768,
+          "value": -0.0016926773823797703
+        },
+        "losses/bounds_loss": {
+          "step": 32768,
+          "value": 0.003198578953742981
+        },
+        "losses/critic_loss": {
+          "step": 32768,
+          "value": 1.1406238079071045
+        },
+        "losses/entropy": {
+          "step": 32768,
+          "value": 22.92879295349121
+        },
+        "info/last_lr": {
+          "step": 32768,
+          "value": 0.006666666828095913
+        },
+        "info/e_clip": {
+          "step": 32768,
+          "value": 0.20000000298023224
+        },
+        "info/kl": {
+          "step": 32768,
+          "value": 0.023619819432497025
+        },
+        "rotation/speed": {
+          "step": 32768,
+          "value": 0.18209341168403625
+        },
+        "rotation/off_axis": {
+          "step": 28672,
+          "value": 0.011797853745520115
+        },
+        "contact/gel_count": {
+          "step": 28672,
+          "value": 0.30859375
+        },
+        "contact/housing_count": {
+          "step": 28672,
+          "value": 0.3359375
+        },
+        "episode/failed": {
+          "step": 28672,
+          "value": 0.0234375
+        },
+        "episode/time_limit": {
+          "step": 28672,
+          "value": 0.0
+        },
+        "reward/pose_penalty": {
+          "step": 28672,
+          "value": -0.02027512900531292
+        },
+        "reward/total": {
+          "step": 28672,
+          "value": -4.215200901031494
+        },
+        "control/blocked_target_command": {
+          "step": 28672,
+          "value": 0.016733443364501
+        },
+        "control/target_increment_lost": {
+          "step": 28672,
+          "value": 0.041923314332962036
+        },
+        "control/target_at_limit": {
+          "step": 28672,
+          "value": 0.0366058349609375
+        },
+        "control/torque_at_limit": {
+          "step": 28672,
+          "value": 0.0048675537109375
+        },
+        "reward/rotation": {
+          "step": 28672,
+          "value": 0.2306511253118515
+        },
+        "reward/off_axis_penalty": {
+          "step": 28672,
+          "value": 0.0
+        },
+        "reward/overspeed_penalty": {
+          "step": 28672,
+          "value": 0.0
+        },
+        "reward/goal": {
+          "step": 28672,
+          "value": 0.00537109375
+        },
+        "reward/contact": {
+          "step": 28672,
+          "value": 0.00640869140625
+        },
+        "reward/housing_penalty": {
+          "step": 28672,
+          "value": -0.0042266845703125
+        },
+        "reward/position_penalty": {
+          "step": 28672,
+          "value": -0.039973799139261246
+        },
+        "reward/linear_velocity_penalty": {
+          "step": 28672,
+          "value": -0.0013698110124096274
+        },
+        "reward/action_rate_penalty": {
+          "step": 28672,
+          "value": -0.05374583974480629
+        },
+        "reward/torque_penalty": {
+          "step": 28672,
+          "value": -0.0003605961974244565
+        },
+        "reward/limit_push_penalty": {
+          "step": 28672,
+          "value": -0.00418336084112525
+        },
+        "reward/failure_penalty": {
+          "step": 28672,
+          "value": -4.33349609375
+        },
+        "episode/outside_workspace": {
+          "step": 28672,
+          "value": 0.0
+        },
+        "episode/contact_lost": {
+          "step": 28672,
+          "value": 0.0234375
+        },
+        "contact/missing_seconds": {
+          "step": 28672,
+          "value": 0.6632813215255737
+        },
+        "episode_rewards/step": {
+          "step": 28672,
+          "value": -248.65557861328125
+        },
+        "episode_lengths/step": {
+          "step": 28672,
+          "value": 65.7549819946289
+        }
+      }
+    }
+  ]
+}

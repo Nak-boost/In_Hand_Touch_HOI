@@ -10,6 +10,7 @@ student_checkpoint: null
 evaluation_steps: 600
 headless: true
 num_envs: 1024
+pipeline: cpu  # Pair identities require CPU tensors; PhysX and PPO still run on CUDA.
 
 task:
   name: AllegroDigitTwoAxis
@@ -19,7 +20,7 @@ task:
     episodeLength: 600
     envSpacing: 0.4
     asset:
-      handAsset: assets/allegro/allegro_digit_official.urdf
+      handAsset: assets/allegro/allegro_digit_official_inward90.urdf
     controller:
       pgain: 3.0
       dgain: 0.1
@@ -36,6 +37,7 @@ task:
       target_speed: 0.5           # rad/s
       action_scale: 0.026         # radians / policy step
       action_smoothing: 0.5
+      action_reference: actual_position  # q_target = clamp(q_actual + scaled smoothed action)
       joint_noise: 0.01
       velocity_noise: 0.02
       max_displacement: 0.13
@@ -45,21 +47,27 @@ task:
       student_goal_tolerance: 0.25
       rotation_weight: 1.0
       off_axis_weight: 0.15
+      off_axis_cost_cap: 0.5      # smooth cap on weighted off-axis cost; 0 restores quadratic
       overspeed_weight: 0.1
+      overspeed_cost_cap: 0.25   # smooth cap on weighted overspeed cost; 0 restores quadratic
       goal_weight: 0.25
       contact_weight: 0.05
+      object_contact_filter: true  # Only gel-object normal loads qualify for task contact reward/failure.
+      fingertip_distance_weight: 0.1  # Rotating without Seeing Appendix D; gel apex -> object center
       housing_weight: 0.05
       position_weight: 2.0
       linear_velocity_weight: 0.1
       action_rate_weight: 0.02
       torque_weight: 0.01
-      drop_penalty: 5.0
+      pose_weight: 0.05           # same HORA pose cost, reduced after scripted scale calibration
+      limit_push_weight: 0.25     # mean blocked increment / action_scale; inward commands are free
+      drop_penalty: 250.0         # raw units; PPO scales rewards by 0.01; see docs/reward_control_tuning.md
       history_length: 30
     objects:
       # Different rigid object identities; per-asset cache prevents cross-shape resets.
       - {name: sphere55, shape: sphere, size: [0.055, 0.055, 0.055]}
     grasp:
-      cache: cache/digit_sphere55_official_grasps.pt
+      cache: cache/digit_sphere55_official_grasps_inward90.pt
       required_per_object: 64
       candidate_steps: 80
       warmup_steps: 25

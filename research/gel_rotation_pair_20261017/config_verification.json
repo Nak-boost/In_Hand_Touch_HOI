@@ -1,0 +1,13 @@
+{
+  "config_differences": [
+    ".task.env.objects",
+    ".task.env.grasp.cache"
+  ],
+  "num_envs": 16384,
+  "horizon": 8,
+  "minibatch": 32768,
+  "mini_epochs": 5,
+  "learning_rate": 0.005,
+  "total_steps": 1500000000,
+  "position_weight": 2.0
+}

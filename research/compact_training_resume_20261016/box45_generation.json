@@ -1,0 +1,54 @@
+{
+  "config": "manip_compact27_box45_resume20261016",
+  "count": 128,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 6,
+      "total": 6,
+      "retained": 113,
+      "two_gel": 7,
+      "non_gel_free": 6
+    },
+    {
+      "batch": 2,
+      "accepted": 22,
+      "total": 28,
+      "retained": 116,
+      "two_gel": 22,
+      "non_gel_free": 22
+    },
+    {
+      "batch": 3,
+      "accepted": 24,
+      "total": 52,
+      "retained": 113,
+      "two_gel": 25,
+      "non_gel_free": 24
+    },
+    {
+      "batch": 4,
+      "accepted": 28,
+      "total": 80,
+      "retained": 113,
+      "two_gel": 28,
+      "non_gel_free": 28
+    },
+    {
+      "batch": 5,
+      "accepted": 27,
+      "total": 107,
+      "retained": 117,
+      "two_gel": 27,
+      "non_gel_free": 27
+    },
+    {
+      "batch": 6,
+      "accepted": 24,
+      "total": 131,
+      "retained": 122,
+      "two_gel": 25,
+      "non_gel_free": 24
+    }
+  ]
+}

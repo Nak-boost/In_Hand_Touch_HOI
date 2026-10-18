@@ -1,0 +1,15 @@
+{
+  "supervisor_alive": true,
+  "pid": 110056,
+  "checked_at": "2026-10-15T12:25:51.373098+08:00",
+  "job_statuses": [
+    "waiting",
+    "waiting",
+    "waiting",
+    "waiting",
+    "waiting",
+    "waiting"
+  ],
+  "scheduler_tests": "5 passed in 1.70s",
+  "config_count": 6
+}

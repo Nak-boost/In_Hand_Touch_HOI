@@ -1,0 +1,67 @@
+{
+  "mode": "compact",
+  "asset_hash": "b9e1e7b56ca63c4ee06ecc819dadc43262427a502cb71d3afef00d0047b15e5c",
+  "n_envs": 3,
+  "steps": 240,
+  "physical_seconds": 2.0000001043081284,
+  "elapsed_seconds": 0.6319711331743747,
+  "actual_rigid_shapes": 27,
+  "torch_allocated_mib": 0.0,
+  "torch_reserved_mib": 0.0,
+  "samples": [
+    {
+      "step": 0,
+      "torch_allocated_mib": 0.0,
+      "torch_reserved_mib": 0.0,
+      "process_mib": 1874
+    },
+    {
+      "step": 60,
+      "torch_allocated_mib": 0.0,
+      "torch_reserved_mib": 0.0,
+      "process_mib": 1874
+    },
+    {
+      "step": 120,
+      "torch_allocated_mib": 0.0,
+      "torch_reserved_mib": 0.0,
+      "process_mib": 1874
+    },
+    {
+      "step": 180,
+      "torch_allocated_mib": 0.0,
+      "torch_reserved_mib": 0.0,
+      "process_mib": 1874
+    }
+  ],
+  "memory": [
+    {
+      "time": 1791962466.6050308,
+      "mib": 1874
+    }
+  ],
+  "peak_process_mib": 1874,
+  "median_step_ms": 2.0314385183155537,
+  "last60_mean_step_ms": 2.0247191190719604,
+  "finite": true,
+  "postures": {
+    "open": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "half_closed": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    },
+    "opposition": {
+      "contact_pairs": [],
+      "max_force_N": 0.0,
+      "joint_error_rad": 0.0,
+      "gel_any_trigger_frame_fraction": 0.0
+    }
+  }
+}

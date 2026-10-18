@@ -1,0 +1,152 @@
+[
+  {
+    "seed": 42,
+    "million_step": 1,
+    "rotation/speed": 0.07796636491202481,
+    "episode_lengths/step": 213.1039255727636,
+    "control/target_increment_lost": 0.7679380798103785,
+    "reward/total": -1.237928031694771,
+    "reward/pose_penalty": -0.18438677415989413,
+    "reward/failure_penalty": -0.806751817759901
+  },
+  {
+    "seed": 42,
+    "million_step": 3,
+    "rotation/speed": 0.05161241938977843,
+    "episode_lengths/step": 466.2052730144841,
+    "control/target_increment_lost": 0.7002411555535722,
+    "reward/total": -0.686883275461669,
+    "reward/pose_penalty": -0.29309330836381065,
+    "reward/failure_penalty": -0.20546488242574257
+  },
+  {
+    "seed": 42,
+    "million_step": 5,
+    "rotation/speed": 0.06426389522315694,
+    "episode_lengths/step": 134.36935485235534,
+    "control/target_increment_lost": 0.5293322059482631,
+    "reward/total": -2.6159595546155874,
+    "reward/pose_penalty": -0.16485978662967682,
+    "reward/failure_penalty": -2.30845838490099
+  },
+  {
+    "seed": 42,
+    "million_step": 8,
+    "rotation/speed": 0.030360550088300783,
+    "episode_lengths/step": 321.7725436522229,
+    "control/target_increment_lost": 0.859548274833377,
+    "reward/total": -1.08691540744045,
+    "reward/pose_penalty": -0.2802718086998061,
+    "reward/failure_penalty": -0.5559637995049505
+  },
+  {
+    "seed": 42,
+    "million_step": 10,
+    "rotation/speed": 0.048304662592524646,
+    "episode_lengths/step": 363.78061879979504,
+    "control/target_increment_lost": 0.8668375735235686,
+    "reward/total": -0.8777550193342832,
+    "reward/pose_penalty": -0.32694051628655724,
+    "reward/failure_penalty": -0.2906723777846535
+  },
+  {
+    "seed": 43,
+    "million_step": 1,
+    "rotation/speed": 0.011533573066981712,
+    "episode_lengths/step": 438.9400112038792,
+    "control/target_increment_lost": 0.8001986269903655,
+    "reward/total": -0.6149180622974245,
+    "reward/pose_penalty": -0.2598264356060783,
+    "reward/failure_penalty": -0.1679977568069307
+  },
+  {
+    "seed": 43,
+    "million_step": 3,
+    "rotation/speed": 0.02919015538934065,
+    "episode_lengths/step": 443.4397806601949,
+    "control/target_increment_lost": 0.7965710552612154,
+    "reward/total": -0.753149953809115,
+    "reward/pose_penalty": -0.256373995158932,
+    "reward/failure_penalty": -0.29550684560643564
+  },
+  {
+    "seed": 43,
+    "million_step": 5,
+    "rotation/speed": 0.029918338365779066,
+    "episode_lengths/step": 499.7788762762995,
+    "control/target_increment_lost": 0.8126168740857945,
+    "reward/total": -0.7630142392498431,
+    "reward/pose_penalty": -0.3553271998863409,
+    "reward/failure_penalty": -0.17947961788366337
+  },
+  {
+    "seed": 43,
+    "million_step": 8,
+    "rotation/speed": 0.022348718305053836,
+    "episode_lengths/step": 369.78468655123567,
+    "control/target_increment_lost": 0.8733798165132504,
+    "reward/total": -1.0356853155806514,
+    "reward/pose_penalty": -0.365999583265569,
+    "reward/failure_penalty": -0.43691502939356436
+  },
+  {
+    "seed": 43,
+    "million_step": 10,
+    "rotation/speed": 0.01230975522185413,
+    "episode_lengths/step": 478.8747044931544,
+    "control/target_increment_lost": 0.9081793433368797,
+    "reward/total": -0.6302904982377987,
+    "reward/pose_penalty": -0.20815481997952603,
+    "reward/failure_penalty": -0.18673131961633663
+  },
+  {
+    "seed": 44,
+    "million_step": 1,
+    "rotation/speed": 0.09426314898277863,
+    "episode_lengths/step": 180.93711573534674,
+    "control/target_increment_lost": 0.589738672912711,
+    "reward/total": -1.5563968909849035,
+    "reward/pose_penalty": -0.19977491186691984,
+    "reward/failure_penalty": -1.2019695621905941
+  },
+  {
+    "seed": 44,
+    "million_step": 3,
+    "rotation/speed": 0.0959855576534525,
+    "episode_lengths/step": 356.06711419738167,
+    "control/target_increment_lost": 0.7908804310430394,
+    "reward/total": -0.7844196434068208,
+    "reward/pose_penalty": -0.08492605871345738,
+    "reward/failure_penalty": -0.4665261448019802
+  },
+  {
+    "seed": 44,
+    "million_step": 5,
+    "rotation/speed": 0.07395914307620266,
+    "episode_lengths/step": 441.11724702438505,
+    "control/target_increment_lost": 0.8337040083243115,
+    "reward/total": -0.6305487170667932,
+    "reward/pose_penalty": -0.14145405730693647,
+    "reward/failure_penalty": -0.2544138691212871
+  },
+  {
+    "seed": 44,
+    "million_step": 8,
+    "rotation/speed": 0.03487748285930714,
+    "episode_lengths/step": 452.8367563379873,
+    "control/target_increment_lost": 0.8406060633092823,
+    "reward/total": -0.4856046721486762,
+    "reward/pose_penalty": -0.0754119980674569,
+    "reward/failure_penalty": -0.12992632271039603
+  },
+  {
+    "seed": 44,
+    "million_step": 10,
+    "rotation/speed": 0.05534703541967373,
+    "episode_lengths/step": 401.0806750306989,
+    "control/target_increment_lost": 0.7963631932098086,
+    "reward/total": -1.0171818308310934,
+    "reward/pose_penalty": -0.39558443500854,
+    "reward/failure_penalty": -0.40911683941831684
+  }
+]

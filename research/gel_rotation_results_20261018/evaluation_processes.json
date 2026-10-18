@@ -1,0 +1,38 @@
+[
+  {
+    "group": "single",
+    "checkpoint": "last",
+    "started": 1792301021.3318524,
+    "pid": 387555,
+    "returncode": 0,
+    "finished": 1792301052.7452464,
+    "result_saved": true
+  },
+  {
+    "group": "single",
+    "checkpoint": "best",
+    "started": 1792301052.745762,
+    "pid": 387709,
+    "returncode": 0,
+    "finished": 1792301086.0074203,
+    "result_saved": true
+  },
+  {
+    "group": "multi",
+    "checkpoint": "last",
+    "started": 1792301086.0080924,
+    "pid": 387873,
+    "returncode": 0,
+    "finished": 1792301146.6516476,
+    "result_saved": true
+  },
+  {
+    "group": "multi",
+    "checkpoint": "best",
+    "started": 1792301146.6523068,
+    "pid": 388107,
+    "returncode": 0,
+    "finished": 1792301209.6840532,
+    "result_saved": true
+  }
+]

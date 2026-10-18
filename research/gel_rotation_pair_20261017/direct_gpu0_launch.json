@@ -1,0 +1,30 @@
+{
+  "pid": 224934,
+  "gpu": 0,
+  "started": "2026-10-17T15:21:46.932087",
+  "command": [
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/scripts/run_manip.sh",
+    "--config-name",
+    "manip_hora16384_six_objects_gel_rotation",
+    "stage=teacher",
+    "run_root=/root/In_Hand_Reconstruction/runs/manip",
+    "run_name=teacher_six_objects_gel16384_direct_20261017_152146",
+    "train.ppo.max_agent_steps=1500000000",
+    "train.ppo.save_frequency=50",
+    "checkpoint=/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_20261017_resumed_attempt00/stage1_nn/best.pth"
+  ],
+  "checkpoint": {
+    "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_20261017_resumed_attempt00/stage1_nn/best.pth",
+    "agent_steps": 262144,
+    "epoch_num": 2,
+    "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+    "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+    "action_reference": "actual_position"
+  },
+  "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146",
+  "log": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/teacher_six_objects_gel16384_direct_20261017_152146.log",
+  "monitor": false,
+  "automatic_memory_stop": false,
+  "verified_at": "2026-10-17T15:22:41.351970",
+  "ppo_update_verified": true
+}

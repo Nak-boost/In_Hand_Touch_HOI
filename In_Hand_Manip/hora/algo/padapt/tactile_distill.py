@@ -7,6 +7,7 @@ from hora.algo.models.models import ActorCritic
 from hora.algo.models.tactile_student import TactileStudent, distillation_loss
 from hora.algo.models.running_mean_std import RunningMeanStd
 from hora.utils.hand_collision import require_collision_signature
+from hora.utils.manip_control import action_reference, require_action_reference
 
 
 def network_spec(config, observation_dim, actions=16):
@@ -30,6 +31,7 @@ class TactileDistill:
         self.spec = network_spec(config, env.num_obs)
         self.teacher = ActorCritic(dict(self.spec)).to(self.device).eval()
         checkpoint = torch.load(config.teacher_checkpoint, map_location=self.device)
+        require_action_reference(checkpoint, env.cfg, 'Teacher checkpoint')
         require_collision_signature(checkpoint, env.collision_hash, 'Teacher checkpoint')
         if checkpoint.get('asset_sha256') != env.asset_hash:
             raise ValueError('Teacher checkpoint must be from this DIGIT asset, not upstream HORA')
@@ -45,6 +47,7 @@ class TactileDistill:
         self.start_step = 0
         if config.student_checkpoint:
             ckpt = torch.load(config.student_checkpoint, map_location=self.device)
+            require_action_reference(ckpt, env.cfg, 'Student checkpoint')
             require_collision_signature(ckpt, env.collision_hash, 'Student checkpoint')
             if ckpt['asset_sha256'] != env.asset_hash:
                 raise ValueError('Student asset mismatch')
@@ -63,6 +66,7 @@ class TactileDistill:
                         step=step, kind='tactile_student',
                         joint_names=self.env.joint_names, lower=self.env.lower.cpu(), upper=self.env.upper.cpu(),
                         action_scale=self.env.cfg['action_scale'],
+                        action_reference=action_reference(self.env.cfg),
                         action_smoothing=self.env.cfg['action_smoothing']), path/'last.pth')
 
     def train(self):

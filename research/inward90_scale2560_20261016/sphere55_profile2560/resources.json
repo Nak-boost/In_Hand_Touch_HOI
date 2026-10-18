@@ -1,0 +1,307 @@
+{
+  "started": "2026-10-16T23:14:48.451344+08:00",
+  "finished": "2026-10-16T23:15:29.642383+08:00",
+  "command": [
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/run_manip.sh",
+    "--config-name",
+    "manip_tabletop_inward90_scale2560_sphere55",
+    "stage=teacher",
+    "num_envs=2560",
+    "graphics_device_id=-1",
+    "task.env.numEnvs=2560",
+    "train.ppo.num_actors=2560",
+    "run_root=/root/In_Hand_Reconstruction/research/inward90_scale2560_20261016/sphere55_profile2560/runs",
+    "run_name=resource_probe",
+    "train.ppo.max_agent_steps=327680",
+    "train.ppo.minibatch_size=8192",
+    "seed=241"
+  ],
+  "gpu": 2,
+  "pid": 157547,
+  "exit_code": 0,
+  "baseline": {
+    "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+    "total_mb": 24564,
+    "used_mb": 0,
+    "utilization": 0
+  },
+  "num_envs": 2560,
+  "config": "manip_tabletop_inward90_scale2560_sphere55",
+  "minibatch_size": 8192,
+  "process_peak_mb": 2606,
+  "note": "Utilization and used_mb are whole-GPU measurements and include other workloads.",
+  "samples": [
+    {
+      "time": "2026-10-16T23:14:48.626196+08:00",
+      "process_memory_mb": 0,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 0,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:14:49.814222+08:00",
+      "process_memory_mb": 0,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 0,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:14:51.047441+08:00",
+      "process_memory_mb": 0,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 0,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:14:52.230197+08:00",
+      "process_memory_mb": 882,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 507,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:14:53.420397+08:00",
+      "process_memory_mb": 1874,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 1885,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:14:54.576558+08:00",
+      "process_memory_mb": 1874,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 1885,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:14:55.780072+08:00",
+      "process_memory_mb": 2302,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 1933,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:14:57.049766+08:00",
+      "process_memory_mb": 2446,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2457,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:14:58.247557+08:00",
+      "process_memory_mb": 2446,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2457,
+      "utilization": 2
+    },
+    {
+      "time": "2026-10-16T23:14:59.464030+08:00",
+      "process_memory_mb": 2448,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2459,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:15:00.718342+08:00",
+      "process_memory_mb": 2542,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2553,
+      "utilization": 32
+    },
+    {
+      "time": "2026-10-16T23:15:01.988557+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 46
+    },
+    {
+      "time": "2026-10-16T23:15:03.193893+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 22
+    },
+    {
+      "time": "2026-10-16T23:15:04.426909+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 8
+    },
+    {
+      "time": "2026-10-16T23:15:05.692843+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 16
+    },
+    {
+      "time": "2026-10-16T23:15:06.925621+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:15:08.145011+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 3
+    },
+    {
+      "time": "2026-10-16T23:15:09.345213+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 7
+    },
+    {
+      "time": "2026-10-16T23:15:10.519589+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 17
+    },
+    {
+      "time": "2026-10-16T23:15:11.787803+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 15
+    },
+    {
+      "time": "2026-10-16T23:15:13.003943+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 31
+    },
+    {
+      "time": "2026-10-16T23:15:14.215887+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 0
+    },
+    {
+      "time": "2026-10-16T23:15:15.451626+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 18
+    },
+    {
+      "time": "2026-10-16T23:15:16.648903+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 39
+    },
+    {
+      "time": "2026-10-16T23:15:17.919383+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 30
+    },
+    {
+      "time": "2026-10-16T23:15:19.090491+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 1
+    },
+    {
+      "time": "2026-10-16T23:15:20.321281+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 17
+    },
+    {
+      "time": "2026-10-16T23:15:21.526863+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 2
+    },
+    {
+      "time": "2026-10-16T23:15:22.692437+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 25
+    },
+    {
+      "time": "2026-10-16T23:15:23.907953+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 24
+    },
+    {
+      "time": "2026-10-16T23:15:25.074273+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 1
+    },
+    {
+      "time": "2026-10-16T23:15:26.279437+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 36
+    },
+    {
+      "time": "2026-10-16T23:15:27.440693+08:00",
+      "process_memory_mb": 2606,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 2617,
+      "utilization": 39
+    },
+    {
+      "time": "2026-10-16T23:15:28.641143+08:00",
+      "process_memory_mb": 658,
+      "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+      "total_mb": 24564,
+      "used_mb": 669,
+      "utilization": 0
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "envs": 16,
+  "steps": 100,
+  "control_checks": 100,
+  "action_reference": "actual_position",
+  "resets": 32,
+  "mean_distance_reward": 0.04734887011349201,
+  "mean_gel_object_distance_m": 0.053258341625332835,
+  "obs_dim": 71,
+  "collision_sha256": "f702ae3c468416e196684340d2f5dacc380d3ca43befeee746d5d29977852646",
+  "note": "GPU PhysX integration; scripted actions, not learned rotation performance"
+}

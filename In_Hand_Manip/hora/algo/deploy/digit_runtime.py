@@ -7,6 +7,7 @@ import torch
 from hora.algo.models.tactile_student import TactileStudent
 from hora.algo.models.running_mean_std import RunningMeanStd
 from hora.algo.padapt.tactile_distill import normalize_inputs
+from hora.utils.manip_control import action_reference, joint_targets
 
 
 class DigitPolicyRuntime:
@@ -23,6 +24,7 @@ class DigitPolicyRuntime:
         self.lower = ckpt['lower'].to(device)
         self.upper = ckpt['upper'].to(device)
         self.scale, self.alpha = ckpt['action_scale'], ckpt['action_smoothing']
+        self.action_reference = action_reference(ckpt)
         self.history = torch.zeros(1, ckpt['history_length'], ckpt['history_dim'], device=device)
         self.targets = None
         self.previous = torch.zeros(1, 16, device=device)
@@ -51,5 +53,6 @@ class DigitPolicyRuntime:
         self.history = frame[:, None].expand_as(self.history).clone() if first else torch.cat((self.history[:, 1:], frame[:, None]), 1)
         raw = self.model.act_inference(normalize_inputs(self.rms, frame, self.history)).clamp(-1, 1)
         self.previous = self.alpha*raw+(1-self.alpha)*self.previous
-        self.targets = (self.targets+self.scale*self.previous).clamp(self.lower, self.upper)
+        self.targets, _ = joint_targets(q, self.targets, self.scale*self.previous,
+                                       self.lower, self.upper, self.action_reference)
         return self.targets[0].clone()

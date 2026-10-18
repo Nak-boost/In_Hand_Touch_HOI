@@ -1,0 +1,29 @@
+[
+  {
+    "checkpoint": "last",
+    "mode": "mean",
+    "seed": 215,
+    "pid": 198370,
+    "exit_code": -11,
+    "result_saved": true,
+    "log": "/root/In_Hand_Reconstruction/research/hora16384_results_20261017/eval_last_mean_seed215.log"
+  },
+  {
+    "checkpoint": "best",
+    "mode": "sampled",
+    "seed": 215,
+    "pid": 198614,
+    "exit_code": -11,
+    "result_saved": true,
+    "log": "/root/In_Hand_Reconstruction/research/hora16384_results_20261017/eval_best_sampled_seed215.log"
+  },
+  {
+    "checkpoint": "best",
+    "mode": "mean",
+    "seed": 216,
+    "pid": 198868,
+    "exit_code": -11,
+    "result_saved": true,
+    "log": "/root/In_Hand_Reconstruction/research/hora16384_results_20261017/eval_best_mean_seed216.log"
+  }
+]

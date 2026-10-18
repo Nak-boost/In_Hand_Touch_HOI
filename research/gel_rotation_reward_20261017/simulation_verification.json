@@ -1,0 +1,25 @@
+{
+  "steps": 240,
+  "num_envs": 32,
+  "environment_steps": 7680,
+  "verified": true,
+  "max_rotation_error": 0.0,
+  "contact_count_frames_0_1_2plus": [
+    5400,
+    1055,
+    1225
+  ],
+  "negative_zero_positive_frames": [
+    390,
+    0,
+    7290
+  ],
+  "means": {
+    "old_rotation": 0.7611541751151284,
+    "new_rotation": 0.24375225638505071,
+    "old_total_counterfactual": 0.35700854058377446,
+    "new_total": -0.16039337549979488
+  },
+  "policy_checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_sphere55_z_hora16384_pairfilter_20261016/stage1_nn/best.pth",
+  "note": "Frozen old policy, new reward evaluated on actual filtered contacts; counterfactual old reward on identical frames. No optimizer updates; no evidence yet of better learned behavior."
+}

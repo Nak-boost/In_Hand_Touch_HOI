@@ -1,0 +1,13 @@
+{
+  "pid": 156945,
+  "latest": {
+    "gpu": 1,
+    "uuid": "GPU-90a24841-4ca6-bae5-8c5e-d58970023b27",
+    "total_mib": 24564,
+    "used_mib": 3363,
+    "utilization": 0,
+    "time": 1792163740.5388794,
+    "process_mib": 3350
+  },
+  "elapsed": 148.85694408416748
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "label": "sphere55_mean_last",
+    "pid": 148766,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 38.03394317626953,
+    "termination_reason": null
+  },
+  {
+    "label": "box45_mean_last",
+    "pid": 148936,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 53.06535887718201,
+    "termination_reason": null
+  },
+  {
+    "label": "capsule70_mean_last",
+    "pid": 149177,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 53.052082777023315,
+    "termination_reason": null
+  },
+  {
+    "label": "box55_mean_last",
+    "pid": 149534,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 50.035683393478394,
+    "termination_reason": null
+  },
+  {
+    "label": "capsule80_mean_last",
+    "pid": 149757,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 49.03414988517761,
+    "termination_reason": null
+  },
+  {
+    "label": "sphere55_sampled_last",
+    "pid": 149957,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 31.01980185508728,
+    "termination_reason": null
+  },
+  {
+    "label": "box45_sampled_last",
+    "pid": 150069,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 31.00573492050171,
+    "termination_reason": null
+  },
+  {
+    "label": "sphere65_sampled_last",
+    "pid": 150180,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 29.005656003952026,
+    "termination_reason": null
+  },
+  {
+    "label": "capsule70_sampled_last",
+    "pid": 150294,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 30.005769968032837,
+    "termination_reason": null
+  },
+  {
+    "label": "box55_sampled_last",
+    "pid": 150405,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 30.00558567047119,
+    "termination_reason": null
+  },
+  {
+    "label": "capsule80_sampled_last",
+    "pid": 150513,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 32.00998258590698,
+    "termination_reason": null
+  },
+  {
+    "label": "sphere55_zero_last",
+    "pid": 150675,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 32.03044319152832,
+    "termination_reason": null
+  },
+  {
+    "label": "box45_zero_last",
+    "pid": 150781,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 26.025527000427246,
+    "termination_reason": null
+  },
+  {
+    "label": "sphere65_zero_last",
+    "pid": 150867,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 24.0216965675354,
+    "termination_reason": null
+  },
+  {
+    "label": "capsule70_zero_last",
+    "pid": 150954,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 25.022439002990723,
+    "termination_reason": null
+  },
+  {
+    "label": "box55_zero_last",
+    "pid": 151040,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 28.015331268310547,
+    "termination_reason": null
+  },
+  {
+    "label": "capsule80_zero_last",
+    "pid": 151127,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 30.034199953079224,
+    "termination_reason": null
+  },
+  {
+    "label": "sphere55_mean_best",
+    "pid": 151212,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 35.044429302215576,
+    "termination_reason": null
+  },
+  {
+    "label": "box45_mean_best",
+    "pid": 151300,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 36.04227161407471,
+    "termination_reason": null
+  },
+  {
+    "label": "sphere65_mean_best",
+    "pid": 151385,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 36.04140639305115,
+    "termination_reason": null
+  },
+  {
+    "label": "capsule70_mean_best",
+    "pid": 151472,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 28.017256498336792,
+    "termination_reason": null
+  },
+  {
+    "label": "box55_mean_best",
+    "pid": 151572,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 28.020198822021484,
+    "termination_reason": null
+  },
+  {
+    "label": "capsule80_mean_best",
+    "pid": 151659,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 29.02305507659912,
+    "termination_reason": null
+  },
+  {
+    "label": "box45_mean_last_pairs",
+    "pid": 151766,
+    "exit": 0,
+    "json_written": false,
+    "seconds": 30.028770446777344,
+    "termination_reason": null
+  }
+]

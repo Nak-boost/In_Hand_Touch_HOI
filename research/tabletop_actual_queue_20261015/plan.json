@@ -1,0 +1,213 @@
+{
+  "gpus": [
+    0,
+    3
+  ],
+  "poll_seconds": 10,
+  "idle_samples": 3,
+  "idle_max_utilization": 15,
+  "minimum_free_mb": 6144,
+  "job_memory_mb": 4096,
+  "reserve_memory_mb": 2048,
+  "memory_peak_multiplier": 1.25,
+  "lock_directory": "/tmp/touchfm-manip-gpu-locks",
+  "quality_gates": [
+    {
+      "report": "/root/In_Hand_Reconstruction/research/tabletop_regrasp_20261015/new_cache_evaluation.json",
+      "minimum_accepted": 64,
+      "action_reference": "actual_position"
+    }
+  ],
+  "experiments": [
+    {
+      "run_name": "tabletop_box45_actual_distance_seed42_20261015",
+      "object": "box45",
+      "seed": 42,
+      "stages": [
+        {
+          "name": "profile",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/profile_manip_resources.py",
+            "--gpu",
+            "{gpu}",
+            "--output-dir",
+            "/root/In_Hand_Reconstruction/research/tabletop_actual_queue_20261015/resource_probe",
+            "--num-envs",
+            "256",
+            "--steps",
+            "16384"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/tabletop_actual_queue_20261015/resource_probe.log"
+        },
+        {
+          "name": "train",
+          "num_envs": 256,
+          "resource_report": "/root/In_Hand_Reconstruction/research/tabletop_actual_queue_20261015/resource_probe/resources.json",
+          "calibration_job": "tabletop_box45_actual_distance_seed42_20261015",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/run_manip.sh",
+            "--config-name",
+            "manip_tabletop_box45",
+            "stage=teacher",
+            "num_envs=256",
+            "graphics_device_id=-1",
+            "run_name=tabletop_box45_actual_distance_seed42_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "train.ppo.minibatch_size=4096",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/tabletop_actual_queue_20261015/tabletop_box45_actual_distance_seed42_20261015.log"
+        }
+      ]
+    },
+    {
+      "run_name": "tabletop_box45_actual_distance_seed43_20261015",
+      "object": "box45",
+      "seed": 43,
+      "stages": [
+        {
+          "name": "train",
+          "num_envs": 256,
+          "resource_report": "/root/In_Hand_Reconstruction/research/tabletop_actual_queue_20261015/resource_probe/resources.json",
+          "calibration_job": "tabletop_box45_actual_distance_seed42_20261015",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/run_manip.sh",
+            "--config-name",
+            "manip_tabletop_box45",
+            "stage=teacher",
+            "num_envs=256",
+            "graphics_device_id=-1",
+            "run_name=tabletop_box45_actual_distance_seed43_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "train.ppo.minibatch_size=4096",
+            "seed=43"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/tabletop_actual_queue_20261015/tabletop_box45_actual_distance_seed43_20261015.log"
+        }
+      ]
+    },
+    {
+      "run_name": "tabletop_box45_actual_distance_seed44_20261015",
+      "object": "box45",
+      "seed": 44,
+      "stages": [
+        {
+          "name": "train",
+          "num_envs": 256,
+          "resource_report": "/root/In_Hand_Reconstruction/research/tabletop_actual_queue_20261015/resource_probe/resources.json",
+          "calibration_job": "tabletop_box45_actual_distance_seed42_20261015",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/run_manip.sh",
+            "--config-name",
+            "manip_tabletop_box45",
+            "stage=teacher",
+            "num_envs=256",
+            "graphics_device_id=-1",
+            "run_name=tabletop_box45_actual_distance_seed44_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "train.ppo.minibatch_size=4096",
+            "seed=44"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/tabletop_actual_queue_20261015/tabletop_box45_actual_distance_seed44_20261015.log"
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_compact.urdf": "430e204848ed1cf2052d6240da3b2bdea12db58186c89c0401ea07640c588358",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_tabletop_box45_actual_candidates_v3.pt": "4ed4de88f31fa6aa28043bdd892556cc2af3178e9281ea0405f842671c6ec69d",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_tabletop_box45_actual_checked_v3.pt": "fad7f91ec49f00103a63bee1a1fe1aefceb497d1329c70f32691637da9f5a59c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/config.yaml": "1b9817484271f173c0f60b77aa3f06af4ddf8b19297b658924a165596250f48f",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/digit_mount.yaml": "d227e16c545eaebbb70f5f07d6d13b15c15f26b6fd8abd7e926be3b9d9a7b3f3",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/digit_mount_aligned_proxy.yaml": "12ae9e37a2dbc623d6edae2259f739cd360aafb3d0dc69994ac58f996b4a78f0",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip.yaml": "74743ce61a04b8f4255ae344fe28e63adf29a1f1eeeaff8c841567e5c0675861",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_box50.yaml": "dcdb7d77f5a674c2b0f930dfd17a7b352b8d6eb3b65afcda9650e78d54554e28",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_capsule70.yaml": "868f63340fd6611820976cf7e16ea563c572416bc277cf0121e87775d68261c1",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_box45.yaml": "8dc086cd116c301a2334beeabaaf9e1bdae68d96e6723346c12067ddeb8cdb79",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_box55.yaml": "0f186460afa1bcee0e3a9bb6ab5075b6a8d39d5fc6279e5cf28e73487c58e932",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_capsule70.yaml": "2d09f615dc628cf783e96f9a6d6c86142d143edf38b44f8fc750a148908ed49b",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_capsule80.yaml": "1f777066501a2fd42fc8af464bb5085230d106ed92d1c553a044aba14e5665ed",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_sphere55.yaml": "8bf80ff407d81690a007069357aec1dc1b2244880898025daf6e49e855652f91",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_sphere65.yaml": "425a1c75ff0642c5578f416c96febb85ef7f5e8ea673fa842b19faf002e077fc",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact_sphere55.yaml": "dc344fc1dc9c0c2ab5f85f8476dc8b0a17e28650ce91a25526922bd68735d1dd",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_box45.yaml": "fe864aed0da3378502d76c30c01f4e046935b41e44932b034ba8d4a56b71bfe2",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_box55.yaml": "9e8dd9e2326d20dbc56ebe5fb7968e1d9fe866cf7a94809c39eb26286928f043",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_capsule70.yaml": "29240ca704f011a2bd9839437a0e2a8779c0f65a54aa993a5737141d846c6f73",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_capsule80.yaml": "9dd30bae78499c1b461a790550885d4175325e134e53f6647239c55c37cc9d3c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_sphere55.yaml": "a8b9100420287cfce33fc49eeb51192ad8607ac314b4b1e198ea8783c81b7db9",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_sphere65.yaml": "f06e29aece356dcc6307b7921924dd8c3b162e78acdbd5e84879bd4bdacb2826",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_tabletop_box45.yaml": "9b7afca1e0a60e9db829a3de513a3a3ae6babc7c9010f613877eb095c095a913",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_two_axis.yaml": "920047251c09337e36ade21a3d11125dc76a659e4e0898f97c994a392b2b8f63",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/task/AllegroHandGrasp.yaml": "f0335a205adb852e5e9730ef1eb55683f298a29e7f1cac0b3a679d80c972b1b3",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/task/AllegroHandHora.yaml": "2d0996728348a0654e95a8f6b062e20b6d5d4ab4c63a8a3c1aff5b13c22c6c50",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/task/PublicAllegroHandGrasp.yaml": "bef6da88c0b3b2e5e2417fc34eac52182fec6df7aa99eb42d6eb43855c3b5c27",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/task/PublicAllegroHandHora.yaml": "e0b957b9cf0a40932d52ec0006a08dc6c45e20b6276ad14f347b5790948270fe",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/train/AllegroHandGrasp.yaml": "87705c8e4996cf80b0ac124954722242ae142ea5aad853b90bcd62956a20265c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/train/AllegroHandHora.yaml": "931673bab4a73bfe597ce1ea83d1ad693d1ccb889726125661a4d63cf596fcab",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/train/PublicAllegroHandGrasp.yaml": "87705c8e4996cf80b0ac124954722242ae142ea5aad853b90bcd62956a20265c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/train/PublicAllegroHandHora.yaml": "0457f4b34989e7d022d54be369e99f01b3d4706f9fa0778232341e708bdce674",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/deploy.py": "465224b9cf16dfba01403cdc819c9f04ee61cc885059cf5adf1aba459ad06e01",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/digit_runtime.py": "fd4ecec4fd8df587a2b6d002da7fdf83941840ae3a17830f0ea2459d7229da6d",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/robots/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/robots/allegro.py": "ba954612feb64a034c36fc33db5b1988b49dd545365de24667ae49d8ccac8644",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/models/models.py": "bbb7ccefff5a9188b4e1618db489de85a9ec11ba382a75907bde12a279639dd7",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/models/running_mean_std.py": "98f63931433654b217535e535be4cd899af2c041a89071ab9fed1db87443a5c8",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/models/tactile_student.py": "3e382d59f9bd4a74b8b60a9f0195fe24e3f3cab2544d91430fa9e376c190aa74",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/padapt/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/padapt/padapt.py": "79eaf5491045ab3892368ff779c8c431a505c7d8324ad5823960afc581499c56",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/padapt/tactile_distill.py": "3d84e31eb249a44b5504468525b994a9b28a3bc79fe6d7fb759eaf7758c638e1",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/ppo/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/ppo/experience.py": "a6e217706afb806a34e0e0c7696c486d0e1187ffe8f1c5ae59acc78928bc40c4",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/ppo/ppo.py": "1340cfa446d30954d5b835fcdd9e50a8edf26992a4924541f3cc706331bfea13",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/__init__.py": "4236998e0ade73d6660df387a14bd7543342afa8d456a208dad977a2b712296c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/allegro_digit_tabletop.py": "9427f6371466241c44d38cafddc7c5ab7ded86f67ebecb3326e90a93d48f3bed",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/allegro_digit_two_axis.py": "1356898dbcfbd956b94a3dc8b3d92d63440109e7ee00be3ed3af662feb8719d6",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/allegro_hand_grasp.py": "8643359c60613eb436fcbdd04083b9d63092cf6dc0cebd96d2ec3d25baf2ee6a",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/allegro_hand_hora.py": "c3e52c8c2714f735488ff1c7b42f969a078ee45a09ac8d2caff95c2d4ea35245",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/base/__init__.py": "16dffd658ec0b9968fc74d3b5e6bb6aac8d1c8b75edefe8b2d0a52b2ae5825da",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/base/vec_task.py": "4fd8ce6cd72d7c8f2d89c8909f23d56df8a0b3fb98aefd00a8a0316e173422ae",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/manipulation_math.py": "f3168803633beea11a2118698fe3e9dd469e33277b67426a1ffe5c6860bdb37f",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/tabletop_math.py": "bff7443d2faf2c9c719b174cf9f70d1989b1947f104c0d02ab6379ed15d887c0",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/asset_geometry.py": "34a964e5fc34d8257aac21d6ddea5a75f78c252975e7bdeb4311ea6c028cc3cf",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/hand_collision.py": "9cf9fcc426e0e8b2cb35870d8579b468e75441ccb6f2f7bda7ee7879475d507c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/manip_control.py": "e0637e8cde3e24e6af666e5d07cc53d15a3e4b8b48437ecfdff36557ca62b90f",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/mesh_inspection.py": "0f8dc12f256ca702f289080435882922aa00db4ce343de8370ab3eb60298643e",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/misc.py": "a09175b0fb7e009146ffec5ca3690f73d8a9a8006eb769c38ba2b22f17b61d13",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/mount_geometry.py": "e878693cf883fe6dd7d67ace3789f5ad1efb2124ee908222b1935cfc14e7e450",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/reformat.py": "8b25e9b8c491cf2a22cd2d9fffa72f011670999cc570d5a43b30eea49c56141f",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/replay_files.py": "08c0d255296541c52c9502262d3778133934a734dd7f5747f01de98fdcdfbb90",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/tabletop_contacts.py": "1d3eecee772953bc126ad2db246202f40633eef192f04baefd8a000bf631dd79",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/assets/check_mesh_fidelity.py": "c9777d2c1f3875318f94327a4ca9af7e03dde0a97819a827f584c6af8ed4de4c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/assets/plot_digit_detail.py": "310d83ecde9d4b71c30c2be1b1200be8b63c8de43bbd0816c776aaf5482cf8ae",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/assets/prepare_digit_meshes.py": "df778109cd565a74da960b1322b24ac6138cba1b23cffa5467a84b6fff8003ef",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/assets/tessellate_step.py": "0ee6f277c8cd276f2ca2b6e38b595170c914c6483dc39c02b1695e4828ee21b3",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py": "672f97a938f47981ddbb08318f72d2effdbfee114af4318c74a4cb78ee09f31d",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/auto_manip_queue.py": "d573682396506cf25b602d9aa0326739f4c0a3d4f211e7a559dae136e83963c5",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/build_digit_asset.py": "abc30733dfa26c58e984301ae4cd117e814a6452aa9bed81adcdfaa5fd419d8a",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/build_digit_collision_baselines.py": "26ffd12a20d2443ff1cd500f1cc3dce276dcf08907731a7f1895d9ca98c0c580",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/build_official_digit_asset.py": "2318c7f7211d1356500f50e6f726a8141311ed788a1802fc97b4565560737d0f",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py": "f7f1bb8adbd5151e08a326bb00d575cd1384da6ad4a9e02cb8896a60b3c82245",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_hand_collisions.py": "72ca7d44ed54b7b66cd7666133843ee68e2484a662297862926813fba53c69c4",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_tabletop_setup.py": "66a3dc08eacff41c4205ce962ce5efc19ffdf6bc8112bf53b97b8dfe71eb1abf",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/evaluate_tabletop_grasps.py": "6e5d090eb68a42eb7996307817aaa90a1421f5be7e098773dec6c137c69ae66a",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/inspect_digit_mount.py": "a54734e295df203f379a7c5b4024084367497b0219bb4dca831af075e4f86197",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/inspect_digit_mount_sim.py": "3f12f28ecb7fd50deed9679521a890f95e9b3b08f191a080e7e740a33b94481b",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/profile_manip_resources.py": "191ad36fe54c696e9dad6fad10158e307bc08d052741325faa8e8079b5d2e3c6",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh": "44247df0d95546f6ee15906b001b59b517eaa328caa79155fe7864ad38e61a9c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/replay_files.py": "e98561e6671a1ca1f3622bd20ae48bbf6e28d9ba50e8087161447ffb256d332f",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/run_experiment_queue.py": "380623ada81e1bd92c3fd2a28d2dcd4e7e6576cbecf6a32f2ea4ffc5ed985cb9",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/run_manip.sh": "55cea3c1b2d4bcbdad442b7c102aef7576c7e40cd2294093ffa839b8448713a9",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py": "944a1784fd40224c6fc385352515aea211be93f7e3817aa1051b9da6944bd740",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/snapshot_environment.py": "3f0fab3773a53a1bf6bb33a135208837ba9797f510572f39080b448885ac14d4",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py": "ebe263cb016340204eb4e2e092b1cf2be38f46751dafc5d5cfe628f90c0e4bb2",
+    "/root/In_Hand_Reconstruction/research/tabletop_regrasp_20261015/cache_audit.json": "c7bc7b762ee2fe9e860ff4536c3344d65a4ea2474afd9e13eae4d726e0011a9b",
+    "/root/In_Hand_Reconstruction/research/tabletop_regrasp_20261015/new_cache_evaluation.json": "588a747ce8cfe3b8472a05845cbac2e7bdd8bf2e585b93e80f81c37dfff24eef"
+  },
+  "resource_policy_note": "One active job per GPU. Probe precedes all training. Require free >= max(6144, max(4096, ceil(measured_peak*1.25))+2048) MiB and utilization <=15% for 3 samples. Unknown resource statistics never admit a job."
+}

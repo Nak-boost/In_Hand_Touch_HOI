@@ -1,0 +1,8 @@
+{
+  "agent_steps": 4096,
+  "epoch": 8,
+  "finite_model": true,
+  "finite_logged_scalars": true,
+  "scalar_tags": 24,
+  "collision_sha256": "f702ae3c468416e196684340d2f5dacc380d3ca43befeee746d5d29977852646"
+}

@@ -1,0 +1,10 @@
+# Pinned official TACTO assembly geometry; see docs/official_digit.md.
+output_asset: assets/allegro/allegro_digit_official.urdf
+source_assembly: assets/allegro/official_digit/source/tacto_left_digit.urdf
+mesh_manifest: assets/allegro/official_digit/mesh_manifest.json
+# This profile preserves the existing RIGHT-hand kinematics and uses TACTO's
+# identical distal-local mounting transforms (no world-frame left/right copy).
+mount_profile: tacto_straight
+# Published original DIGIT nominal mass, not a measured mass of this CAD revision.
+# Inertia distribution is an explicit uniform-density envelope approximation.
+sensor_nominal_mass: 0.020

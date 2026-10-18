@@ -1,0 +1,27 @@
+{
+  "exit_code": 0,
+  "peak_gpu_memory_MiB": 2789,
+  "samples_MiB": [
+    0,
+    0,
+    0,
+    0,
+    25,
+    1639,
+    1927,
+    2789,
+    2789,
+    2789,
+    2789,
+    571
+  ],
+  "command": [
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/run_manip.sh",
+    "--config-name",
+    "manip_tabletop_box45",
+    "stage=teacher",
+    "num_envs=256",
+    "train.ppo.max_agent_steps=32768",
+    "run_name=tabletop_capacity_20261015"
+  ]
+}

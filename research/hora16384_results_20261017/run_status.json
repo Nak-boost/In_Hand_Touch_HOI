@@ -1,0 +1,48 @@
+{
+  "status": {
+    "status": "failed",
+    "started": "2026-10-16T23:27:51.470395+08:00",
+    "supervisor_pid": 162292,
+    "pid": 162298,
+    "physical_gpu": 1,
+    "run_name": "teacher_sphere55_z_hora16384_pairfilter_20261016",
+    "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_sphere55_z_hora16384_pairfilter_20261016",
+    "config": "manip_hora16384_sphere55",
+    "command": [
+      "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/run_manip.sh",
+      "--config-name",
+      "manip_hora16384_sphere55",
+      "stage=teacher",
+      "run_name=teacher_sphere55_z_hora16384_pairfilter_20261016",
+      "checkpoint=/root/In_Hand_Reconstruction/research/hora16384_gpu1_20261016/probe_16384/runs/capacity/stage1_nn/last.pth"
+    ],
+    "baseline": {
+      "gpu": 1,
+      "uuid": "GPU-90a24841-4ca6-bae5-8c5e-d58970023b27",
+      "total_mib": 24564,
+      "used_mib": 0,
+      "utilization": 0
+    },
+    "process_peak_mib": 7558,
+    "log": "/root/In_Hand_Reconstruction/research/hora16384_gpu1_20261016/train.log",
+    "minimum_free_mib": 2048,
+    "maximum_process_mib": 20000,
+    "last_sample": {
+      "time": "2026-10-17T09:07:34.776585+08:00",
+      "gpu": 1,
+      "uuid": "GPU-90a24841-4ca6-bae5-8c5e-d58970023b27",
+      "total_mib": 24564,
+      "used_mib": 12000,
+      "utilization": 0,
+      "process_mib": 7558
+    },
+    "updated": "2026-10-17T09:07:39.996196+08:00",
+    "exit_code": -11,
+    "finished": "2026-10-17T09:07:39.996178+08:00"
+  },
+  "elapsed_hours": 9.663479384166665,
+  "last100_harmonic_fps": 6782.0105537852205,
+  "log_iterations": 1772,
+  "last_completed_step": 233308160,
+  "error_lines": []
+}

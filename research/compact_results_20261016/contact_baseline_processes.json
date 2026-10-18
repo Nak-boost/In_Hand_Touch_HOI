@@ -1,0 +1,26 @@
+[
+  {
+    "label": "sphere65_mean_last_pairs",
+    "pid": 148930,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 67.0925829410553,
+    "termination_reason": null
+  },
+  {
+    "label": "sphere55_mean_last_pairs",
+    "pid": 149270,
+    "exit": 0,
+    "json_written": true,
+    "seconds": 64.05691480636597,
+    "termination_reason": null
+  },
+  {
+    "label": "box45_mean_last_pairs",
+    "pid": 149651,
+    "exit": 0,
+    "json_written": false,
+    "seconds": 56.03395056724548,
+    "termination_reason": null
+  }
+]

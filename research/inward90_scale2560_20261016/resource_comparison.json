@@ -1,0 +1,30 @@
+[
+  {
+    "object": "sphere55",
+    "num_envs": 1536,
+    "peak_memory_mib": 2366,
+    "last_fps_median": 9158.45,
+    "exit_code": 0
+  },
+  {
+    "object": "sphere55",
+    "num_envs": 2560,
+    "peak_memory_mib": 2606,
+    "last_fps_median": 10561.400000000001,
+    "exit_code": 0
+  },
+  {
+    "object": "box45",
+    "num_envs": 1536,
+    "peak_memory_mib": 2366,
+    "last_fps_median": 7764.0,
+    "exit_code": 0
+  },
+  {
+    "object": "box45",
+    "num_envs": 2560,
+    "peak_memory_mib": 2606,
+    "last_fps_median": 8535.45,
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,444 @@
+--- before/train_manip.py
++++ after/train_manip.py
+@@ -16,6 +16,7 @@
+ from hora.tasks.allegro_digit_two_axis import AllegroDigitTwoAxis
+ from hora.tasks.allegro_digit_tabletop import AllegroDigitTabletop
+ from hora.utils.hand_collision import require_collision_signature
++from hora.utils.manip_control import action_reference, require_action_reference
+ from hora.utils.misc import set_seed
+ 
+ ROOT = Path(__file__).resolve().parent
+@@ -34,6 +35,7 @@
+         super().save(name)
+         ckpt = torch.load(str(name)+'.pth', map_location=self.device)
+         ckpt.update(asset_sha256=self.env.asset_hash, kind='privileged_teacher',
++                    action_reference=action_reference(self.env.cfg),
+                     collision_sha256=self.env.collision_hash,
+                     optimizer=self.optimizer.state_dict(), agent_steps=self.agent_steps,
+                     epoch_num=self.epoch_num, best_rewards=self.best_rewards, last_lr=self.last_lr)
+@@ -43,6 +45,7 @@
+         if not fn:
+             return
+         ckpt = torch.load(fn, map_location=self.device)
++        require_action_reference(ckpt, self.env.cfg, 'Teacher checkpoint')
+         require_collision_signature(ckpt, self.env.collision_hash, 'Teacher checkpoint')
+         if ckpt.get('asset_sha256') != self.env.asset_hash:
+             raise ValueError('Checkpoint is not from this DIGIT asset')
+@@ -61,6 +64,7 @@
+     if not cfg.student_checkpoint:
+         raise ValueError('Evaluation requires student_checkpoint; privileged teacher is not evaluated as deployable')
+     ckpt = torch.load(cfg.student_checkpoint, map_location=cfg.rl_device)
++    require_action_reference(ckpt, env.cfg, 'Student checkpoint')
+     require_collision_signature(ckpt, env.collision_hash, 'Student checkpoint')
+     if ckpt.get('kind') != 'tactile_student' or ckpt['asset_sha256'] != env.asset_hash:
+         raise ValueError('Expected compatible tactile student checkpoint')
+@@ -126,7 +130,7 @@
+         (run_dir/'asset_metadata.json').write_text(json.dumps(dict(
+             asset_sha256=env.asset_hash, collision_sha256=env.collision_hash,
+             collision_spec=env.collision_spec, joint_names=env.joint_names, fingers=['index', 'middle', 'ring', 'thumb'],
+-            control_dt=env.control_dt, objects=env.catalog), indent=2))
++            control_dt=env.control_dt, action_reference=action_reference(env.cfg), objects=env.catalog), indent=2))
+         shutil.copy2(ROOT/task['env']['asset']['handAsset'], run_dir/'allegro_digit.urdf')
+         if cfg.stage == 'grasps':
+             env.generate_grasps()
+--- before/replay_policy.py
++++ after/replay_policy.py
+@@ -37,6 +37,8 @@
+     from hora.algo.models.running_mean_std import RunningMeanStd
+     from hora.algo.padapt.tactile_distill import network_spec, normalize_inputs
+     from hora.tasks.allegro_digit_two_axis import AllegroDigitTwoAxis
++    from hora.tasks.allegro_digit_tabletop import AllegroDigitTabletop
++    from hora.utils.manip_control import require_action_reference
+     from hora.utils.hand_collision import require_collision_signature
+ 
+     root = Path(__file__).resolve().parent
+@@ -69,7 +71,9 @@
+     source_files = ['hora/tasks/allegro_digit_two_axis.py', 'hora/tasks/manipulation_math.py',
+                     'hora/algo/models/models.py', 'hora/algo/models/running_mean_std.py',
+                     'hora/tasks/base/vec_task.py', 'hora/utils/hand_collision.py',
+-                    'hora/algo/padapt/tactile_distill.py']
++                    'hora/algo/padapt/tactile_distill.py', 'hora/utils/manip_control.py']
++    if task['name'] == 'AllegroDigitTabletop':
++        source_files += ['hora/tasks/allegro_digit_tabletop.py', 'hora/tasks/tabletop_math.py']
+     if student:
+         source_files.append('hora/algo/models/tactile_student.py')
+     mismatches, missing = [], []
+@@ -90,7 +94,9 @@
+     np.random.seed(args.seed)
+     torch.manual_seed(args.seed)
+     torch.cuda.manual_seed_all(args.seed)
+-    env = AllegroDigitTwoAxis(task, args.device, args.graphics_device_id, args.headless)
++    require_action_reference(checkpoint, task['env']['manipulation'], 'Replay checkpoint')
++    task_class = {'AllegroDigitTwoAxis': AllegroDigitTwoAxis, 'AllegroDigitTabletop': AllegroDigitTabletop}[task['name']]
++    env = task_class(task, args.device, args.graphics_device_id, args.headless)
+     try:
+         if checkpoint.get('asset_sha256') != env.asset_hash:
+             raise ValueError('Policy hand asset mismatch')
+--- before/README.md
++++ after/README.md
+@@ -134,6 +134,8 @@
+ | `tests/` | 特权信息隔离、梯度、旋转和资产测试 |
+ 
+ `DigitPolicyRuntime.step(q, qdot, contacts, axis)` 返回 16 个关节目标。
++
++2026-10-15：新训练默认使用“当前实际关节角＋平滑动作增量”，增加胶面靠近物体的距离奖励；初始姿态惩罚与两指接触奖励保留。检查点记录控制模式，旧权重不能直接套用新控制。详见 [控制与奖励说明](docs/distance_actual_control.md)。
+ 关节数组必须按检查点 `joint_names` 排列，而不是假定编号顺序；触觉顺序为 index/middle/ring/thumb。
+ 外层程序负责时间同步、DIGIT 接触检测、PD、通信和任务调度。初始抓取和换物体后调用 `reset()`。
+ 完整数据约定见 `docs/interfaces.md`。
+--- before/configs/manip.yaml
++++ after/configs/manip.yaml
+@@ -36,6 +36,7 @@
+       target_speed: 0.5           # rad/s
+       action_scale: 0.026         # radians / policy step
+       action_smoothing: 0.5
++      action_reference: actual_position  # q_target = clamp(q_actual + scaled smoothed action)
+       joint_noise: 0.01
+       velocity_noise: 0.02
+       max_displacement: 0.13
+@@ -50,6 +51,7 @@
+       overspeed_cost_cap: 0.25   # smooth cap on weighted overspeed cost; 0 restores quadratic
+       goal_weight: 0.25
+       contact_weight: 0.05
++      fingertip_distance_weight: 0.1  # Rotating without Seeing Appendix D; gel apex -> object center
+       housing_weight: 0.05
+       position_weight: 2.0
+       linear_velocity_weight: 0.1
+--- before/tests/test_manipulation.py
++++ after/tests/test_manipulation.py
+@@ -3,6 +3,7 @@
+ from pathlib import Path
+ import math
+ import torch
++import pytest
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ # Avoid hora.tasks.__init__ importing Isaac Gym during tensor-only tests.
+@@ -82,7 +83,8 @@
+         assert (asset.parent/mesh.get('filename')).is_file()
+ 
+ 
+-def test_runtime_matches_training_observation_and_action_filter(tmp_path):
++@pytest.mark.parametrize('reference', [None, 'previous_target', 'actual_position'])
++def test_runtime_matches_training_observation_and_action_filter(tmp_path, reference):
+     from hora.algo.models.tactile_student import TactileStudent
+     from hora.algo.models.running_mean_std import RunningMeanStd
+     from hora.algo.padapt.tactile_distill import normalize_inputs
+@@ -93,10 +95,13 @@
+     rms = RunningMeanStd((maths.OBS_DIM,)).eval()
+     lower, upper = torch.full((16,), -.5), torch.full((16,), 1.5)
+     path = tmp_path/'student.pt'
+-    torch.save(dict(kind='tactile_student', network=cfg, history_dim=maths.OBS_DIM, history_length=30,
++    checkpoint = dict(kind='tactile_student', network=cfg, history_dim=maths.OBS_DIM, history_length=30,
+                     model=model.state_dict(), running_mean_std=rms.state_dict(),
+                     joint_names=list(range(16)), lower=lower, upper=upper,
+-                    action_scale=.026, action_smoothing=.5), path)
++                    action_scale=.026, action_smoothing=.5)
++    if reference is not None:
++        checkpoint['action_reference'] = reference
++    torch.save(checkpoint, path)
+     runtime = DigitPolicyRuntime(path)
+     q, qdot = torch.full((1, 16), .3), torch.zeros(1, 16)
+     contacts = torch.tensor([[1., 1., 0., 1.]])
+@@ -108,5 +113,6 @@
+         with torch.no_grad():
+             action = model.act_inference(normalize_inputs(rms, frame, history)).clamp(-1, 1)
+         previous = .5*action+.5*previous
+-        targets = (targets+.026*previous).clamp(lower, upper)
++        base = q if reference == 'actual_position' else targets
++        targets = (base+.026*previous).clamp(lower, upper)
+         assert torch.allclose(runtime.step(q, qdot, contacts, axis), targets[0], atol=1e-6)
+--- before/tests/test_reward_control.py
++++ after/tests/test_reward_control.py
+@@ -28,6 +28,50 @@
+ def test_invalid_scales_rejected():
+     with pytest.raises(ValueError):m.blocked_target_command(torch.zeros(1,16),torch.zeros(1,16),0)
+     with pytest.raises(ValueError):m.bounded_quadratic_cost(torch.zeros(1),.15,-1)
++
++
++def test_proximity_reward_guides_each_finger_before_contact_and_is_bounded():
++    distances = torch.tensor([[.10]*4, [.05]*4, [.02]*4, [0.]*4])
++    reward = m.fingertip_proximity_reward(distances)
++    assert (reward[1:] >= reward[:-1]).all()
++    assert ((reward >= 0) & (reward <= 1)).all()
++    torch.testing.assert_close(reward, torch.tensor([.1/.42, .1/.22, 1., 1.]))
++    # A released finger moving closer improves the score even without contact.
++    before = torch.tensor([[.03, .03, .08, .08]])
++    after = torch.tensor([[.03, .03, .06, .08]])
++    assert m.fingertip_proximity_reward(after) > m.fingertip_proximity_reward(before)
++    torch.testing.assert_close(m.fingertip_proximity_reward(after.flip(-1)),
++                               m.fingertip_proximity_reward(after))
++
++
++def test_actual_joint_reference_does_not_accumulate_when_finger_is_blocked():
++    from hora.utils.manip_control import joint_targets
++    q = torch.tensor([[.3, .99, -.99]])
++    target = torch.tensor([[.9, .9, -.9]])
++    delta = torch.tensor([[.02, .02, -.02]])
++    for _ in range(50):
++        target, applied = joint_targets(q, target, delta, -1., 1., 'actual_position')
++        torch.testing.assert_close(target, torch.tensor([[.32, 1., -1.]]))
++        torch.testing.assert_close(applied, torch.tensor([[.02, .01, -.01]]))
++    # Zero action discards old target preload; retraction is based on measured q.
++    target, _ = joint_targets(q, target, torch.zeros_like(q), -1., 1., 'actual_position')
++    torch.testing.assert_close(target, q)
++    target, applied = joint_targets(q, target, -delta, -1., 1., 'actual_position')
++    torch.testing.assert_close(target, torch.tensor([[.28, .97, -.97]]))
++    assert not m.blocked_target_command(-delta, applied, .02).any()
++
++
++def test_checkpoint_control_convention_cannot_silently_change():
++    from hora.utils.manip_control import action_reference, require_action_reference
++    assert action_reference({}) == 'previous_target'
++    require_action_reference({}, {'action_reference': 'previous_target'})
++    require_action_reference({'action_reference': 'actual_position'}, {'action_reference': 'actual_position'})
++    with pytest.raises(ValueError, match='action_reference mismatch'):
++        require_action_reference({}, {'action_reference': 'actual_position'})
++    with pytest.raises(ValueError, match='action_reference mismatch'):
++        require_action_reference({'action_reference': 'actual_position'}, {})
++    with pytest.raises(ValueError, match='Unknown action_reference'):
++        action_reference({'action_reference': 'typo'})
+ 
+ def test_overspeed_cap_preserves_disabled_tabletop_term():
+     fast=torch.tensor([0.,.01,100.,100000.])
+--- before/docs/reward_control_tuning.md
++++ after/docs/reward_control_tuning.md
+@@ -1,4 +1,6 @@
+ # 奖励尺度与累积目标限位惩罚（2026-10-14）
++
++后续更新：2026-10-15 新默认控制已改为相对实际关节角，并增加指尖距离奖励。见 [最新控制与奖励说明](distance_actual_control.md)。本文保留为 10 月 14 日实验的历史记录，下面的目标累加公式不是新默认值。
+ 
+ 本次调整针对提前失败的回报动机、累积关节目标饱和。默认值用于下一轮受控实验，尚未证明旋转策略收敛。实现涉及 `configs/manip.yaml`、`hora/tasks/manipulation_math.py`、`hora/tasks/allegro_digit_two_axis.py` 和 PPO 的诊断日志汇总。
+ 
+--- before/hora/tasks/allegro_digit_two_axis.py
++++ after/hora/tasks/allegro_digit_two_axis.py
+@@ -14,7 +14,8 @@
+ from .base.vec_task import VecTask
+ from .manipulation_math import (OBS_DIM, PRIV_DIM, build_observation, append_history,
+                                 rotation_increment, rotation_terms, joint_pose_deviation,
+-                                bounded_quadratic_cost, blocked_target_command)
++                                bounded_quadratic_cost, blocked_target_command, fingertip_proximity_reward)
++from hora.utils.manip_control import action_reference, joint_targets
+ from hora.utils.hand_collision import (collision_spec, collision_signature, configure_asset_collisions,
+                              verify_actor_collisions, require_collision_signature)
+ from hora.utils.asset_geometry import verify_geometry_manifest
+@@ -27,6 +28,10 @@
+     def __init__(self, config, sim_device, graphics_device_id, headless):
+         self.config = config
+         self.cfg = config['env']['manipulation']
++        self.action_reference = action_reference(self.cfg)
++        distance_weight = self.cfg.get('fingertip_distance_weight', 0.0)
++        if not np.isfinite(distance_weight) or distance_weight < 0:
++            raise ValueError('fingertip_distance_weight must be finite and nonnegative')
+         self.stage = config.get('stage', 'teacher')
+         self.max_episode_length = config['env']['episodeLength']
+         self.up_axis = 'z'
+@@ -287,12 +292,12 @@
+         alpha = self.cfg['action_smoothing']
+         self.actions.copy_(alpha*actions.to(self.device)+(1-alpha)*self.actions)
+         requested = self.cfg['action_scale']*self.actions
+-        previous_targets = self.targets.clone()
+-        self.targets.add_(requested)
+-        self.targets.copy_(torch.max(torch.min(self.targets, self.upper), self.lower))
+-        self.target_increment_lost = (requested-(self.targets-previous_targets)).abs().sum(-1)/requested.abs().sum(-1).clamp_min(1e-8)
++        targets, applied = joint_targets(self.q, self.targets, requested,
++                                         self.lower, self.upper, self.action_reference)
++        self.targets.copy_(targets)
++        self.target_increment_lost = (requested-applied).abs().sum(-1)/requested.abs().sum(-1).clamp_min(1e-8)
+         self.blocked_target_command = blocked_target_command(
+-            requested, self.targets-previous_targets, self.cfg['action_scale'])
++            requested, applied, self.cfg['action_scale'])
+         self.prev_pose.copy_(self.object_state[:, :7])
+ 
+     def update_low_level_control(self):
+@@ -342,6 +347,10 @@
+         gel = self.contact_forces[:, self.gel_ids].norm(dim=-1) > self.config['env']['digit']['contact_threshold']
+         housing = self.contact_forces[:, self.housing_ids].norm(dim=-1) > self.config['env']['digit']['contact_threshold']
+         displacement = (self.object_state[:, :3]-self.initial_position).norm(dim=-1)
++        # Official DIGIT gel link frames are at the sensing-surface apex.
++        # Simulation truth is used only for reward/diagnostics, never actor observations.
++        fingertip_distance = (self.bodies[:, self.gel_ids, :3] -
++                              self.object_state[:, None, :3]).norm(dim=-1)
+         pose_penalty = self.cfg.get('pose_weight', 0.0)*joint_pose_deviation(self.q, self.initial_q)
+         finite = torch.isfinite(self.object_state).all(-1) & torch.isfinite(self.q).all(-1)
+         failed = self._failure_conditions(gel, displacement, finite)
+@@ -357,6 +366,7 @@
+                                                         self.cfg.get('overspeed_cost_cap', 0.0)),
+             'goal': self.cfg['goal_weight']*hit,
+             'contact': self.cfg['contact_weight']*(gel.sum(-1)>=2),
++            'fingertip_distance': self.cfg.get('fingertip_distance_weight', 0.0)*fingertip_proximity_reward(fingertip_distance),
+             'housing_penalty': -self.cfg['housing_weight']*housing.float().mean(-1),
+             'position_penalty': -self.cfg['position_weight']*displacement,
+             'linear_velocity_penalty': -self.cfg['linear_velocity_weight']*self.object_state[:, 7:10].norm(dim=-1),
+@@ -372,6 +382,7 @@
+         self.extras = {'rotation/speed': along.mean(), 'rotation/off_axis': off.mean(),
+                        'contact/gel_count': gel.float().sum(-1).mean(),
+                        'contact/housing_count': housing.float().sum(-1).mean(),
++                       'contact/gel_object_center_distance_m': fingertip_distance.mean(),
+                        'episode/failed': failed.float().mean(),
+                        'episode/time_limit': timeout.float().mean()}
+         self.extras.update({'reward/pose_penalty': -pose_penalty.mean(),
+--- before/hora/tasks/manipulation_math.py
++++ after/hora/tasks/manipulation_math.py
+@@ -4,6 +4,15 @@
+ OBS_DIM = 71  # q, qdot, q_target, previous action, four contacts, commanded axis
+ HISTORY_DIM = OBS_DIM
+ PRIV_DIM = 23  # position, quaternion, linear/angular velocity, dimensions, mass, friction, COM, goal phase
++
++
++def fingertip_proximity_reward(distances):
++    """Mean proximity score from Rotating without Seeing, Appendix D (meters).
++
++    Distances are gel reference point to object center, not surface clearance.
++    Output is in [0, 1]; the task applies its configurable reward weight.
++    """
++    return (0.1 / (0.02 + 4.0 * distances)).clamp(0.0, 1.0).mean(dim=-1)
+ 
+ 
+ def bounded_quadratic_cost(squared_error, weight, cap=0.0):
+--- before/hora/algo/deploy/digit_runtime.py
++++ after/hora/algo/deploy/digit_runtime.py
+@@ -7,6 +7,7 @@
+ from hora.algo.models.tactile_student import TactileStudent
+ from hora.algo.models.running_mean_std import RunningMeanStd
+ from hora.algo.padapt.tactile_distill import normalize_inputs
++from hora.utils.manip_control import action_reference, joint_targets
+ 
+ 
+ class DigitPolicyRuntime:
+@@ -23,6 +24,7 @@
+         self.lower = ckpt['lower'].to(device)
+         self.upper = ckpt['upper'].to(device)
+         self.scale, self.alpha = ckpt['action_scale'], ckpt['action_smoothing']
++        self.action_reference = action_reference(ckpt)
+         self.history = torch.zeros(1, ckpt['history_length'], ckpt['history_dim'], device=device)
+         self.targets = None
+         self.previous = torch.zeros(1, 16, device=device)
+@@ -51,5 +53,6 @@
+         self.history = frame[:, None].expand_as(self.history).clone() if first else torch.cat((self.history[:, 1:], frame[:, None]), 1)
+         raw = self.model.act_inference(normalize_inputs(self.rms, frame, self.history)).clamp(-1, 1)
+         self.previous = self.alpha*raw+(1-self.alpha)*self.previous
+-        self.targets = (self.targets+self.scale*self.previous).clamp(self.lower, self.upper)
++        self.targets, _ = joint_targets(q, self.targets, self.scale*self.previous,
++                                       self.lower, self.upper, self.action_reference)
+         return self.targets[0].clone()
+--- before/hora/algo/padapt/tactile_distill.py
++++ after/hora/algo/padapt/tactile_distill.py
+@@ -7,6 +7,7 @@
+ from hora.algo.models.tactile_student import TactileStudent, distillation_loss
+ from hora.algo.models.running_mean_std import RunningMeanStd
+ from hora.utils.hand_collision import require_collision_signature
++from hora.utils.manip_control import action_reference, require_action_reference
+ 
+ 
+ def network_spec(config, observation_dim, actions=16):
+@@ -30,6 +31,7 @@
+         self.spec = network_spec(config, env.num_obs)
+         self.teacher = ActorCritic(dict(self.spec)).to(self.device).eval()
+         checkpoint = torch.load(config.teacher_checkpoint, map_location=self.device)
++        require_action_reference(checkpoint, env.cfg, 'Teacher checkpoint')
+         require_collision_signature(checkpoint, env.collision_hash, 'Teacher checkpoint')
+         if checkpoint.get('asset_sha256') != env.asset_hash:
+             raise ValueError('Teacher checkpoint must be from this DIGIT asset, not upstream HORA')
+@@ -45,6 +47,7 @@
+         self.start_step = 0
+         if config.student_checkpoint:
+             ckpt = torch.load(config.student_checkpoint, map_location=self.device)
++            require_action_reference(ckpt, env.cfg, 'Student checkpoint')
+             require_collision_signature(ckpt, env.collision_hash, 'Student checkpoint')
+             if ckpt['asset_sha256'] != env.asset_hash:
+                 raise ValueError('Student asset mismatch')
+@@ -63,6 +66,7 @@
+                         step=step, kind='tactile_student',
+                         joint_names=self.env.joint_names, lower=self.env.lower.cpu(), upper=self.env.upper.cpu(),
+                         action_scale=self.env.cfg['action_scale'],
++                        action_reference=action_reference(self.env.cfg),
+                         action_smoothing=self.env.cfg['action_smoothing']), path/'last.pth')
+ 
+     def train(self):
+--- before/hora/utils/manip_control.py
++++ after/hora/utils/manip_control.py
+@@ -0,0 +1,28 @@
++"""Shared simulation/deployment joint-target convention (no simulator imports)."""
++
++
++def action_reference(config):
++    # Snapshots/checkpoints predating this field used accumulated targets.
++    reference = config.get('action_reference', 'previous_target')
++    if reference not in ('actual_position', 'previous_target'):
++        raise ValueError('Unknown action_reference: ' + str(reference))
++    return reference
++
++
++def joint_targets(q, previous_targets, increment, lower, upper, reference):
++    if reference == 'actual_position':
++        base = q
++    elif reference == 'previous_target':
++        base = previous_targets
++    else:
++        raise ValueError('Unknown action_reference: ' + str(reference))
++    targets = (base + increment).clamp(lower, upper)
++    return targets, targets - base
++
++
++def require_action_reference(checkpoint, config, context='Checkpoint'):
++    saved, expected = action_reference(checkpoint), action_reference(config)
++    if saved != expected:
++        raise ValueError('%s action_reference mismatch: %s != %s. '
++                         'Use the original control configuration for replay or train a new policy.'
++                         % (context, saved, expected))
+--- before/docs/distance_actual_control.md
++++ after/docs/distance_actual_control.md
+@@ -0,0 +1,53 @@
++# 距离引导与实际关节角增量控制（2026-10-15）
++
++按用户要求，新的 `manip.yaml` 默认配置采用下列设置；桌面配置继承它们。
++
++| 参数 | 新默认值 | 含义 |
++|---|---|---|
++| `pose_weight` | 0.05（保留） | `-0.05 * sum((q-initial_q)^2)` |
++| `contact_weight` | 0.05（保留） | 至少两路胶面净接触力超过阈值时 +0.05 |
++| `fingertip_distance_weight` | 0.1（新增） | 四个胶面参考点接近物体中心的平均得分 |
++| `action_reference` | `actual_position`（修改） | 以测得的当前关节角而非上一目标为基准 |
++
++## 距离奖励
++
++令 `d_i = ||p_gel_i - p_object||`，单位为米：
++
++```
++reward_distance = 0.1 * mean(clip(0.1 / (0.02 + 4 * d_i), 0, 1))
++```
++
++公式与权重参考 Rotating without Seeing 附录 D：<https://arxiv.org/html/2303.10880v4>。针对 DIGIT，参考点选用独立 gel link 原点；官方 CAD 构建器将它置于胶面顶点（`scripts/build_official_digit_asset.py` 中的 `apex`），不是手指关节原点，也不是胶体质心。
++
++这一项使用胶面顶点到物体中心的距离，不是到物体表面的最短距离，不判断实际接触，也不区分靠近方向。得分在距离 <= 2 cm 时饱和；加权后每环境每步在 [0, 0.1]，不是每指各 +0.1。0.1 是有出处的实验起点，未证明是当前系统最优值；不同尺寸需要重新检查其尺度。
++
++物体位置来自仿真，仅参与训练奖励和日志，没有加入学生的触觉/本体观测。新日志：`reward/fingertip_distance`、`contact/gel_object_center_distance_m`。
++
++当前两指接触奖励的判定保留原实现：胶面刚体的净接触力阈值，而不是胶面—目标物体的接触对识别。因此它仍可能计入胶面与其他手部部位的接触；新增距离项没有修复或掩盖这一限制。
++
++## 控制定义
++
++```
++smoothed_action = 0.5 * clipped_action + 0.5 * previous_smoothed_action
++increment = 0.026 * smoothed_action
++target = clamp(q_actual + increment, joint_lower, joint_upper)
++```
++
++该定义参考 Visual Dexterity 的 Action space 与公开控制代码：
++<https://github.com/Improbable-AI/dexenv/blob/ad9634e9d26cf5555d18728244a58f5b412c1eb2/dexenv/envs/dclaw_base.py#L882>。
++
++每个策略步从实际关节位置重新建立目标；该步内低层 PD 仍跟踪这个固定目标。动作尺度、平滑、PD 增益和力矩限幅保持原设置。关节观测噪声仍只加到策略观测，目标基准使用仿真实际 q；部署使用调用者传入的实测 q。
++
++关节被阻挡时，目标不会因相同增量持续累加。平滑动作真正归零后，目标等于当前角度，不再保留缓存/上一目标的静态预紧力；保持接触需要策略持续输出适当动作。物理关节限位仍然可能被触及。
++
++限位增量损失与 `limit_push_penalty` 同步改为相对本次基准角计算，避免把“旧目标重置回实际位置”误判成被裁掉的动作。它们衡量命令被硬限位裁剪，不衡量电机是否实际完成动作。
++
++## 保存、回放与旧结果
++
++教师/学生检查点均保存 `action_reference`；训练恢复、蒸馏、评估和回放会核对控制模式。部署适配器从检查点读取模式，使用与仿真相同的目标计算函数。
++
++历史配置/检查点缺少 `action_reference` 时解释为 `previous_target`；缺少距离权重时解释为 0。因而旧配置仍可用于历史回放，但不能把旧权重直接续训进新的默认控制方式。历史回放仍遵守原有的源码差异检查。
++
++回放入口还修正为按保存的任务名称选择桌面或手内环境，避免桌面策略错误创建为无桌面的环境。
++
++此修改未改变碰撞模型、接触过滤、失败条件、桌面偏轴/超速权重，也没有重设其他奖励项。正式新实验应从头训练；验证记录见 `../../research/distance_actual_control_20261015/`。

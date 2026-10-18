@@ -1,0 +1,98 @@
+{
+  "vendor": {
+    "asset": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_vendor.urdf",
+    "shapes": 25,
+    "palm_hulls": []
+  },
+  "palm23": {
+    "asset": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm23.urdf",
+    "shapes": 47,
+    "palm_hulls": []
+  },
+  "palm2_y": {
+    "asset": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm2_y.urdf",
+    "shapes": 26,
+    "palm_hulls": [
+      {
+        "file": "collision_baselines/palm2_y_0.obj",
+        "vertices": 49
+      },
+      {
+        "file": "collision_baselines/palm2_y_1.obj",
+        "vertices": 54
+      }
+    ]
+  },
+  "palm2_z": {
+    "asset": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm2_z.urdf",
+    "shapes": 26,
+    "palm_hulls": [
+      {
+        "file": "collision_baselines/palm2_z_0.obj",
+        "vertices": 90
+      },
+      {
+        "file": "collision_baselines/palm2_z_1.obj",
+        "vertices": 20
+      }
+    ]
+  },
+  "palm3": {
+    "asset": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm3.urdf",
+    "shapes": 27,
+    "palm_hulls": [
+      {
+        "file": "collision_baselines/palm3_0.obj",
+        "vertices": 63
+      },
+      {
+        "file": "collision_baselines/palm3_1.obj",
+        "vertices": 46
+      },
+      {
+        "file": "collision_baselines/palm3_2.obj",
+        "vertices": 8
+      }
+    ]
+  },
+  "palm4": {
+    "asset": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm4.urdf",
+    "shapes": 28,
+    "palm_hulls": [
+      {
+        "file": "collision_baselines/palm4_0.obj",
+        "vertices": 18
+      },
+      {
+        "file": "collision_baselines/palm4_1.obj",
+        "vertices": 48
+      },
+      {
+        "file": "collision_baselines/palm4_2.obj",
+        "vertices": 10
+      },
+      {
+        "file": "collision_baselines/palm4_3.obj",
+        "vertices": 55
+      }
+    ]
+  },
+  "compact": {
+    "asset": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_compact.urdf",
+    "shapes": 27,
+    "palm_hulls": [
+      {
+        "file": "collision_baselines/compact_0.obj",
+        "vertices": 63
+      },
+      {
+        "file": "collision_baselines/compact_1.obj",
+        "vertices": 46
+      },
+      {
+        "file": "collision_baselines/compact_2.obj",
+        "vertices": 8
+      }
+    ]
+  }
+}

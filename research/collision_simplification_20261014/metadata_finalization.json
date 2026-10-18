@@ -1,0 +1,6 @@
+{
+  "tested_asset_sha256": "b9e1e7b56ca63c4ee06ecc819dadc43262427a502cb71d3afef00d0047b15e5c",
+  "final_asset_sha256": "430e204848ed1cf2052d6240da3b2bdea12db58186c89c0401ea07640c588358",
+  "all_link_joint_collision_and_dynamics_elements_identical": true,
+  "change": "Correct compact manifest method description to include four distal single hulls; geometry files unchanged."
+}

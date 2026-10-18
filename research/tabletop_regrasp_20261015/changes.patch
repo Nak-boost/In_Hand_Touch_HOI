@@ -1,0 +1,297 @@
+--- before/scripts/auto_manip_queue.py
++++ after/scripts/auto_manip_queue.py
+@@ -9,6 +9,7 @@
+ import fcntl
+ import hashlib
+ import json
++import math
+ import os
+ from pathlib import Path
+ import signal
+@@ -34,9 +35,29 @@
+ 
+ 
+ def idle(gpu, plan):
+-    return (gpu['total_mb'] - gpu['used_mb'] >= plan['minimum_free_mb']
+-            and gpu['used_mb'] <= plan['idle_max_used_mb']
++    required = max(plan['minimum_free_mb'], plan.get('job_memory_mb', 0) + plan.get('reserve_memory_mb', 0))
++    return (gpu['total_mb'] - gpu['used_mb'] >= required
++            and gpu['used_mb'] <= plan.get('idle_max_used_mb', gpu['total_mb'])
+             and gpu['utilization'] <= plan['idle_max_utilization'])
++
++
++def stage_resources(job, plan):
++    """Wait for shared calibration, then admit using measured memory plus margin."""
++    stage = job['stages'][job['stage_index']]
++    policy = dict(plan)
++    path = stage.get('resource_report')
++    if not path:
++        return policy
++    if not Path(path).is_file():
++        return None
++    report = json.loads(Path(path).read_text())
++    if report['exit_code'] != 0 or report['process_peak_mb'] <= 0:
++        raise ValueError('Resource calibration failed: '+path)
++    if report['num_envs'] != stage['num_envs']:
++        raise ValueError('Resource calibration environment count mismatch')
++    policy['job_memory_mb'] = max(policy.get('job_memory_mb', 0),
++        math.ceil(report['process_peak_mb'] * plan.get('memory_peak_multiplier', 1.25)))
++    return policy
+ 
+ 
+ def acquire_lock(path):
+@@ -55,6 +76,12 @@
+         actual = hashlib.sha256(Path(path).read_bytes()).hexdigest()
+         if actual != expected:
+             raise ValueError('Queued implementation/config changed: '+path)
++    for gate in plan.get('quality_gates', []):
++        report = json.loads(Path(gate['report']).read_text())
++        if not report.get('passed') or report.get('accepted', 0) < gate['minimum_accepted']:
++            raise ValueError('Grasp validation did not pass: '+gate['report'])
++        if report.get('action_reference') != gate['action_reference']:
++            raise ValueError('Grasp validation control mode mismatch: '+gate['report'])
+ 
+ 
+ def main():
+@@ -109,16 +136,17 @@
+         log_path.parent.mkdir(parents=True, exist_ok=True)
+         log = log_path.open('x')
+         env = os.environ.copy()
+-        env.update(CUDA_VISIBLE_DEVICES=str(gpu), OMP_NUM_THREADS='1', PYTHONUNBUFFERED='1')
++        env.update(CUDA_VISIBLE_DEVICES=str(gpu), OMP_NUM_THREADS='1', MKL_NUM_THREADS='1', PYTHONUNBUFFERED='1')
+         try:
+-            process = subprocess.Popen(stage['command'], cwd=ROOT, env=env,
++            command = [str(gpu) if part == '{gpu}' else part for part in stage['command']]
++            process = subprocess.Popen(command, cwd=ROOT, env=env,
+                 stdout=log, stderr=subprocess.STDOUT, start_new_session=True,
+                 pass_fds=(lease.fileno(),))
+         except Exception:
+             log.close()
+             raise
+         job.update(status='running', gpu=gpu, pid=process.pid, phase=stage['name'],
+-                   phase_started=now(), console_log=str(log_path))
++                   phase_started=now(), console_log=str(log_path), command=command)
+         print(now(), job['run_name'], stage['name'], 'GPU', gpu, 'PID', process.pid, flush=True)
+         return dict(process=process, log=log, lease=lease, job=job)
+ 
+@@ -162,9 +190,27 @@
+             for gpu in plan['gpus']:
+                 if stopping or gpu in active:
+                     continue
+-                available = gpu in latest and idle(latest[gpu], plan)
++                pending, policy = None, None
++                for candidate in jobs:
++                    if candidate['status'] != 'waiting':
++                        continue
++                    stage = candidate['stages'][candidate['stage_index']]
++                    dependency = stage.get('calibration_job')
++                    if dependency and not Path(stage['resource_report']).is_file():
++                        upstream = next(j for j in jobs if j['run_name'] == dependency)
++                        if upstream['status'] in ('failed', 'interrupted', 'cancelled'):
++                            candidate.update(status='failed', reason='Resource calibration job failed', finished=now())
++                            continue
++                    try:
++                        candidate_policy = stage_resources(candidate, plan)
++                    except (OSError, ValueError, KeyError) as error:
++                        candidate.update(status='failed', reason=str(error), finished=now())
++                        continue
++                    if candidate_policy is not None:
++                        pending, policy = candidate, candidate_policy
++                        break
++                available = pending is not None and gpu in latest and idle(latest[gpu], policy)
+                 streak[gpu] = streak[gpu] + 1 if available else 0
+-                pending = next((j for j in jobs if j['status'] == 'waiting'), None)
+                 if pending is None or streak[gpu] < plan['idle_samples']:
+                     continue
+                 lease = acquire_lock(Path(plan['lock_directory'])/(latest[gpu]['uuid']+'.lock'))
+@@ -174,7 +220,7 @@
+                     # Recheck after acquiring the lease, closing the race between
+                     # cooperating queue instances. External jobs do not honor it.
+                     fresh = gpu_snapshot()
+-                    if gpu not in fresh or not idle(fresh[gpu], plan):
++                    if gpu not in fresh or not idle(fresh[gpu], policy):
+                         lease.close()
+                         streak[gpu] = 0
+                         continue
+--- before/configs/manip_tabletop_box45.yaml
++++ after/configs/manip_tabletop_box45.yaml
+@@ -27,10 +27,10 @@
+     domain:
+       friction: [0.1, 0.1]  # low object and table friction; gels have a separate material
+     grasp:
+-      cache: cache/digit_tabletop_box45_light_v2.pt
++      cache: cache/digit_tabletop_box45_actual_checked_v3.pt
+       object_position: [0.0, 0.0, 0.5235]
+       q_noise: 0.015
+-      required_per_object: 16
++      required_per_object: 64
+       max_batches: 20
+     manipulation:
+       off_axis_weight: 0.0
+--- before/tests/test_auto_manip_queue.py
++++ after/tests/test_auto_manip_queue.py
+@@ -18,6 +18,41 @@
+     assert not queue.idle(dict(total_mb=24564, used_mb=23783, utilization=0), policy)
+     assert not queue.idle(dict(total_mb=24564, used_mb=0, utilization=95), policy)
+     assert queue.idle(dict(total_mb=24564, used_mb=0, utilization=0), policy)
++
++
++def test_memory_budget_reserve_and_compute_gate_are_both_required():
++    policy = dict(minimum_free_mb=4000, job_memory_mb=5000, reserve_memory_mb=2000, idle_max_utilization=15)
++    assert queue.idle(dict(total_mb=24000, used_mb=16000, utilization=10), policy)
++    assert not queue.idle(dict(total_mb=24000, used_mb=18000, utilization=0), policy)
++    assert not queue.idle(dict(total_mb=24000, used_mb=16000, utilization=50), policy)
++
++
++def test_quality_gate_rejects_failed_or_old_controller_report(tmp_path):
++    import pytest
++    report = tmp_path/'quality.json'
++    plan = dict(source_sha256={}, quality_gates=[dict(report=str(report), minimum_accepted=16,
++                action_reference='actual_position')])
++    for value in [dict(passed=False,accepted=64,action_reference='actual_position'),
++                  dict(passed=True,accepted=15,action_reference='actual_position'),
++                  dict(passed=True,accepted=64,action_reference='previous_target')]:
++        report.write_text(json.dumps(value))
++        with pytest.raises(ValueError): queue.check_sources(plan)
++    report.write_text(json.dumps(dict(passed=True,accepted=16,action_reference='actual_position')))
++    queue.check_sources(plan)
++
++
++def test_training_waits_for_measurement_and_uses_peak_margin(tmp_path):
++    import pytest
++    path = tmp_path/'resources.json'
++    job = dict(stage_index=0, stages=[dict(resource_report=str(path), num_envs=256)])
++    policy = dict(job_memory_mb=4096, memory_peak_multiplier=1.25)
++    assert queue.stage_resources(job, policy) is None
++    path.write_text(json.dumps(dict(exit_code=0, process_peak_mb=4000, num_envs=256)))
++    assert queue.stage_resources(job, policy)['job_memory_mb'] == 5000
++    path.write_text(json.dumps(dict(exit_code=1, process_peak_mb=4000, num_envs=256)))
++    with pytest.raises(ValueError): queue.stage_resources(job, policy)
++    path.write_text(json.dumps(dict(exit_code=0, process_peak_mb=4000, num_envs=512)))
++    with pytest.raises(ValueError): queue.stage_resources(job, policy)
+ 
+ 
+ def test_cooperative_lease_excludes_second_supervisor(tmp_path):
+@@ -103,3 +138,39 @@
+     result = subprocess.run([sys.executable, str(SCRIPT), '--plan', str(path)], env=env,
+                             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+     assert result.returncode != 0 and not marker.exists()
++
++
++def test_shared_profile_completes_before_both_training_jobs(tmp_path):
++    path, env, gpu, marker = fixture(tmp_path)
++    gpu.write_text('2, GPU-test, 24564, 0, 0\n')
++    plan = json.loads(path.read_text())
++    resource = tmp_path/'resources.json'
++    code = "import json,sys; from pathlib import Path; assert sys.argv[1]=='2'; Path("+repr(str(resource))+ ").write_text(json.dumps(dict(exit_code=0,process_peak_mb=2000,num_envs=256)))"
++    first = plan['experiments'][0]
++    train = first['stages'][-1]
++    train.update(resource_report=str(resource), num_envs=256, calibration_job='test')
++    first['stages'] = [dict(name='profile',command=[sys.executable,'-c',code,'{gpu}'], log=str(tmp_path/'profile.log')),train]
++    second_train = dict(train,log=str(tmp_path/'train2.log'))
++    plan['experiments'].append(dict(run_name='test2', stages=[second_train]))
++    path.write_text(json.dumps(plan))
++    result = subprocess.run([sys.executable,str(SCRIPT),'--plan',str(path)],env=env,
++                            stdout=subprocess.DEVNULL,timeout=8)
++    assert result.returncode == 0
++    assert marker.read_text().splitlines() == ['train:2','train:2']
++    assert all(j['status']=='completed' for j in json.loads((tmp_path/'queue_status.json').read_text())['jobs'])
++
++
++def test_failed_profile_marks_dependent_jobs_failed(tmp_path):
++    path, env, gpu, marker = fixture(tmp_path)
++    gpu.write_text('2, GPU-test, 24564, 0, 0\n')
++    plan = json.loads(path.read_text())
++    profile = dict(name='profile', command=[sys.executable,'-c','raise SystemExit(7)'],log=str(tmp_path/'profile.log'))
++    train = plan['experiments'][0]['stages'][-1]
++    train.update(resource_report=str(tmp_path/'missing.json'),num_envs=256,calibration_job='test')
++    plan['experiments']=[dict(run_name='test',stages=[profile,train]),
++                         dict(run_name='test2',stages=[dict(train,log=str(tmp_path/'train2.log'))])]
++    path.write_text(json.dumps(plan))
++    subprocess.run([sys.executable,str(SCRIPT),'--plan',str(path)],env=env,check=True,
++                   stdout=subprocess.DEVNULL,timeout=8)
++    assert not marker.exists()
++    assert all(j['status']=='failed' for j in json.loads((tmp_path/'queue_status.json').read_text())['jobs'])
+--- before/hora/utils/manip_control.py
++++ after/hora/utils/manip_control.py
+@@ -26,3 +26,18 @@
+         raise ValueError('%s action_reference mismatch: %s != %s. '
+                          'Use the original control configuration for replay or train a new policy.'
+                          % (context, saved, expected))
++
++
++def tracking_action(q, previous_targets, desired_targets, previous_action, config):
++    """Bounded scripted controller using the exact same action path as the policy.
++
++    For grasp preparation/diagnostics only; desired targets are not actor inputs.
++    Saturation deliberately limits how quickly a distant target can be reached.
++    """
++    reference = action_reference(config)
++    base = q if reference == 'actual_position' else previous_targets
++    alpha, scale = config['action_smoothing'], config['action_scale']
++    if not 0 < alpha <= 1 or scale <= 0:
++        raise ValueError('Target tracking requires 0 < smoothing <= 1 and positive action scale')
++    smoothed = (desired_targets - base) / scale
++    return ((smoothed - (1-alpha)*previous_action) / alpha).clamp(-1, 1)
+--- before/hora/tasks/allegro_digit_tabletop.py
++++ after/hora/tasks/allegro_digit_tabletop.py
+@@ -5,6 +5,7 @@
+ from isaacgym import gymapi, gymtorch
+ from .allegro_digit_two_axis import AllegroDigitTwoAxis
+ from .tabletop_math import tabletop_collision_spec, tabletop_failures
++from hora.utils.manip_control import tracking_action
+ 
+ 
+ class AllegroDigitTabletop(AllegroDigitTwoAxis):
+@@ -113,8 +114,8 @@
+             valid = torch.ones(self.num_envs, dtype=torch.bool, device=self.device)
+             for step in range(close_steps + hold_steps):
+                 alpha = min(1., (step + 1)/close_steps)
+-                self.targets.copy_(opened + alpha*(closed-opened))
+-                self.step(torch.zeros_like(self.actions))
++                desired = opened + alpha*(closed-opened)
++                self.step(tracking_action(self.q, self.targets, desired, self.actions, self.cfg))
+                 if step >= close_steps:
+                     contacts = object_contact_summary(self)
+                     gel_force = self.contact_forces[:, self.gel_ids].norm(dim=-1)
+@@ -137,6 +138,8 @@
+                 torch.save({'asset_sha256': self.asset_hash, 'collision_sha256': self.collision_hash,
+                             'objects': self.catalog, 'joint_names': self.joint_names,
+                             'grasp_contact_validation': 'tabletop_light_object_pairs_v1',
++                            'generation_action_reference': self.action_reference,
++                            'generation_controller': 'bounded_target_tracking_v1',
+                             'scene': self.table_cfg,
+                             'states': {k: torch.cat(v)[:cfg['required_per_object']] for k,v in banks.items()},
+                             'targets': {k: torch.cat(v)[:cfg['required_per_object']] for k,v in target_banks.items()}}, self.cache_path)
+--- before/hora/tasks/allegro_digit_two_axis.py
++++ after/hora/tasks/allegro_digit_two_axis.py
+@@ -15,7 +15,7 @@
+ from .manipulation_math import (OBS_DIM, PRIV_DIM, build_observation, append_history,
+                                 rotation_increment, rotation_terms, joint_pose_deviation,
+                                 bounded_quadratic_cost, blocked_target_command, fingertip_proximity_reward)
+-from hora.utils.manip_control import action_reference, joint_targets
++from hora.utils.manip_control import action_reference, joint_targets, tracking_action
+ from hora.utils.hand_collision import (collision_spec, collision_signature, configure_asset_collisions,
+                              verify_actor_collisions, require_collision_signature)
+ from hora.utils.asset_geometry import verify_geometry_manifest
+@@ -433,9 +433,10 @@
+         counts = {name: 0 for name in banks}
+         for batch in range(cfg['max_batches']):
+             self.reset()
++            desired = self.targets.clone()
+             valid = torch.ones(self.num_envs, dtype=torch.bool, device=self.device)
+             for t in range(cfg['candidate_steps']):
+-                self.step(torch.zeros_like(self.actions))
++                self.step(tracking_action(self.q, self.targets, desired, self.actions, self.cfg))
+                 if t >= cfg['warmup_steps']:
+                     # Net force alone cannot identify the other body now that
+                     # fingers can collide. Use real PhysX pairs for cache filtering.
+@@ -464,6 +465,8 @@
+                     raise FileExistsError('Refusing to overwrite existing grasp cache: '+str(self.cache_path))
+                 torch.save({'asset_sha256': self.asset_hash, 'collision_sha256': self.collision_hash,
+                             'grasp_contact_validation': 'physx_body_pairs_v1',
++                            'generation_action_reference': self.action_reference,
++                            'generation_controller': 'bounded_target_tracking_v1',
+                             'objects': self.catalog,
+                             'joint_names': self.joint_names,
+                             'targets': {k: torch.cat(v)[:cfg['required_per_object']] for k, v in target_banks.items()},

@@ -1,0 +1,7 @@
+{
+  "supervisor_pid": 158024,
+  "physical_gpu": 1,
+  "selected_num_envs": 2560,
+  "config": "manip_scale2560_sphere55",
+  "run_name": "teacher_sphere55_z_scale2560_pairfilter_20261016"
+}

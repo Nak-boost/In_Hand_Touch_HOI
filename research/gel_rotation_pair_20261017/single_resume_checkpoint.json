@@ -1,0 +1,8 @@
+{
+  "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_sphere55_gel16384_20261017_attempt00/stage1_nn/ep_50_step_0006M_reward_-350.70.pth",
+  "agent_steps": 6553600,
+  "epoch_num": 50,
+  "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+  "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+  "action_reference": "actual_position"
+}

@@ -1,0 +1,7 @@
+defaults:
+  - manip_hora16384_sphere55_gel_rotation
+  - _self_
+task:
+  env:
+    objects:
+      - {"name": "sphere65", "shape": "sphere", "size": [0.065, 0.065, 0.065]}

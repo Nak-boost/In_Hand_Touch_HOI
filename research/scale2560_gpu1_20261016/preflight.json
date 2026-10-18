@@ -1,0 +1,10 @@
+{
+  "environments": 2560,
+  "rollout_batch": 40960,
+  "updates_per_rollout": 20,
+  "save_every_steps": 2048000,
+  "budget": 100000000,
+  "asset": "assets/allegro/allegro_digit_compact_inward90.urdf",
+  "cache": "cache/digit_sphere55_compact27_checked_20261015_inward90.pt",
+  "cache_exists": false
+}

@@ -1,0 +1,45 @@
+{
+  "count": 256,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 8,
+      "total": 8,
+      "retained": 228,
+      "two_gels": 28,
+      "non_gel_free": 27
+    },
+    {
+      "batch": 2,
+      "accepted": 57,
+      "total": 65,
+      "retained": 239,
+      "two_gels": 84,
+      "non_gel_free": 69
+    },
+    {
+      "batch": 3,
+      "accepted": 62,
+      "total": 127,
+      "retained": 236,
+      "two_gels": 89,
+      "non_gel_free": 77
+    },
+    {
+      "batch": 4,
+      "accepted": 61,
+      "total": 188,
+      "retained": 242,
+      "two_gels": 90,
+      "non_gel_free": 69
+    },
+    {
+      "batch": 5,
+      "accepted": 76,
+      "total": 264,
+      "retained": 237,
+      "two_gels": 112,
+      "non_gel_free": 88
+    }
+  ]
+}

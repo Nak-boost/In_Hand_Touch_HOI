@@ -1,0 +1,38 @@
+[
+  {
+    "object": "sphere55",
+    "matched_original_rewards": true,
+    "action_reference": "previous_target",
+    "fingertip_distance_weight": 0.0
+  },
+  {
+    "object": "box45",
+    "matched_original_rewards": true,
+    "action_reference": "previous_target",
+    "fingertip_distance_weight": 0.0
+  },
+  {
+    "object": "sphere65",
+    "matched_original_rewards": true,
+    "action_reference": "previous_target",
+    "fingertip_distance_weight": 0.0
+  },
+  {
+    "object": "capsule70",
+    "matched_original_rewards": true,
+    "action_reference": "previous_target",
+    "fingertip_distance_weight": 0.0
+  },
+  {
+    "object": "box55",
+    "matched_original_rewards": true,
+    "action_reference": "previous_target",
+    "fingertip_distance_weight": 0.0
+  },
+  {
+    "object": "capsule80",
+    "matched_original_rewards": true,
+    "action_reference": "previous_target",
+    "fingertip_distance_weight": 0.0
+  }
+]

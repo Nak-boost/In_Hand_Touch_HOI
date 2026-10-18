@@ -1,0 +1,11 @@
+# Resume original suspended experiment; pin semantics despite newer shared defaults.
+defaults:
+  - manip_compact27_box55
+  - _self_
+task:
+  env:
+    grasp:
+      cache: cache/digit_box55_compact27_checked_resume20261016.pt
+    manipulation:
+      action_reference: previous_target
+      fingertip_distance_weight: 0.0

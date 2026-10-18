@@ -1,0 +1,40 @@
+# HORA upstream 410d958 PPO/network scale, with current DIGIT task semantics.
+defaults:
+  - manip_scale2560_sphere55
+  - _self_
+
+num_envs: 16384
+
+train:
+  network:
+    mlp: {units: [512, 256, 128]}
+    priv_mlp: {units: [256, 128, 8]}
+  ppo:
+    normalize_input: true
+    normalize_value: true
+    normalize_advantage: true
+    gamma: 0.99
+    tau: 0.95
+    learning_rate: 0.005
+    kl_threshold: 0.02
+    horizon_length: 8
+    minibatch_size: 32768
+    mini_epochs: 5
+    clip_value: true
+    critic_coef: 4
+    entropy_coef: 0.0
+    e_clip: 0.2
+    bounds_loss_coef: 0.0001
+    truncate_grads: true
+    grad_norm: 1.0
+    save_best_after: 0
+    save_frequency: 500
+    max_agent_steps: 1500000000
+    # Task compatibility: 23 privileged quantities instead of upstream's 9.
+    priv_info: true
+    priv_info_dim: 23
+    priv_info_embed_dim: 8
+    proprio_adapt: false
+    # Preserve current auto-reset handling; no correct terminal-observation
+    # timeout bootstrap is implemented for this task.
+    value_bootstrap: false

@@ -1,0 +1,1351 @@
+{
+  "captured_at": "2026-10-14T19:26:35.939071+08:00",
+  "window_updates": 100,
+  "jobs": [
+    {
+      "object": "sphere55",
+      "status": "failed",
+      "run": "/root/In_Hand_Reconstruction/runs/manip/teacher_sphere55_z_official_pose03_20261014_v2_env256",
+      "first_allocation_failure": null,
+      "errors": [],
+      "metrics": {
+        "performance/RLTrainFPS": {
+          "first100": 128749.022734375,
+          "last100": 157404.91765625,
+          "previous100": 151076.1321875,
+          "pre_error_last100": 157404.91765625,
+          "nonfinite_count": 0
+        },
+        "performance/EnvStepFPS": {
+          "first100": 2106.5657177734374,
+          "last100": 163.9625631713867,
+          "previous100": 221.48526901245117,
+          "pre_error_last100": 163.9625631713867,
+          "nonfinite_count": 0
+        },
+        "losses/actor_loss": {
+          "first100": -0.001511596558848396,
+          "last100": 2.4015555391088127e-05,
+          "previous100": -0.0020010385918430985,
+          "pre_error_last100": 2.4015555391088127e-05,
+          "nonfinite_count": 0
+        },
+        "losses/bounds_loss": {
+          "first100": 3.6414656835699644,
+          "last100": 41.981716041564944,
+          "previous100": 47.039940719604495,
+          "pre_error_last100": 41.981716041564944,
+          "nonfinite_count": 0
+        },
+        "losses/critic_loss": {
+          "first100": 0.2388975504785776,
+          "last100": 0.2640725588798523,
+          "previous100": 0.3255494196712971,
+          "pre_error_last100": 0.2640725588798523,
+          "nonfinite_count": 0
+        },
+        "losses/entropy": {
+          "first100": 22.87459726333618,
+          "last100": 23.097896518707277,
+          "previous100": 23.208257026672364,
+          "pre_error_last100": 23.097896518707277,
+          "nonfinite_count": 0
+        },
+        "info/last_lr": {
+          "first100": 0.0020607902319170535,
+          "last100": 0.001458436211105436,
+          "previous100": 0.0014156378572806716,
+          "pre_error_last100": 0.001458436211105436,
+          "nonfinite_count": 0
+        },
+        "info/e_clip": {
+          "first100": 0.20000000298023224,
+          "last100": 0.20000000298023224,
+          "previous100": 0.20000000298023224,
+          "pre_error_last100": 0.20000000298023224,
+          "nonfinite_count": 0
+        },
+        "info/kl": {
+          "first100": 0.03044299137312919,
+          "last100": 0.03310409128665924,
+          "previous100": 0.028819854808971285,
+          "pre_error_last100": 0.03310409128665924,
+          "nonfinite_count": 0
+        },
+        "rotation/speed": {
+          "first100": -0.002996551487594843,
+          "last100": 0.46907563775777816,
+          "previous100": 0.44028528228402136,
+          "pre_error_last100": 0.46907563775777816,
+          "nonfinite_count": 0
+        },
+        "rotation/off_axis": {
+          "first100": 14.56013889670372,
+          "last100": 18.346291971206664,
+          "previous100": 19.561966218948363,
+          "pre_error_last100": 18.346291971206664,
+          "nonfinite_count": 0
+        },
+        "contact/gel_count": {
+          "first100": 0.5173828125,
+          "last100": 2.0073046875,
+          "previous100": 1.6332421875,
+          "pre_error_last100": 2.0073046875,
+          "nonfinite_count": 0
+        },
+        "contact/housing_count": {
+          "first100": 0.60984375,
+          "last100": 0.825703125,
+          "previous100": 0.9374609375,
+          "pre_error_last100": 0.825703125,
+          "nonfinite_count": 0
+        },
+        "episode/failed": {
+          "first100": 0.0062109375,
+          "last100": 0.0379296875,
+          "previous100": 0.031171875,
+          "pre_error_last100": 0.0379296875,
+          "nonfinite_count": 0
+        },
+        "episode/time_limit": {
+          "first100": 0.00140625,
+          "last100": 0.000234375,
+          "previous100": 0.000390625,
+          "pre_error_last100": 0.000234375,
+          "nonfinite_count": 0
+        },
+        "reward/pose_penalty": {
+          "first100": -1.2747037368267775,
+          "last100": -0.2787829592823982,
+          "previous100": -0.38148282319307325,
+          "pre_error_last100": -0.2787829592823982,
+          "nonfinite_count": 0
+        },
+        "control/target_increment_lost": {
+          "first100": 0.41780101479962467,
+          "last100": 0.21069593787193297,
+          "previous100": 0.2498763744533062,
+          "pre_error_last100": 0.21069593787193297,
+          "nonfinite_count": 0
+        },
+        "control/target_at_limit": {
+          "first100": 0.33580810546875,
+          "last100": 0.19908447265625,
+          "previous100": 0.22564453125,
+          "pre_error_last100": 0.19908447265625,
+          "nonfinite_count": 0
+        },
+        "control/torque_at_limit": {
+          "first100": 0.02981689453125,
+          "last100": 0.0179052734375,
+          "previous100": 0.02866943359375,
+          "pre_error_last100": 0.0179052734375,
+          "nonfinite_count": 0
+        },
+        "episode_rewards/step": {
+          "first100": -522.1257376098633,
+          "last100": -78.50733604431153,
+          "previous100": -104.83937370300293,
+          "pre_error_last100": -78.50733604431153,
+          "nonfinite_count": 0
+        },
+        "episode_lengths/step": {
+          "first100": 121.35851194381713,
+          "last100": 25.894821338653564,
+          "previous100": 31.842193794250488,
+          "pre_error_last100": 25.894821338653564,
+          "nonfinite_count": 0
+        }
+      },
+      "checkpoints": {
+        "best": {
+          "agent_steps": 2486272,
+          "epoch_num": 607,
+          "best_rewards": -59.572284874504966,
+          "last_lr": 0.0008779149519890263,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "3aa4dc6eb2bd56042c4abee83713f3e15e0463cdd2f5e5c414a1ebfff905eaf3",
+          "model_finite": true
+        },
+        "last": {
+          "agent_steps": 2457600,
+          "epoch_num": 600,
+          "best_rewards": -63.01520812660167,
+          "last_lr": 0.0013168724279835394,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "bc0916e1f96fc1efc127d07d6f0415f822179d59282390f556ddcc7c67f6f5ee",
+          "model_finite": true
+        }
+      },
+      "logged_steps": 2662400,
+      "logged_updates": 650,
+      "last_logged_at": "2026-10-14T08:10:42.198972+08:00",
+      "recent_fps": 55.40528953104958,
+      "previous_review_steps": 2662400,
+      "previous_review_metrics": {
+        "performance/RLTrainFPS": 157404.91765625,
+        "performance/EnvStepFPS": 163.9625631713867,
+        "losses/actor_loss": 2.4015555391088127e-05,
+        "losses/bounds_loss": 41.981716041564944,
+        "losses/critic_loss": 0.2640725588798523,
+        "losses/entropy": 23.097896518707277,
+        "info/last_lr": 0.001458436211105436,
+        "info/e_clip": 0.20000000298023224,
+        "info/kl": 0.03310409128665924,
+        "rotation/speed": 0.46907563775777816,
+        "rotation/off_axis": 18.346291971206664,
+        "contact/gel_count": 2.0073046875,
+        "contact/housing_count": 0.825703125,
+        "episode/failed": 0.0379296875,
+        "episode/time_limit": 0.000234375,
+        "reward/pose_penalty": -0.2787829592823982,
+        "control/target_increment_lost": 0.21069593787193297,
+        "control/target_at_limit": 0.19908447265625,
+        "control/torque_at_limit": 0.0179052734375,
+        "episode_rewards/step": -78.50733604431153,
+        "episode_lengths/step": 25.894821338653564
+      }
+    },
+    {
+      "object": "sphere65",
+      "status": "failed",
+      "run": "/root/In_Hand_Reconstruction/runs/manip/teacher_sphere65_z_official_pose03_20261014_v2_env256",
+      "first_allocation_failure": {
+        "line": 244,
+        "after_logged_updates": 214,
+        "approx_after_steps": 876544,
+        "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 545259520 bytes!! Result = 2"
+      },
+      "errors": [
+        {
+          "line": 244,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 545259520 bytes!! Result = 2"
+        },
+        {
+          "line": 245,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 2181038080 bytes!! Result = 2"
+        },
+        {
+          "line": 246,
+          "message": "/buildAgent/work/99bede84aa0a52c2/source/physx/src/NpScene.cpp (3509) : internal error : PhysX Internal CUDA error. Simulation can not continue!"
+        },
+        {
+          "line": 361,
+          "message": "RuntimeError: CUDA error: an illegal memory access was encountered"
+        }
+      ],
+      "metrics": {
+        "performance/RLTrainFPS": {
+          "first100": 101291.422109375,
+          "last100": 104874.969453125,
+          "previous100": 102901.423515625,
+          "pre_error_last100": 104874.969453125,
+          "nonfinite_count": 0
+        },
+        "performance/EnvStepFPS": {
+          "first100": 1132.032958984375,
+          "last100": 396.6250119018555,
+          "previous100": 915.0615240478515,
+          "pre_error_last100": 396.6250119018555,
+          "nonfinite_count": 0
+        },
+        "losses/actor_loss": {
+          "first100": -0.0034826450399123134,
+          "last100": -0.0028707134106662124,
+          "previous100": -0.0037606778484769164,
+          "pre_error_last100": -0.0028707134106662124,
+          "nonfinite_count": 0
+        },
+        "losses/bounds_loss": {
+          "first100": 2.9662274514978164,
+          "last100": 12.223818469047547,
+          "previous100": 4.0084015965461735,
+          "pre_error_last100": 12.223818469047547,
+          "nonfinite_count": 0
+        },
+        "losses/critic_loss": {
+          "first100": 0.3144946394860744,
+          "last100": 0.2896472181379795,
+          "previous100": 0.27466558024287224,
+          "pre_error_last100": 0.2896472181379795,
+          "nonfinite_count": 0
+        },
+        "losses/entropy": {
+          "first100": 22.949549140930177,
+          "last100": 22.897727947235108,
+          "previous100": 22.97725191116333,
+          "pre_error_last100": 22.897727947235108,
+          "nonfinite_count": 0
+        },
+        "info/last_lr": {
+          "first100": 0.002304320181719959,
+          "last100": 0.0016208504769019783,
+          "previous100": 0.001948422493878752,
+          "pre_error_last100": 0.0016208504769019783,
+          "nonfinite_count": 0
+        },
+        "info/e_clip": {
+          "first100": 0.20000000298023224,
+          "last100": 0.20000000298023224,
+          "previous100": 0.20000000298023224,
+          "pre_error_last100": 0.20000000298023224,
+          "nonfinite_count": 0
+        },
+        "info/kl": {
+          "first100": 0.03209912959020585,
+          "last100": 0.03164486221037805,
+          "previous100": 0.03195321787148714,
+          "pre_error_last100": 0.03164486221037805,
+          "nonfinite_count": 0
+        },
+        "rotation/speed": {
+          "first100": 0.037797853164374826,
+          "last100": 0.03706583769991994,
+          "previous100": 0.040351460538804534,
+          "pre_error_last100": 0.03706583769991994,
+          "nonfinite_count": 0
+        },
+        "rotation/off_axis": {
+          "first100": 14.660459866523743,
+          "last100": 17.88984321594238,
+          "previous100": 14.76788447380066,
+          "pre_error_last100": 17.88984321594238,
+          "nonfinite_count": 0
+        },
+        "contact/gel_count": {
+          "first100": 0.969765625,
+          "last100": 1.264453125,
+          "previous100": 1.035625,
+          "pre_error_last100": 1.264453125,
+          "nonfinite_count": 0
+        },
+        "contact/housing_count": {
+          "first100": 1.214140625,
+          "last100": 1.6104296875,
+          "previous100": 1.2909375,
+          "pre_error_last100": 1.6104296875,
+          "nonfinite_count": 0
+        },
+        "episode/failed": {
+          "first100": 0.0071484375,
+          "last100": 0.0110546875,
+          "previous100": 0.007734375,
+          "pre_error_last100": 0.0110546875,
+          "nonfinite_count": 0
+        },
+        "episode/time_limit": {
+          "first100": 0.0003515625,
+          "last100": 0.000546875,
+          "previous100": 0.0004296875,
+          "pre_error_last100": 0.000546875,
+          "nonfinite_count": 0
+        },
+        "reward/pose_penalty": {
+          "first100": -1.5087916361354292,
+          "last100": -1.1125454890727997,
+          "previous100": -1.5969384324550628,
+          "pre_error_last100": -1.1125454890727997,
+          "nonfinite_count": 0
+        },
+        "control/target_increment_lost": {
+          "first100": 0.36669352240860464,
+          "last100": 0.381754002571106,
+          "previous100": 0.3932830831408501,
+          "pre_error_last100": 0.381754002571106,
+          "nonfinite_count": 0
+        },
+        "control/target_at_limit": {
+          "first100": 0.30716796875,
+          "last100": 0.30599853515625,
+          "previous100": 0.32763916015625,
+          "pre_error_last100": 0.30599853515625,
+          "nonfinite_count": 0
+        },
+        "control/torque_at_limit": {
+          "first100": 0.08892578125,
+          "last100": 0.10376708984375,
+          "previous100": 0.09490234375,
+          "pre_error_last100": 0.10376708984375,
+          "nonfinite_count": 0
+        },
+        "episode_rewards/step": {
+          "first100": -485.5286729431152,
+          "last100": -381.6149554443359,
+          "previous100": -502.6318606567383,
+          "pre_error_last100": -381.6149554443359,
+          "nonfinite_count": 0
+        },
+        "episode_lengths/step": {
+          "first100": 120.60169661521911,
+          "last100": 91.17694786071777,
+          "previous100": 127.90197845458984,
+          "pre_error_last100": 91.17694786071777,
+          "nonfinite_count": 0
+        }
+      },
+      "checkpoints": {
+        "best": {
+          "agent_steps": 4096,
+          "epoch_num": 1,
+          "best_rewards": -243.33812343052455,
+          "last_lr": 0.000675,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "e2754a2eaa7fec6fcefae4b9a537045dbc353e814c456dbf1d9105cd59b9bfa5",
+          "model_finite": true
+        },
+        "last": {
+          "agent_steps": 819200,
+          "epoch_num": 200,
+          "best_rewards": -243.33812343052455,
+          "last_lr": 0.001975308641975309,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "73d3c8ac0d98cef6de03483f1df647ab701b5ebe2ca708d562fd28e97fd8ee43",
+          "model_finite": true
+        }
+      },
+      "logged_steps": 876544,
+      "logged_updates": 214,
+      "last_logged_at": "2026-10-14T03:43:07.475265+08:00",
+      "recent_fps": 179.29144334405703,
+      "previous_review_steps": 876544,
+      "previous_review_metrics": {
+        "performance/RLTrainFPS": 104874.969453125,
+        "performance/EnvStepFPS": 396.6250119018555,
+        "losses/actor_loss": -0.0028707134106662124,
+        "losses/bounds_loss": 12.223818469047547,
+        "losses/critic_loss": 0.2896472181379795,
+        "losses/entropy": 22.897727947235108,
+        "info/last_lr": 0.0016208504769019783,
+        "info/e_clip": 0.20000000298023224,
+        "info/kl": 0.03164486221037805,
+        "rotation/speed": 0.03706583769991994,
+        "rotation/off_axis": 17.88984321594238,
+        "contact/gel_count": 1.264453125,
+        "contact/housing_count": 1.6104296875,
+        "episode/failed": 0.0110546875,
+        "episode/time_limit": 0.000546875,
+        "reward/pose_penalty": -1.1125454890727997,
+        "control/target_increment_lost": 0.381754002571106,
+        "control/target_at_limit": 0.30599853515625,
+        "control/torque_at_limit": 0.10376708984375,
+        "episode_rewards/step": -381.6149554443359,
+        "episode_lengths/step": 91.17694786071777
+      }
+    },
+    {
+      "object": "box45",
+      "status": "stopped_by_user",
+      "run": "/root/In_Hand_Reconstruction/runs/manip/teacher_box45_z_official_pose03_20261014_v2_env256",
+      "first_allocation_failure": null,
+      "errors": [
+        {
+          "line": 1647,
+          "message": "KeyboardInterrupt"
+        }
+      ],
+      "metrics": {
+        "performance/RLTrainFPS": {
+          "first100": 106166.6038671875,
+          "last100": 104508.80109375,
+          "previous100": 102961.194140625,
+          "pre_error_last100": 104508.80109375,
+          "nonfinite_count": 0
+        },
+        "performance/EnvStepFPS": {
+          "first100": 2317.0820556640624,
+          "last100": 165.0511166381836,
+          "previous100": 173.7274154663086,
+          "pre_error_last100": 165.0511166381836,
+          "nonfinite_count": 0
+        },
+        "losses/actor_loss": {
+          "first100": 0.008709301119670271,
+          "last100": 0.0007438268116675317,
+          "previous100": -0.0005289388110395521,
+          "pre_error_last100": 0.0007438268116675317,
+          "nonfinite_count": 0
+        },
+        "losses/bounds_loss": {
+          "first100": 5.483363194664707,
+          "last100": 159.06451766967774,
+          "previous100": 154.1822360229492,
+          "pre_error_last100": 159.06451766967774,
+          "nonfinite_count": 0
+        },
+        "losses/critic_loss": {
+          "first100": 0.11236843991093337,
+          "last100": 0.4621779558062553,
+          "previous100": 0.46463767856359484,
+          "pre_error_last100": 0.4621779558062553,
+          "nonfinite_count": 0
+        },
+        "losses/entropy": {
+          "first100": 22.62831554412842,
+          "last100": 22.89256998062134,
+          "previous100": 22.733103504180907,
+          "pre_error_last100": 22.89256998062134,
+          "nonfinite_count": 0
+        },
+        "info/last_lr": {
+          "first100": 0.0013761562493164092,
+          "last100": 0.0009005625155987219,
+          "previous100": 0.0008690625173039734,
+          "pre_error_last100": 0.0009005625155987219,
+          "nonfinite_count": 0
+        },
+        "info/e_clip": {
+          "first100": 0.20000000298023224,
+          "last100": 0.20000000298023224,
+          "previous100": 0.20000000298023224,
+          "pre_error_last100": 0.20000000298023224,
+          "nonfinite_count": 0
+        },
+        "info/kl": {
+          "first100": 0.035404316796921194,
+          "last100": 0.031612699711695315,
+          "previous100": 0.03013132288120687,
+          "pre_error_last100": 0.031612699711695315,
+          "nonfinite_count": 0
+        },
+        "rotation/speed": {
+          "first100": 0.012189504510861298,
+          "last100": 0.27249358780682087,
+          "previous100": 0.2670008932799101,
+          "pre_error_last100": 0.27249358780682087,
+          "nonfinite_count": 0
+        },
+        "rotation/off_axis": {
+          "first100": 0.9890223493694793,
+          "last100": 23.491842565536498,
+          "previous100": 21.538768100738526,
+          "pre_error_last100": 23.491842565536498,
+          "nonfinite_count": 0
+        },
+        "contact/gel_count": {
+          "first100": 0.03546875,
+          "last100": 0.2556640625,
+          "previous100": 0.2734375,
+          "pre_error_last100": 0.2556640625,
+          "nonfinite_count": 0
+        },
+        "contact/housing_count": {
+          "first100": 0.3979296875,
+          "last100": 0.180546875,
+          "previous100": 0.296171875,
+          "pre_error_last100": 0.180546875,
+          "nonfinite_count": 0
+        },
+        "episode/failed": {
+          "first100": 0.0003125,
+          "last100": 0.026640625,
+          "previous100": 0.0259375,
+          "pre_error_last100": 0.026640625,
+          "nonfinite_count": 0
+        },
+        "episode/time_limit": {
+          "first100": 0.0066015625,
+          "last100": 0.0,
+          "previous100": 0.0,
+          "pre_error_last100": 0.0,
+          "nonfinite_count": 0
+        },
+        "reward/pose_penalty": {
+          "first100": -2.2232511016353964,
+          "last100": -1.1232372558116912,
+          "previous100": -1.05243703186512,
+          "pre_error_last100": -1.1232372558116912,
+          "nonfinite_count": 0
+        },
+        "control/target_increment_lost": {
+          "first100": 0.653289597518742,
+          "last100": 0.29256143033504484,
+          "previous100": 0.28350325644016267,
+          "pre_error_last100": 0.29256143033504484,
+          "nonfinite_count": 0
+        },
+        "control/target_at_limit": {
+          "first100": 0.549970703125,
+          "last100": 0.26826171875,
+          "previous100": 0.26461669921875,
+          "pre_error_last100": 0.26826171875,
+          "nonfinite_count": 0
+        },
+        "control/torque_at_limit": {
+          "first100": 0.01747802734375,
+          "last100": 0.0069580078125,
+          "previous100": 0.00740966796875,
+          "pre_error_last100": 0.0069580078125,
+          "nonfinite_count": 0
+        },
+        "episode_rewards/step": {
+          "first100": -876.3922920227051,
+          "last100": -202.1843182373047,
+          "previous100": -193.59330352783203,
+          "pre_error_last100": -202.1843182373047,
+          "nonfinite_count": 0
+        },
+        "episode_lengths/step": {
+          "first100": 307.7178374481201,
+          "last100": 39.59641273498535,
+          "previous100": 39.806134452819826,
+          "pre_error_last100": 39.59641273498535,
+          "nonfinite_count": 0
+        }
+      },
+      "checkpoints": {
+        "best": {
+          "agent_steps": 4276224,
+          "epoch_num": 1044,
+          "best_rewards": -160.48881900340913,
+          "last_lr": 0.0010125,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "6cafe4cebac82cc7d7543d7aede6e47ba04820555a35635adb1afc2607d9a5bc",
+          "model_finite": true
+        },
+        "last": {
+          "agent_steps": 6144000,
+          "epoch_num": 1500,
+          "best_rewards": -160.48881900340913,
+          "last_lr": 0.0010125,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "a1b7cc23680a484bfe5231be191228eb76eeb39f45e9732ca98a42ea13cd9323",
+          "model_finite": true
+        }
+      },
+      "logged_steps": 6455296,
+      "logged_updates": 1576,
+      "last_logged_at": "2026-10-14T19:25:11.069129+08:00",
+      "recent_fps": 89.48735566859854,
+      "previous_review_steps": 4595712,
+      "previous_review_metrics": {
+        "performance/RLTrainFPS": 99087.1303125,
+        "performance/EnvStepFPS": 202.0046778869629,
+        "losses/actor_loss": -0.0021759975282475354,
+        "losses/bounds_loss": 103.09957374572754,
+        "losses/critic_loss": 0.3763330043852329,
+        "losses/entropy": 22.329299278259278,
+        "info/last_lr": 0.0009466875175712631,
+        "info/e_clip": 0.20000000298023224,
+        "info/kl": 0.029077871609479188,
+        "rotation/speed": 0.22146977424621583,
+        "rotation/off_axis": 17.46884234905243,
+        "contact/gel_count": 0.223671875,
+        "contact/housing_count": 0.1146875,
+        "episode/failed": 0.0225,
+        "episode/time_limit": 7.8125e-05,
+        "reward/pose_penalty": -1.0080771124362946,
+        "control/target_increment_lost": 0.34233627170324327,
+        "control/target_at_limit": 0.30536376953125,
+        "control/torque_at_limit": 0.0076708984375,
+        "episode_rewards/step": -190.4149313354492,
+        "episode_lengths/step": 47.280171966552736
+      }
+    },
+    {
+      "object": "box55",
+      "status": "failed",
+      "run": "/root/In_Hand_Reconstruction/runs/manip/teacher_box55_z_official_pose03_20261014_v2_env256",
+      "first_allocation_failure": {
+        "line": 632,
+        "after_logged_updates": 597,
+        "approx_after_steps": 2445312,
+        "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 144703488 bytes!! Result = 2"
+      },
+      "errors": [
+        {
+          "line": 632,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 144703488 bytes!! Result = 2"
+        },
+        {
+          "line": 633,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 243269632 bytes!! Result = 2"
+        },
+        {
+          "line": 634,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 106430464 bytes!! Result = 2"
+        },
+        {
+          "line": 635,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 197656576 bytes!! Result = 2"
+        },
+        {
+          "line": 636,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 1094713344 bytes!! Result = 2"
+        },
+        {
+          "line": 637,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 729808896 bytes!! Result = 2"
+        },
+        {
+          "line": 638,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 2432696320 bytes!! Result = 2"
+        },
+        {
+          "line": 639,
+          "message": "/buildAgent/work/99bede84aa0a52c2/source/physx/src/NpScene.cpp (3509) : internal error : PhysX Internal CUDA error. Simulation can not continue!"
+        },
+        {
+          "line": 751,
+          "message": "RuntimeError: CUDA error: an illegal memory access was encountered"
+        }
+      ],
+      "metrics": {
+        "performance/RLTrainFPS": {
+          "first100": 98679.87953125,
+          "last100": 110332.9134375,
+          "previous100": 108794.056875,
+          "pre_error_last100": 110332.9134375,
+          "nonfinite_count": 0
+        },
+        "performance/EnvStepFPS": {
+          "first100": 1262.3540789794922,
+          "last100": 258.19049377441405,
+          "previous100": 308.3016983032227,
+          "pre_error_last100": 258.19049377441405,
+          "nonfinite_count": 0
+        },
+        "losses/actor_loss": {
+          "first100": 0.003713223743252456,
+          "last100": 0.005997406262904406,
+          "previous100": 0.001857814691029489,
+          "pre_error_last100": 0.005997406262904406,
+          "nonfinite_count": 0
+        },
+        "losses/bounds_loss": {
+          "first100": 1.9637797995336586,
+          "last100": 25.139354038238526,
+          "previous100": 19.81195592880249,
+          "pre_error_last100": 25.139354038238526,
+          "nonfinite_count": 0
+        },
+        "losses/critic_loss": {
+          "first100": 0.1837445377651602,
+          "last100": 0.1150173102132976,
+          "previous100": 0.06222692742943764,
+          "pre_error_last100": 0.1150173102132976,
+          "nonfinite_count": 0
+        },
+        "losses/entropy": {
+          "first100": 22.769445514678956,
+          "last100": 21.60131601333618,
+          "previous100": 21.732019634246825,
+          "pre_error_last100": 21.60131601333618,
+          "nonfinite_count": 0
+        },
+        "info/last_lr": {
+          "first100": 0.0020195859187515453,
+          "last100": 0.0020480246469378473,
+          "previous100": 0.001904343741480261,
+          "pre_error_last100": 0.0020480246469378473,
+          "nonfinite_count": 0
+        },
+        "info/e_clip": {
+          "first100": 0.20000000298023224,
+          "last100": 0.20000000298023224,
+          "previous100": 0.20000000298023224,
+          "pre_error_last100": 0.20000000298023224,
+          "nonfinite_count": 0
+        },
+        "info/kl": {
+          "first100": 0.04437831973191351,
+          "last100": 0.06227133681997657,
+          "previous100": 0.0367316866107285,
+          "pre_error_last100": 0.06227133681997657,
+          "nonfinite_count": 0
+        },
+        "rotation/speed": {
+          "first100": 0.03721233824151568,
+          "last100": 0.020285400836728515,
+          "previous100": 0.018299680729396643,
+          "pre_error_last100": 0.020285400836728515,
+          "nonfinite_count": 0
+        },
+        "rotation/off_axis": {
+          "first100": 3.7511465871462133,
+          "last100": 2.07924634475261,
+          "previous100": 1.0214244993403554,
+          "pre_error_last100": 2.07924634475261,
+          "nonfinite_count": 0
+        },
+        "contact/gel_count": {
+          "first100": 0.2520703125,
+          "last100": 0.0295703125,
+          "previous100": 0.0184375,
+          "pre_error_last100": 0.0295703125,
+          "nonfinite_count": 0
+        },
+        "contact/housing_count": {
+          "first100": 0.4484765625,
+          "last100": 0.05609375,
+          "previous100": 0.04015625,
+          "pre_error_last100": 0.05609375,
+          "nonfinite_count": 0
+        },
+        "episode/failed": {
+          "first100": 0.0041796875,
+          "last100": 0.0012109375,
+          "previous100": 0.000625,
+          "pre_error_last100": 0.0012109375,
+          "nonfinite_count": 0
+        },
+        "episode/time_limit": {
+          "first100": 0.0003515625,
+          "last100": 0.0011328125,
+          "previous100": 0.001484375,
+          "pre_error_last100": 0.0011328125,
+          "nonfinite_count": 0
+        },
+        "reward/pose_penalty": {
+          "first100": -1.6340317263454198,
+          "last100": -0.9338584512472152,
+          "previous100": -0.7903581005334854,
+          "pre_error_last100": -0.9338584512472152,
+          "nonfinite_count": 0
+        },
+        "control/target_increment_lost": {
+          "first100": 0.5114552213391289,
+          "last100": 0.8230490463972092,
+          "previous100": 0.7983182632923126,
+          "pre_error_last100": 0.8230490463972092,
+          "nonfinite_count": 0
+        },
+        "control/target_at_limit": {
+          "first100": 0.42015380859375,
+          "last100": 0.7161572265625,
+          "previous100": 0.67331298828125,
+          "pre_error_last100": 0.7161572265625,
+          "nonfinite_count": 0
+        },
+        "control/torque_at_limit": {
+          "first100": 0.04038818359375,
+          "last100": 0.00248779296875,
+          "previous100": 0.0039013671875,
+          "pre_error_last100": 0.00248779296875,
+          "nonfinite_count": 0
+        },
+        "episode_rewards/step": {
+          "first100": -601.1203909301757,
+          "last100": -572.2984463500976,
+          "previous100": -501.03354705810546,
+          "pre_error_last100": -572.2984463500976,
+          "nonfinite_count": 0
+        },
+        "episode_lengths/step": {
+          "first100": 210.29558646202088,
+          "last100": 387.11277893066404,
+          "previous100": 445.4063739013672,
+          "pre_error_last100": 387.11277893066404,
+          "nonfinite_count": 0
+        }
+      },
+      "checkpoints": {
+        "best": {
+          "agent_steps": 24576,
+          "epoch_num": 6,
+          "best_rewards": -132.81909001258117,
+          "last_lr": 0.005125781249999999,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "434b24feff77e815102c837d1b319ec8bdd4b025a957300158ad6951b62f6c88",
+          "model_finite": true
+        },
+        "last": {
+          "agent_steps": 2048000,
+          "epoch_num": 500,
+          "best_rewards": -132.81909001258117,
+          "last_lr": 0.0022781249999999998,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "cf75916da172db03eb096ece7834ff20f8bd6ba08deb3d3ff8b4930089db87cc",
+          "model_finite": true
+        }
+      },
+      "logged_steps": 2445312,
+      "logged_updates": 597,
+      "last_logged_at": "2026-10-14T11:08:27.224796+08:00",
+      "recent_fps": 124.89144483001515,
+      "previous_review_steps": 2445312,
+      "previous_review_metrics": {
+        "performance/RLTrainFPS": 110332.9134375,
+        "performance/EnvStepFPS": 258.19049377441405,
+        "losses/actor_loss": 0.005997406262904406,
+        "losses/bounds_loss": 25.139354038238526,
+        "losses/critic_loss": 0.1150173102132976,
+        "losses/entropy": 21.60131601333618,
+        "info/last_lr": 0.0020480246469378473,
+        "info/e_clip": 0.20000000298023224,
+        "info/kl": 0.06227133681997657,
+        "rotation/speed": 0.020285400836728515,
+        "rotation/off_axis": 2.07924634475261,
+        "contact/gel_count": 0.0295703125,
+        "contact/housing_count": 0.05609375,
+        "episode/failed": 0.0012109375,
+        "episode/time_limit": 0.0011328125,
+        "reward/pose_penalty": -0.9338584512472152,
+        "control/target_increment_lost": 0.8230490463972092,
+        "control/target_at_limit": 0.7161572265625,
+        "control/torque_at_limit": 0.00248779296875,
+        "episode_rewards/step": -572.2984463500976,
+        "episode_lengths/step": 387.11277893066404
+      }
+    },
+    {
+      "object": "capsule70",
+      "status": "failed",
+      "run": "/root/In_Hand_Reconstruction/runs/manip/teacher_capsule70_z_official_pose03_20261014_v2_env256",
+      "first_allocation_failure": {
+        "line": 914,
+        "after_logged_updates": 882,
+        "approx_after_steps": 3612672,
+        "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 85196800 bytes!! Result = 2"
+      },
+      "errors": [
+        {
+          "line": 914,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 85196800 bytes!! Result = 2"
+        },
+        {
+          "line": 1084,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 1258291200 bytes!! Result = 2"
+        },
+        {
+          "line": 1085,
+          "message": "/buildAgent/work/99bede84aa0a52c2/source/physx/src/NpScene.cpp (3509) : internal error : PhysX Internal CUDA error. Simulation can not continue!"
+        },
+        {
+          "line": 1202,
+          "message": "RuntimeError: CUDA error: an illegal memory access was encountered"
+        }
+      ],
+      "metrics": {
+        "performance/RLTrainFPS": {
+          "first100": 113254.793515625,
+          "last100": 126544.069140625,
+          "previous100": 127288.300546875,
+          "pre_error_last100": 127559.040390625,
+          "nonfinite_count": 0
+        },
+        "performance/EnvStepFPS": {
+          "first100": 1131.5082604980469,
+          "last100": 340.20058685302735,
+          "previous100": 361.33891326904296,
+          "pre_error_last100": 380.0350073242187,
+          "nonfinite_count": 0
+        },
+        "losses/actor_loss": {
+          "first100": -0.002108078629244119,
+          "last100": 0.002996843969449401,
+          "previous100": 0.0035029534192290157,
+          "pre_error_last100": 0.0036545220331754536,
+          "nonfinite_count": 0
+        },
+        "losses/bounds_loss": {
+          "first100": 3.716127552588714,
+          "last100": 49.207266883850096,
+          "previous100": 72.60798480987549,
+          "pre_error_last100": 55.79542640686035,
+          "nonfinite_count": 0
+        },
+        "losses/critic_loss": {
+          "first100": 0.2773773853480816,
+          "last100": 0.15900170780718326,
+          "previous100": 0.22026904553174972,
+          "pre_error_last100": 0.14464484240859746,
+          "nonfinite_count": 0
+        },
+        "losses/entropy": {
+          "first100": 23.12316135406494,
+          "last100": 23.03900468826294,
+          "previous100": 22.942554206848143,
+          "pre_error_last100": 22.806046657562256,
+          "nonfinite_count": 0
+        },
+        "info/last_lr": {
+          "first100": 0.002547347543295473,
+          "last100": 0.0016786465444602072,
+          "previous100": 0.001208169485325925,
+          "pre_error_last100": 0.0018784941377816722,
+          "nonfinite_count": 0
+        },
+        "info/e_clip": {
+          "first100": 0.20000000298023224,
+          "last100": 0.20000000298023224,
+          "previous100": 0.20000000298023224,
+          "pre_error_last100": 0.20000000298023224,
+          "nonfinite_count": 0
+        },
+        "info/kl": {
+          "first100": 0.03513035906944424,
+          "last100": 0.03170650597661734,
+          "previous100": 0.03779189047403633,
+          "pre_error_last100": 0.03899913002736866,
+          "nonfinite_count": 0
+        },
+        "rotation/speed": {
+          "first100": 0.09422797815874219,
+          "last100": 0.09440571560058743,
+          "previous100": 0.11251185860484839,
+          "pre_error_last100": 0.033964348998852076,
+          "nonfinite_count": 0
+        },
+        "rotation/off_axis": {
+          "first100": 12.69626289486885,
+          "last100": 6.958193690776825,
+          "previous100": 9.160580115318298,
+          "pre_error_last100": 5.939903458952903,
+          "nonfinite_count": 0
+        },
+        "contact/gel_count": {
+          "first100": 0.783671875,
+          "last100": 0.3807421875,
+          "previous100": 0.542578125,
+          "pre_error_last100": 0.3022265625,
+          "nonfinite_count": 0
+        },
+        "contact/housing_count": {
+          "first100": 1.275390625,
+          "last100": 2.021953125,
+          "previous100": 1.8309375,
+          "pre_error_last100": 1.996484375,
+          "nonfinite_count": 0
+        },
+        "episode/failed": {
+          "first100": 0.006796875,
+          "last100": 0.0035546875,
+          "previous100": 0.004765625,
+          "pre_error_last100": 0.0034375,
+          "nonfinite_count": 0
+        },
+        "episode/time_limit": {
+          "first100": 0.000234375,
+          "last100": 0.0015234375,
+          "previous100": 0.0012890625,
+          "pre_error_last100": 0.0011328125,
+          "nonfinite_count": 0
+        },
+        "reward/pose_penalty": {
+          "first100": -0.9525664865784347,
+          "last100": -0.7718580430746078,
+          "previous100": -0.7701326489448548,
+          "pre_error_last100": -0.8121104979515076,
+          "nonfinite_count": 0
+        },
+        "control/target_increment_lost": {
+          "first100": 0.3936025049444288,
+          "last100": 0.8179421424865723,
+          "previous100": 0.7523789966106414,
+          "pre_error_last100": 0.833221048116684,
+          "nonfinite_count": 0
+        },
+        "control/target_at_limit": {
+          "first100": 0.32263916015625,
+          "last100": 0.7788232421875,
+          "previous100": 0.7124853515625,
+          "pre_error_last100": 0.80100341796875,
+          "nonfinite_count": 0
+        },
+        "control/torque_at_limit": {
+          "first100": 0.13081298828125,
+          "last100": 0.16226318359375,
+          "previous100": 0.15298095703125,
+          "pre_error_last100": 0.13443359375,
+          "nonfinite_count": 0
+        },
+        "episode_rewards/step": {
+          "first100": -398.75520782470704,
+          "last100": -419.1665484619141,
+          "previous100": -395.0801071166992,
+          "pre_error_last100": -444.59436096191405,
+          "nonfinite_count": 0
+        },
+        "episode_lengths/step": {
+          "first100": 116.15876821517945,
+          "last100": 209.49266487121582,
+          "previous100": 161.03602264404296,
+          "pre_error_last100": 242.61802871704103,
+          "nonfinite_count": 0
+        }
+      },
+      "checkpoints": {
+        "best": {
+          "agent_steps": 32768,
+          "epoch_num": 8,
+          "best_rewards": -253.54952552340316,
+          "last_lr": 0.0044444444444444444,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "213c28423a00cdacf5d7cb135aaca61d31b99077bde1a759fe97eb0c1782c3ee",
+          "model_finite": true
+        },
+        "last": {
+          "agent_steps": 4096000,
+          "epoch_num": 1000,
+          "best_rewards": -253.54952552340316,
+          "last_lr": 0.0008779149519890263,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "267fb5713abbfb44b43d8296489f3b841f7e63d7f00028199b8033e1f7669bec",
+          "model_finite": true
+        }
+      },
+      "logged_steps": 4304896,
+      "logged_updates": 1051,
+      "last_logged_at": "2026-10-14T14:44:59.663819+08:00",
+      "recent_fps": 233.8485018974009,
+      "previous_review_steps": 4304896,
+      "previous_review_metrics": {
+        "performance/RLTrainFPS": 126544.069140625,
+        "performance/EnvStepFPS": 340.20058685302735,
+        "losses/actor_loss": 0.002996843969449401,
+        "losses/bounds_loss": 49.207266883850096,
+        "losses/critic_loss": 0.15900170780718326,
+        "losses/entropy": 23.03900468826294,
+        "info/last_lr": 0.0016786465444602072,
+        "info/e_clip": 0.20000000298023224,
+        "info/kl": 0.03170650597661734,
+        "rotation/speed": 0.09440571560058743,
+        "rotation/off_axis": 6.958193690776825,
+        "contact/gel_count": 0.3807421875,
+        "contact/housing_count": 2.021953125,
+        "episode/failed": 0.0035546875,
+        "episode/time_limit": 0.0015234375,
+        "reward/pose_penalty": -0.7718580430746078,
+        "control/target_increment_lost": 0.8179421424865723,
+        "control/target_at_limit": 0.7788232421875,
+        "control/torque_at_limit": 0.16226318359375,
+        "episode_rewards/step": -419.1665484619141,
+        "episode_lengths/step": 209.49266487121582
+      }
+    },
+    {
+      "object": "capsule80",
+      "status": "failed",
+      "run": "/root/In_Hand_Reconstruction/runs/manip/teacher_capsule80_z_official_pose03_20261014_v2_env256",
+      "first_allocation_failure": {
+        "line": 324,
+        "after_logged_updates": 288,
+        "approx_after_steps": 1179648,
+        "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 2722103296 bytes!! Result = 2"
+      },
+      "errors": [
+        {
+          "line": 324,
+          "message": "PxgCudaDeviceMemoryAllocator fail to allocate memory 2722103296 bytes!! Result = 2"
+        },
+        {
+          "line": 1168,
+          "message": "/buildAgent/work/99bede84aa0a52c2/source/physx/src/NpScene.cpp (3509) : internal error : PhysX Internal CUDA error. Simulation can not continue!"
+        },
+        {
+          "line": 1286,
+          "message": "RuntimeError: CUDA error: an illegal memory access was encountered"
+        }
+      ],
+      "metrics": {
+        "performance/RLTrainFPS": {
+          "first100": 124485.7758203125,
+          "last100": 121319.25140625,
+          "previous100": 122356.636015625,
+          "pre_error_last100": 121319.25140625,
+          "nonfinite_count": 0
+        },
+        "performance/EnvStepFPS": {
+          "first100": 1012.2526580810547,
+          "last100": 395.1158764648437,
+          "previous100": 533.0089709472657,
+          "pre_error_last100": 395.1158764648437,
+          "nonfinite_count": 0
+        },
+        "losses/actor_loss": {
+          "first100": -0.0015392226073890924,
+          "last100": 0.0019445748545695097,
+          "previous100": -0.0015892506495583803,
+          "pre_error_last100": 0.0019445748545695097,
+          "nonfinite_count": 0
+        },
+        "losses/bounds_loss": {
+          "first100": 1.0721888532175217,
+          "last100": 9.27598037481308,
+          "previous100": 3.795657000541687,
+          "pre_error_last100": 9.27598037481308,
+          "nonfinite_count": 0
+        },
+        "losses/critic_loss": {
+          "first100": 0.32938228495419025,
+          "last100": 0.36916312396526335,
+          "previous100": 0.23471156030893325,
+          "pre_error_last100": 0.36916312396526335,
+          "nonfinite_count": 0
+        },
+        "losses/entropy": {
+          "first100": 22.823354358673097,
+          "last100": 22.83475704193115,
+          "previous100": 22.988386726379396,
+          "pre_error_last100": 22.83475704193115,
+          "nonfinite_count": 0
+        },
+        "info/last_lr": {
+          "first100": 0.003096575292292982,
+          "last100": 0.001885688155889511,
+          "previous100": 0.002251851852051914,
+          "pre_error_last100": 0.001885688155889511,
+          "nonfinite_count": 0
+        },
+        "info/e_clip": {
+          "first100": 0.20000000298023224,
+          "last100": 0.20000000298023224,
+          "previous100": 0.20000000298023224,
+          "pre_error_last100": 0.20000000298023224,
+          "nonfinite_count": 0
+        },
+        "info/kl": {
+          "first100": 0.03279330102726817,
+          "last100": 0.032168036019429566,
+          "previous100": 0.029613965321332217,
+          "pre_error_last100": 0.032168036019429566,
+          "nonfinite_count": 0
+        },
+        "rotation/speed": {
+          "first100": 0.046610115189105274,
+          "last100": 0.03859111410565674,
+          "previous100": 0.07097106141969561,
+          "pre_error_last100": 0.03859111410565674,
+          "nonfinite_count": 0
+        },
+        "rotation/off_axis": {
+          "first100": 9.95287504673004,
+          "last100": 10.165164682865143,
+          "previous100": 7.751335029602051,
+          "pre_error_last100": 10.165164682865143,
+          "nonfinite_count": 0
+        },
+        "contact/gel_count": {
+          "first100": 0.954609375,
+          "last100": 0.8778515625,
+          "previous100": 0.7421484375,
+          "pre_error_last100": 0.8778515625,
+          "nonfinite_count": 0
+        },
+        "contact/housing_count": {
+          "first100": 1.248359375,
+          "last100": 1.350703125,
+          "previous100": 1.84765625,
+          "pre_error_last100": 1.350703125,
+          "nonfinite_count": 0
+        },
+        "episode/failed": {
+          "first100": 0.006015625,
+          "last100": 0.0078515625,
+          "previous100": 0.005234375,
+          "pre_error_last100": 0.0078515625,
+          "nonfinite_count": 0
+        },
+        "episode/time_limit": {
+          "first100": 0.0006640625,
+          "last100": 0.000625,
+          "previous100": 0.0012890625,
+          "pre_error_last100": 0.000625,
+          "nonfinite_count": 0
+        },
+        "reward/pose_penalty": {
+          "first100": -0.9087046976760029,
+          "last100": -1.2771256297826767,
+          "previous100": -1.0794485592842102,
+          "pre_error_last100": -1.2771256297826767,
+          "nonfinite_count": 0
+        },
+        "control/target_increment_lost": {
+          "first100": 0.3483081304747611,
+          "last100": 0.5221687886118889,
+          "previous100": 0.5657478341460228,
+          "pre_error_last100": 0.5221687886118889,
+          "nonfinite_count": 0
+        },
+        "control/target_at_limit": {
+          "first100": 0.27931640625,
+          "last100": 0.412158203125,
+          "previous100": 0.469580078125,
+          "pre_error_last100": 0.412158203125,
+          "nonfinite_count": 0
+        },
+        "control/torque_at_limit": {
+          "first100": 0.10646484375,
+          "last100": 0.12232666015625,
+          "previous100": 0.13740234375,
+          "pre_error_last100": 0.12232666015625,
+          "nonfinite_count": 0
+        },
+        "episode_rewards/step": {
+          "first100": -369.83776260375976,
+          "last100": -383.47032516479493,
+          "previous100": -446.90855987548827,
+          "pre_error_last100": -383.47032516479493,
+          "nonfinite_count": 0
+        },
+        "episode_lengths/step": {
+          "first100": 127.57360904693604,
+          "last100": 125.26139610290528,
+          "previous100": 179.7596884918213,
+          "pre_error_last100": 125.26139610290528,
+          "nonfinite_count": 0
+        }
+      },
+      "checkpoints": {
+        "best": {
+          "agent_steps": 839680,
+          "epoch_num": 205,
+          "best_rewards": -208.00075249864395,
+          "last_lr": 0.001975308641975309,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "17d0f5a2859378236a91364238c26e0f91ece7ef7259198866a953fa0971a028",
+          "model_finite": true
+        },
+        "last": {
+          "agent_steps": 819200,
+          "epoch_num": 200,
+          "best_rewards": -234.72353760016756,
+          "last_lr": 0.0013168724279835394,
+          "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+          "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+          "sha256": "4a8c7728ec715c9926a7c9adad4a384eed4536b60ff141b46345d8d3e835c114",
+          "model_finite": true
+        }
+      },
+      "logged_steps": 1179648,
+      "logged_updates": 288,
+      "last_logged_at": "2026-10-14T15:42:17.556575+08:00",
+      "recent_fps": 235.86240544115938,
+      "previous_review_steps": 57344,
+      "previous_review_metrics": {
+        "performance/RLTrainFPS": 99308.837890625,
+        "performance/EnvStepFPS": 2043.4567609514509,
+        "losses/actor_loss": 0.0017079762183129787,
+        "losses/bounds_loss": 0.5569435893308504,
+        "losses/critic_loss": 0.7019210755825043,
+        "losses/entropy": 22.77043342590332,
+        "info/last_lr": 0.003506082609029753,
+        "info/e_clip": 0.20000000298023224,
+        "info/kl": 0.03463320819927113,
+        "rotation/speed": 0.03211187897250056,
+        "rotation/off_axis": 13.76736960044274,
+        "contact/gel_count": 1.2352764423076923,
+        "contact/housing_count": 1.2412860576923077,
+        "episode/failed": 0.007211538461538462,
+        "episode/time_limit": 0.0,
+        "reward/pose_penalty": -0.5248520113527775,
+        "control/target_increment_lost": 0.1616330545825454,
+        "control/target_at_limit": 0.12595778245192307,
+        "control/torque_at_limit": 0.07900766225961539,
+        "episode_rewards/step": -257.4620150052584,
+        "episode_lengths/step": 53.16143006544847
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "seed": 44,
+    "mode": "mean",
+    "checkpoint": "ep_1300_step_0005M_reward_-89.32.pth",
+    "pid": 132316,
+    "exit": -15,
+    "json_written": true,
+    "seconds": 31.218841075897217,
+    "close_hang": true
+  },
+  {
+    "seed": 44,
+    "mode": "mean",
+    "checkpoint": "ep_1800_step_0007M_reward_-218.45.pth",
+    "pid": 132526,
+    "exit": -15,
+    "json_written": true,
+    "seconds": 12.215808391571045,
+    "close_hang": true
+  }
+]

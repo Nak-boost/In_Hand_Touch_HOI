@@ -5,6 +5,22 @@
 它不是 AnyRotate 官方代码或完整复现；这里限定固定手腕、掌心朝上。
 当前默认训练 **55 mm 球体绕 +Z 轴持续旋转**，两轴、多物体配置单独保留。
 
+**2026-10-16 安装更新：** 悬空和桌面任务的食指/无名指 DIGIT 改为末节局部 −90°/+90°，
+中指/拇指保持 0°。新模型需要重新生成抓取；当前尚未生成新缓存或启动训练。
+模型、历史实验兼容性、验证和预览见[两侧朝内安装](docs/inward_digit_mount.md)。
+
+新增独立的 [掌心朝下桌面旋转实验](docs/tabletop_experiment.md)，使用低摩擦桌面、
+轻接触包围初始化以及胶面/桌面共用屏蔽位；物理过滤假设、失败条件和运行命令见该文档。
+
+接触奖励和桌面失触失败默认使用[胶面—目标物体接触筛选](docs/object_contact_filter.md)，
+排除胶面自接触、桌面接触及外壳接触。默认使用 CPU 数据管线，PhysX/PPO 仍在 GPU 上运行；实测开销见文档。
+
+长时间教师训练可通过[监测与受控恢复入口](docs/training_monitor.md)启动，记录阶段心跳、
+资源与崩溃栈，使用原子检查点保存；自动恢复需显式设置次数上限。
+
+新增独立的 [B 实验配置](docs/gel_rotation_reward.md)：正向旋转奖励按有效胶面接触数
+乘以0.1/0.5/1.0，位置权重仍为2；原基线配置保留。
+
 ## 当前范围
 
 - Allegro 右手 16 DOF，加四个官方来源的 DIGIT 弧面网格及刚体碰撞近似；胶面与外壳是独立碰撞部件。
@@ -100,7 +116,9 @@ scripts/run_manip.sh stage=evaluate num_envs=96 evaluation_steps=600 \
 当前默认就是单球体、单轴。后续用 `scripts/run_manip.sh --config-name=manip_two_axis ...`
 切回三物体、两轴配置，其新抓取缓存为 `cache/digit_two_axis_official_grasps.pt`。可指定
 `checkpoint=/path/to/teacher.pth` 继续 PPO，网络观测维度不变。碰撞签名不兼容的旧缓存和旧权重会被拒绝；
-更换官方几何后的训练需要新抓取并从头开始；本次尚未启动。
+更换官方几何后已重新生成、检查抓取，并于 2026-10-14 启动独立形状/尺寸的从头训练队列。
+抓取筛选、初始关节姿态惩罚和监测项见 [实验说明](docs/official_pose_experiments_20261014.md)；
+实际运行/排队状态见 `../research/grasp_training_20261014/queue_status.json`。启动训练不代表策略已收敛。
 `max_agent_steps` 是累计预算，恢复时应设更大的预算。
 评估报告用 `commanded_axes` 标识轴，`all_axes_one_turn_rate` 表示所有指定轴均累计转满一圈且回合结束时未失败的比例。
 学生恢复用 `student_checkpoint=...`，同时指定原教师；`distill.steps` 也是累计预算。
@@ -129,6 +147,8 @@ scripts/run_manip.sh stage=teacher num_envs=24 \
 | `tests/` | 特权信息隔离、梯度、旋转和资产测试 |
 
 `DigitPolicyRuntime.step(q, qdot, contacts, axis)` 返回 16 个关节目标。
+
+2026-10-15：新训练默认使用“当前实际关节角＋平滑动作增量”，增加胶面靠近物体的距离奖励；初始姿态惩罚与两指接触奖励保留。检查点记录控制模式，旧权重不能直接套用新控制。详见 [控制与奖励说明](docs/distance_actual_control.md)。
 关节数组必须按检查点 `joint_names` 排列，而不是假定编号顺序；触觉顺序为 index/middle/ring/thumb。
 外层程序负责时间同步、DIGIT 接触检测、PD、通信和任务调度。初始抓取和换物体后调用 `reset()`。
 完整数据约定见 `docs/interfaces.md`。

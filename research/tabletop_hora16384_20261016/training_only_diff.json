@@ -1,0 +1,96 @@
+{
+  "sphere55": [
+    {
+      "path": "num_envs",
+      "before": 2560,
+      "after": 16384
+    },
+    {
+      "path": "task.env.numEnvs",
+      "before": 2560,
+      "after": 16384
+    },
+    {
+      "path": "train.ppo.num_actors",
+      "before": 2560,
+      "after": 16384
+    },
+    {
+      "path": "train.ppo.learning_rate",
+      "before": 0.0003,
+      "after": 0.005
+    },
+    {
+      "path": "train.ppo.horizon_length",
+      "before": 16,
+      "after": 8
+    },
+    {
+      "path": "train.ppo.minibatch_size",
+      "before": 8192,
+      "after": 32768
+    },
+    {
+      "path": "train.ppo.mini_epochs",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "path": "train.ppo.save_frequency",
+      "before": 50,
+      "after": 500
+    },
+    {
+      "path": "train.ppo.max_agent_steps",
+      "before": 100000000,
+      "after": 1500000000
+    }
+  ],
+  "box45": [
+    {
+      "path": "num_envs",
+      "before": 2560,
+      "after": 16384
+    },
+    {
+      "path": "task.env.numEnvs",
+      "before": 2560,
+      "after": 16384
+    },
+    {
+      "path": "train.ppo.num_actors",
+      "before": 2560,
+      "after": 16384
+    },
+    {
+      "path": "train.ppo.learning_rate",
+      "before": 0.0003,
+      "after": 0.005
+    },
+    {
+      "path": "train.ppo.horizon_length",
+      "before": 16,
+      "after": 8
+    },
+    {
+      "path": "train.ppo.minibatch_size",
+      "before": 8192,
+      "after": 32768
+    },
+    {
+      "path": "train.ppo.mini_epochs",
+      "before": 4,
+      "after": 5
+    },
+    {
+      "path": "train.ppo.save_frequency",
+      "before": 50,
+      "after": 500
+    },
+    {
+      "path": "train.ppo.max_agent_steps",
+      "before": 100000000,
+      "after": 1500000000
+    }
+  ]
+}

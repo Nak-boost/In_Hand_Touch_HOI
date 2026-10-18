@@ -1,0 +1,78 @@
+{
+  "config": "manip_official_sphere65",
+  "count": 128,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 1,
+      "total": 1,
+      "retained": 8,
+      "two_gel": 1,
+      "non_gel_free": 1
+    },
+    {
+      "batch": 2,
+      "accepted": 23,
+      "total": 24,
+      "retained": 29,
+      "two_gel": 24,
+      "non_gel_free": 23
+    },
+    {
+      "batch": 3,
+      "accepted": 24,
+      "total": 48,
+      "retained": 26,
+      "two_gel": 24,
+      "non_gel_free": 24
+    },
+    {
+      "batch": 4,
+      "accepted": 20,
+      "total": 68,
+      "retained": 27,
+      "two_gel": 20,
+      "non_gel_free": 20
+    },
+    {
+      "batch": 5,
+      "accepted": 18,
+      "total": 86,
+      "retained": 21,
+      "two_gel": 19,
+      "non_gel_free": 18
+    },
+    {
+      "batch": 6,
+      "accepted": 15,
+      "total": 101,
+      "retained": 22,
+      "two_gel": 15,
+      "non_gel_free": 15
+    },
+    {
+      "batch": 7,
+      "accepted": 14,
+      "total": 115,
+      "retained": 16,
+      "two_gel": 14,
+      "non_gel_free": 14
+    },
+    {
+      "batch": 8,
+      "accepted": 9,
+      "total": 124,
+      "retained": 10,
+      "two_gel": 9,
+      "non_gel_free": 9
+    },
+    {
+      "batch": 9,
+      "accepted": 7,
+      "total": 131,
+      "retained": 11,
+      "two_gel": 7,
+      "non_gel_free": 7
+    }
+  ]
+}

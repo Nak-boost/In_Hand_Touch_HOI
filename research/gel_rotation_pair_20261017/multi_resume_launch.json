@@ -1,0 +1,27 @@
+{
+  "pid": 214031,
+  "command": [
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/scripts/python_manip.sh",
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/scripts/monitor_manip.py",
+    "--config",
+    "manip_hora16384_six_objects_gel_rotation",
+    "--gpu",
+    "0",
+    "--output",
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/multi_resume_monitor",
+    "--run-prefix",
+    "teacher_six_objects_gel16384_20261017_resumed",
+    "--checkpoint",
+    "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_20261017_attempt00/stage1_nn/best.pth",
+    "--max-steps",
+    "1500000000",
+    "--save-frequency",
+    "50",
+    "--max-restarts",
+    "2",
+    "--start-free-mib",
+    "9000"
+  ],
+  "time": "2026-10-17T14:29:39.980269",
+  "reason": "User requested immediate GPU 0 launch; skip 12000 MiB stable-wait gate, use 9000 MiB start threshold and retain 2048 MiB runtime protection."
+}

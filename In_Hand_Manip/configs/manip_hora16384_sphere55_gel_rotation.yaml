@@ -1,0 +1,10 @@
+# Experiment B: only condition positive rotation reward on gel-object contacts.
+# Everything else, including position_weight=2.0, inherits the existing baseline.
+defaults:
+  - manip_hora16384_sphere55
+  - _self_
+
+task:
+  env:
+    manipulation:
+      rotation_contact_multipliers: [0.1, 0.5, 1.0]  # 0, 1, >=2 filtered gel contacts

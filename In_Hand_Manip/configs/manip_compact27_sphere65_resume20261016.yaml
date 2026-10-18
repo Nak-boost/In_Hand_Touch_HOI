@@ -1,0 +1,13 @@
+# Resume original suspended experiment; pin semantics despite newer shared defaults.
+defaults:
+  - manip_compact27_sphere65
+  - _self_
+task:
+  env:
+    asset:
+      handAsset: assets/allegro/allegro_digit_compact.urdf  # historical straight mount
+    grasp:
+      cache: cache/digit_sphere65_compact27_checked_resume20261016.pt
+    manipulation:
+      action_reference: previous_target
+      fingertip_distance_weight: 0.0

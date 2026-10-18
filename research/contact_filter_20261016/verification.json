@@ -1,0 +1,14 @@
+{
+  "identical_initial_state": true,
+  "cross_run_q_max_difference": 1.8060005903244019,
+  "cross_run_trajectory_note": "Independent GPU PhysX runs diverge despite same initial states and tape; do not compare reward frame-by-frame across runs.",
+  "off_reward_and_failure_match": true,
+  "off_envs_ever_failed": 130,
+  "on_reward_and_failure_match": true,
+  "on_envs_ever_failed": 256,
+  "removed_reward_environment_frames": 15518,
+  "raw_signal_without_object_environment_frames": 92767,
+  "failure_on_while_raw_counterfactual_alive_frames": 100912,
+  "actor_self_contact_observation_frames": 91006,
+  "total_environment_frames": 128000
+}

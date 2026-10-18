@@ -1,0 +1,44 @@
+{
+  "smoke": {
+    "status": "completed",
+    "exit_code": 0,
+    "checkpoint": {
+      "path": "/root/In_Hand_Reconstruction/runs/manip/monitor_smoke_20261017_attempt00/stage1_nn/last.pth",
+      "agent_steps": 512,
+      "epoch_num": 2,
+      "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "action_reference": "actual_position"
+    },
+    "heartbeat": {
+      "pid": 200900,
+      "agent_steps": 512,
+      "epoch_num": 2,
+      "phase": "closed",
+      "time": 1792214310.9007244,
+      "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/monitor_smoke_20261017_attempt00/stage1_nn/last.pth",
+      "training_complete": true
+    }
+  },
+  "resume_smoke": {
+    "status": "completed",
+    "exit_code": 0,
+    "checkpoint": {
+      "path": "/root/In_Hand_Reconstruction/runs/manip/monitor_resume_smoke_20261017_attempt00/stage1_nn/last.pth",
+      "agent_steps": 1024,
+      "epoch_num": 4,
+      "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "action_reference": "actual_position"
+    },
+    "heartbeat": {
+      "pid": 201315,
+      "agent_steps": 1024,
+      "epoch_num": 4,
+      "phase": "closed",
+      "time": 1792214342.8087032,
+      "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/monitor_resume_smoke_20261017_attempt00/stage1_nn/last.pth",
+      "training_complete": true
+    }
+  }
+}

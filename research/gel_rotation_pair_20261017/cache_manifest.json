@@ -1,0 +1,66 @@
+{
+  "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_six_objects_inward90_checked_20261017.pt",
+  "sha256": "e68a1101b82375fb3bc6c9178750b189bb7afbaf97d68e1b05f01774f23d71ee",
+  "objects": {
+    "sphere55": {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere55_scale2560_inward90_checked_20261016.pt",
+      "sha256": "8f272c468ad77b80c584f2d5bf931f7fd4410c7e955f180caa03efbbee54514d",
+      "count": 246,
+      "quality_validation": {
+        "report": "/root/In_Hand_Reconstruction/research/scale2560_gpu1_20261016/quality.json",
+        "report_sha256": "babafe9d9bc7a90f5073667e85299120da9cd88ed60e5a947e413bba7e9f5154",
+        "action_reference": "actual_position"
+      }
+    },
+    "sphere65": {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere65_pair_inward90_checked_20261017.pt",
+      "sha256": "593970a39f7bc8582f0c263d1c0a45479bb946f48679035e8cc774a135e64f40",
+      "count": 237,
+      "quality_validation": {
+        "report": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/grasps/sphere65/quality.json",
+        "report_sha256": "0ff484f1dc49fab6870120d13105f3c99b8788ea9c2e8f9f17bbd3a47b3e3f12",
+        "action_reference": "actual_position"
+      }
+    },
+    "box45": {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box45_pair_inward90_checked_20261017.pt",
+      "sha256": "00a868f794b6f7686a383fb7935ce5838a7783b04fa15055f7d6fd28c9a903ae",
+      "count": 177,
+      "quality_validation": {
+        "report": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/grasps/box45/quality.json",
+        "report_sha256": "4d92202647effce9029238daf17c28423367bbc7b76c76d3c64240ec6edf4b5f",
+        "action_reference": "actual_position"
+      }
+    },
+    "box55": {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box55_pair_inward90_checked_20261017.pt",
+      "sha256": "5b8ce0721a079ac64e057a386b7111564cc2037ab113fa84cc117dbf62411693",
+      "count": 163,
+      "quality_validation": {
+        "report": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/grasps/box55/quality.json",
+        "report_sha256": "6ab34336350114998dc3776c074ede46bd99ee06546470819b4f0ff946bb5936",
+        "action_reference": "actual_position"
+      }
+    },
+    "capsule70": {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule70_pair_inward90_checked_20261017.pt",
+      "sha256": "140f7707f18ce9b0a280214dd86515e0ceca9a0312e7090df9d4968ac55d54d2",
+      "count": 232,
+      "quality_validation": {
+        "report": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/grasps/capsule70/quality.json",
+        "report_sha256": "fad54a1fb231e8d2aadc719e0ce7c86a798cd187683b71147a45ac9aad35830e",
+        "action_reference": "actual_position"
+      }
+    },
+    "capsule80": {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule80_pair_inward90_checked_20261017.pt",
+      "sha256": "8864720883c68d88b0db52d21f9868f29af39a4f4694165d5e1f3a6499c0d3fa",
+      "count": 240,
+      "quality_validation": {
+        "report": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/grasps/capsule80/quality.json",
+        "report_sha256": "30412f83c6677078dc1ec716bca8db3bd75dc5568c265b12202687882b5a249c",
+        "action_reference": "actual_position"
+      }
+    }
+  }
+}

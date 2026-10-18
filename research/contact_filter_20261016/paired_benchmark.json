@@ -1,0 +1,24 @@
+{
+  "num_envs": 256,
+  "warmup_steps": 100,
+  "sequence": "ABBA, repeated 100 times, same physics trajectory and target-tracking actions",
+  "observation_invariance_at_fixed_state": true,
+  "modes": {
+    "off": {
+      "steps": 200,
+      "mean_ms": 58.09351433767006,
+      "median_ms": 56.4221985405311,
+      "p95_ms": 83.47374681616202,
+      "env_steps_per_second": 4406.688128936276
+    },
+    "on": {
+      "steps": 200,
+      "mean_ms": 68.30498103634454,
+      "median_ms": 66.27739639952779,
+      "p95_ms": 93.74752576695754,
+      "env_steps_per_second": 3747.896509389036
+    }
+  },
+  "query_mean_ms": 9.483082810183987,
+  "extra_step_time_fraction": 0.17577636359405058
+}

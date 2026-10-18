@@ -1,0 +1,16 @@
+{
+  "pid": 210756,
+  "status": "supervisor_launched",
+  "gpu": 1,
+  "minimum_free_mib": 12000,
+  "required_consecutive_samples": 4,
+  "poll_seconds": 30,
+  "samples": 4,
+  "started": 1792216932.7206435,
+  "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_sphere55_gel16384_20261017_attempt00/stage1_nn/ep_50_step_0006M_reward_-350.70.pth",
+  "checked": 1792217294.3225482,
+  "free_mib": 19659,
+  "used_mib": 4433,
+  "supervisor_pid": 211311,
+  "monitor": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/single_resume_monitor/status.json"
+}

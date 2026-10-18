@@ -1,0 +1,29 @@
+{
+  "upstream": "410d958",
+  "network_matches": true,
+  "ppo_differences": {
+    "value_bootstrap": {
+      "upstream": true,
+      "trial": false
+    },
+    "save_frequency": {
+      "upstream": 500,
+      "trial": 8
+    },
+    "max_agent_steps": {
+      "upstream": 1500000000,
+      "trial": 1048576
+    },
+    "priv_info": {
+      "upstream": false,
+      "trial": true
+    },
+    "priv_info_dim": {
+      "upstream": 9,
+      "trial": 23
+    }
+  },
+  "batch_size": 131072,
+  "minibatches_per_epoch": 4,
+  "optimizer_updates_per_rollout": 20
+}

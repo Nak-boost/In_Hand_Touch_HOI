@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-14T19:28:25.562009+08:00",
+  "matching_active_processes": [],
+  "snapshot_collision_shapes": {
+    "sphere55": 85,
+    "sphere65": 85,
+    "box45": 85,
+    "box55": 85,
+    "capsule70": 85,
+    "capsule80": 85
+  },
+  "all_snapshot_shapes_are_85": true,
+  "report_exists": true,
+  "plot_exists": true
+}

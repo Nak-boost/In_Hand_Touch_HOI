@@ -1,0 +1,22 @@
+[
+  {
+    "group": "single",
+    "checkpoint": "last",
+    "seed": 216,
+    "started": 1792301161.2432594,
+    "pid": 388233,
+    "returncode": 0,
+    "finished": 1792301203.4481404,
+    "result_saved": true
+  },
+  {
+    "group": "single",
+    "checkpoint": "best",
+    "seed": 216,
+    "started": 1792301203.4487169,
+    "pid": 388410,
+    "returncode": 0,
+    "finished": 1792301235.585238,
+    "result_saved": true
+  }
+]

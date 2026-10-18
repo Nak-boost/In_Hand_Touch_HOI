@@ -1,0 +1,8 @@
+{
+  "four_complete_evaluations": true,
+  "samples_per_evaluation": 246,
+  "all_exported_metrics_finite": true,
+  "cleanup_segmentation_fault": true,
+  "training_restarted": false,
+  "task_or_training_code_changed": false
+}

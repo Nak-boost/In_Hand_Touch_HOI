@@ -3,6 +3,7 @@ import importlib.util
 from pathlib import Path
 import math
 import torch
+import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 # Avoid hora.tasks.__init__ importing Isaac Gym during tensor-only tests.
@@ -21,6 +22,16 @@ def test_quaternion_sign_and_axis_reward():
     wrong = maths.rotation_terms(expected, torch.tensor([[1., 0., 0.]]), .5)
     assert forward[0] > wrong[0]
     assert forward[1] < wrong[1]
+
+
+def test_pose_penalty_restores_each_environments_own_grasp():
+    initial = torch.tensor([[0.2, -0.4], [1.1, 0.7]])
+    q = (initial + torch.tensor([[0.1, -0.2], [0., 0.]])).requires_grad_()
+    loss = maths.joint_pose_deviation(q, initial)
+    torch.testing.assert_close(loss, torch.tensor([0.05, 0.]))
+    loss.sum().backward()
+    torch.testing.assert_close(q.grad, torch.tensor([[0.2, -0.4], [0., 0.]]))
+    torch.testing.assert_close(maths.joint_pose_deviation(q.detach()+2, initial+2), loss)
 
 
 def test_reset_history_does_not_leak_previous_episode():
@@ -72,7 +83,8 @@ def test_asset_has_separate_gel_links_and_valid_meshes():
         assert (asset.parent/mesh.get('filename')).is_file()
 
 
-def test_runtime_matches_training_observation_and_action_filter(tmp_path):
+@pytest.mark.parametrize('reference', [None, 'previous_target', 'actual_position'])
+def test_runtime_matches_training_observation_and_action_filter(tmp_path, reference):
     from hora.algo.models.tactile_student import TactileStudent
     from hora.algo.models.running_mean_std import RunningMeanStd
     from hora.algo.padapt.tactile_distill import normalize_inputs
@@ -83,10 +95,13 @@ def test_runtime_matches_training_observation_and_action_filter(tmp_path):
     rms = RunningMeanStd((maths.OBS_DIM,)).eval()
     lower, upper = torch.full((16,), -.5), torch.full((16,), 1.5)
     path = tmp_path/'student.pt'
-    torch.save(dict(kind='tactile_student', network=cfg, history_dim=maths.OBS_DIM, history_length=30,
+    checkpoint = dict(kind='tactile_student', network=cfg, history_dim=maths.OBS_DIM, history_length=30,
                     model=model.state_dict(), running_mean_std=rms.state_dict(),
                     joint_names=list(range(16)), lower=lower, upper=upper,
-                    action_scale=.026, action_smoothing=.5), path)
+                    action_scale=.026, action_smoothing=.5)
+    if reference is not None:
+        checkpoint['action_reference'] = reference
+    torch.save(checkpoint, path)
     runtime = DigitPolicyRuntime(path)
     q, qdot = torch.full((1, 16), .3), torch.zeros(1, 16)
     contacts = torch.tensor([[1., 1., 0., 1.]])
@@ -98,5 +113,6 @@ def test_runtime_matches_training_observation_and_action_filter(tmp_path):
         with torch.no_grad():
             action = model.act_inference(normalize_inputs(rms, frame, history)).clamp(-1, 1)
         previous = .5*action+.5*previous
-        targets = (targets+.026*previous).clamp(lower, upper)
+        base = q if reference == 'actual_position' else targets
+        targets = (base+.026*previous).clamp(lower, upper)
         assert torch.allclose(runtime.step(q, qdot, contacts, axis), targets[0], atol=1e-6)

@@ -1,0 +1,127 @@
+{
+  "all_logged_scalars_finite": true,
+  "reward_terms": [
+    "reward/pose_penalty",
+    "reward/rotation",
+    "reward/off_axis_penalty",
+    "reward/overspeed_penalty",
+    "reward/goal",
+    "reward/contact",
+    "reward/housing_penalty",
+    "reward/position_penalty",
+    "reward/linear_velocity_penalty",
+    "reward/action_rate_penalty",
+    "reward/torque_penalty",
+    "reward/limit_push_penalty",
+    "reward/failure_penalty"
+  ],
+  "reward_sum_max_error": 4.1956081986427307e-07,
+  "logged_updates": 32,
+  "checkpoint_agent_steps": 16384,
+  "checkpoint_epoch": 32,
+  "model_parameters_finite": true,
+  "inhand": {
+    "hold": {
+      "drop_penalty": 200.0,
+      "failed": 6,
+      "timeout_only": 30,
+      "limit_cost_mean": -0.0
+    },
+    "small_noise": {
+      "drop_penalty": 200.0,
+      "failed": 23,
+      "timeout_only": 17,
+      "limit_cost_mean": 8.914797945180908e-06
+    },
+    "outward_push": {
+      "drop_penalty": 200.0,
+      "failed": 21,
+      "timeout_only": 20,
+      "limit_cost_mean": 0.22935064136981964
+    },
+    "alternating": {
+      "drop_penalty": 200.0,
+      "failed": 279,
+      "timeout_only": 0,
+      "limit_cost_mean": 0.09160568565130234
+    }
+  },
+  "tabletop": {
+    "hold": {
+      "drop_penalty": 200.0,
+      "failed": 0,
+      "timeout_only": 32,
+      "limit_cost_mean": -0.0
+    },
+    "small_noise": {
+      "drop_penalty": 200.0,
+      "failed": 109,
+      "timeout_only": 3,
+      "limit_cost_mean": 6.831196060375078e-06
+    },
+    "outward_push": {
+      "drop_penalty": 200.0,
+      "failed": 560,
+      "timeout_only": 0,
+      "limit_cost_mean": 0.09342767298221588
+    },
+    "alternating": {
+      "drop_penalty": 200.0,
+      "failed": 491,
+      "timeout_only": 0,
+      "limit_cost_mean": 0.07464368641376495
+    }
+  },
+  "official": {
+    "hold": {
+      "drop_penalty": 200.0,
+      "failed": 30,
+      "timeout_only": 0,
+      "limit_cost_mean": -0.0
+    },
+    "small_noise": {
+      "drop_penalty": 200.0,
+      "failed": 18,
+      "timeout_only": 0,
+      "limit_cost_mean": -0.0
+    },
+    "outward_push": {
+      "drop_penalty": 200.0,
+      "failed": 38,
+      "timeout_only": 0,
+      "limit_cost_mean": 0.13003477454185486
+    },
+    "alternating": {
+      "drop_penalty": 200.0,
+      "failed": 38,
+      "timeout_only": 0,
+      "limit_cost_mean": 0.10307689011096954
+    }
+  },
+  "official_terminal250": {
+    "hold": {
+      "drop_penalty": 250.0,
+      "failed": 9,
+      "timeout_only": 0,
+      "limit_cost_mean": -0.0
+    },
+    "small_noise": {
+      "drop_penalty": 250.0,
+      "failed": 14,
+      "timeout_only": 0,
+      "limit_cost_mean": -0.0
+    },
+    "outward_push": {
+      "drop_penalty": 250.0,
+      "failed": 10,
+      "timeout_only": 0,
+      "limit_cost_mean": 0.09869195520877838
+    },
+    "alternating": {
+      "drop_penalty": 250.0,
+      "failed": 12,
+      "timeout_only": 0,
+      "limit_cost_mean": 0.09701919555664062
+    }
+  }
+}

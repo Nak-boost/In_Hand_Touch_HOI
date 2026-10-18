@@ -30,8 +30,32 @@ lightning_logs/
 tensorboard/
 
 # Downloaded literature caches and full training scalar exports.
+Papers/
+papers/
 /research/**/sources/
 /research/**/*_scalars.csv
 
 # Offline convex decomposition scratch files; final meshes are versioned.
 /In_Hand_Manip/assets/allegro/official_digit/build_cache/
+
+# Generated experiment copies and live monitoring output (keep reports/configs).
+/research/**/frozen_project/
+/research/**/ppo_smoke/
+/research/**/smoke_runs/
+/research/inward90_scale2560_20261016/preparation/
+/research/**/runs
+/research/**/*.lock
+/research/**/*.jsonl
+/research/**/scalars.json
+/research/**/scalars_*.json
+/research/**/training_metrics.json
+/research/**/heartbeat.json
+/research/**/status.json
+/research/**/queue_status.json
+
+# Downloaded research-page caches; retain the authored synthesis and verification.
+/research/pose_tracking_review_20261016/*
+!/research/pose_tracking_review_20261016/report.md
+/research/tactile_policy_sources_20261015/*
+!/research/tactile_policy_sources_20261015/report.md
+!/research/tactile_policy_sources_20261015/verification.json

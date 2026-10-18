@@ -1,0 +1,65 @@
+[
+  {
+    "label": "gpu_off_1",
+    "pid": 146226,
+    "exit": 0,
+    "peak_gpu_mb": 2756,
+    "wall_seconds": 21.169362545013428
+  },
+  {
+    "label": "cpu_off_1",
+    "pid": 146351,
+    "exit": 0,
+    "peak_gpu_mb": 1916,
+    "wall_seconds": 45.52837157249451
+  },
+  {
+    "label": "cpu_on_1",
+    "pid": 146543,
+    "exit": 0,
+    "peak_gpu_mb": 1916,
+    "wall_seconds": 38.741796016693115
+  },
+  {
+    "label": "cpu_on_2",
+    "pid": 146707,
+    "exit": 0,
+    "peak_gpu_mb": 1980,
+    "wall_seconds": 36.562180280685425
+  },
+  {
+    "label": "cpu_off_2",
+    "pid": 146865,
+    "exit": 0,
+    "peak_gpu_mb": 1980,
+    "wall_seconds": 25.448708295822144
+  },
+  {
+    "label": "gpu_off_2",
+    "pid": 147064,
+    "exit": 0,
+    "peak_gpu_mb": 2756,
+    "wall_seconds": 29.046618461608887
+  },
+  {
+    "label": "gpu_off_3",
+    "pid": 147276,
+    "exit": 0,
+    "peak_gpu_mb": 2756,
+    "wall_seconds": 26.751306772232056
+  },
+  {
+    "label": "cpu_off_3",
+    "pid": 147413,
+    "exit": 0,
+    "peak_gpu_mb": 1916,
+    "wall_seconds": 27.84282922744751
+  },
+  {
+    "label": "cpu_on_3",
+    "pid": 147636,
+    "exit": 0,
+    "peak_gpu_mb": 1980,
+    "wall_seconds": 34.4765248298645
+  }
+]

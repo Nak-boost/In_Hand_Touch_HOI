@@ -1,0 +1,370 @@
+{
+  "pipeline": "cpu",
+  "object_contact_filter": true,
+  "num_envs": 256,
+  "warmup_steps": 100,
+  "measured_steps": 400,
+  "seed": 215,
+  "sim_device": "cuda:0",
+  "rl_device": "cuda:0",
+  "state_device": "cpu",
+  "elapsed_seconds": 22.15769916237332,
+  "step_ms": 55.3942479059333,
+  "env_steps_per_second": 4621.41846270251,
+  "step_ms_p50": 52.139688516035676,
+  "step_ms_p95": 86.75226462073624,
+  "pair_query_ms_per_step": 8.689664875273593,
+  "pid": 147636,
+  "initial_sha256": "e09675191dc0d07c16bdf9770f08e3b73c43ff57c8c2285ceec2f9909e02f01f",
+  "actions_sha256": "e798796223860f0e514727885e650b7af61b5b08aabced6b80db89a8699e57e2",
+  "source_config": {
+    "task_name": "AllegroDigitTabletop",
+    "num_envs": 256,
+    "seed": 42,
+    "physics_engine": "physx",
+    "pipeline": "cpu",
+    "sim_device": "cuda:0",
+    "rl_device": "cuda:0",
+    "graphics_device_id": -1,
+    "num_threads": 4,
+    "solver_type": 1,
+    "num_subscenes": 4,
+    "test": false,
+    "checkpoint": "",
+    "headless": true,
+    "task": {
+      "name": "AllegroDigitTabletop",
+      "physics_engine": "physx",
+      "on_evaluation": false,
+      "env": {
+        "numEnvs": 256,
+        "numObservations": 71,
+        "numActions": 16,
+        "envSpacing": 0.55,
+        "episodeLength": 600,
+        "enableDebugVis": false,
+        "aggregateMode": 1,
+        "controller": {
+          "torque_control": true,
+          "controlFrequencyInv": 6,
+          "pgain": 3.0,
+          "dgain": 0.1
+        },
+        "genGrasps": false,
+        "clipObservations": 5.0,
+        "clipActions": 1.0,
+        "reset_height_threshold": 0.645,
+        "grasp_cache_name": "internal_allegro",
+        "forceScale": 0.0,
+        "randomForceProbScalar": 0.0,
+        "forceDecay": 0.9,
+        "forceDecayInterval": 0.08,
+        "hora": {
+          "propHistoryLen": 30,
+          "privInfoDim": 9
+        },
+        "reward": {
+          "angvelClipMin": -0.5,
+          "angvelClipMax": 0.5,
+          "rotateRewardScale": 1.0,
+          "objLinvelPenaltyScale": -0.3,
+          "poseDiffPenaltyScale": -0.3,
+          "torquePenaltyScale": -0.1,
+          "workPenaltyScale": -2.0
+        },
+        "baseObjScale": 0.8,
+        "randomization": {
+          "randomizeMass": true,
+          "randomizeMassLower": 0.01,
+          "randomizeMassUpper": 0.25,
+          "randomizeCOM": true,
+          "randomizeCOMLower": -0.01,
+          "randomizeCOMUpper": 0.01,
+          "randomizeFriction": true,
+          "randomizeFrictionLower": 0.3,
+          "randomizeFrictionUpper": 3.0,
+          "randomizeScale": true,
+          "scaleListInit": true,
+          "randomizeScaleList": [
+            0.7,
+            0.72,
+            0.74,
+            0.76,
+            0.78,
+            0.8,
+            0.82,
+            0.84,
+            0.86
+          ],
+          "randomizeScaleLower": 0.75,
+          "randomizeScaleUpper": 0.8,
+          "randomizePDGains": true,
+          "randomizePGainLower": 2.9,
+          "randomizePGainUpper": 3.1,
+          "randomizeDGainLower": 0.09,
+          "randomizeDGainUpper": 0.11,
+          "jointNoiseScale": 0.02
+        },
+        "privInfo": {
+          "enableObjPos": true,
+          "enableObjScale": true,
+          "enableObjMass": true,
+          "enableObjCOM": true,
+          "enableObjFriction": true
+        },
+        "object": {
+          "type": "block",
+          "sampleProb": [
+            1.0
+          ]
+        },
+        "asset": {
+          "handAsset": "assets/allegro/allegro_digit_compact.urdf"
+        },
+        "enableCameraSensors": false,
+        "digit": {
+          "contact_threshold": 0.1,
+          "dropout": 0.02,
+          "latency_steps": 1
+        },
+        "manipulation": {
+          "axes": [
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "switch_steps": 0,
+          "random_initial_axis": false,
+          "target_speed": 0.5,
+          "action_scale": 0.026,
+          "action_smoothing": 0.5,
+          "action_reference": "actual_position",
+          "joint_noise": 0.01,
+          "velocity_noise": 0.02,
+          "max_displacement": 0.13,
+          "min_height": 0.53,
+          "goal_increment": 0.5235987756,
+          "goal_tolerance": 0.15,
+          "student_goal_tolerance": 0.25,
+          "rotation_weight": 1.0,
+          "off_axis_weight": 0.0,
+          "off_axis_cost_cap": 0.5,
+          "overspeed_weight": 0.0,
+          "overspeed_cost_cap": 0.25,
+          "goal_weight": 0.25,
+          "contact_weight": 0.05,
+          "object_contact_filter": true,
+          "fingertip_distance_weight": 0.1,
+          "housing_weight": 0.05,
+          "position_weight": 2.0,
+          "linear_velocity_weight": 0.1,
+          "action_rate_weight": 0.02,
+          "torque_weight": 0.01,
+          "pose_weight": 0.05,
+          "limit_push_weight": 0.25,
+          "drop_penalty": 250.0,
+          "history_length": 30
+        },
+        "objects": [
+          {
+            "name": "box45",
+            "shape": "box",
+            "size": [
+              0.045,
+              0.045,
+              0.045
+            ]
+          }
+        ],
+        "grasp": {
+          "cache": "cache/digit_tabletop_box45_actual_checked_v3.pt",
+          "required_per_object": 64,
+          "candidate_steps": 80,
+          "warmup_steps": 25,
+          "max_batches": 20,
+          "q_noise": 0.015,
+          "canonical_q": [
+            0.032716922696956856,
+            1.3326937617158283,
+            0.27833144304360274,
+            -0.1369578350193639,
+            0.08728426666719966,
+            1.3691151730280766,
+            0.26312845893178505,
+            -0.156551887751547,
+            -0.016073907529437634,
+            1.255730323084971,
+            0.19999999999999543,
+            0.09999999999999849,
+            1.057939203400643,
+            0.8914491051800979,
+            0.4122238507616981,
+            -0.09114433921737265
+          ],
+          "object_position": [
+            0.0,
+            0.0,
+            0.5235
+          ],
+          "preload_delta": [
+            0.0006858290582031205,
+            0.008355664124707046,
+            0.004824219257447329,
+            0.002334528499701728,
+            -0.00013392595712549674,
+            0.008460068185695736,
+            0.004844788946214973,
+            0.0023353484876388773,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.006570535011295797,
+            -0.014277160109035304,
+            0.007391719811829391,
+            -0.002800491053774368
+          ]
+        },
+        "domain": {
+          "mass": [
+            0.03,
+            0.12
+          ],
+          "friction": [
+            0.1,
+            0.1
+          ],
+          "com": 0.003,
+          "gain_scale": [
+            0.9,
+            1.1
+          ]
+        },
+        "tabletop": {
+          "size": [
+            0.8,
+            0.8,
+            0.04
+          ],
+          "surface_height": 0.5,
+          "friction": 0.1,
+          "gel_friction": 1.0,
+          "hand_friction": 0.6,
+          "hand_position": [
+            -0.03075675614,
+            -0.01401577895,
+            0.67373061667
+          ],
+          "workspace_center": [
+            0.0,
+            0.0
+          ],
+          "workspace_radius": 0.1,
+          "contact_loss_seconds": 2.0,
+          "initialization": {
+            "close_steps": 30,
+            "hold_steps": 60,
+            "opening_delta": 0.12,
+            "min_gel_force": 0.15,
+            "max_gel_force": 2.0
+          }
+        }
+      },
+      "sim": {
+        "dt": 0.008333333333333333,
+        "substeps": 1,
+        "up_axis": "z",
+        "use_gpu_pipeline": false,
+        "gravity": [
+          0.0,
+          0.0,
+          -9.81
+        ],
+        "physx": {
+          "num_threads": 4,
+          "solver_type": 1,
+          "use_gpu": true,
+          "num_position_iterations": 8,
+          "num_velocity_iterations": 1,
+          "max_gpu_contact_pairs": 8388608,
+          "num_subscenes": 4,
+          "contact_offset": 0.001,
+          "rest_offset": 0.0,
+          "bounce_threshold_velocity": 0.2,
+          "max_depenetration_velocity": 1000.0,
+          "default_buffer_size_multiplier": 5.0,
+          "contact_collection": 2
+        }
+      },
+      "rl_device": "cuda:0"
+    },
+    "train": {
+      "seed": 42,
+      "algo": "PPO",
+      "network": {
+        "mlp": {
+          "units": [
+            256,
+            256,
+            128
+          ]
+        },
+        "priv_mlp": {
+          "units": [
+            128,
+            64,
+            8
+          ]
+        }
+      },
+      "load_path": "",
+      "ppo": {
+        "output_name": "debug",
+        "normalize_input": true,
+        "normalize_value": true,
+        "value_bootstrap": false,
+        "num_actors": 256,
+        "normalize_advantage": true,
+        "gamma": 0.99,
+        "tau": 0.95,
+        "learning_rate": 0.0003,
+        "kl_threshold": 0.02,
+        "horizon_length": 16,
+        "minibatch_size": 4096,
+        "mini_epochs": 4,
+        "clip_value": true,
+        "critic_coef": 4,
+        "entropy_coef": 0.0,
+        "e_clip": 0.2,
+        "bounds_loss_coef": 0.0001,
+        "bounds_loss_soft_bound": 1.1,
+        "truncate_grads": true,
+        "grad_norm": 1.0,
+        "save_best_after": 0,
+        "save_frequency": 100,
+        "max_agent_steps": 10000000,
+        "priv_info": true,
+        "priv_info_dim": 23,
+        "priv_info_embed_dim": 8,
+        "proprio_adapt": false
+      }
+    },
+    "stage": "teacher",
+    "run_name": null,
+    "run_root": "../runs/manip",
+    "teacher_checkpoint": null,
+    "student_checkpoint": null,
+    "evaluation_steps": 600,
+    "distill": {
+      "steps": 100000,
+      "learning_rate": 0.0003,
+      "action_weight": 1.0,
+      "latent_weight": 1.0,
+      "grad_norm": 1.0,
+      "save_every": 1000
+    }
+  },
+  "note": "Fixed action tape, no auto-reset; per-step CUDA synchronized. No PPO updates timed. Optional verification queries/copies are outside timing. Normal loads, last physics step."
+}

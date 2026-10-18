@@ -37,6 +37,8 @@ def main():
     from hora.algo.models.running_mean_std import RunningMeanStd
     from hora.algo.padapt.tactile_distill import network_spec, normalize_inputs
     from hora.tasks.allegro_digit_two_axis import AllegroDigitTwoAxis
+    from hora.tasks.allegro_digit_tabletop import AllegroDigitTabletop
+    from hora.utils.manip_control import require_action_reference
     from hora.utils.hand_collision import require_collision_signature
 
     root = Path(__file__).resolve().parent
@@ -69,7 +71,9 @@ def main():
     source_files = ['hora/tasks/allegro_digit_two_axis.py', 'hora/tasks/manipulation_math.py',
                     'hora/algo/models/models.py', 'hora/algo/models/running_mean_std.py',
                     'hora/tasks/base/vec_task.py', 'hora/utils/hand_collision.py',
-                    'hora/algo/padapt/tactile_distill.py']
+                    'hora/algo/padapt/tactile_distill.py', 'hora/utils/manip_control.py']
+    if task['name'] == 'AllegroDigitTabletop':
+        source_files += ['hora/tasks/allegro_digit_tabletop.py', 'hora/tasks/tabletop_math.py']
     if student:
         source_files.append('hora/algo/models/tactile_student.py')
     mismatches, missing = [], []
@@ -90,7 +94,9 @@ def main():
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
     torch.cuda.manual_seed_all(args.seed)
-    env = AllegroDigitTwoAxis(task, args.device, args.graphics_device_id, args.headless)
+    require_action_reference(checkpoint, task['env']['manipulation'], 'Replay checkpoint')
+    task_class = {'AllegroDigitTwoAxis': AllegroDigitTwoAxis, 'AllegroDigitTabletop': AllegroDigitTabletop}[task['name']]
+    env = task_class(task, args.device, args.graphics_device_id, args.headless)
     try:
         if checkpoint.get('asset_sha256') != env.asset_hash:
             raise ValueError('Policy hand asset mismatch')

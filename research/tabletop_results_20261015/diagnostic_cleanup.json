@@ -1,0 +1,40 @@
+{
+  "reason": "All episode results saved; CPU Isaac Gym hung during env.close(), so diagnostic processes were terminated after result validation.",
+  "terminated": [
+    {
+      "pid": 108779,
+      "seed": "42",
+      "mode": "mean"
+    },
+    {
+      "pid": 108974,
+      "seed": "43",
+      "mode": "mean"
+    },
+    {
+      "pid": 108975,
+      "seed": "44",
+      "mode": "mean"
+    },
+    {
+      "pid": 108984,
+      "seed": "42",
+      "mode": "zero"
+    },
+    {
+      "pid": 109281,
+      "seed": "42",
+      "mode": "sampled"
+    },
+    {
+      "pid": 109282,
+      "seed": "43",
+      "mode": "sampled"
+    },
+    {
+      "pid": 109284,
+      "seed": "44",
+      "mode": "sampled"
+    }
+  ]
+}

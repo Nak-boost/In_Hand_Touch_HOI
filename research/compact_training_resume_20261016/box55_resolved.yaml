@@ -1,0 +1,278 @@
+task_name: AllegroDigitTwoAxis
+num_envs: 512
+seed: 42
+physics_engine: physx
+pipeline: gpu
+sim_device: cuda:0
+rl_device: cuda:0
+graphics_device_id: 0
+num_threads: 4
+solver_type: 1
+num_subscenes: 4
+test: false
+checkpoint: ''
+headless: true
+task:
+  name: AllegroDigitTwoAxis
+  physics_engine: physx
+  on_evaluation: false
+  env:
+    numEnvs: 512
+    numObservations: 71
+    numActions: 16
+    envSpacing: 0.4
+    episodeLength: 600
+    enableDebugVis: false
+    aggregateMode: 1
+    controller:
+      torque_control: true
+      controlFrequencyInv: 6
+      pgain: 3.0
+      dgain: 0.1
+    genGrasps: false
+    clipObservations: 5.0
+    clipActions: 1.0
+    reset_height_threshold: 0.645
+    grasp_cache_name: internal_allegro
+    forceScale: 0.0
+    randomForceProbScalar: 0.0
+    forceDecay: 0.9
+    forceDecayInterval: 0.08
+    hora:
+      propHistoryLen: 30
+      privInfoDim: 9
+    reward:
+      angvelClipMin: -0.5
+      angvelClipMax: 0.5
+      rotateRewardScale: 1.0
+      objLinvelPenaltyScale: -0.3
+      poseDiffPenaltyScale: -0.3
+      torquePenaltyScale: -0.1
+      workPenaltyScale: -2.0
+    baseObjScale: 0.8
+    randomization:
+      randomizeMass: true
+      randomizeMassLower: 0.01
+      randomizeMassUpper: 0.25
+      randomizeCOM: true
+      randomizeCOMLower: -0.01
+      randomizeCOMUpper: 0.01
+      randomizeFriction: true
+      randomizeFrictionLower: 0.3
+      randomizeFrictionUpper: 3.0
+      randomizeScale: true
+      scaleListInit: true
+      randomizeScaleList:
+      - 0.7
+      - 0.72
+      - 0.74
+      - 0.76
+      - 0.78
+      - 0.8
+      - 0.82
+      - 0.84
+      - 0.86
+      randomizeScaleLower: 0.75
+      randomizeScaleUpper: 0.8
+      randomizePDGains: true
+      randomizePGainLower: 2.9
+      randomizePGainUpper: 3.1
+      randomizeDGainLower: 0.09
+      randomizeDGainUpper: 0.11
+      jointNoiseScale: 0.02
+    privInfo:
+      enableObjPos: true
+      enableObjScale: true
+      enableObjMass: true
+      enableObjCOM: true
+      enableObjFriction: true
+    object:
+      type: block
+      sampleProb:
+      - 1.0
+    asset:
+      handAsset: assets/allegro/allegro_digit_compact.urdf
+    enableCameraSensors: false
+    digit:
+      contact_threshold: 0.1
+      dropout: 0.02
+      latency_steps: 1
+    manipulation:
+      axes:
+      - - 0
+        - 0
+        - 1
+      switch_steps: 0
+      random_initial_axis: false
+      target_speed: 0.5
+      action_scale: 0.026
+      action_smoothing: 0.5
+      action_reference: previous_target
+      joint_noise: 0.01
+      velocity_noise: 0.02
+      max_displacement: 0.13
+      min_height: 0.53
+      goal_increment: 0.5235987756
+      goal_tolerance: 0.15
+      student_goal_tolerance: 0.25
+      rotation_weight: 1.0
+      off_axis_weight: 0.15
+      off_axis_cost_cap: 0.5
+      overspeed_weight: 0.1
+      overspeed_cost_cap: 0.25
+      goal_weight: 0.25
+      contact_weight: 0.05
+      fingertip_distance_weight: 0.0
+      housing_weight: 0.05
+      position_weight: 2.0
+      linear_velocity_weight: 0.1
+      action_rate_weight: 0.02
+      torque_weight: 0.01
+      pose_weight: 0.05
+      limit_push_weight: 0.25
+      drop_penalty: 250.0
+      history_length: 30
+    objects:
+    - name: box55
+      shape: box
+      size:
+      - 0.055
+      - 0.055
+      - 0.055
+    grasp:
+      cache: cache/digit_box55_compact27_checked_resume20261016.pt
+      required_per_object: 64
+      candidate_steps: 80
+      warmup_steps: 25
+      max_batches: 40
+      q_noise: 0.025
+      canonical_q:
+      - 0.06585371931859907
+      - 1.2743632297487546
+      - 0.20278599708657014
+      - -0.0025895032552674165
+      - -0.019601454375552576
+      - 1.2647394890698311
+      - 0.3037859648307448
+      - -0.09359121009250035
+      - -0.08126912164163709
+      - 1.2553639025253933
+      - 0.2000000000000006
+      - 0.10000000000000077
+      - 1.1449430313197335
+      - 0.7729098961663283
+      - 0.30283415126587193
+      - -0.09102900826367492
+      object_position:
+      - -0.02599541184327866
+      - 0.011546615086294985
+      - 0.6519710842879696
+      preload_delta:
+      - -0.00012038407837112038
+      - 0.008561352396922708
+      - 0.004945233907632021
+      - 0.00230713740630557
+      - -0.0013458755493226371
+      - 0.004261532234862906
+      - 0.003058565394746291
+      - 0.0021913139921092045
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0064927845846749965
+      - -0.0005902483618589037
+      - 0.00845146327357709
+      - 0.004159763184256373
+    domain:
+      mass:
+      - 0.03
+      - 0.12
+      friction:
+      - 0.6
+      - 1.5
+      com: 0.003
+      gain_scale:
+      - 0.9
+      - 1.1
+  sim:
+    dt: 0.008333333333333333
+    substeps: 1
+    up_axis: z
+    use_gpu_pipeline: true
+    gravity:
+    - 0.0
+    - 0.0
+    - -9.81
+    physx:
+      num_threads: 4
+      solver_type: 1
+      use_gpu: true
+      num_position_iterations: 8
+      num_velocity_iterations: 1
+      max_gpu_contact_pairs: 8388608
+      num_subscenes: 4
+      contact_offset: 0.001
+      rest_offset: 0.0
+      bounce_threshold_velocity: 0.2
+      max_depenetration_velocity: 1000.0
+      default_buffer_size_multiplier: 5.0
+      contact_collection: 2
+  rl_device: cuda:0
+train:
+  seed: 42
+  algo: PPO
+  network:
+    mlp:
+      units:
+      - 256
+      - 256
+      - 128
+    priv_mlp:
+      units:
+      - 128
+      - 64
+      - 8
+  load_path: ''
+  ppo:
+    output_name: debug
+    normalize_input: true
+    normalize_value: true
+    value_bootstrap: false
+    num_actors: 512
+    normalize_advantage: true
+    gamma: 0.99
+    tau: 0.95
+    learning_rate: 0.0003
+    kl_threshold: 0.02
+    horizon_length: 16
+    minibatch_size: 4096
+    mini_epochs: 4
+    clip_value: true
+    critic_coef: 4
+    entropy_coef: 0.0
+    e_clip: 0.2
+    bounds_loss_coef: 0.0001
+    bounds_loss_soft_bound: 1.1
+    truncate_grads: true
+    grad_norm: 1.0
+    save_best_after: 0
+    save_frequency: 100
+    max_agent_steps: 10000000
+    priv_info: true
+    priv_info_dim: 23
+    priv_info_embed_dim: 8
+    proprio_adapt: false
+stage: teacher
+run_name: null
+run_root: ../runs/manip
+teacher_checkpoint: null
+student_checkpoint: null
+evaluation_steps: 600
+distill:
+  steps: 100000
+  learning_rate: 0.0003
+  action_weight: 1.0
+  latent_weight: 1.0
+  grad_norm: 1.0
+  save_every: 1000

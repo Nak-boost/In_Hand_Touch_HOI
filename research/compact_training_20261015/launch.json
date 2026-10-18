@@ -1,0 +1,10 @@
+{
+  "supervisor_pid": 110056,
+  "command": [
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/auto_manip_queue.py",
+    "--plan",
+    "/root/In_Hand_Reconstruction/research/compact_training_20261015/plan.json"
+  ],
+  "started": "2026-10-15T12:25:20.315968+08:00"
+}

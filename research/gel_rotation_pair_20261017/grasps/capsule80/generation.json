@@ -1,0 +1,21 @@
+{
+  "count": 256,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 160,
+      "total": 160,
+      "retained": 215,
+      "two_gels": 160,
+      "non_gel_free": 199
+    },
+    {
+      "batch": 2,
+      "accepted": 198,
+      "total": 358,
+      "retained": 231,
+      "two_gels": 198,
+      "non_gel_free": 222
+    }
+  ]
+}

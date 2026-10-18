@@ -1,0 +1,13 @@
+{
+  "teacher": {
+    "action_reference": "actual_position",
+    "finite_weights": true,
+    "steps": 512
+  },
+  "student": {
+    "action_reference": "actual_position",
+    "finite_weights": true,
+    "steps": 4
+  },
+  "evaluation_completed_episodes": 16
+}

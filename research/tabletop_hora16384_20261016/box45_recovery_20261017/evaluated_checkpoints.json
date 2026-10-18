@@ -1,0 +1,104 @@
+[
+  {
+    "object": "box45",
+    "agent_steps": 30015488,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s30m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": 0.0,
+    "frame_means": {
+      "object_gel_count": 0.19264041316978697,
+      "two_object_gels": 0.025693996126533246,
+      "any_object_gel": 0.16694641704325372,
+      "target_increment_lost": 0.28926263606878894,
+      "raw_action_clipped": 0.025040348612007747,
+      "off_axis_squared": 9.140543605058443e-07,
+      "reward": -2.016434468364546
+    }
+  },
+  {
+    "object": "box45",
+    "agent_steps": 50069504,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s50m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": 0.0,
+    "frame_means": {
+      "object_gel_count": 0.057564057564057566,
+      "two_object_gels": 0.016848016848016848,
+      "any_object_gel": 0.040716040716040715,
+      "target_increment_lost": 0.11601998766108354,
+      "raw_action_clipped": 0.16255703755703757,
+      "off_axis_squared": 4.064470411221791e-07,
+      "reward": -5.811538990010354
+    }
+  },
+  {
+    "object": "box45",
+    "agent_steps": 100007936,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s100m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": -0.00019756100664380938,
+    "frame_means": {
+      "object_gel_count": 1.2687857462902927,
+      "two_object_gels": 0.2586120555599483,
+      "any_object_gel": 0.9825782135420785,
+      "target_increment_lost": 0.2323420814513494,
+      "raw_action_clipped": 0.08320319706913365,
+      "off_axis_squared": 0.0012606351834990451,
+      "reward": -0.06409722129950045
+    }
+  },
+  {
+    "object": "box45",
+    "agent_steps": 300023808,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s300m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": -0.00010776806448120624,
+    "frame_means": {
+      "object_gel_count": 2.0145561971263595,
+      "two_object_gels": 0.9935007385524373,
+      "any_object_gel": 0.9952195514972472,
+      "target_increment_lost": 0.0003172858555079647,
+      "raw_action_clipped": 0.08430911776554317,
+      "off_axis_squared": 6.566631266119418e-05,
+      "reward": 0.05013536409321961
+    }
+  },
+  {
+    "object": "box45",
+    "agent_steps": 296615936,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s300m/stage1_nn/best.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": -8.644533227197826e-05,
+    "frame_means": {
+      "object_gel_count": 2.000897007257604,
+      "two_object_gels": 0.9916007502242518,
+      "any_object_gel": 0.9929054880534942,
+      "target_increment_lost": 0.0003961111616050888,
+      "raw_action_clipped": 0.08274552175922151,
+      "off_axis_squared": 4.668119088903372e-05,
+      "reward": 0.039199433542139756
+    }
+  },
+  {
+    "object": "box45",
+    "agent_steps": 500039680,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s500m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": -0.0001528553693788126,
+    "frame_means": {
+      "object_gel_count": 1.996171875,
+      "two_object_gels": 0.9958854166666666,
+      "any_object_gel": 0.9999479166666667,
+      "target_increment_lost": 0.02160610538672965,
+      "raw_action_clipped": 6.510416666666667e-05,
+      "off_axis_squared": 8.320840158641356e-07,
+      "reward": 0.05275543030894672
+    }
+  }
+]

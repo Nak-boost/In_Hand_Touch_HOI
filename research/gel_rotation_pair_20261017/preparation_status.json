@@ -1,0 +1,62 @@
+[
+  {
+    "object": "box45",
+    "mode": "generate",
+    "started": 1792215943.0885468,
+    "returncode": -11,
+    "finished": 1792216002.1325307
+  },
+  {
+    "object": "box45",
+    "mode": "validate",
+    "started": 1792216071.9285007,
+    "returncode": 0,
+    "finished": 1792216161.2603302
+  },
+  {
+    "object": "box55",
+    "mode": "generate",
+    "started": 1792216161.2609932,
+    "returncode": -11,
+    "finished": 1792216228.664259,
+    "cleanup_failure_after_saved_artifact": true
+  },
+  {
+    "object": "box55",
+    "mode": "validate",
+    "started": 1792216228.693308,
+    "returncode": -11,
+    "finished": 1792216328.7060475,
+    "cleanup_failure_after_saved_artifact": true
+  },
+  {
+    "object": "capsule70",
+    "mode": "generate",
+    "started": 1792216328.709029,
+    "returncode": -11,
+    "finished": 1792216363.1003323,
+    "cleanup_failure_after_saved_artifact": true
+  },
+  {
+    "object": "capsule70",
+    "mode": "validate",
+    "started": 1792216363.102659,
+    "returncode": -11,
+    "finished": 1792216469.9597948,
+    "cleanup_failure_after_saved_artifact": true
+  },
+  {
+    "object": "capsule80",
+    "mode": "generate",
+    "started": 1792216469.9624553,
+    "returncode": 0,
+    "finished": 1792216498.308221
+  },
+  {
+    "object": "capsule80",
+    "mode": "validate",
+    "started": 1792216498.3088324,
+    "returncode": 0,
+    "finished": 1792216607.7323344
+  }
+]

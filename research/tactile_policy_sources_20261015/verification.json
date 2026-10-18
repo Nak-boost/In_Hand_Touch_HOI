@@ -1,0 +1,29 @@
+{
+  "access_date": "2026-10-15",
+  "method": "curl via configured proxy; downloaded official pages, arXiv HTML/PDF and GitHub API/raw sources; static inspection only",
+  "checks": {
+    "AnyRotate v3 >=2": true,
+    "Visual controller actual q": true,
+    "Robot Synesthesia contact coef zero": true,
+    "Touch Dexterity official code link": true,
+    "Report exists": true
+  },
+  "files": {
+    "anyrotate_latest.html": "f63b5e56a9ed714ffe5ecce50808137e80b9c934110cc638630627ab66b91fe5",
+    "anyrotate_v3.pdf": "e5adc8090f8cec5f9938282f2690e6c9869dc36f68b0035a79b24feed2ca90a2",
+    "anyrotate_v3_pdf.txt": "1a2d03bc489440439a9b2235817f227735c22fa33581be7b7cf5135c3205c292",
+    "rotating_paper.html": "751985d3e086e2ad9d71c197289be0bc352654e55c12b096f6cbf782bf9348df",
+    "rotateit_paper.html": "8e95fc377cf4759dc334c3417ce06515dcfb5576ea4a8b2dc44dd1b8386d5b0c",
+    "visual_paper.html": "68f14ee1b130ea33077ee3629a1504ac3d0e52641c1ba1ff2628c10026969e5c",
+    "synesthesia_paper.html": "09612cd0ee8b5329d744b7916511c95977f16904fe6467c7bcea50e292686018",
+    "touchdexterity_page.html": "c45e6629edc57fe22a3b7b987b57d8684043642a49ee2a7ee9806ae2a6169def",
+    "synesthesia_page.html": "ae7b40f87653f72e2d6b7f1aeb22776bbca7dab6830579e344092c9d7b51b742",
+    "visual_page.html": "8ac5ac5f3433c59d4902ac47bd76fbe4a934ff0f9a6723a002c383b351ba42b5",
+    "report.md": "e07b5b149fd6486824eb89583b7caf0fd18a6a58959e4cb419068d7f1329cb3b"
+  },
+  "repo_snapshots": {
+    "Improbable-AI__dexenv": "ad9634e9d26cf5555d18728244a58f5b412c1eb2",
+    "YingYuan0414__in-hand-rotation": "1e5cc92864b87fbe60482a923002b5499ec5e799",
+    "maxyang27896__anyrotate": "a6616fcb63d07d8c224d3077dfe7fba7a45bc604"
+  }
+}

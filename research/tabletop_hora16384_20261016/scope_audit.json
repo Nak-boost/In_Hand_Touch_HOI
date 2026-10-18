@@ -1,0 +1,28 @@
+{
+  "runtime_files_changed": [
+    "hora/algo/ppo/ppo.py",
+    "hora/tasks/allegro_digit_two_axis.py",
+    "hora/utils/object_contacts.py"
+  ],
+  "change_purpose": "Timing/log aggregation only; see patch",
+  "asset_unchanged": "assets/allegro/allegro_digit_compact_inward90.urdf",
+  "caches_unchanged": [
+    "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt",
+    "cache/digit_tabletop_box45_inward90_checked_20261016.pt"
+  ],
+  "configuration_diff": "training_only_diff.json",
+  "baseline": "/root/In_Hand_Reconstruction/research/inward90_scale2560_20261016/frozen_project",
+  "verified_at": "2026-10-16T23:36:47.890257+08:00",
+  "train_entrypoint_unchanged": true,
+  "all_baseline_assets_unchanged": true,
+  "cache_sha256": {
+    "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt": "c6bcfafd6cc4ddfa219d59fc5cf6fb41bc12b34181f1b2f5b0e7a6a98922b6a7",
+    "cache/digit_tabletop_box45_inward90_checked_20261016.pt": "920690b8ec4c38c138479afb97e6f5e30febd48812c63d3ad389308e4389900c"
+  },
+  "frozen_manifest_verified": true,
+  "launcher_update_20261017": {
+    "file": "scripts/supervise_tabletop_stages.py",
+    "purpose": "Resource admission by measured free memory; verify saved complete checkpoints before tolerating known post-training teardown crash; preserve original exit code.",
+    "training_semantics_changed": false
+  }
+}

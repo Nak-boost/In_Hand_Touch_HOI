@@ -1,0 +1,223 @@
+[
+  {
+    "object": "sphere55",
+    "agent_steps": 10092544,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s10m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": 0.005256648175418377,
+    "frame_means": {
+      "object_gel_count": 0.7068475607315804,
+      "two_object_gels": 0.05370792812262377,
+      "any_object_gel": 0.6496978428782967,
+      "target_increment_lost": 0.41921932316239935,
+      "raw_action_clipped": 0.038875215111858166,
+      "off_axis_squared": 0.016902866214334872,
+      "reward": -0.23643724817557366
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 131072,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s10m/stage1_nn/best.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": 0.0,
+    "frame_means": {
+      "object_gel_count": 0.004606525911708253,
+      "two_object_gels": 0.0,
+      "any_object_gel": 0.004606525911708253,
+      "target_increment_lost": 1.557301099450911e-05,
+      "raw_action_clipped": 0.0,
+      "off_axis_squared": 0.9294040568730653,
+      "reward": -6.0796367045956705
+    }
+  },
+  {
+    "object": "box45",
+    "agent_steps": 10092544,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261016_s10m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": 0.0,
+    "frame_means": {
+      "object_gel_count": 0.1446028513238289,
+      "two_object_gels": 0.054650373387644266,
+      "any_object_gel": 0.08927359131025119,
+      "target_increment_lost": 0.05797669984358232,
+      "raw_action_clipped": 0.12413017651052274,
+      "off_axis_squared": 1.9178187937194381e-07,
+      "reward": -5.262963796098946
+    }
+  },
+  {
+    "object": "box45",
+    "agent_steps": 131072,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261016_s10m/stage1_nn/best.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.0,
+    "late_signed_speed_all_starts": 0.0,
+    "frame_means": {
+      "object_gel_count": 0.0,
+      "two_object_gels": 0.0,
+      "any_object_gel": 0.0,
+      "target_increment_lost": 2.324339793631225e-05,
+      "raw_action_clipped": 0.0,
+      "off_axis_squared": 1.3750791576505607e-07,
+      "reward": -6.188286995328963
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 30015488,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s30m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.046875,
+    "one_turn_retained_fraction": 0.734375,
+    "late_signed_speed_all_starts": 0.14662781357765198,
+    "frame_means": {
+      "object_gel_count": 1.437292276226458,
+      "two_object_gels": 0.4373774962361162,
+      "any_object_gel": 0.9766781240235207,
+      "target_increment_lost": 0.3119636803402828,
+      "raw_action_clipped": 0.20373086100616425,
+      "off_axis_squared": 0.16374801961081314,
+      "reward": 0.31621706385681975
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 29753344,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s30m/stage1_nn/best.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.671875,
+    "late_signed_speed_all_starts": 0.08233144879341125,
+    "frame_means": {
+      "object_gel_count": 1.3605227455214997,
+      "two_object_gels": 0.3805687072569704,
+      "any_object_gel": 0.9707340033779107,
+      "target_increment_lost": 0.33481339586614295,
+      "raw_action_clipped": 0.21678157100534373,
+      "off_axis_squared": 0.1621888765422801,
+      "reward": 0.21070187759613296
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 50069504,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s50m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.6875,
+    "late_signed_speed_all_starts": 0.5150538086891174,
+    "frame_means": {
+      "object_gel_count": 1.5169010043041606,
+      "two_object_gels": 0.5318220946915352,
+      "any_object_gel": 0.9188235294117647,
+      "target_increment_lost": 0.16576412415884126,
+      "raw_action_clipped": 0.270674318507891,
+      "off_axis_squared": 0.20331320543713344,
+      "reward": 0.5806619570279224
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 49676288,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s50m/stage1_nn/best.pth",
+    "qualified_one_turn_fraction": 0.015625,
+    "one_turn_retained_fraction": 0.796875,
+    "late_signed_speed_all_starts": 0.5605703592300415,
+    "frame_means": {
+      "object_gel_count": 1.508869546055531,
+      "two_object_gels": 0.5258924636403702,
+      "any_object_gel": 0.9206148082855884,
+      "target_increment_lost": 0.17399513394787672,
+      "raw_action_clipped": 0.2676977743499339,
+      "off_axis_squared": 0.2022180330220063,
+      "reward": 0.6225810445526614
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 100007936,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s100m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 0.90625,
+    "late_signed_speed_all_starts": 0.6085501909255981,
+    "frame_means": {
+      "object_gel_count": 1.662457191780822,
+      "two_object_gels": 0.5834225171232876,
+      "any_object_gel": 0.944964683219178,
+      "target_increment_lost": 0.06413332563507886,
+      "raw_action_clipped": 0.296241237692637,
+      "off_axis_squared": 0.1702476270522361,
+      "reward": 0.8138339539913282
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 89391104,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s100m/stage1_nn/best.pth",
+    "qualified_one_turn_fraction": 0.015625,
+    "one_turn_retained_fraction": 1.0,
+    "late_signed_speed_all_starts": 0.7429660558700562,
+    "frame_means": {
+      "object_gel_count": 1.8315104166666667,
+      "two_object_gels": 0.7104427083333333,
+      "any_object_gel": 0.97234375,
+      "target_increment_lost": 0.09473678843302272,
+      "raw_action_clipped": 0.30421875,
+      "off_axis_squared": 0.15460595256338516,
+      "reward": 0.9295781091849009
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 300023808,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s300m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 1.0,
+    "late_signed_speed_all_starts": 0.6358371376991272,
+    "frame_means": {
+      "object_gel_count": 1.645390625,
+      "two_object_gels": 0.6906510416666667,
+      "any_object_gel": 0.9542708333333333,
+      "target_increment_lost": 0.0480646868643827,
+      "raw_action_clipped": 0.14289225260416666,
+      "off_axis_squared": 0.12340461562698087,
+      "reward": 0.9173266718784968
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 261095424,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s300m/stage1_nn/best.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 1.0,
+    "late_signed_speed_all_starts": 0.74423748254776,
+    "frame_means": {
+      "object_gel_count": 1.6896614583333334,
+      "two_object_gels": 0.7061979166666666,
+      "any_object_gel": 0.981796875,
+      "target_increment_lost": 0.04145165536495095,
+      "raw_action_clipped": 0.1219970703125,
+      "off_axis_squared": 0.11600942801684141,
+      "reward": 0.9763714449604353
+    }
+  },
+  {
+    "object": "sphere55",
+    "agent_steps": 500039680,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s500m/stage1_nn/last.pth",
+    "qualified_one_turn_fraction": 0.0,
+    "one_turn_retained_fraction": 1.0,
+    "late_signed_speed_all_starts": 0.5728352069854736,
+    "frame_means": {
+      "object_gel_count": 1.4716927083333333,
+      "two_object_gels": 0.5747395833333333,
+      "any_object_gel": 0.8951822916666666,
+      "target_increment_lost": 0.11040835081142035,
+      "raw_action_clipped": 0.26244140625,
+      "off_axis_squared": 0.16834678060064714,
+      "reward": 0.9008674155672391
+    }
+  }
+]

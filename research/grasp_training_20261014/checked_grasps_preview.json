@@ -1,0 +1,32 @@
+[
+  {
+    "object": "sphere55",
+    "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere55_official_checked_20261014.pt",
+    "row": 0
+  },
+  {
+    "object": "sphere65",
+    "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere65_official_checked_20261014.pt",
+    "row": 0
+  },
+  {
+    "object": "box45",
+    "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box45_official_checked_v2_20261014.pt",
+    "row": 0
+  },
+  {
+    "object": "box55",
+    "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box55_official_checked_20261014.pt",
+    "row": 0
+  },
+  {
+    "object": "capsule70",
+    "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule70_official_checked_v2_20261014.pt",
+    "row": 0
+  },
+  {
+    "object": "capsule80",
+    "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule80_official_checked_v2_20261014.pt",
+    "row": 0
+  }
+]

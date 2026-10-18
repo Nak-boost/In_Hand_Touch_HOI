@@ -1,0 +1,11 @@
+{
+  "environment_steps": 128000,
+  "task_mask_matches_pair_load": true,
+  "contact_reward_matches": true,
+  "contact_loss_timer_matches": true,
+  "failure_and_penalty_match": true,
+  "removed_contact_reward_frames": 6294,
+  "failure_while_raw_counterfactual_alive_frames": 43392,
+  "raw_tactile_without_effective_object_frames": 32654,
+  "note": "Diagnostic replay disables auto-reset. Counts are environment frames, not independent episodes."
+}

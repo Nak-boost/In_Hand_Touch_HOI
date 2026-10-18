@@ -1,0 +1,10 @@
+{
+  "pid": 127023,
+  "command": [
+    "/root/conda_envs/inhand_hoi/bin/python",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/auto_manip_queue.py",
+    "--plan",
+    "/root/In_Hand_Reconstruction/research/tabletop_actual_queue_20261015/plan.json"
+  ],
+  "started": "2026-10-15T18:44:50.580061+08:00"
+}

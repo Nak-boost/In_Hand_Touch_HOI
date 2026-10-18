@@ -11,6 +11,8 @@ def main():
     parser.add_argument('--headless', action='store_true')
     parser.add_argument('--steps', type=int, default=0, help='Physics steps; 0 means until viewer exit')
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--config', default='manip', help='Task config, including tabletop variants')
+    parser.add_argument('--asset', help='Optional asset path relative to In_Hand_Manip')
     args = parser.parse_args()
     if args.steps < 0 or (args.headless and not args.steps):
         parser.error('Headless inspection requires positive --steps')
@@ -22,16 +24,20 @@ def main():
     from omegaconf import OmegaConf
     from train_manip import ROOT
     from hora.tasks.allegro_digit_two_axis import AllegroDigitTwoAxis
+    from hora.tasks.allegro_digit_tabletop import AllegroDigitTabletop
     from hora.utils.mount_geometry import POSTURES
     names = list(POSTURES) if args.pose == 'all' else [args.pose]
     np.random.seed(0)
     torch.manual_seed(0)
     with initialize_config_dir(config_dir=str(ROOT/'configs'), version_base='1.3'):
-        cfg = compose(config_name='manip', overrides=['stage=smoke', 'num_envs='+str(len(names)),
+        cfg = compose(config_name=args.config, overrides=['stage=smoke', 'num_envs='+str(len(names)),
                                                      'rl_device=cpu', 'pipeline=cpu'])
     task = OmegaConf.to_container(cfg.task, resolve=True)
     task['stage'] = 'smoke'
-    env = AllegroDigitTwoAxis(task, 'cuda:0', -1 if args.headless else 0, args.headless)
+    if args.asset:
+        task['env']['asset']['handAsset'] = args.asset
+    task_class = {'AllegroDigitTwoAxis': AllegroDigitTwoAxis, 'AllegroDigitTabletop': AllegroDigitTabletop}[task['name']]
+    env = task_class(task, 'cuda:0', -1 if args.headless else 0, args.headless)
     contacts = [set() for _ in names]
     max_force = [0. for _ in names]
     steps = 0
@@ -75,6 +81,7 @@ def main():
                 env.render()
     finally:
         report = {'asset': task['env']['asset']['handAsset'], 'asset_sha256': env.asset_hash,
+                  'task': task['name'], 'rigid_shapes': env.gym.get_asset_rigid_shape_count(env.hand_asset),
                   'physics_steps': steps, 'physics_dt': env.dt,
                   'method': 'Task limited-torque PD hold; object moved away; CPU tensor pipeline; GPU PhysX contacts',
                   'postures': {name: {'contact_pairs': sorted(contacts[i]), 'max_hand_force_N': max_force[i],

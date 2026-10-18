@@ -1,0 +1,482 @@
+[
+  {
+    "scene": "inhand",
+    "pose_weight": 0.3,
+    "overspeed_cost_cap": 0,
+    "required_drop_p95": 343.67655161330833,
+    "required_drop_p99": 403.6533191894916,
+    "required_drop_max": 440.1193261741299,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 63.309394199814825,
+        "required_drop_max": 75.27495807719362,
+        "mean_pose_cost": 0.00010535412729950622
+      },
+      "small_noise": {
+        "required_drop_p95": 60.559709217855634,
+        "required_drop_max": 69.48022875031707,
+        "mean_pose_cost": 0.011255227029323578
+      },
+      "outward_push": {
+        "required_drop_p95": 410.3466450154385,
+        "required_drop_max": 412.81125941519383,
+        "mean_pose_cost": 4.370185375213623
+      },
+      "alternating": {
+        "required_drop_p95": 321.5149916060453,
+        "required_drop_max": 440.1193261741299,
+        "mean_pose_cost": 2.075644016265869
+      }
+    }
+  },
+  {
+    "scene": "tabletop",
+    "pose_weight": 0.3,
+    "overspeed_cost_cap": 0,
+    "required_drop_p95": 229.0158117923232,
+    "required_drop_p99": 255.55269181662382,
+    "required_drop_max": 264.50810850584884,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 0.0,
+        "required_drop_max": 0.0,
+        "mean_pose_cost": 8.023198461160064e-07
+      },
+      "small_noise": {
+        "required_drop_p95": 5.889006943094231,
+        "required_drop_max": 8.392125799560255,
+        "mean_pose_cost": 0.0042471010237932205
+      },
+      "outward_push": {
+        "required_drop_p95": 246.94415034632075,
+        "required_drop_max": 264.50810850584884,
+        "mean_pose_cost": 1.4849562644958496
+      },
+      "alternating": {
+        "required_drop_p95": 216.51826378565934,
+        "required_drop_max": 257.76248588250945,
+        "mean_pose_cost": 0.951447069644928
+      }
+    }
+  },
+  {
+    "scene": "inhand",
+    "pose_weight": 0.3,
+    "overspeed_cost_cap": 0.25,
+    "required_drop_p95": 329.57076138830143,
+    "required_drop_p99": 401.2085886614245,
+    "required_drop_max": 412.79211310079137,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 58.04796705581497,
+        "required_drop_max": 75.19006791700168,
+        "mean_pose_cost": 0.00010535412729950622
+      },
+      "small_noise": {
+        "required_drop_p95": 56.63438743216072,
+        "required_drop_max": 64.94465322029784,
+        "mean_pose_cost": 0.011255227029323578
+      },
+      "outward_push": {
+        "required_drop_p95": 410.121086908827,
+        "required_drop_max": 412.79211310079137,
+        "mean_pose_cost": 4.370185375213623
+      },
+      "alternating": {
+        "required_drop_p95": 304.7943870241286,
+        "required_drop_max": 346.49335006365925,
+        "mean_pose_cost": 2.075644016265869
+      }
+    }
+  },
+  {
+    "scene": "tabletop",
+    "pose_weight": 0.3,
+    "overspeed_cost_cap": 0.25,
+    "required_drop_p95": 229.0158117923232,
+    "required_drop_p99": 255.55269181662382,
+    "required_drop_max": 264.50810850584884,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 0.0,
+        "required_drop_max": 0.0,
+        "mean_pose_cost": 8.023198461160064e-07
+      },
+      "small_noise": {
+        "required_drop_p95": 5.889006943094231,
+        "required_drop_max": 8.392125799560255,
+        "mean_pose_cost": 0.0042471010237932205
+      },
+      "outward_push": {
+        "required_drop_p95": 246.94415034632075,
+        "required_drop_max": 264.50810850584884,
+        "mean_pose_cost": 1.4849562644958496
+      },
+      "alternating": {
+        "required_drop_p95": 216.51826378565934,
+        "required_drop_max": 257.76248588250945,
+        "mean_pose_cost": 0.951447069644928
+      }
+    }
+  },
+  {
+    "scene": "inhand",
+    "pose_weight": 0.1,
+    "overspeed_cost_cap": 0,
+    "required_drop_p95": 163.91266864735405,
+    "required_drop_p99": 201.3686709177269,
+    "required_drop_max": 274.96442376001033,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 63.25920420582597,
+        "required_drop_max": 75.24306019093005,
+        "mean_pose_cost": 3.5118046071147546e-05
+      },
+      "small_noise": {
+        "required_drop_p95": 60.52907149853183,
+        "required_drop_max": 69.41435377025647,
+        "mean_pose_cost": 0.003751742420718074
+      },
+      "outward_push": {
+        "required_drop_p95": 175.0768046449792,
+        "required_drop_max": 181.0250362400804,
+        "mean_pose_cost": 1.4567283391952515
+      },
+      "alternating": {
+        "required_drop_p95": 159.7958684154434,
+        "required_drop_max": 274.96442376001033,
+        "mean_pose_cost": 0.6918812990188599
+      }
+    }
+  },
+  {
+    "scene": "tabletop",
+    "pose_weight": 0.1,
+    "overspeed_cost_cap": 0,
+    "required_drop_p95": 108.80663846113352,
+    "required_drop_p99": 118.60634101022718,
+    "required_drop_max": 126.29884685602349,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 0.0,
+        "required_drop_max": 0.0,
+        "mean_pose_cost": 2.674399581792386e-07
+      },
+      "small_noise": {
+        "required_drop_p95": 5.7658712851761775,
+        "required_drop_max": 8.07454748026188,
+        "mean_pose_cost": 0.0014157003024592996
+      },
+      "outward_push": {
+        "required_drop_p95": 114.15708598403147,
+        "required_drop_max": 126.29884685602349,
+        "mean_pose_cost": 0.4949854612350464
+      },
+      "alternating": {
+        "required_drop_p95": 103.62010737394347,
+        "required_drop_max": 120.38582928926199,
+        "mean_pose_cost": 0.31714898347854614
+      }
+    }
+  },
+  {
+    "scene": "inhand",
+    "pose_weight": 0.1,
+    "overspeed_cost_cap": 0.25,
+    "required_drop_p95": 147.36651458690028,
+    "required_drop_p99": 168.89796773273892,
+    "required_drop_max": 180.96139274942223,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 57.99777695122808,
+        "required_drop_max": 75.15817003073813,
+        "mean_pose_cost": 3.5118046071147546e-05
+      },
+      "small_noise": {
+        "required_drop_p95": 56.57983641149664,
+        "required_drop_max": 64.87877810932059,
+        "mean_pose_cost": 0.003751742420718074
+      },
+      "outward_push": {
+        "required_drop_p95": 175.0576581706017,
+        "required_drop_max": 180.96139274942223,
+        "mean_pose_cost": 1.4567283391952515
+      },
+      "alternating": {
+        "required_drop_p95": 135.55866274605245,
+        "required_drop_max": 164.03793761218446,
+        "mean_pose_cost": 0.6918812990188599
+      }
+    }
+  },
+  {
+    "scene": "tabletop",
+    "pose_weight": 0.1,
+    "overspeed_cost_cap": 0.25,
+    "required_drop_p95": 108.80663846113352,
+    "required_drop_p99": 118.60634101022718,
+    "required_drop_max": 126.29884685602349,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 0.0,
+        "required_drop_max": 0.0,
+        "mean_pose_cost": 2.674399581792386e-07
+      },
+      "small_noise": {
+        "required_drop_p95": 5.7658712851761775,
+        "required_drop_max": 8.07454748026188,
+        "mean_pose_cost": 0.0014157003024592996
+      },
+      "outward_push": {
+        "required_drop_p95": 114.15708598403147,
+        "required_drop_max": 126.29884685602349,
+        "mean_pose_cost": 0.4949854612350464
+      },
+      "alternating": {
+        "required_drop_p95": 103.62010737394347,
+        "required_drop_max": 120.38582928926199,
+        "mean_pose_cost": 0.31714898347854614
+      }
+    }
+  },
+  {
+    "scene": "inhand",
+    "pose_weight": 0.05,
+    "overspeed_cost_cap": 0,
+    "required_drop_p95": 124.05902114264542,
+    "required_drop_p99": 187.71867410790958,
+    "required_drop_max": 261.6261548837037,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 63.246656835685215,
+        "required_drop_max": 75.23508825984034,
+        "mean_pose_cost": 1.7559023035573773e-05
+      },
+      "small_noise": {
+        "required_drop_p95": 60.52141366798467,
+        "required_drop_max": 69.39788410561965,
+        "mean_pose_cost": 0.001875871210359037
+      },
+      "outward_push": {
+        "required_drop_p95": 117.93157903352164,
+        "required_drop_max": 123.1807616388541,
+        "mean_pose_cost": 0.7283641695976257
+      },
+      "alternating": {
+        "required_drop_p95": 129.90170912389138,
+        "required_drop_max": 261.6261548837037,
+        "mean_pose_cost": 0.34594064950942993
+      }
+    }
+  },
+  {
+    "scene": "tabletop",
+    "pose_weight": 0.05,
+    "overspeed_cost_cap": 0,
+    "required_drop_p95": 93.67591484254386,
+    "required_drop_p99": 103.42150670841582,
+    "required_drop_max": 111.60967696528559,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 0.0,
+        "required_drop_max": 0.0,
+        "mean_pose_cost": 1.337199790896193e-07
+      },
+      "small_noise": {
+        "required_drop_p95": 5.7350873894790375,
+        "required_drop_max": 7.995152954227452,
+        "mean_pose_cost": 0.0007078501512296498
+      },
+      "outward_push": {
+        "required_drop_p95": 97.87265811241352,
+        "required_drop_max": 111.60967696528559,
+        "mean_pose_cost": 0.2474927306175232
+      },
+      "alternating": {
+        "required_drop_p95": 90.46420527843205,
+        "required_drop_max": 107.90353716706358,
+        "mean_pose_cost": 0.15857449173927307
+      }
+    }
+  },
+  {
+    "scene": "inhand",
+    "pose_weight": 0.05,
+    "overspeed_cost_cap": 0.25,
+    "required_drop_p95": 113.45497997258052,
+    "required_drop_p99": 128.66750342338173,
+    "required_drop_max": 144.4414724009957,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 57.98522969168536,
+        "required_drop_max": 75.15019809964842,
+        "mean_pose_cost": 1.7559023035573773e-05
+      },
+      "small_noise": {
+        "required_drop_p95": 56.56619819786404,
+        "required_drop_max": 64.86230844468378,
+        "mean_pose_cost": 0.001875871210359037
+      },
+      "outward_push": {
+        "required_drop_p95": 115.81093449239509,
+        "required_drop_max": 123.11711816483016,
+        "mean_pose_cost": 0.7283641695976257
+      },
+      "alternating": {
+        "required_drop_p95": 116.60808381711328,
+        "required_drop_max": 144.4414724009957,
+        "mean_pose_cost": 0.34594064950942993
+      }
+    }
+  },
+  {
+    "scene": "tabletop",
+    "pose_weight": 0.05,
+    "overspeed_cost_cap": 0.25,
+    "required_drop_p95": 93.67591484254386,
+    "required_drop_p99": 103.42150670841582,
+    "required_drop_max": 111.60967696528559,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 0.0,
+        "required_drop_max": 0.0,
+        "mean_pose_cost": 1.337199790896193e-07
+      },
+      "small_noise": {
+        "required_drop_p95": 5.7350873894790375,
+        "required_drop_max": 7.995152954227452,
+        "mean_pose_cost": 0.0007078501512296498
+      },
+      "outward_push": {
+        "required_drop_p95": 97.87265811241352,
+        "required_drop_max": 111.60967696528559,
+        "mean_pose_cost": 0.2474927306175232
+      },
+      "alternating": {
+        "required_drop_p95": 90.46420527843205,
+        "required_drop_max": 107.90353716706358,
+        "mean_pose_cost": 0.15857449173927307
+      }
+    }
+  },
+  {
+    "scene": "inhand",
+    "pose_weight": 0.03,
+    "overspeed_cost_cap": 0,
+    "required_drop_p95": 117.43328589234508,
+    "required_drop_p99": 186.90172333600543,
+    "required_drop_max": 258.10582426330916,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 63.2416374812897,
+        "required_drop_max": 75.23189764601777,
+        "mean_pose_cost": 1.0535412911849562e-05
+      },
+      "small_noise": {
+        "required_drop_p95": 60.51834904214861,
+        "required_drop_max": 69.39129685464009,
+        "mean_pose_cost": 0.001125522656366229
+      },
+      "outward_push": {
+        "required_drop_p95": 95.1020212031829,
+        "required_drop_max": 100.04305174073751,
+        "mean_pose_cost": 0.4370185434818268
+      },
+      "alternating": {
+        "required_drop_p95": 127.41285089261946,
+        "required_drop_max": 258.10582426330916,
+        "mean_pose_cost": 0.20756439864635468
+      }
+    }
+  },
+  {
+    "scene": "tabletop",
+    "pose_weight": 0.03,
+    "overspeed_cost_cap": 0,
+    "required_drop_p95": 92.31119287100235,
+    "required_drop_p99": 102.02294919810493,
+    "required_drop_max": 108.78049952416872,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 0.0,
+        "required_drop_max": 0.0,
+        "mean_pose_cost": 8.023197750617328e-08
+      },
+      "small_noise": {
+        "required_drop_p95": 5.722773858986453,
+        "required_drop_max": 7.963395125506315,
+        "mean_pose_cost": 0.00042471010237932205
+      },
+      "outward_push": {
+        "required_drop_p95": 96.19607360027018,
+        "required_drop_max": 108.78049952416872,
+        "mean_pose_cost": 0.1484956294298172
+      },
+      "alternating": {
+        "required_drop_p95": 89.05039422153294,
+        "required_drop_max": 105.41134513241668,
+        "mean_pose_cost": 0.09514469653367996
+      }
+    }
+  },
+  {
+    "scene": "inhand",
+    "pose_weight": 0.03,
+    "overspeed_cost_cap": 0.25,
+    "required_drop_p95": 103.77927707403128,
+    "required_drop_p99": 126.68251552015636,
+    "required_drop_max": 143.84959444127773,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 57.98021033728985,
+        "required_drop_max": 75.14700748582585,
+        "mean_pose_cost": 1.0535412911849562e-05
+      },
+      "small_noise": {
+        "required_drop_p95": 56.56074312116169,
+        "required_drop_max": 64.85572132462084,
+        "mean_pose_cost": 0.001125522656366229
+      },
+      "outward_push": {
+        "required_drop_p95": 92.9813767060588,
+        "required_drop_max": 99.97940827499355,
+        "mean_pose_cost": 0.4370185434818268
+      },
+      "alternating": {
+        "required_drop_p95": 110.04070591047781,
+        "required_drop_max": 143.84959444127773,
+        "mean_pose_cost": 0.20756439864635468
+      }
+    }
+  },
+  {
+    "scene": "tabletop",
+    "pose_weight": 0.03,
+    "overspeed_cost_cap": 0.25,
+    "required_drop_p95": 92.31119287100235,
+    "required_drop_p99": 102.02294919810493,
+    "required_drop_max": 108.78049952416872,
+    "parts": {
+      "hold": {
+        "required_drop_p95": 0.0,
+        "required_drop_max": 0.0,
+        "mean_pose_cost": 8.023197750617328e-08
+      },
+      "small_noise": {
+        "required_drop_p95": 5.722773858986453,
+        "required_drop_max": 7.963395125506315,
+        "mean_pose_cost": 0.00042471010237932205
+      },
+      "outward_push": {
+        "required_drop_p95": 96.19607360027018,
+        "required_drop_max": 108.78049952416872,
+        "mean_pose_cost": 0.1484956294298172
+      },
+      "alternating": {
+        "required_drop_p95": 89.05039422153294,
+        "required_drop_max": 105.41134513241668,
+        "mean_pose_cost": 0.09514469653367996
+      }
+    }
+  }
+]

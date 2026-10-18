@@ -1,0 +1,12 @@
+{
+  "digit_thumb_housing|link_5.0": {
+    "n": 1,
+    "max_mm": 0.2235284802182564,
+    "example_index": 281
+  },
+  "link_3.0|link_6.0": {
+    "n": 1,
+    "max_mm": 0.22680340078152106,
+    "example_index": 306
+  }
+}

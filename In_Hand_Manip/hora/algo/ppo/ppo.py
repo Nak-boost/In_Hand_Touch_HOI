@@ -321,6 +321,7 @@ class PPO(object):
         return a_losses, c_losses, b_losses, entropies, kls
 
     def play_steps(self):
+        diagnostic_sums, diagnostic_counts = {}, {}
         for n in range(self.horizon_length):
             res_dict = self.model_act(self.obs)
             # collect o_t
@@ -351,12 +352,20 @@ class PPO(object):
                 # only log scalars
                 if isinstance(v, float) or isinstance(v, int) or (isinstance(v, torch.Tensor) and len(v.shape) == 0):
                     self.extra_info[k] = v
+                    # Reward/control diagnostics should represent the whole rollout,
+                    # including failures between its first and last steps.
+                    if k.startswith(('reward/', 'control/', 'performance/contact_')):
+                        value = v.detach().clone() if isinstance(v, torch.Tensor) else v
+                        diagnostic_sums[k] = diagnostic_sums.get(k, 0) + value
+                        diagnostic_counts[k] = diagnostic_counts.get(k, 0) + 1
 
             not_dones = 1.0 - self.dones.float()
 
             self.current_rewards = self.current_rewards * not_dones.unsqueeze(1)
             self.current_lengths = self.current_lengths * not_dones
 
+        self.extra_info.update({k: value / diagnostic_counts[k]
+                                for k, value in diagnostic_sums.items()})
         res_dict = self.model_act(self.obs)
         last_values = res_dict['values']
 

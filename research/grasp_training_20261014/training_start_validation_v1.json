@@ -1,0 +1,62 @@
+[
+  {
+    "object": "sphere55",
+    "events": 1,
+    "metrics": {
+      "rotation/speed": {
+        "step": 139264,
+        "value": 0.026140280067920685
+      },
+      "reward/pose_penalty": {
+        "step": 139264,
+        "value": -1.2120485305786133
+      },
+      "control/target_increment_lost": {
+        "step": 131072,
+        "value": 0.2810337543487549
+      },
+      "control/target_at_limit": {
+        "step": 131072,
+        "value": 0.2342529296875
+      },
+      "control/torque_at_limit": {
+        "step": 131072,
+        "value": 0.0992431640625
+      }
+    },
+    "checkpoint_count": 1,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_sphere55_z_official_pose03_20261014_v1/stage1_nn/best.pth",
+    "agent_steps": 163840,
+    "finite_weights": true
+  },
+  {
+    "object": "sphere65",
+    "events": 1,
+    "metrics": {
+      "rotation/speed": {
+        "step": 106496,
+        "value": 0.1809694617986679
+      },
+      "reward/pose_penalty": {
+        "step": 106496,
+        "value": -1.5758047103881836
+      },
+      "control/target_increment_lost": {
+        "step": 106496,
+        "value": 0.3495621085166931
+      },
+      "control/target_at_limit": {
+        "step": 106496,
+        "value": 0.2882080078125
+      },
+      "control/torque_at_limit": {
+        "step": 106496,
+        "value": 0.078369140625
+      }
+    },
+    "checkpoint_count": 1,
+    "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_sphere65_z_official_pose03_20261014_v1/stage1_nn/best.pth",
+    "agent_steps": 8192,
+    "finite_weights": true
+  }
+]

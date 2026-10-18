@@ -1,0 +1,23 @@
+{
+  "supervisor_pid": 204859,
+  "command": [
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/scripts/python_manip.sh",
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/scripts/monitor_manip.py",
+    "--config",
+    "manip_hora16384_sphere55_gel_rotation",
+    "--gpu",
+    "1",
+    "--output",
+    "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/single_monitor",
+    "--run-prefix",
+    "teacher_sphere55_gel16384_20261017",
+    "--max-steps",
+    "1500000000",
+    "--save-frequency",
+    "50",
+    "--max-restarts",
+    "2"
+  ],
+  "started": 1792215681.9497085,
+  "from_scratch": true
+}

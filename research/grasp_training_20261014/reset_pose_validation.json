@@ -1,0 +1,8 @@
+{
+  "paired_targets_restored": true,
+  "reference_stable_during_steps": true,
+  "partial_reset_isolated": true,
+  "legacy_cache_fallback": true,
+  "pose_reward_matches_formula": true,
+  "physics": "CPU PhysX; behavior checks only"
+}

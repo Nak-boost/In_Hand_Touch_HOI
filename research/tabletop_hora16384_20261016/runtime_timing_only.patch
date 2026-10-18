@@ -1,0 +1,73 @@
+--- /root/In_Hand_Reconstruction/research/inward90_scale2560_20261016/frozen_project/hora/algo/ppo/ppo.py
++++ /root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/ppo/ppo.py
+@@ -354,7 +354,7 @@
+                     self.extra_info[k] = v
+                     # Reward/control diagnostics should represent the whole rollout,
+                     # including failures between its first and last steps.
+-                    if k.startswith(('reward/', 'control/')):
++                    if k.startswith(('reward/', 'control/', 'performance/contact_')):
+                         value = v.detach().clone() if isinstance(v, torch.Tensor) else v
+                         diagnostic_sums[k] = diagnostic_sums.get(k, 0) + value
+                         diagnostic_counts[k] = diagnostic_counts.get(k, 0) + 1
+--- /root/In_Hand_Reconstruction/research/inward90_scale2560_20261016/frozen_project/hora/tasks/allegro_digit_two_axis.py
++++ /root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/allegro_digit_two_axis.py
+@@ -5,6 +5,7 @@
+ """
+ import hashlib
+ import json
++import time
+ from pathlib import Path
+ 
+ import numpy as np
+@@ -437,8 +438,22 @@
+         return self._observations()
+ 
+     def step(self, actions):
++        measured = self.object_contact_reader is not None
++        if measured:
++            started = time.perf_counter_ns()
+         _, reward, done, info = super().step(actions)
+-        return self._observations(), reward, done, info
++        observations = self._observations()
++        if measured:
++            step_ms = (time.perf_counter_ns() - started) / 1e6
++            reader = self.object_contact_reader
++            info.update({
++                'performance/contact_pair_wall_ms': reader.last_wall_ms,
++                'performance/contact_pair_cpu_ms': reader.last_cpu_ms,
++                'performance/contact_pair_wall_fraction': reader.last_wall_ms / max(step_ms, 1e-9),
++                'performance/contact_env_step_wall_ms': step_ms,
++                'performance/contact_pair_wall_us_per_env': reader.last_wall_ms * 1000 / self.num_envs,
++            })
++        return observations, reward, done, info
+ 
+     def generate_grasps(self):
+         if self.sim_params.use_gpu_pipeline:
+--- /root/In_Hand_Reconstruction/research/inward90_scale2560_20261016/frozen_project/hora/utils/object_contacts.py
++++ /root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/object_contacts.py
+@@ -5,6 +5,7 @@
+ """
+ import numpy as np
+ import torch
++import time
+ 
+ 
+ def validate_object_contact_filter(enabled, sim_config):
+@@ -63,11 +64,17 @@
+                               for e in env.envs]
+         self.loads = np.zeros((env.num_envs, 4), dtype=np.float32)
+         self.tensor = torch.from_numpy(self.loads)
++        self.last_wall_ms = 0.0
++        self.last_cpu_ms = 0.0
+ 
+     def refresh(self, env):
+         # Caller fetches the completed final physics step before querying. Do not
+         # retain Gym's borrowed contact arrays across calls or simulation steps.
++        wall_start = time.perf_counter_ns()
++        cpu_start = time.process_time_ns()
+         for i, e in enumerate(env.envs):
+             contacts = env.gym.get_env_rigid_contacts(e)
+             self.loads[i] = gel_object_normal_load(contacts, self.object_bodies[i], self.gel_lookup)
++        self.last_cpu_ms = (time.process_time_ns() - cpu_start) / 1e6
++        self.last_wall_ms = (time.perf_counter_ns() - wall_start) / 1e6
+         return self.tensor

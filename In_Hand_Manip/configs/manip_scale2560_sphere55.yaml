@@ -1,0 +1,38 @@
+# Single-object +Z scale-up. Separate run/config; never overwrites prior experiments.
+defaults:
+  - manip_compact27_sphere55
+  - _self_
+
+num_envs: 2560
+seed: 42
+pipeline: cpu
+sim_device: cuda:0
+rl_device: cuda:0
+graphics_device_id: -1
+headless: true
+
+task:
+  env:
+    asset:
+      handAsset: assets/allegro/allegro_digit_compact_inward90.urdf
+    grasp:
+      cache: cache/digit_sphere55_scale2560_inward90_checked_20261016.pt
+    manipulation:
+      object_contact_filter: true
+      action_reference: actual_position
+      fingertip_distance_weight: 0.1
+
+train:
+  network:
+    mlp: {units: [256, 256, 128]}
+    priv_mlp: {units: [128, 64, 8]}
+  ppo:
+    horizon_length: 16
+    minibatch_size: 8192
+    mini_epochs: 4
+    learning_rate: 0.0003
+    kl_threshold: 0.02
+    gamma: 0.99
+    tau: 0.95
+    max_agent_steps: 100000000
+    save_frequency: 50

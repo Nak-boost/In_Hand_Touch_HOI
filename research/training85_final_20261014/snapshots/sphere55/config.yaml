@@ -1,0 +1,273 @@
+task_name: AllegroDigitTwoAxis
+num_envs: 256
+seed: 42
+physics_engine: physx
+pipeline: gpu
+sim_device: cuda:0
+rl_device: cuda:0
+graphics_device_id: -1
+num_threads: 4
+solver_type: 1
+num_subscenes: 4
+test: false
+checkpoint: ''
+headless: true
+task:
+  name: AllegroDigitTwoAxis
+  physics_engine: physx
+  on_evaluation: false
+  env:
+    numEnvs: 256
+    numObservations: 71
+    numActions: 16
+    envSpacing: 0.4
+    episodeLength: 600
+    enableDebugVis: false
+    aggregateMode: 1
+    controller:
+      torque_control: true
+      controlFrequencyInv: 6
+      pgain: 3.0
+      dgain: 0.1
+    genGrasps: false
+    clipObservations: 5.0
+    clipActions: 1.0
+    reset_height_threshold: 0.645
+    grasp_cache_name: internal_allegro
+    forceScale: 0.0
+    randomForceProbScalar: 0.0
+    forceDecay: 0.9
+    forceDecayInterval: 0.08
+    hora:
+      propHistoryLen: 30
+      privInfoDim: 9
+    reward:
+      angvelClipMin: -0.5
+      angvelClipMax: 0.5
+      rotateRewardScale: 1.0
+      objLinvelPenaltyScale: -0.3
+      poseDiffPenaltyScale: -0.3
+      torquePenaltyScale: -0.1
+      workPenaltyScale: -2.0
+    baseObjScale: 0.8
+    randomization:
+      randomizeMass: true
+      randomizeMassLower: 0.01
+      randomizeMassUpper: 0.25
+      randomizeCOM: true
+      randomizeCOMLower: -0.01
+      randomizeCOMUpper: 0.01
+      randomizeFriction: true
+      randomizeFrictionLower: 0.3
+      randomizeFrictionUpper: 3.0
+      randomizeScale: true
+      scaleListInit: true
+      randomizeScaleList:
+      - 0.7
+      - 0.72
+      - 0.74
+      - 0.76
+      - 0.78
+      - 0.8
+      - 0.82
+      - 0.84
+      - 0.86
+      randomizeScaleLower: 0.75
+      randomizeScaleUpper: 0.8
+      randomizePDGains: true
+      randomizePGainLower: 2.9
+      randomizePGainUpper: 3.1
+      randomizeDGainLower: 0.09
+      randomizeDGainUpper: 0.11
+      jointNoiseScale: 0.02
+    privInfo:
+      enableObjPos: true
+      enableObjScale: true
+      enableObjMass: true
+      enableObjCOM: true
+      enableObjFriction: true
+    object:
+      type: block
+      sampleProb:
+      - 1.0
+    asset:
+      handAsset: assets/allegro/allegro_digit_official.urdf
+    enableCameraSensors: false
+    digit:
+      contact_threshold: 0.1
+      dropout: 0.02
+      latency_steps: 1
+    manipulation:
+      axes:
+      - - 0
+        - 0
+        - 1
+      switch_steps: 0
+      random_initial_axis: false
+      target_speed: 0.5
+      action_scale: 0.026
+      action_smoothing: 0.5
+      joint_noise: 0.01
+      velocity_noise: 0.02
+      max_displacement: 0.13
+      min_height: 0.53
+      goal_increment: 0.5235987756
+      goal_tolerance: 0.15
+      student_goal_tolerance: 0.25
+      rotation_weight: 1.0
+      off_axis_weight: 0.15
+      overspeed_weight: 0.1
+      goal_weight: 0.25
+      contact_weight: 0.05
+      housing_weight: 0.05
+      position_weight: 2.0
+      linear_velocity_weight: 0.1
+      action_rate_weight: 0.02
+      torque_weight: 0.01
+      pose_weight: 0.3
+      drop_penalty: 5.0
+      history_length: 30
+    objects:
+    - name: sphere55
+      shape: sphere
+      size:
+      - 0.055
+      - 0.055
+      - 0.055
+    grasp:
+      cache: cache/digit_sphere55_official_checked_20261014.pt
+      required_per_object: 64
+      candidate_steps: 80
+      warmup_steps: 25
+      max_batches: 40
+      q_noise: 0.025
+      canonical_q:
+      - 0.017354817472386895
+      - 1.395430671602011
+      - 0.21845413584086526
+      - -0.1393323907324536
+      - 0.12013921065475199
+      - 1.4188066590910524
+      - 0.20905990039836916
+      - -0.15695174158836464
+      - 0.00029556698217407046
+      - 1.2557005788566202
+      - 0.20000000000000265
+      - 0.09999999999999702
+      - 1.1564803358398767
+      - 0.9252160094537663
+      - 0.33796269775261184
+      - -0.09189932757466343
+      object_position:
+      - -0.03016873098075555
+      - 0.017206298640239894
+      - 0.6400000000507339
+      preload_delta:
+      - -0.0026038118099406945
+      - 0.00834416818848115
+      - 0.004765291008193344
+      - 0.00233823457411947
+      - 0.0025871232680201093
+      - 0.008488917006577461
+      - 0.0048304565828662755
+      - 0.002387375330931034
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.004321768187506605
+      - -0.002894160308923309
+      - 0.00681723022250317
+      - 0.005682216788034684
+    domain:
+      mass:
+      - 0.03
+      - 0.12
+      friction:
+      - 0.6
+      - 1.5
+      com: 0.003
+      gain_scale:
+      - 0.9
+      - 1.1
+  sim:
+    dt: 0.008333333333333333
+    substeps: 1
+    up_axis: z
+    use_gpu_pipeline: true
+    gravity:
+    - 0.0
+    - 0.0
+    - -9.81
+    physx:
+      num_threads: 4
+      solver_type: 1
+      use_gpu: true
+      num_position_iterations: 8
+      num_velocity_iterations: 1
+      max_gpu_contact_pairs: 8388608
+      num_subscenes: 4
+      contact_offset: 0.001
+      rest_offset: 0.0
+      bounce_threshold_velocity: 0.2
+      max_depenetration_velocity: 1000.0
+      default_buffer_size_multiplier: 5.0
+      contact_collection: 2
+  rl_device: cuda:0
+train:
+  seed: 42
+  algo: PPO
+  network:
+    mlp:
+      units:
+      - 256
+      - 256
+      - 128
+    priv_mlp:
+      units:
+      - 128
+      - 64
+      - 8
+  load_path: ''
+  ppo:
+    output_name: debug
+    normalize_input: true
+    normalize_value: true
+    value_bootstrap: false
+    num_actors: 256
+    normalize_advantage: true
+    gamma: 0.99
+    tau: 0.95
+    learning_rate: 0.0003
+    kl_threshold: 0.02
+    horizon_length: 16
+    minibatch_size: 4096
+    mini_epochs: 4
+    clip_value: true
+    critic_coef: 4
+    entropy_coef: 0.0
+    e_clip: 0.2
+    bounds_loss_coef: 0.0001
+    bounds_loss_soft_bound: 1.1
+    truncate_grads: true
+    grad_norm: 1.0
+    save_best_after: 0
+    save_frequency: 100
+    max_agent_steps: 10000000
+    priv_info: true
+    priv_info_dim: 23
+    priv_info_embed_dim: 8
+    proprio_adapt: false
+stage: teacher
+run_name: teacher_sphere55_z_official_pose03_20261014_v2_env256
+run_root: ../runs/manip
+teacher_checkpoint: null
+student_checkpoint: null
+evaluation_steps: 600
+distill:
+  steps: 100000
+  learning_rate: 0.0003
+  action_weight: 1.0
+  latent_weight: 1.0
+  grad_norm: 1.0
+  save_every: 1000

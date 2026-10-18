@@ -1,0 +1,166 @@
+{
+  "config": "manip_official_box45",
+  "count": 40,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 1,
+      "total": 1,
+      "retained": 223,
+      "two_gel": 1,
+      "non_gel_free": 1
+    },
+    {
+      "batch": 2,
+      "accepted": 0,
+      "total": 1,
+      "retained": 239,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 3,
+      "accepted": 2,
+      "total": 3,
+      "retained": 227,
+      "two_gel": 2,
+      "non_gel_free": 2
+    },
+    {
+      "batch": 4,
+      "accepted": 7,
+      "total": 10,
+      "retained": 219,
+      "two_gel": 7,
+      "non_gel_free": 7
+    },
+    {
+      "batch": 5,
+      "accepted": 9,
+      "total": 19,
+      "retained": 202,
+      "two_gel": 9,
+      "non_gel_free": 9
+    },
+    {
+      "batch": 6,
+      "accepted": 12,
+      "total": 31,
+      "retained": 168,
+      "two_gel": 12,
+      "non_gel_free": 12
+    },
+    {
+      "batch": 7,
+      "accepted": 4,
+      "total": 35,
+      "retained": 162,
+      "two_gel": 4,
+      "non_gel_free": 4
+    },
+    {
+      "batch": 8,
+      "accepted": 3,
+      "total": 38,
+      "retained": 140,
+      "two_gel": 3,
+      "non_gel_free": 3
+    },
+    {
+      "batch": 9,
+      "accepted": 1,
+      "total": 39,
+      "retained": 160,
+      "two_gel": 1,
+      "non_gel_free": 1
+    },
+    {
+      "batch": 10,
+      "accepted": 0,
+      "total": 39,
+      "retained": 151,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 11,
+      "accepted": 0,
+      "total": 39,
+      "retained": 159,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 12,
+      "accepted": 0,
+      "total": 39,
+      "retained": 152,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 13,
+      "accepted": 0,
+      "total": 39,
+      "retained": 164,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 14,
+      "accepted": 0,
+      "total": 39,
+      "retained": 171,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 15,
+      "accepted": 1,
+      "total": 40,
+      "retained": 165,
+      "two_gel": 1,
+      "non_gel_free": 1
+    },
+    {
+      "batch": 16,
+      "accepted": 0,
+      "total": 40,
+      "retained": 159,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 17,
+      "accepted": 0,
+      "total": 40,
+      "retained": 171,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 18,
+      "accepted": 0,
+      "total": 40,
+      "retained": 164,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 19,
+      "accepted": 0,
+      "total": 40,
+      "retained": 156,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 20,
+      "accepted": 0,
+      "total": 40,
+      "retained": 183,
+      "two_gel": 0,
+      "non_gel_free": 0
+    }
+  ]
+}

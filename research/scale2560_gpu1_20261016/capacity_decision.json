@@ -1,0 +1,20 @@
+{
+  "probes": {
+    "2560": {
+      "peak_process_mib": 2606,
+      "steady_fps": 7528.769463672699,
+      "finite": true,
+      "steps": 491520,
+      "collection_fraction": 0.981296288202668
+    },
+    "5120": {
+      "peak_process_mib": 3350,
+      "steady_fps": 7232.85043074591,
+      "finite": true,
+      "steps": 983040,
+      "collection_fraction": 0.9813494500554095
+    }
+  },
+  "selected_num_envs": 2560,
+  "reason": "5120 showed no clear throughput improvement; 2560 fits with ample headroom. Keep approved PPO parameters. Shared-machine short probes are not a universal optimum."
+}

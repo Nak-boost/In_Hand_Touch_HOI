@@ -1,0 +1,102 @@
+{
+  "config": "manip_official_box55",
+  "count": 73,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 19,
+      "total": 19,
+      "retained": 99,
+      "two_gel": 19,
+      "non_gel_free": 19
+    },
+    {
+      "batch": 2,
+      "accepted": 23,
+      "total": 42,
+      "retained": 74,
+      "two_gel": 23,
+      "non_gel_free": 23
+    },
+    {
+      "batch": 3,
+      "accepted": 13,
+      "total": 55,
+      "retained": 53,
+      "two_gel": 16,
+      "non_gel_free": 13
+    },
+    {
+      "batch": 4,
+      "accepted": 11,
+      "total": 66,
+      "retained": 53,
+      "two_gel": 11,
+      "non_gel_free": 11
+    },
+    {
+      "batch": 5,
+      "accepted": 7,
+      "total": 73,
+      "retained": 44,
+      "two_gel": 7,
+      "non_gel_free": 7
+    },
+    {
+      "batch": 6,
+      "accepted": 0,
+      "total": 73,
+      "retained": 27,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 7,
+      "accepted": 0,
+      "total": 73,
+      "retained": 37,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 8,
+      "accepted": 0,
+      "total": 73,
+      "retained": 44,
+      "two_gel": 1,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 9,
+      "accepted": 0,
+      "total": 73,
+      "retained": 41,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 10,
+      "accepted": 0,
+      "total": 73,
+      "retained": 41,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 11,
+      "accepted": 0,
+      "total": 73,
+      "retained": 40,
+      "two_gel": 0,
+      "non_gel_free": 0
+    },
+    {
+      "batch": 12,
+      "accepted": 0,
+      "total": 73,
+      "retained": 35,
+      "two_gel": 0,
+      "non_gel_free": 0
+    }
+  ]
+}

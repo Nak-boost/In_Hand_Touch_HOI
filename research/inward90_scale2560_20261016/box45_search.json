@@ -1,0 +1,92 @@
+{
+  "config": "manip_tabletop_inward90_scale2560_box45",
+  "seed": 42,
+  "accepted": 128,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 0,
+      "total": 0,
+      "two_gels": 0,
+      "table_supported": 128,
+      "non_gel_free": 84,
+      "force_ok": 128,
+      "not_failed": 6,
+      "not_moving": 128,
+      "finger_contact_fraction": [
+        0.01536458358168602,
+        0.0001302083401242271,
+        0.0,
+        0.012630208395421505
+      ]
+    },
+    {
+      "batch": 2,
+      "accepted": 1,
+      "total": 1,
+      "two_gels": 1,
+      "table_supported": 128,
+      "non_gel_free": 90,
+      "force_ok": 128,
+      "not_failed": 13,
+      "not_moving": 128,
+      "finger_contact_fraction": [
+        0.015625,
+        0.0234375,
+        0.0006510416860692203,
+        0.00794270820915699
+      ]
+    },
+    {
+      "batch": 3,
+      "accepted": 40,
+      "total": 41,
+      "two_gels": 41,
+      "table_supported": 128,
+      "non_gel_free": 116,
+      "force_ok": 128,
+      "not_failed": 93,
+      "not_moving": 128,
+      "finger_contact_fraction": [
+        0.015625,
+        0.4703125059604645,
+        0.0,
+        0.3583333194255829
+      ]
+    },
+    {
+      "batch": 4,
+      "accepted": 60,
+      "total": 101,
+      "two_gels": 60,
+      "table_supported": 128,
+      "non_gel_free": 116,
+      "force_ok": 128,
+      "not_failed": 98,
+      "not_moving": 128,
+      "finger_contact_fraction": [
+        0.0078125,
+        0.5735676884651184,
+        0.0,
+        0.551562488079071
+      ]
+    },
+    {
+      "batch": 5,
+      "accepted": 64,
+      "total": 165,
+      "two_gels": 64,
+      "table_supported": 128,
+      "non_gel_free": 114,
+      "force_ok": 128,
+      "not_failed": 96,
+      "not_moving": 128,
+      "finger_contact_fraction": [
+        0.0078125,
+        0.5766927003860474,
+        0.0,
+        0.5854166746139526
+      ]
+    }
+  ]
+}

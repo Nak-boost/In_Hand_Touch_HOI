@@ -1,0 +1,348 @@
+{
+  "models": [
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit.urdf",
+      "sha256": "2e2c4efd33d6d9d93e9dc29961746b4e6e85e1dbfc3bebeb4c05cf7255fe1927",
+      "links": 25,
+      "collision_shapes": 25
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_aligned.urdf",
+      "sha256": "3680a9e923a4df14effd79501c00464e64542e254eebd0be9713c91b03c3a87d",
+      "links": 25,
+      "collision_shapes": 25
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_cad_envelope.urdf",
+      "sha256": "8d5e51b7b5f391da6907942c93fdbff80e4babf255c83995619dd6312236f1be",
+      "links": 25,
+      "collision_shapes": 25
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_compact.urdf",
+      "sha256": "430e204848ed1cf2052d6240da3b2bdea12db58186c89c0401ea07640c588358",
+      "links": 25,
+      "collision_shapes": 27
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_official.urdf",
+      "sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "links": 25,
+      "collision_shapes": 85
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm23.urdf",
+      "sha256": "d3e70c724b2a33688bc329a460c3ef797a8d240553f8fae615aa4bf531a2bb6d",
+      "links": 25,
+      "collision_shapes": 47
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm2_y.urdf",
+      "sha256": "6660daf5b336d2a005a1893cb1a149b2fa8c89b68fe283b5f9348023b35082f6",
+      "links": 25,
+      "collision_shapes": 26
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm2_z.urdf",
+      "sha256": "0ac0bf2eeb019d237d9e69bb6250979bb0af4a5599e113913c35f8a58b9b8987",
+      "links": 25,
+      "collision_shapes": 26
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm3.urdf",
+      "sha256": "e0e875a3c77eeec75cb47e3afec62f642043fd46793f979a3d970c637dc4542f",
+      "links": 25,
+      "collision_shapes": 27
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_palm4.urdf",
+      "sha256": "9a10bd50572aeadda4e6e0035811f4d2bb4677ad51a9ddb83e7417d03746c691",
+      "links": 25,
+      "collision_shapes": 28
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/assets/allegro/allegro_digit_vendor.urdf",
+      "sha256": "130887dbf0b0bee1bb3d76824375fb1f782fe7591553396673b790d71c80fa2f",
+      "links": 25,
+      "collision_shapes": 25
+    }
+  ],
+  "caches": [
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box45_official_candidates_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "box45": 40
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box45_official_candidates_v2_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "box45": 74
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box45_official_checked_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "box45": 9
+      },
+      "quality": {
+        "report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/box45_quality.json",
+        "report_sha256": "c2f79c1e53113f9788dbcfacce49dee40ca65c40f08d7426402d439f31ae88b7",
+        "seed": 20261014
+      }
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box45_official_checked_v2_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "box45": 34
+      },
+      "quality": {
+        "report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/box45_quality_v2.json",
+        "report_sha256": "d2b6806e372cf6f09a481806dba720bdfa5d6ce4f8c5aa6c0231beabd4c9faaa",
+        "seed": 20261014
+      }
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box50_self_collision_grasps.pt",
+      "asset_sha256": "2e2c4efd33d6d9d93e9dc29961746b4e6e85e1dbfc3bebeb4c05cf7255fe1927",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "box50": 64
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box55_official_candidates_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "box55": 73
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_box55_official_checked_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "box55": 18
+      },
+      "quality": {
+        "report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/box55_quality.json",
+        "report_sha256": "528b2520249b9669709351d4d8ce810c4f9cdb3f6e06b7e25e5320164f72de89",
+        "seed": 20261014
+      }
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule70_official_candidates_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "capsule70": 47
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule70_official_candidates_v2_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "capsule70": 64
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule70_official_checked_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "capsule70": 12
+      },
+      "quality": {
+        "report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/capsule70_quality_v1.json",
+        "report_sha256": "241b2d79a8a2e0323e9aeeb89ffee1b48ff720bc9a7b95d62bc4e2dfe92837ef",
+        "seed": 20261014
+      }
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule70_official_checked_v2_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "capsule70": 32
+      },
+      "quality": {
+        "report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/capsule70_quality.json",
+        "report_sha256": "39c524bb48589a785e79220e66100bf1b79536d23a26ffb09d9cdf1e2c427a3b",
+        "seed": 20261014
+      }
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule70_self_collision_grasps.pt",
+      "asset_sha256": "2e2c4efd33d6d9d93e9dc29961746b4e6e85e1dbfc3bebeb4c05cf7255fe1927",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "capsule70": 64
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule80_official_candidates_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "capsule80": 57
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule80_official_candidates_v2_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "capsule80": 57
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule80_official_checked_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "capsule80": 8
+      },
+      "quality": {
+        "report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/capsule80_quality.json",
+        "report_sha256": "7967cfa7a6751765d07177eeddef10a4f36af66c2e4f524ec92de140d3be04e2",
+        "seed": 20261014
+      }
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_capsule80_official_checked_v2_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "capsule80": 33
+      },
+      "quality": {
+        "report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/capsule80_quality_v2.json",
+        "report_sha256": "caf423a70ddb57ac4075577bb352935d97db36ce3e2dca6cf1f146b27fcac30e",
+        "seed": 20261014
+      }
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_grasps.pt",
+      "asset_sha256": "2e2c4efd33d6d9d93e9dc29961746b4e6e85e1dbfc3bebeb4c05cf7255fe1927",
+      "collision_sha256": null,
+      "counts": {
+        "sphere55": 64,
+        "box50": 64,
+        "capsule70": 64
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere55_grasps.pt",
+      "asset_sha256": "2e2c4efd33d6d9d93e9dc29961746b4e6e85e1dbfc3bebeb4c05cf7255fe1927",
+      "collision_sha256": null,
+      "counts": {
+        "sphere55": 64
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere55_official_candidates_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "sphere55": 55
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere55_official_checked_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "sphere55": 19
+      },
+      "quality": {
+        "report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/sphere55_quality.json",
+        "report_sha256": "c1c0200a02c4287e3a63d58efa208c7195a9b71736f798af5cf2a4c6d3b0da09",
+        "seed": 20261014
+      }
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere55_self_collision_grasps.pt",
+      "asset_sha256": "2e2c4efd33d6d9d93e9dc29961746b4e6e85e1dbfc3bebeb4c05cf7255fe1927",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "sphere55": 64
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere65_official_candidates_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "sphere65": 128
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere65_official_checked_20261014.pt",
+      "asset_sha256": "31846982dad1d6ed725a43eb5a479f00790b5f3adb2ba5dd1871658c4b5e5b7c",
+      "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+      "counts": {
+        "sphere65": 46
+      },
+      "quality": {
+        "report": "/root/In_Hand_Reconstruction/research/grasp_training_20261014/sphere65_quality.json",
+        "report_sha256": "17e93dd5518b19509f7002910fac4e383dfe1b93a033d88254932b8b41cff8f2",
+        "seed": 20261014
+      }
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_tabletop_box45_light_v1.pt",
+      "asset_sha256": "430e204848ed1cf2052d6240da3b2bdea12db58186c89c0401ea07640c588358",
+      "collision_sha256": "5bd1fb6bfb9f4e795f432a7b8e8068f2c9777628eb11c4b009e955e20b40fe1f",
+      "counts": {
+        "box45": 16
+      },
+      "quality": null
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_tabletop_box45_light_v2.pt",
+      "asset_sha256": "430e204848ed1cf2052d6240da3b2bdea12db58186c89c0401ea07640c588358",
+      "collision_sha256": "f702ae3c468416e196684340d2f5dacc380d3ca43befeee746d5d29977852646",
+      "counts": {
+        "box45": 16
+      },
+      "quality": null
+    }
+  ],
+  "gpu_snapshot": "index, name, memory.total [MiB], memory.used [MiB], utilization.gpu [%]\n0, NVIDIA GeForce RTX 4090, 24564 MiB, 14401 MiB, 100 %\n1, NVIDIA GeForce RTX 4090, 24564 MiB, 8555 MiB, 98 %\n2, NVIDIA GeForce RTX 4090, 24564 MiB, 0 MiB, 0 %\n3, NVIDIA GeForce RTX 4090, 24564 MiB, 0 MiB, 0 %\n",
+  "requested_gpus": [
+    2,
+    3
+  ],
+  "reward_required": {
+    "off_axis_cost_cap": 0.5,
+    "overspeed_cost_cap": 0.25,
+    "pose_weight": 0.05,
+    "drop_penalty": 250.0,
+    "limit_push_weight": 0.25
+  },
+  "model_selection": "Confirmed by user: allegro_digit_compact.urdf, 27 collision shapes"
+}

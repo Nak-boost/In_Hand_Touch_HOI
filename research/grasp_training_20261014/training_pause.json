@@ -1,0 +1,11 @@
+{
+  "pids": [
+    68695,
+    68729
+  ],
+  "paused_utc": "2026-10-13T18:22:57.096584+00:00",
+  "reason": "Finish contact validation on shared GPU; automatic resume after at most 8 min.",
+  "resume_observed_utc": "2026-10-13T18:32:42.096573+00:00",
+  "resumed_by": "8 min watchdog",
+  "state": "resumed"
+}

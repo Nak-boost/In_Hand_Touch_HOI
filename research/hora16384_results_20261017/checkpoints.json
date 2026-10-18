@@ -1,0 +1,42 @@
+{
+  "best.pth": {
+    "agent_steps": 217317376,
+    "epoch_num": 1658,
+    "last_lr": 0.00013006147436874462,
+    "best_rewards": 89.02964782714844,
+    "action_reference": "actual_position",
+    "model_finite": true
+  },
+  "ep_1000_step_0131M_reward_13.69.pth": {
+    "agent_steps": 131072000,
+    "epoch_num": 1000,
+    "last_lr": 8.670764957916308e-05,
+    "best_rewards": 34.71375274658203,
+    "action_reference": "actual_position",
+    "model_finite": true
+  },
+  "ep_1500_step_0196M_reward_19.61.pth": {
+    "agent_steps": 196608000,
+    "epoch_num": 1500,
+    "last_lr": 0.00019509221155311694,
+    "best_rewards": 44.48804473876953,
+    "action_reference": "actual_position",
+    "model_finite": true
+  },
+  "ep_500_step_0065M_reward_-54.25.pth": {
+    "agent_steps": 65536000,
+    "epoch_num": 500,
+    "last_lr": 0.00019509221155311694,
+    "best_rewards": -31.425691604614258,
+    "action_reference": "actual_position",
+    "model_finite": true
+  },
+  "last.pth": {
+    "agent_steps": 196608000,
+    "epoch_num": 1500,
+    "last_lr": 0.00019509221155311694,
+    "best_rewards": 44.48804473876953,
+    "action_reference": "actual_position",
+    "model_finite": true
+  }
+}

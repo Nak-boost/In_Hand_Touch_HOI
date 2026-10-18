@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-17T14:30:42.385907",
+  "status": "running",
+  "multi": {
+    "status": "running",
+    "gpu": 0,
+    "pid": 214197,
+    "num_envs": 16384,
+    "agent_steps": 393216,
+    "process_mib": 6074,
+    "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_20261017_resumed_attempt00",
+    "monitor": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/multi_resume_monitor/status.json"
+  },
+  "single": {
+    "status": "running",
+    "gpu": 1,
+    "pid": 211460,
+    "num_envs": 16384,
+    "agent_steps": 12582912,
+    "process_mib": 7544,
+    "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_sphere55_gel16384_20261017_resumed_attempt00",
+    "monitor": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/single_resume_monitor/status.json"
+  }
+}

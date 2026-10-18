@@ -1,0 +1,147 @@
+"""Summarize historical-rollout diagnostics alongside the ed93077 asset audit."""
+from pathlib import Path
+import json
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+OUT=Path(__file__).resolve().parent
+OLD=OUT.parent/'training_review_20261013'
+objects=['sphere55','box50','capsule70']
+names=['球体55 mm','立方体50 mm','胶囊70×50 mm']
+rows=[]
+fig,axs=plt.subplots(1,3,figsize=(13,3.8),constrained_layout=True)
+for obj,name,color in zip(objects,names,['#2463a6','#d27b23','#23836d']):
+    d=json.loads((OUT/(obj+'_actuation.json')).read_text())
+    prev=json.loads((OLD/(obj+'_last_windows.json')).read_text())
+    assert d['initial_state_sha256']==prev['initial_state_sha256']
+    for key in ['retention_30s','mean_net_turns','mean_return']:
+        assert abs(d[key]-prev[key])<1e-6,(obj,key)
+    m=d['windows'][-1]['means']
+    lost=m['blocked_increment_l1']/m['requested_increment_l1']
+    rows.append(f"| {name} | {m['mean_abs_action']:.3f} | {lost:.2%} | {m['target_at_limit']:.1%} | {m['actual_joint_at_limit']:.1%} | {m['last_substep_torque_at_limit']:.1%} | {m['mean_abs_target_error']:.3f} |")
+    x=[(w['start_s']+w['end_s'])/2 for w in d['windows']]
+    axs[0].plot(x,[w['means']['abs_z_speed'] for w in d['windows']],'-o',color=color,label=obj)
+    axs[1].plot(x,[100*w['means']['blocked_increment_l1']/w['means']['requested_increment_l1'] for w in d['windows']],'-o',color=color)
+    axs[2].plot(x,[100*w['means']['last_substep_torque_at_limit'] for w in d['windows']],'-o',color=color)
+axs[0].axhline(.5,ls='--',color='gray',label='target speed')
+axs[0].legend(frameon=False,fontsize=8)
+for ax,title in zip(axs,['Object absolute Z speed (rad/s)','Requested target increment lost (%)','Torque at limit, last substep (%)']):
+    ax.set(xlabel='Time-window midpoint (s)',ylabel=title);ax.grid(alpha=.2)
+fig.suptitle('Historical policies and legacy geometry — diagnostic replay, not new-asset training')
+fig.savefig(OUT/'stall_diagnostics.png',dpi=180)
+fig.savefig(OUT/'stall_diagnostics.pdf')
+
+report='''# ed93077 后的停转原因复核（2026-10-13）
+
+## 版本边界
+
+检查时 HEAD 为 ed930779cc07ab2688301db1805d2a6737428abf，训练代码工作区干净。
+当前默认资产为 allegro_digit_official.urdf；没有 *_official_grasps.pt，
+也没有该资产上的正式教师训练。三组约1亿步教师仍来自旧 allegro_digit.urdf，
+并使用修正前的 PPO bounds loss。因此现有失败不能被称为新装配/新正则的训练失败。
+
+ed93077 同时改变了 DIGIT 曲面胶体、外壳、末端安装变换、掌部/指节碰撞体及传感器惯量估计。
+已有静态/PhysX 证据表明，旧掌部盒与拇指在张手/半握中的穿插问题已在三种诊断姿态下消除。
+这改善了模型有效性，但不是持物、滚动接触或连续换指成功的证据。
+新装配采用 TACTO 直线安装，不是 NeuralFeels 带偏航的装配。
+
+## 新补充的执行链诊断
+
+用三组历史 last 权重，各256环境、seed=20261013、首回合30秒，读取训练时保存的任务源码。
+仅将历史模块 ROOT 指向保留旧URDF/缓存的项目路径，并禁止回合自动重置；未把旧权重装到新手模型。
+支持模块（数学、模型、归一化、碰撞过滤）与训练快照逐字节一致，权重/资产/碰撞签名校验通过。
+每组的初始状态哈希、保持率、净圈数、回报与前次诊断一致；本脚本逐步验证奖励分解。
+
+下表统计20–30秒未失败环境的有效控制帧：
+
+| 物体 | 平均绝对动作 | 请求目标增量被裁掉 | 目标角在限位附近 | 实际角在限位附近 | 力矩到上限 | 平均目标跟踪误差(rad) |
+|---|---:|---:|---:|---:|---:|---:|
+'''+ '\n'.join(rows)+'''
+
+- 动作为平滑后的归一化动作，范围[-1,1]。
+- 增量损失比例 = sum(abs(请求增量−实际目标角增量))/sum(abs(请求增量))。
+  两者都是目标角的量，不是物体转角或实际关节运动量。
+- 角度限位附近阈值为0.001 rad；力矩只采每个控制步最后一个物理子步。
+- 有效关节力矩上限来自URDF，为0.35 Nm；代码的clamp(max=0.5)不会把0.35提升到0.5。
+- 跟踪误差与力矩饱和支持“目标继续施压而关节不能跟上”，但不能仅凭它区分物体约束、自碰撞或执行器限制各自的比例。
+
+这次诊断把“目标在限位附近”的相关性补充成了明确的执行机制：
+策略仍输出幅度较大的动作，但绝大多数目标增量被硬限位截掉，执行目标不再变化。
+物体停转不等于网络输出零动作。保留的PD误差与接触约束可继续产生夹持力。
+实际关节仅部分到限位，也不能把目标饱和误读为所有手指都到机械极限。
+
+## 主要因素与证据强度
+
+### 1. 增量动作饱和，未形成持续换指循环（执行机制已测量）
+
+控制为 q_target <- clip(q_target + 0.026 * a_filtered)，20 Hz，平滑系数0.5。
+持续同号饱和动作的目标速度渐近0.52 rad/s，约数秒就可走完有限的关节行程。
+要持续转动物体，需要指间协调、回撤/重接触或滚动接触循环；当前行为主要是一次性推进后继续朝边界施压。
+这不是增量控制本身不可用，而是当前策略学到的动作模式不可持续。
+
+### 2. 历史模型与旧正则是确实存在的缺陷，但贡献尚未分离
+
+旧平面/方盒代理和无来源的倾斜安装影响可接触区域，旧掌部碰撞盒还在部分姿态与拇指穿插。
+这些限制会妨碍回撤和再接触，但尚无几何单因素训练对照能给出影响比例。
+旧bounds loss严格等价于sum((mu-1.1)^2)，人为偏向正动作；其方向与目标持续累加问题一致。
+当前对称正则已经修复，但旧权重不会随源码改变而自行改善。
+不能说“修复这两项就必然成功”。
+
+### 3. 当前任务对失去精细抓持后卡住的状态容忍较大（代码与接触数据支持）
+
+失败只检查高度<0.53 m、位移>0.13 m、非有限状态或30秒超时，没有长期无进展或有效接触丢失判定。
+旧回放中物体约99%的有效帧接触非胶面部件，同时至少两胶面真正接触物体仅约4%–6%。
+这意味着大量样本不是期望的指尖旋转。并非全部是掌心支撑，主要还包括指节和外壳。
+胶面奖励基于净力，无法区分物体接触与手指自接触。真实传感器也会感到自接触，
+所以首先应澄清训练奖励/诊断的接触身份，不应把观测无条件改成“只看物体”而造成实机信息泄漏。
+所有手部部件和物体共享每环境摩擦系数0.6–1.5；外壳、指节未与胶体区分材质。
+这为非胶面夹持提供条件，但其因果贡献仍需要接触/摩擦对照。
+
+### 4. 奖励和初始化鼓励的行为不等于可持续旋转（结构性风险）
+
+原HORA有 -0.3*sum((q-q_init)^2) 姿态偏离惩罚，当前自定义任务没有它；
+动作变化惩罚只看 a_t-a_(t-1)，恒定大动作的这项代价趋零。
+目标到边界后继续输出同号动作，也没有针对“无效目标增量”的专门代价。
+这些不是指必须照搬HORA姿态项：过强的姿态正则同样可能阻止必要换指，需要单独对照。
+
+球体前0–5秒平均旋转奖励+0.610，偏轴惩罚-0.751，位移惩罚-0.102。
+运动带来的奖励已被当前运动中的偏轴代价抵消；后期停转使偏轴代价接近0，但也没有取得旋转收益。
+当前偏轴项为-0.15*||omega_perp||²，旋转主项最大+1；例如偏轴3 rad/s时单项为-1.35。
+这说明粗糙探索/换指的代价可能阻碍发现更好的运动，不证明正确旋转比静止回报低。
+零动作基线三组回报都高于已训练策略，同样提示策略优化与任务设计没有对齐。
+
+抓取筛选是64个静态保持状态、至少两个胶面接触、单方向重力、允许非胶面支撑；
+没有检验关节剩余行程、释放一指后的稳定性或局部旋转可操作性。
+新安装后连该静态筛选都还未运行，不能直接复用旧缓存或认定原canonical姿态仍合适。
+抓取数量增加不能替代抓取质量和动态可操作性验证。
+
+16步PPO采样窗口为0.8秒，gamma=0.99、GAE lambda=0.95，探索依靠高斯关节动作；
+这些可能影响多阶段换指学习效率，但value bootstrap存在，不能声称策略只能看到0.8秒，
+也不能从当前数据认定增加rollout长度或增加网络就能修复停转。
+
+## 建议顺序（未自动修改或启动训练）
+
+1. 在新官方资产上重新生成独立抓取库，先检查真实物体—胶面接触、非胶面支撑比例和关节行程余量，
+   做零动作保持与小幅释放/回撤诊断。若找不到合适抓取，再审查物体放置、尺寸和安装；不靠关闭碰撞解决。
+2. 用已修正bounds loss的新球体教师从头做短基线，保留当前奖励，记录目标增量裁剪率、力矩/目标误差、
+   每5秒转角、真实接触和30秒整圈成功率，确认新几何+修正公式是否仍出现同样停转模式。
+   这条基线同时更新几何和旧错误，不能用于分别估计二者贡献；需要严格归因时再另设单因素对照。
+3. 若仍停转，分别比较弱姿态/限位余量正则，以及有效接触/持续进展任务判定；不要同时改一组权重。
+   允许必要的短暂换指，不设“每一帧都必须三指接触”的苛刻终止条件。
+4. 对非胶面支撑和停转使用有宽限时间的判定；终止奖励要处理好，避免代理通过提前结束回合逃避后续负回报。
+   不要仅叠加静态接触奖励，不要先盲目增大力矩或减小真实摩擦。
+5. 持续单物体旋转通过后再做多物体、学生和更丰富触觉。教师已有真实位姿/速度，
+   此次失败尚不能归结为没有TACTO、DIGIT四路binary不足或点云重建缺失。
+
+## 产物
+
+- diagnose_actuation.py：历史源码回放与执行链诊断。
+- *_actuation.json：每回合及分时间段统计。
+- stall_diagnostics.png/pdf：分时间段停转、目标增量裁剪与力矩饱和曲线。
+- 既有回放、零动作和真实接触对证据：../training_review_20261013/report.md。
+- 几何来源及修复范围：../../In_Hand_Manip/docs/official_digit.md。
+'''
+(OUT/'report.md').write_text(report)
+print('\n'.join(rows))
+print('Verified 3 historical reproductions; wrote report and figures.')

@@ -1,0 +1,17 @@
+{
+  "pid": 210535,
+  "status": "superseded_by_direct_launch",
+  "gpu": 0,
+  "minimum_free_mib": 12000,
+  "required_consecutive_samples": 4,
+  "poll_seconds": 30,
+  "samples": 0,
+  "started": 1792216878.9316866,
+  "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_20261017_attempt00/stage1_nn/best.pth",
+  "checked": 1792218565.7254992,
+  "free_mib": 9809,
+  "used_mib": 14283,
+  "finished": 1792218579.7441213,
+  "supervisor_pid": 214031,
+  "monitor": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/multi_resume_monitor/status.json"
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "object": "sphere55",
+    "collision_shapes": 27,
+    "num_envs": 512,
+    "rewards": {
+      "off_axis_cost_cap": 0.5,
+      "overspeed_cost_cap": 0.25,
+      "pose_weight": 0.05,
+      "drop_penalty": 250.0,
+      "limit_push_weight": 0.25
+    },
+    "cache": "cache/digit_sphere55_compact27_checked_20261015.pt"
+  },
+  {
+    "object": "sphere65",
+    "collision_shapes": 27,
+    "num_envs": 512,
+    "rewards": {
+      "off_axis_cost_cap": 0.5,
+      "overspeed_cost_cap": 0.25,
+      "pose_weight": 0.05,
+      "drop_penalty": 250.0,
+      "limit_push_weight": 0.25
+    },
+    "cache": "cache/digit_sphere65_compact27_checked_20261015.pt"
+  },
+  {
+    "object": "box45",
+    "collision_shapes": 27,
+    "num_envs": 512,
+    "rewards": {
+      "off_axis_cost_cap": 0.5,
+      "overspeed_cost_cap": 0.25,
+      "pose_weight": 0.05,
+      "drop_penalty": 250.0,
+      "limit_push_weight": 0.25
+    },
+    "cache": "cache/digit_box45_compact27_checked_20261015.pt"
+  },
+  {
+    "object": "box55",
+    "collision_shapes": 27,
+    "num_envs": 512,
+    "rewards": {
+      "off_axis_cost_cap": 0.5,
+      "overspeed_cost_cap": 0.25,
+      "pose_weight": 0.05,
+      "drop_penalty": 250.0,
+      "limit_push_weight": 0.25
+    },
+    "cache": "cache/digit_box55_compact27_checked_20261015.pt"
+  },
+  {
+    "object": "capsule70",
+    "collision_shapes": 27,
+    "num_envs": 512,
+    "rewards": {
+      "off_axis_cost_cap": 0.5,
+      "overspeed_cost_cap": 0.25,
+      "pose_weight": 0.05,
+      "drop_penalty": 250.0,
+      "limit_push_weight": 0.25
+    },
+    "cache": "cache/digit_capsule70_compact27_checked_20261015.pt"
+  },
+  {
+    "object": "capsule80",
+    "collision_shapes": 27,
+    "num_envs": 512,
+    "rewards": {
+      "off_axis_cost_cap": 0.5,
+      "overspeed_cost_cap": 0.25,
+      "pose_weight": 0.05,
+      "drop_penalty": 250.0,
+      "limit_push_weight": 0.25
+    },
+    "cache": "cache/digit_capsule80_compact27_checked_20261015.pt"
+  }
+]

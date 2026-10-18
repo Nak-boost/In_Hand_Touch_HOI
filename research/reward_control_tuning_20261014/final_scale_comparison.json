@@ -1,0 +1,227 @@
+{
+  "inhand": {
+    "protocols": {
+      "hold": {
+        "mean_pose_cost_old": 0.00010535412729950622,
+        "mean_pose_cost_new": 1.7559023035573773e-05,
+        "mean_off_cost_old": 0.24180231988430023,
+        "mean_off_cost_new": 0.004634068813174963,
+        "overspeed_cost_max_old": 5.2167887687683105,
+        "overspeed_cost_max_new": 0.2385673224925995,
+        "mean_limit_push_cost": 0.0,
+        "mean_blocked_command": 0.0,
+        "complete_episodes": 36,
+        "fraction_worse_than_immediate_failure_old": 0.2777777777777778,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      },
+      "small_noise": {
+        "mean_pose_cost_old": 0.011255227960646152,
+        "mean_pose_cost_new": 0.001875871210359037,
+        "mean_off_cost_old": 0.8295509219169617,
+        "mean_off_cost_new": 0.047978371381759644,
+        "overspeed_cost_max_old": 6.037609577178955,
+        "overspeed_cost_max_new": 0.24005982279777527,
+        "mean_limit_push_cost": 8.914797945180908e-06,
+        "mean_blocked_command": 3.565919178072363e-05,
+        "complete_episodes": 40,
+        "fraction_worse_than_immediate_failure_old": 0.775,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      },
+      "outward_push": {
+        "mean_pose_cost_old": 4.370185375213623,
+        "mean_pose_cost_new": 0.7283641695976257,
+        "mean_off_cost_old": 0.4832327663898468,
+        "mean_off_cost_new": 0.022952532395720482,
+        "overspeed_cost_max_old": 4.0387043952941895,
+        "overspeed_cost_max_new": 0.23542682826519012,
+        "mean_limit_push_cost": 0.22935064136981964,
+        "mean_blocked_command": 0.9174025654792786,
+        "complete_episodes": 41,
+        "fraction_worse_than_immediate_failure_old": 1.0,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      },
+      "alternating": {
+        "mean_pose_cost_old": 2.075644016265869,
+        "mean_pose_cost_new": 0.34594064950942993,
+        "mean_off_cost_old": 2.327134847640991,
+        "mean_off_cost_new": 0.16325460374355316,
+        "overspeed_cost_max_old": 127.20246887207031,
+        "overspeed_cost_max_new": 0.24950961768627167,
+        "mean_limit_push_cost": 0.09160568565130234,
+        "mean_blocked_command": 0.36642274260520935,
+        "complete_episodes": 279,
+        "fraction_worse_than_immediate_failure_old": 1.0,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      }
+    },
+    "required_D_episode_start": {
+      "count": 396,
+      "p95": 113.45498152900078,
+      "p99": 128.66750312993693,
+      "maximum": 144.4414735572785
+    },
+    "required_D_suffix_at_least_20_steps": {
+      "count": 54298,
+      "p95": 125.64403390937004,
+      "p99": 135.00694331530698,
+      "maximum": 227.89745022581994
+    },
+    "required_D_suffix_under_20_steps": {
+      "count": 6182,
+      "p95": 268.5873480089572,
+      "p99": 403.79219250440525,
+      "maximum": 563.6514186859126
+    },
+    "note": "Immediate failure benchmark is -D only, excludes action-dependent same-step shaping. Finite observed trajectories only; cannot prove policy incentives globally."
+  },
+  "tabletop": {
+    "protocols": {
+      "hold": {
+        "mean_pose_cost_old": 8.023198461160064e-07,
+        "mean_pose_cost_new": 1.337199790896193e-07,
+        "mean_off_cost_old": 0.0,
+        "mean_off_cost_new": 0.0,
+        "overspeed_cost_max_old": 0.0,
+        "overspeed_cost_max_new": 0.0,
+        "mean_limit_push_cost": 0.0,
+        "mean_blocked_command": 0.0,
+        "complete_episodes": 32,
+        "fraction_worse_than_immediate_failure_old": 0.0,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      },
+      "small_noise": {
+        "mean_pose_cost_old": 0.0042471010237932205,
+        "mean_pose_cost_new": 0.0007078502676449716,
+        "mean_off_cost_old": 0.0,
+        "mean_off_cost_new": 0.0,
+        "overspeed_cost_max_old": 0.0,
+        "overspeed_cost_max_new": 0.0,
+        "mean_limit_push_cost": 6.831196060375078e-06,
+        "mean_blocked_command": 2.732478424150031e-05,
+        "complete_episodes": 112,
+        "fraction_worse_than_immediate_failure_old": 0.07142857142857142,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      },
+      "outward_push": {
+        "mean_pose_cost_old": 1.4849562644958496,
+        "mean_pose_cost_new": 0.2474927306175232,
+        "mean_off_cost_old": 0.0,
+        "mean_off_cost_new": 0.0,
+        "overspeed_cost_max_old": 0.0,
+        "overspeed_cost_max_new": 0.0,
+        "mean_limit_push_cost": 0.09342767298221588,
+        "mean_blocked_command": 0.3737106919288635,
+        "complete_episodes": 560,
+        "fraction_worse_than_immediate_failure_old": 0.9875,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      },
+      "alternating": {
+        "mean_pose_cost_old": 0.951447069644928,
+        "mean_pose_cost_new": 0.15857449173927307,
+        "mean_off_cost_old": 0.0,
+        "mean_off_cost_new": 0.0,
+        "overspeed_cost_max_old": 0.0,
+        "overspeed_cost_max_new": 0.0,
+        "mean_limit_push_cost": 0.07464368641376495,
+        "mean_blocked_command": 0.2985747456550598,
+        "complete_episodes": 491,
+        "fraction_worse_than_immediate_failure_old": 0.9755600814663951,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      }
+    },
+    "required_D_episode_start": {
+      "count": 1195,
+      "p95": 93.67591523436828,
+      "p99": 103.42150625023456,
+      "maximum": 111.60967744567667
+    },
+    "required_D_suffix_at_least_20_steps": {
+      "count": 49005,
+      "p95": 99.82246059586589,
+      "p99": 115.3586800800922,
+      "maximum": 136.37692710900092
+    },
+    "required_D_suffix_under_20_steps": {
+      "count": 19639,
+      "p95": 193.79215432405414,
+      "p99": 291.5277009606359,
+      "maximum": 337.20567989349337
+    },
+    "note": "Immediate failure benchmark is -D only, excludes action-dependent same-step shaping. Finite observed trajectories only; cannot prove policy incentives globally."
+  },
+  "official": {
+    "protocols": {
+      "hold": {
+        "mean_pose_cost_old": 0.0009497483260929585,
+        "mean_pose_cost_new": 0.00015829138283152133,
+        "mean_off_cost_old": 11.259350776672363,
+        "mean_off_cost_new": 0.18181835114955902,
+        "overspeed_cost_max_old": 9.144615173339844,
+        "overspeed_cost_max_new": 0.24334725737571716,
+        "mean_limit_push_cost": 0.0,
+        "mean_blocked_command": 0.0,
+        "complete_episodes": 30,
+        "fraction_worse_than_immediate_failure_old": 1.0,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      },
+      "small_noise": {
+        "mean_pose_cost_old": 0.003730679862201214,
+        "mean_pose_cost_new": 0.0006217799964360893,
+        "mean_off_cost_old": 6.0224761962890625,
+        "mean_off_cost_new": 0.16362400352954865,
+        "overspeed_cost_max_old": 4.959301948547363,
+        "overspeed_cost_max_new": 0.2380022257566452,
+        "mean_limit_push_cost": 0.0,
+        "mean_blocked_command": 0.0,
+        "complete_episodes": 18,
+        "fraction_worse_than_immediate_failure_old": 1.0,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      },
+      "outward_push": {
+        "mean_pose_cost_old": 1.9816287755966187,
+        "mean_pose_cost_new": 0.3302714228630066,
+        "mean_off_cost_old": 15.260611534118652,
+        "mean_off_cost_new": 0.2471296489238739,
+        "overspeed_cost_max_old": 190.87380981445312,
+        "overspeed_cost_max_new": 0.249672994017601,
+        "mean_limit_push_cost": 0.13003477454185486,
+        "mean_blocked_command": 0.5201390981674194,
+        "complete_episodes": 38,
+        "fraction_worse_than_immediate_failure_old": 1.0,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      },
+      "alternating": {
+        "mean_pose_cost_old": 1.5059412717819214,
+        "mean_pose_cost_new": 0.25099024176597595,
+        "mean_off_cost_old": 15.38708782196045,
+        "mean_off_cost_new": 0.23729248344898224,
+        "overspeed_cost_max_old": 52.7867546081543,
+        "overspeed_cost_max_new": 0.24882157146930695,
+        "mean_limit_push_cost": 0.10307689011096954,
+        "mean_blocked_command": 0.4123075604438782,
+        "complete_episodes": 38,
+        "fraction_worse_than_immediate_failure_old": 1.0,
+        "fraction_worse_than_immediate_failure_new": 0.0
+      }
+    },
+    "required_D_episode_start": {
+      "count": 124,
+      "p95": 173.22817829318723,
+      "p99": 204.6127936558775,
+      "maximum": 214.60536531469828
+    },
+    "required_D_suffix_at_least_20_steps": {
+      "count": 1263,
+      "p95": 150.39356941564446,
+      "p99": 180.2559386874944,
+      "maximum": 216.30845102018327
+    },
+    "required_D_suffix_under_20_steps": {
+      "count": 1815,
+      "p95": 294.77021250952384,
+      "p99": 417.2109720897669,
+      "maximum": 489.9069123268123
+    },
+    "note": "Immediate failure benchmark is -D only, excludes action-dependent same-step shaping. Finite observed trajectories only; cannot prove policy incentives globally."
+  }
+}

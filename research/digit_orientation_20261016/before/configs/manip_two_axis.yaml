@@ -1,0 +1,17 @@
+# Original multi-object, two-axis setup retained as an explicit opt-in profile.
+defaults:
+  - manip
+  - _self_
+
+task:
+  env:
+    manipulation:
+      axes: [[0, 0, 1], [1, 0, 0]]
+      switch_steps: 160
+      random_initial_axis: true
+    objects:
+      - {name: sphere55, shape: sphere, size: [0.055, 0.055, 0.055]}
+      - {name: box50, shape: box, size: [0.050, 0.050, 0.050]}
+      - {name: capsule70, shape: capsule, size: [0.070, 0.050, 0.050]}
+    grasp:
+      cache: cache/digit_two_axis_official_grasps.pt

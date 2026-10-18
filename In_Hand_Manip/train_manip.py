@@ -1,8 +1,12 @@
 """Project entry point. Run with scripts/run_manip.sh for the local Isaac Gym environment."""
 import isaacgym  # Isaac Gym must be imported before torch
 import datetime
+import faulthandler
 import json
+import os
+import signal
 import subprocess
+import traceback
 from pathlib import Path
 
 import hydra
@@ -14,8 +18,13 @@ from hora.algo.padapt.tactile_distill import TactileDistill, normalize_inputs
 from hora.algo.models.tactile_student import TactileStudent
 from hora.algo.models.running_mean_std import RunningMeanStd
 from hora.tasks.allegro_digit_two_axis import AllegroDigitTwoAxis
+from hora.tasks.allegro_digit_tabletop import AllegroDigitTabletop
 from hora.utils.hand_collision import require_collision_signature
+from hora.utils.manip_control import action_reference, require_action_reference
 from hora.utils.misc import set_seed
+from hora.utils.training_watchdog import TrainingJournal, atomic_torch_save
+
+JOURNAL = TrainingJournal(os.environ.get('MANIP_HEARTBEAT'))
 
 ROOT = Path(__file__).resolve().parent
 for name, resolver in {
@@ -29,19 +38,36 @@ for name, resolver in {
 
 
 class ManipPPO(PPO):
+    def play_steps(self):
+        JOURNAL.write('collect', agent_steps=self.agent_steps, epoch_num=self.epoch_num)
+        result = super().play_steps()
+        JOURNAL.write('update', agent_steps=self.agent_steps, epoch_num=self.epoch_num)
+        return result
+
+    def train_epoch(self):
+        result = super().train_epoch()
+        JOURNAL.write('rollout_complete', agent_steps=self.agent_steps, epoch_num=self.epoch_num)
+        return result
+
     def save(self, name):
-        super().save(name)
-        ckpt = torch.load(str(name)+'.pth', map_location=self.device)
+        JOURNAL.write('checkpoint_save', agent_steps=self.agent_steps, epoch_num=self.epoch_num)
+        ckpt = dict(model=self.model.state_dict(),
+                    running_mean_std=self.running_mean_std.state_dict(),
+                    value_mean_std=self.value_mean_std.state_dict())
         ckpt.update(asset_sha256=self.env.asset_hash, kind='privileged_teacher',
+                    action_reference=action_reference(self.env.cfg),
                     collision_sha256=self.env.collision_hash,
                     optimizer=self.optimizer.state_dict(), agent_steps=self.agent_steps,
                     epoch_num=self.epoch_num, best_rewards=self.best_rewards, last_lr=self.last_lr)
-        torch.save(ckpt, str(name)+'.pth')
+        atomic_torch_save(ckpt, str(name)+'.pth')
+        JOURNAL.write('checkpoint_saved', checkpoint=str(name)+'.pth',
+                      agent_steps=self.agent_steps, epoch_num=self.epoch_num)
 
     def restore_train(self, fn):
         if not fn:
             return
         ckpt = torch.load(fn, map_location=self.device)
+        require_action_reference(ckpt, self.env.cfg, 'Teacher checkpoint')
         require_collision_signature(ckpt, self.env.collision_hash, 'Teacher checkpoint')
         if ckpt.get('asset_sha256') != self.env.asset_hash:
             raise ValueError('Checkpoint is not from this DIGIT asset')
@@ -60,6 +86,7 @@ def evaluate(env, cfg, run_dir):
     if not cfg.student_checkpoint:
         raise ValueError('Evaluation requires student_checkpoint; privileged teacher is not evaluated as deployable')
     ckpt = torch.load(cfg.student_checkpoint, map_location=cfg.rl_device)
+    require_action_reference(ckpt, env.cfg, 'Student checkpoint')
     require_collision_signature(ckpt, env.collision_hash, 'Student checkpoint')
     if ckpt.get('kind') != 'tactile_student' or ckpt['asset_sha256'] != env.asset_hash:
         raise ValueError('Expected compatible tactile student checkpoint')
@@ -98,6 +125,10 @@ def evaluate(env, cfg, run_dir):
 
 @hydra.main(version_base='1.3', config_path='configs', config_name='manip')
 def main(cfg):
+    if JOURNAL.path:
+        faulthandler.enable(all_threads=True)
+        faulthandler.register(signal.SIGUSR1, all_threads=True)
+    JOURNAL.write('initializing')
     set_seed(cfg.seed)
     if cfg.stage not in ('teacher', 'student', 'evaluate', 'grasps', 'smoke'):
         raise ValueError('Unknown stage: '+cfg.stage)
@@ -119,12 +150,14 @@ def main(cfg):
     shutil.copy2(__file__, run_dir/'source'/'train_manip.py')
     task = OmegaConf.to_container(cfg.task, resolve=True)
     task['stage'] = cfg.stage
-    env = AllegroDigitTwoAxis(task, cfg.sim_device, cfg.graphics_device_id, cfg.headless)
+    task_classes = {'AllegroDigitTwoAxis': AllegroDigitTwoAxis, 'AllegroDigitTabletop': AllegroDigitTabletop}
+    env = task_classes[task['name']](task, cfg.sim_device, cfg.graphics_device_id, cfg.headless)
+    JOURNAL.write('environment_ready')
     try:
         (run_dir/'asset_metadata.json').write_text(json.dumps(dict(
             asset_sha256=env.asset_hash, collision_sha256=env.collision_hash,
             collision_spec=env.collision_spec, joint_names=env.joint_names, fingers=['index', 'middle', 'ring', 'thumb'],
-            control_dt=env.control_dt, objects=env.catalog), indent=2))
+            control_dt=env.control_dt, action_reference=action_reference(env.cfg), objects=env.catalog), indent=2))
         shutil.copy2(ROOT/task['env']['asset']['handAsset'], run_dir/'allegro_digit.urdf')
         if cfg.stage == 'grasps':
             env.generate_grasps()
@@ -134,6 +167,8 @@ def main(cfg):
             try:
                 agent.train()
                 agent.save(str(run_dir/'stage1_nn'/'last'))
+                JOURNAL.write('training_complete', training_complete=True,
+                              agent_steps=agent.agent_steps, epoch_num=agent.epoch_num)
             finally:
                 agent.writer.close()
         elif cfg.stage == 'student':
@@ -147,8 +182,13 @@ def main(cfg):
                 if not all(torch.isfinite(v).all() for v in obs.values()) or not torch.isfinite(reward).all():
                     raise FloatingPointError('Smoke test produced nonfinite observations/rewards')
             print('SMOKE PASS', {k: list(v.shape) for k, v in obs.items()})
+    except BaseException:
+        JOURNAL.write('exception', exception=traceback.format_exc())
+        raise
     finally:
+        JOURNAL.write('destroy_sim')
         env.close()
+    JOURNAL.write('closed')
     print('Run directory:', run_dir)
 
 

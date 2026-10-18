@@ -1,0 +1,22 @@
+{
+  "config": "manip_official_capsule70",
+  "count": 64,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 51,
+      "total": 63,
+      "retained": 58,
+      "two_gel": 52,
+      "non_gel_free": 51
+    },
+    {
+      "batch": 2,
+      "accepted": 32,
+      "total": 95,
+      "retained": 41,
+      "two_gel": 32,
+      "non_gel_free": 32
+    }
+  ]
+}

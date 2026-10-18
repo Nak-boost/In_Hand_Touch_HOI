@@ -1,0 +1,11 @@
+# Isolated 27-shape collision candidate; regenerate/revalidate grasps for this hash.
+# Does not alter the asset or cache used by already-running official experiments.
+defaults:
+  - manip_official_sphere55
+  - _self_
+task:
+  env:
+    asset:
+      handAsset: assets/allegro/allegro_digit_compact.urdf
+    grasp:
+      cache: cache/digit_sphere55_compact_checked.pt

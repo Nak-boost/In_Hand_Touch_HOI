@@ -1,0 +1,333 @@
+{
+  "accepted": 89,
+  "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere65_compact27_checked_resume20261016.pt",
+  "cache_sha256": "8ddc6ae9734632759ee6887a78b1836b4e2c9f9a285658ca0c3dfe3b9a97cac1",
+  "asset_sha256": "430e204848ed1cf2052d6240da3b2bdea12db58186c89c0401ea07640c588358",
+  "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+  "rewards": {
+    "off_axis_cost_cap": 0.5,
+    "overspeed_cost_cap": 0.25,
+    "pose_weight": 0.05,
+    "drop_penalty": 250.0,
+    "limit_push_weight": 0.25
+  },
+  "config": {
+    "task_name": "AllegroDigitTwoAxis",
+    "num_envs": 512,
+    "seed": 42,
+    "physics_engine": "physx",
+    "pipeline": "gpu",
+    "sim_device": "cuda:0",
+    "rl_device": "cuda:0",
+    "graphics_device_id": 0,
+    "num_threads": 4,
+    "solver_type": 1,
+    "num_subscenes": 4,
+    "test": false,
+    "checkpoint": "",
+    "headless": true,
+    "task": {
+      "name": "AllegroDigitTwoAxis",
+      "physics_engine": "physx",
+      "on_evaluation": false,
+      "env": {
+        "numEnvs": 512,
+        "numObservations": 71,
+        "numActions": 16,
+        "envSpacing": 0.4,
+        "episodeLength": 600,
+        "enableDebugVis": false,
+        "aggregateMode": 1,
+        "controller": {
+          "torque_control": true,
+          "controlFrequencyInv": 6,
+          "pgain": 3.0,
+          "dgain": 0.1
+        },
+        "genGrasps": false,
+        "clipObservations": 5.0,
+        "clipActions": 1.0,
+        "reset_height_threshold": 0.645,
+        "grasp_cache_name": "internal_allegro",
+        "forceScale": 0.0,
+        "randomForceProbScalar": 0.0,
+        "forceDecay": 0.9,
+        "forceDecayInterval": 0.08,
+        "hora": {
+          "propHistoryLen": 30,
+          "privInfoDim": 9
+        },
+        "reward": {
+          "angvelClipMin": -0.5,
+          "angvelClipMax": 0.5,
+          "rotateRewardScale": 1.0,
+          "objLinvelPenaltyScale": -0.3,
+          "poseDiffPenaltyScale": -0.3,
+          "torquePenaltyScale": -0.1,
+          "workPenaltyScale": -2.0
+        },
+        "baseObjScale": 0.8,
+        "randomization": {
+          "randomizeMass": true,
+          "randomizeMassLower": 0.01,
+          "randomizeMassUpper": 0.25,
+          "randomizeCOM": true,
+          "randomizeCOMLower": -0.01,
+          "randomizeCOMUpper": 0.01,
+          "randomizeFriction": true,
+          "randomizeFrictionLower": 0.3,
+          "randomizeFrictionUpper": 3.0,
+          "randomizeScale": true,
+          "scaleListInit": true,
+          "randomizeScaleList": [
+            0.7,
+            0.72,
+            0.74,
+            0.76,
+            0.78,
+            0.8,
+            0.82,
+            0.84,
+            0.86
+          ],
+          "randomizeScaleLower": 0.75,
+          "randomizeScaleUpper": 0.8,
+          "randomizePDGains": true,
+          "randomizePGainLower": 2.9,
+          "randomizePGainUpper": 3.1,
+          "randomizeDGainLower": 0.09,
+          "randomizeDGainUpper": 0.11,
+          "jointNoiseScale": 0.02
+        },
+        "privInfo": {
+          "enableObjPos": true,
+          "enableObjScale": true,
+          "enableObjMass": true,
+          "enableObjCOM": true,
+          "enableObjFriction": true
+        },
+        "object": {
+          "type": "block",
+          "sampleProb": [
+            1.0
+          ]
+        },
+        "asset": {
+          "handAsset": "assets/allegro/allegro_digit_compact.urdf"
+        },
+        "enableCameraSensors": false,
+        "digit": {
+          "contact_threshold": 0.1,
+          "dropout": 0.02,
+          "latency_steps": 1
+        },
+        "manipulation": {
+          "axes": [
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "switch_steps": 0,
+          "random_initial_axis": false,
+          "target_speed": 0.5,
+          "action_scale": 0.026,
+          "action_smoothing": 0.5,
+          "action_reference": "previous_target",
+          "joint_noise": 0.01,
+          "velocity_noise": 0.02,
+          "max_displacement": 0.13,
+          "min_height": 0.53,
+          "goal_increment": 0.5235987756,
+          "goal_tolerance": 0.15,
+          "student_goal_tolerance": 0.25,
+          "rotation_weight": 1.0,
+          "off_axis_weight": 0.15,
+          "off_axis_cost_cap": 0.5,
+          "overspeed_weight": 0.1,
+          "overspeed_cost_cap": 0.25,
+          "goal_weight": 0.25,
+          "contact_weight": 0.05,
+          "fingertip_distance_weight": 0.0,
+          "housing_weight": 0.05,
+          "position_weight": 2.0,
+          "linear_velocity_weight": 0.1,
+          "action_rate_weight": 0.02,
+          "torque_weight": 0.01,
+          "pose_weight": 0.05,
+          "limit_push_weight": 0.25,
+          "drop_penalty": 250.0,
+          "history_length": 30
+        },
+        "objects": [
+          {
+            "name": "sphere65",
+            "shape": "sphere",
+            "size": [
+              0.065,
+              0.065,
+              0.065
+            ]
+          }
+        ],
+        "grasp": {
+          "cache": "cache/digit_sphere65_compact27_checked_resume20261016.pt",
+          "required_per_object": 64,
+          "candidate_steps": 80,
+          "warmup_steps": 25,
+          "max_batches": 40,
+          "q_noise": 0.025,
+          "canonical_q": [
+            0.04417984548480591,
+            1.2635896517478002,
+            0.2338011334260039,
+            -0.021760969095849875,
+            0.1558893153209627,
+            1.265989817195861,
+            0.2760891640396346,
+            -0.06726422747500754,
+            3.6504550581143493e-06,
+            1.274346685320821,
+            0.19999999999999812,
+            0.09999999999999931,
+            1.1698612380145856,
+            0.8439735526323641,
+            0.3077583960835689,
+            -0.09193048336457005
+          ],
+          "object_position": [
+            -0.03364933269351346,
+            0.010845375626816076,
+            0.6401069979193664
+          ],
+          "preload_delta": [
+            -0.002347299224011377,
+            0.008318638519761286,
+            0.004765429574979947,
+            0.0022952520255451296,
+            0.0016394514934245956,
+            0.008664371508071558,
+            0.004885204707714053,
+            0.002350197429071004,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.005128459581155741,
+            -0.0033761031892407187,
+            0.009128854559243374,
+            0.00457682939854654
+          ]
+        },
+        "domain": {
+          "mass": [
+            0.03,
+            0.12
+          ],
+          "friction": [
+            0.6,
+            1.5
+          ],
+          "com": 0.003,
+          "gain_scale": [
+            0.9,
+            1.1
+          ]
+        }
+      },
+      "sim": {
+        "dt": 0.008333333333333333,
+        "substeps": 1,
+        "up_axis": "z",
+        "use_gpu_pipeline": true,
+        "gravity": [
+          0.0,
+          0.0,
+          -9.81
+        ],
+        "physx": {
+          "num_threads": 4,
+          "solver_type": 1,
+          "use_gpu": true,
+          "num_position_iterations": 8,
+          "num_velocity_iterations": 1,
+          "max_gpu_contact_pairs": 8388608,
+          "num_subscenes": 4,
+          "contact_offset": 0.001,
+          "rest_offset": 0.0,
+          "bounce_threshold_velocity": 0.2,
+          "max_depenetration_velocity": 1000.0,
+          "default_buffer_size_multiplier": 5.0,
+          "contact_collection": 2
+        }
+      },
+      "rl_device": "cuda:0"
+    },
+    "train": {
+      "seed": 42,
+      "algo": "PPO",
+      "network": {
+        "mlp": {
+          "units": [
+            256,
+            256,
+            128
+          ]
+        },
+        "priv_mlp": {
+          "units": [
+            128,
+            64,
+            8
+          ]
+        }
+      },
+      "load_path": "",
+      "ppo": {
+        "output_name": "debug",
+        "normalize_input": true,
+        "normalize_value": true,
+        "value_bootstrap": false,
+        "num_actors": 512,
+        "normalize_advantage": true,
+        "gamma": 0.99,
+        "tau": 0.95,
+        "learning_rate": 0.0003,
+        "kl_threshold": 0.02,
+        "horizon_length": 16,
+        "minibatch_size": 4096,
+        "mini_epochs": 4,
+        "clip_value": true,
+        "critic_coef": 4,
+        "entropy_coef": 0.0,
+        "e_clip": 0.2,
+        "bounds_loss_coef": 0.0001,
+        "bounds_loss_soft_bound": 1.1,
+        "truncate_grads": true,
+        "grad_norm": 1.0,
+        "save_best_after": 0,
+        "save_frequency": 100,
+        "max_agent_steps": 10000000,
+        "priv_info": true,
+        "priv_info_dim": 23,
+        "priv_info_embed_dim": 8,
+        "proprio_adapt": false
+      }
+    },
+    "stage": "teacher",
+    "run_name": null,
+    "run_root": "../runs/manip",
+    "teacher_checkpoint": null,
+    "student_checkpoint": null,
+    "evaluation_steps": 600,
+    "distill": {
+      "steps": 100000,
+      "learning_rate": 0.0003,
+      "action_weight": 1.0,
+      "latent_weight": 1.0,
+      "grad_norm": 1.0,
+      "save_every": 1000
+    }
+  }
+}

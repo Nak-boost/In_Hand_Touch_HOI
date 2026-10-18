@@ -1,0 +1,21 @@
+# Palm-up +Z, compact 27-shape asset, isolated caches and calibrated rewards.
+defaults:
+  - manip_official_box55
+  - _self_
+num_envs: 512
+task:
+  env:
+    asset:
+      handAsset: assets/allegro/allegro_digit_compact.urdf
+    grasp:
+      cache: cache/digit_box55_compact27_checked_20261015.pt
+    manipulation:
+      off_axis_cost_cap: 0.5
+      overspeed_cost_cap: 0.25
+      pose_weight: 0.05
+      drop_penalty: 250.0
+      limit_push_weight: 0.25
+train:
+  ppo:
+    minibatch_size: 4096
+    max_agent_steps: 10000000

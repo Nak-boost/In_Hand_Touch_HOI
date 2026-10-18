@@ -1,0 +1,4 @@
+{
+  "pid": 131781,
+  "reason": "Complete JSON and completion print verified; CPU env.close did not return after >40 seconds; terminated diagnostic only."
+}

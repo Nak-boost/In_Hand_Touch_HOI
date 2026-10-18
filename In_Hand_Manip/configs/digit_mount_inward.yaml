@@ -1,0 +1,10 @@
+# Right hand: rotate whole DIGIT assemblies around distal-local +Z.
+# Matches the index/ring directions of the published NeuralFeels right asset.
+# Middle and thumb deliberately retain the current mount (thumb is NOT -60 deg).
+mount_profile: inward90_right
+yaw_degrees: {index: -90, middle: 0, ring: 90, thumb: 0}
+assets:
+  - source: assets/allegro/allegro_digit_official.urdf
+    output: assets/allegro/allegro_digit_official_inward90.urdf
+  - source: assets/allegro/allegro_digit_compact.urdf
+    output: assets/allegro/allegro_digit_compact_inward90.urdf

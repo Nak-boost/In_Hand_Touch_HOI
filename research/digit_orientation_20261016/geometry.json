@@ -1,0 +1,97 @@
+{
+  "asset_sha256": "430e204848ed1cf2052d6240da3b2bdea12db58186c89c0401ea07640c588358",
+  "angle_definition": "Angle between gel apex +X and apex-to-object-center vector. Not a contact measurement; for boxes not the local surface-normal error.",
+  "cases": {
+    "sphere55": {
+      "cache": "digit_sphere55_compact27_checked_resume20261016.pt",
+      "states": 100,
+      "fingers": {
+        "index": {
+          "angle_deg_p10_p50_p90": [
+            29.969439044738465,
+            36.15916424661934,
+            41.00408336709309
+          ],
+          "apex_to_center_mm_median": 30.344747208676694,
+          "prior_probe_contact_count": 98
+        },
+        "middle": {
+          "angle_deg_p10_p50_p90": [
+            38.918726497911756,
+            49.26812812493918,
+            51.409783472338205
+          ],
+          "apex_to_center_mm_median": 33.67686550940537,
+          "prior_probe_contact_count": 100
+        },
+        "ring": {
+          "angle_deg_p10_p50_p90": [
+            60.77127782621183,
+            62.449003605350754,
+            63.793981459385364
+          ],
+          "apex_to_center_mm_median": 84.58635872687236,
+          "prior_probe_contact_count": 0
+        },
+        "thumb": {
+          "angle_deg_p10_p50_p90": [
+            32.37213976311413,
+            34.90413475446136,
+            40.22798190567966
+          ],
+          "apex_to_center_mm_median": 30.265938474879597,
+          "prior_probe_contact_count": 99
+        }
+      },
+      "base_joint_median_deg": [
+        1.3447997876652187,
+        5.510884130641663,
+        0.9771797432672389
+      ],
+      "prior_contact_probe_note": "Existing validation: real gel-object contact after 1 s hold, selected accepted cache states, not a newly run simulation or trained-policy statistic."
+    },
+    "tabletop_box45": {
+      "cache": "digit_tabletop_box45_actual_checked_v3.pt",
+      "states": 64,
+      "fingers": {
+        "index": {
+          "angle_deg_p10_p50_p90": [
+            47.37386211238827,
+            49.201344796494766,
+            51.406047720157915
+          ],
+          "apex_to_center_mm_median": 39.623303412124194
+        },
+        "middle": {
+          "angle_deg_p10_p50_p90": [
+            51.96714353985437,
+            54.58307069991922,
+            57.01474723776397
+          ],
+          "apex_to_center_mm_median": 40.631846898924366
+        },
+        "ring": {
+          "angle_deg_p10_p50_p90": [
+            64.1135779768383,
+            65.26892185733254,
+            66.83849688046858
+          ],
+          "apex_to_center_mm_median": 88.7999276078339
+        },
+        "thumb": {
+          "angle_deg_p10_p50_p90": [
+            32.63382433761798,
+            34.17906996692975,
+            35.867032834855486
+          ],
+          "apex_to_center_mm_median": 38.55183031838444
+        }
+      },
+      "base_joint_median_deg": [
+        1.8131411632979386,
+        5.02750331878681,
+        -0.7628779423443137
+      ]
+    }
+  }
+}

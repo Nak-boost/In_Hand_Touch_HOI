@@ -1,0 +1,38 @@
+{
+  "config": "manip_compact27_sphere65_resume20261016",
+  "count": 128,
+  "batches": [
+    {
+      "batch": 1,
+      "accepted": 11,
+      "total": 11,
+      "retained": 19,
+      "two_gel": 11,
+      "non_gel_free": 11
+    },
+    {
+      "batch": 2,
+      "accepted": 37,
+      "total": 48,
+      "retained": 43,
+      "two_gel": 37,
+      "non_gel_free": 37
+    },
+    {
+      "batch": 3,
+      "accepted": 55,
+      "total": 103,
+      "retained": 60,
+      "two_gel": 55,
+      "non_gel_free": 55
+    },
+    {
+      "batch": 4,
+      "accepted": 64,
+      "total": 167,
+      "retained": 66,
+      "two_gel": 64,
+      "non_gel_free": 64
+    }
+  ]
+}

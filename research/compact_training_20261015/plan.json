@@ -1,0 +1,536 @@
+{
+  "gpus": [
+    2,
+    3
+  ],
+  "poll_seconds": 5,
+  "idle_samples": 3,
+  "idle_max_used_mb": 1024,
+  "idle_max_utilization": 10,
+  "minimum_free_mb": 12000,
+  "lock_directory": "/tmp/touchfm-manip-gpu-locks",
+  "experiments": [
+    {
+      "object": "sphere55",
+      "config": "manip_compact27_sphere55",
+      "run_name": "teacher_sphere55_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_sphere55",
+            "--output-cache",
+            "cache/digit_sphere55_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_sphere55",
+            "--cache",
+            "cache/digit_sphere55_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_quality.json",
+            "--output-cache",
+            "cache/digit_sphere55_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_sphere55",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_sphere55",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_sphere55_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere55_train.log"
+        }
+      ]
+    },
+    {
+      "object": "box45",
+      "config": "manip_compact27_box45",
+      "run_name": "teacher_box45_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_box45",
+            "--output-cache",
+            "cache/digit_box45_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_box45",
+            "--cache",
+            "cache/digit_box45_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_quality.json",
+            "--output-cache",
+            "cache/digit_box45_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_box45",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_box45",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_box45_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box45_train.log"
+        }
+      ]
+    },
+    {
+      "object": "sphere65",
+      "config": "manip_compact27_sphere65",
+      "run_name": "teacher_sphere65_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_sphere65",
+            "--output-cache",
+            "cache/digit_sphere65_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_sphere65",
+            "--cache",
+            "cache/digit_sphere65_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_quality.json",
+            "--output-cache",
+            "cache/digit_sphere65_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_sphere65",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_sphere65",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_sphere65_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/sphere65_train.log"
+        }
+      ]
+    },
+    {
+      "object": "capsule70",
+      "config": "manip_compact27_capsule70",
+      "run_name": "teacher_capsule70_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_capsule70",
+            "--output-cache",
+            "cache/digit_capsule70_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_capsule70",
+            "--cache",
+            "cache/digit_capsule70_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_quality.json",
+            "--output-cache",
+            "cache/digit_capsule70_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_capsule70",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_capsule70",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_capsule70_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule70_train.log"
+        }
+      ]
+    },
+    {
+      "object": "box55",
+      "config": "manip_compact27_box55",
+      "run_name": "teacher_box55_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_box55",
+            "--output-cache",
+            "cache/digit_box55_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_box55",
+            "--cache",
+            "cache/digit_box55_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_quality.json",
+            "--output-cache",
+            "cache/digit_box55_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_box55",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_box55",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_box55_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/box55_train.log"
+        }
+      ]
+    },
+    {
+      "object": "capsule80",
+      "config": "manip_compact27_capsule80",
+      "run_name": "teacher_capsule80_z_compact27_reward250_20261015",
+      "stages": [
+        {
+          "name": "generate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py",
+            "--config",
+            "manip_compact27_capsule80",
+            "--output-cache",
+            "cache/digit_capsule80_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_generation.json",
+            "--count",
+            "128",
+            "--envs",
+            "128",
+            "--batches",
+            "40"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_generate.log"
+        },
+        {
+          "name": "validate",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py",
+            "--config",
+            "manip_compact27_capsule80",
+            "--cache",
+            "cache/digit_capsule80_compact27_candidates_20261015.pt",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_quality.json",
+            "--output-cache",
+            "cache/digit_capsule80_compact27_checked_20261015.pt"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_validate.log"
+        },
+        {
+          "name": "audit",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py",
+            "--config",
+            "manip_compact27_capsule80",
+            "--quality",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_quality.json",
+            "--minimum",
+            "16",
+            "--output",
+            "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_cache_audit.json"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_audit.log"
+        },
+        {
+          "name": "train",
+          "command": [
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh",
+            "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py",
+            "--config-name",
+            "manip_compact27_capsule80",
+            "stage=teacher",
+            "num_envs=512",
+            "graphics_device_id=-1",
+            "run_name=teacher_capsule80_z_compact27_reward250_20261015",
+            "train.ppo.max_agent_steps=10000000",
+            "seed=42"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/compact_training_20261015/capsule80_train.log"
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/__init__.py": "4236998e0ade73d6660df387a14bd7543342afa8d456a208dad977a2b712296c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/allegro_hand_grasp.py": "8643359c60613eb436fcbdd04083b9d63092cf6dc0cebd96d2ec3d25baf2ee6a",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/allegro_hand_hora.py": "c3e52c8c2714f735488ff1c7b42f969a078ee45a09ac8d2caff95c2d4ea35245",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/manipulation_math.py": "3609f90c58d60329968dac01c1586281518263a7d8b732bfe1b76f31fe47536f",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/allegro_digit_two_axis.py": "577b2fa3329cfc413e640b39902f86abb941ba8129f9b026edf94189f56f41c0",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/tabletop_math.py": "bff7443d2faf2c9c719b174cf9f70d1989b1947f104c0d02ab6379ed15d887c0",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/allegro_digit_tabletop.py": "5a7d0a00b5cd17e1cb329862d9ae85473f0e85c17c3089ed55b732c6e66f85d6",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/misc.py": "a09175b0fb7e009146ffec5ca3690f73d8a9a8006eb769c38ba2b22f17b61d13",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/reformat.py": "8b25e9b8c491cf2a22cd2d9fffa72f011670999cc570d5a43b30eea49c56141f",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/hand_collision.py": "9cf9fcc426e0e8b2cb35870d8579b468e75441ccb6f2f7bda7ee7879475d507c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/replay_files.py": "08c0d255296541c52c9502262d3778133934a734dd7f5747f01de98fdcdfbb90",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/mount_geometry.py": "e878693cf883fe6dd7d67ace3789f5ad1efb2124ee908222b1935cfc14e7e450",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/asset_geometry.py": "34a964e5fc34d8257aac21d6ddea5a75f78c252975e7bdeb4311ea6c028cc3cf",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/mesh_inspection.py": "0f8dc12f256ca702f289080435882922aa00db4ce343de8370ab3eb60298643e",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/utils/tabletop_contacts.py": "1d3eecee772953bc126ad2db246202f40633eef192f04baefd8a000bf631dd79",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/deploy.py": "465224b9cf16dfba01403cdc819c9f04ee61cc885059cf5adf1aba459ad06e01",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/digit_runtime.py": "2014e53136daac79f9f4e2b2d3f3b1868914c6ef3fa1383e0c20b98b42148c28",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/models/models.py": "bbb7ccefff5a9188b4e1618db489de85a9ec11ba382a75907bde12a279639dd7",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/models/running_mean_std.py": "98f63931433654b217535e535be4cd899af2c041a89071ab9fed1db87443a5c8",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/models/tactile_student.py": "3e382d59f9bd4a74b8b60a9f0195fe24e3f3cab2544d91430fa9e376c190aa74",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/padapt/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/padapt/padapt.py": "79eaf5491045ab3892368ff779c8c431a505c7d8324ad5823960afc581499c56",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/padapt/tactile_distill.py": "377962f6cc5b2fc83e67c69c744c948cde9816dffa44be8c71d33eee601dd696",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/ppo/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/ppo/experience.py": "a6e217706afb806a34e0e0c7696c486d0e1187ffe8f1c5ae59acc78928bc40c4",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/ppo/ppo.py": "1340cfa446d30954d5b835fcdd9e50a8edf26992a4924541f3cc706331bfea13",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/robots/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/algo/deploy/robots/allegro.py": "ba954612feb64a034c36fc33db5b1988b49dd545365de24667ae49d8ccac8644",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/base/__init__.py": "16dffd658ec0b9968fc74d3b5e6bb6aac8d1c8b75edefe8b2d0a52b2ae5825da",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/hora/tasks/base/vec_task.py": "4fd8ce6cd72d7c8f2d89c8909f23d56df8a0b3fb98aefd00a8a0316e173422ae",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/config.yaml": "1b9817484271f173c0f60b77aa3f06af4ddf8b19297b658924a165596250f48f",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/digit_mount.yaml": "d227e16c545eaebbb70f5f07d6d13b15c15f26b6fd8abd7e926be3b9d9a7b3f3",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip.yaml": "92a68c72bdeedaa672a120310090a5c0029a567b7dc1f323c384247abbc59a12",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_two_axis.yaml": "920047251c09337e36ade21a3d11125dc76a659e4e0898f97c994a392b2b8f63",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_box50.yaml": "dcdb7d77f5a674c2b0f930dfd17a7b352b8d6eb3b65afcda9650e78d54554e28",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_capsule70.yaml": "868f63340fd6611820976cf7e16ea563c572416bc277cf0121e87775d68261c1",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/digit_mount_aligned_proxy.yaml": "12ae9e37a2dbc623d6edae2259f739cd360aafb3d0dc69994ac58f996b4a78f0",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_sphere55.yaml": "a8b9100420287cfce33fc49eeb51192ad8607ac314b4b1e198ea8783c81b7db9",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_sphere65.yaml": "f06e29aece356dcc6307b7921924dd8c3b162e78acdbd5e84879bd4bdacb2826",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_box45.yaml": "fe864aed0da3378502d76c30c01f4e046935b41e44932b034ba8d4a56b71bfe2",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_box55.yaml": "9e8dd9e2326d20dbc56ebe5fb7968e1d9fe866cf7a94809c39eb26286928f043",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_capsule70.yaml": "29240ca704f011a2bd9839437a0e2a8779c0f65a54aa993a5737141d846c6f73",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_official_capsule80.yaml": "9dd30bae78499c1b461a790550885d4175325e134e53f6647239c55c37cc9d3c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact_sphere55.yaml": "dc344fc1dc9c0c2ab5f85f8476dc8b0a17e28650ce91a25526922bd68735d1dd",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_tabletop_box45.yaml": "52f94ef6ace10a1e26ba80ee594f13b65b5811f233387b1cb13a6718069c6d75",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_sphere55.yaml": "8bf80ff407d81690a007069357aec1dc1b2244880898025daf6e49e855652f91",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_sphere65.yaml": "425a1c75ff0642c5578f416c96febb85ef7f5e8ea673fa842b19faf002e077fc",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_box45.yaml": "8dc086cd116c301a2334beeabaaf9e1bdae68d96e6723346c12067ddeb8cdb79",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_box55.yaml": "0f186460afa1bcee0e3a9bb6ab5075b6a8d39d5fc6279e5cf28e73487c58e932",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_capsule70.yaml": "2d09f615dc628cf783e96f9a6d6c86142d143edf38b44f8fc750a148908ed49b",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/manip_compact27_capsule80.yaml": "1f777066501a2fd42fc8af464bb5085230d106ed92d1c553a044aba14e5665ed",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/task/AllegroHandGrasp.yaml": "f0335a205adb852e5e9730ef1eb55683f298a29e7f1cac0b3a679d80c972b1b3",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/task/AllegroHandHora.yaml": "2d0996728348a0654e95a8f6b062e20b6d5d4ab4c63a8a3c1aff5b13c22c6c50",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/task/PublicAllegroHandGrasp.yaml": "bef6da88c0b3b2e5e2417fc34eac52182fec6df7aa99eb42d6eb43855c3b5c27",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/task/PublicAllegroHandHora.yaml": "e0b957b9cf0a40932d52ec0006a08dc6c45e20b6276ad14f347b5790948270fe",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/train/AllegroHandGrasp.yaml": "87705c8e4996cf80b0ac124954722242ae142ea5aad853b90bcd62956a20265c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/train/AllegroHandHora.yaml": "931673bab4a73bfe597ce1ea83d1ad693d1ccb889726125661a4d63cf596fcab",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/train/PublicAllegroHandGrasp.yaml": "87705c8e4996cf80b0ac124954722242ae142ea5aad853b90bcd62956a20265c",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/configs/train/PublicAllegroHandHora.yaml": "0457f4b34989e7d022d54be369e99f01b3d4706f9fa0778232341e708bdce674",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/train_manip.py": "dee30ea234c924e5ad5d37dcf0360bc82fd98af7891208e42ae8812d432abd00",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/search_grasps.py": "944a1784fd40224c6fc385352515aea211be93f7e3817aa1051b9da6944bd740",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/check_grasp_cache.py": "f7f1bb8adbd5151e08a326bb00d575cd1384da6ad4a9e02cb8896a60b3c82245",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/audit_queue_cache.py": "b2104ad81fa781495125ec65b4ac36eb308da4903b9f324dcca97db62d845673",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/auto_manip_queue.py": "aceb7a9eb2b3db457800db37a9f792180093b9299c232bbda687c6c50dc1d201",
+    "/root/In_Hand_Reconstruction/In_Hand_Manip/scripts/python_manip.sh": "44247df0d95546f6ee15906b001b59b517eaa328caa79155fe7864ad38e61a9c"
+  }
+}

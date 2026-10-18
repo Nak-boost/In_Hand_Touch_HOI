@@ -1,0 +1,10 @@
+{
+  "status": "running",
+  "pid": 162298,
+  "verified_saved_steps": 1179648,
+  "epoch_num": 9,
+  "last_lr": 0.0009876543209876546,
+  "process_peak_mib": 6040,
+  "model_finite": true,
+  "note": "Use Last FPS after resume; cumulative numerator includes old progress while timer restarts."
+}

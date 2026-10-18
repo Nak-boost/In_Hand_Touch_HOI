@@ -1,0 +1,256 @@
+{
+  "checkpoint_finite": true,
+  "tensorboard_finite": true,
+  "agent_steps": 1048576,
+  "epoch_num": 8,
+  "last_lr": 0.005000000000000001,
+  "errors": [],
+  "scalars": {
+    "performance/RLTrainFPS": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 962206.0,
+      "finite": true
+    },
+    "performance/EnvStepFPS": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 8607.5126953125,
+      "finite": true
+    },
+    "losses/actor_loss": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.00041345017962157726,
+      "finite": true
+    },
+    "losses/bounds_loss": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 1.1858591442148736e-08,
+      "finite": true
+    },
+    "losses/critic_loss": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.20409870147705078,
+      "finite": true
+    },
+    "losses/entropy": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 22.861289978027344,
+      "finite": true
+    },
+    "info/last_lr": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.004999999888241291,
+      "finite": true
+    },
+    "info/e_clip": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.20000000298023224,
+      "finite": true
+    },
+    "info/kl": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.024997029453516006,
+      "finite": true
+    },
+    "rotation/speed": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.021249856799840927,
+      "finite": true
+    },
+    "rotation/off_axis": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 4.774386882781982,
+      "finite": true
+    },
+    "contact/gel_count": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.099853515625,
+      "finite": true
+    },
+    "contact/task_gel_count": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.05499267578125,
+      "finite": true
+    },
+    "contact/housing_count": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.08203125,
+      "finite": true
+    },
+    "contact/gel_object_center_distance_m": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.09258868545293808,
+      "finite": true
+    },
+    "episode/failed": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.00274658203125,
+      "finite": true
+    },
+    "episode/time_limit": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.0,
+      "finite": true
+    },
+    "contact/object_gel_count": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.05499267578125,
+      "finite": true
+    },
+    "contact/object_gel_normal_force_N": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.0047231619246304035,
+      "finite": true
+    },
+    "contact/raw_without_object": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.04296875,
+      "finite": true
+    },
+    "reward/pose_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.012599660083651543,
+      "finite": true
+    },
+    "reward/total": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -1.2273131608963013,
+      "finite": true
+    },
+    "control/blocked_target_command": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.0038967798464000225,
+      "finite": true
+    },
+    "control/target_increment_lost": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.010613878257572651,
+      "finite": true
+    },
+    "control/target_at_limit": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.010584831237792969,
+      "finite": true
+    },
+    "control/torque_at_limit": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 9.5367431640625e-07,
+      "finite": true
+    },
+    "reward/rotation": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.028688985854387283,
+      "finite": true
+    },
+    "reward/off_axis_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.12642443180084229,
+      "finite": true
+    },
+    "reward/overspeed_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.007131746970117092,
+      "finite": true
+    },
+    "reward/goal": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.0022792816162109375,
+      "finite": true
+    },
+    "reward/contact": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.0011264801723882556,
+      "finite": true
+    },
+    "reward/fingertip_distance": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 0.026803171262145042,
+      "finite": true
+    },
+    "reward/housing_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.0009241104125976562,
+      "finite": true
+    },
+    "reward/position_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.19853506982326508,
+      "finite": true
+    },
+    "reward/linear_velocity_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.003642166731879115,
+      "finite": true
+    },
+    "reward/action_rate_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.05477606877684593,
+      "finite": true
+    },
+    "reward/torque_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -8.524797522113658e-06,
+      "finite": true
+    },
+    "reward/limit_push_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.0009741949616000056,
+      "finite": true
+    },
+    "reward/failure_penalty": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -0.881195068359375,
+      "finite": true
+    },
+    "episode_rewards/step": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": -259.4308776855469,
+      "finite": true
+    },
+    "episode_lengths/step": {
+      "count": 8,
+      "last_step": 1048576,
+      "last": 20.54067611694336,
+      "finite": true
+    }
+  }
+}

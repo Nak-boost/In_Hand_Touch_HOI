@@ -1,0 +1,620 @@
+{
+  "seed": 43,
+  "control_dt": 0.05000000260770321,
+  "recorded_steps": 900,
+  "max_kinematics_error_m": 4.1780831331425486e-07,
+  "stop_reason": "duration_complete",
+  "environments": [
+    {
+      "cycles": 6,
+      "completed_pushes": 5,
+      "events": [
+        {
+          "time": 0.5000000260770321,
+          "source": "settle",
+          "target": "approach",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 1.900000099092722,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 2.4500001277774572,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 5.800000302493572,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 0,
+          "reason": "push_complete"
+        },
+        {
+          "time": 6.300000328570604,
+          "source": "release",
+          "target": "reset",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 7.250000378116965,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 8.500000443309546,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 8.950000466778874,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 12.250000638887286,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 1,
+          "reason": "push_complete"
+        },
+        {
+          "time": 12.750000664964318,
+          "source": "release",
+          "target": "reset",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 13.70000071451068,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 15.000000782310963,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 15.350000800564885,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 19.30000100657344,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 2,
+          "reason": "lost_contact"
+        },
+        {
+          "time": 19.80000103265047,
+          "source": "release",
+          "target": "reset",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 20.800001084804535,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 22.050001149997115,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 22.350001165643334,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 25.600001335144043,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 3,
+          "reason": "push_complete"
+        },
+        {
+          "time": 26.100001361221075,
+          "source": "release",
+          "target": "reset",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 27.050001410767436,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 4,
+          "reason": ""
+        },
+        {
+          "time": 28.35000147856772,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 4,
+          "reason": ""
+        },
+        {
+          "time": 28.700001496821642,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 4,
+          "reason": ""
+        },
+        {
+          "time": 31.900001663714647,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 4,
+          "reason": "push_complete"
+        },
+        {
+          "time": 32.40000168979168,
+          "source": "release",
+          "target": "reset",
+          "cycle": 4,
+          "reason": ""
+        },
+        {
+          "time": 33.400001741945744,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 5,
+          "reason": ""
+        },
+        {
+          "time": 34.70000180974603,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 5,
+          "reason": ""
+        },
+        {
+          "time": 35.150001833215356,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 5,
+          "reason": ""
+        },
+        {
+          "time": 39.050002036616206,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 5,
+          "reason": "push_complete"
+        },
+        {
+          "time": 39.55000206269324,
+          "source": "release",
+          "target": "reset",
+          "cycle": 5,
+          "reason": ""
+        },
+        {
+          "time": 40.5500021148473,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 6,
+          "reason": ""
+        },
+        {
+          "time": 41.850002182647586,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 6,
+          "reason": ""
+        },
+        {
+          "time": 42.20000220090151,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 6,
+          "reason": ""
+        }
+      ],
+      "cycle_metrics": [
+        {
+          "cycle": 1,
+          "start_seconds": 0.5000000260770321,
+          "end_seconds": 7.250000378116965,
+          "net_degrees": 23.81269980534617
+        },
+        {
+          "cycle": 2,
+          "start_seconds": 7.250000378116965,
+          "end_seconds": 13.70000071451068,
+          "net_degrees": 16.820525868977395
+        },
+        {
+          "cycle": 3,
+          "start_seconds": 13.70000071451068,
+          "end_seconds": 20.800001084804535,
+          "net_degrees": 21.13595208471276
+        },
+        {
+          "cycle": 4,
+          "start_seconds": 20.800001084804535,
+          "end_seconds": 27.050001410767436,
+          "net_degrees": 26.898248008183185
+        },
+        {
+          "cycle": 5,
+          "start_seconds": 27.050001410767436,
+          "end_seconds": 33.400001741945744,
+          "net_degrees": 23.245285255141944
+        },
+        {
+          "cycle": 6,
+          "start_seconds": 33.400001741945744,
+          "end_seconds": 40.5500021148473,
+          "net_degrees": 20.26454289002419
+        }
+      ],
+      "net_rotation_degrees": 150.79721069335938,
+      "last_half_rotation_degrees": 87.2678995157164,
+      "max_xy_drift_m": 0.008873608894646168,
+      "max_object_tilt_degrees": 1.4236780405044556,
+      "rotate_two_object_gels_fraction": 1.0,
+      "rotate_four_object_gels_fraction": 0.9684873949579832,
+      "rotate_gel_load_median_N": [
+        0.6643258929252625,
+        0.6734793782234192,
+        0.5370383262634277,
+        0.2775583863258362
+      ],
+      "rotate_sensor_tilt_p95_degrees": [
+        8.729688444584841,
+        1.6933384037654668,
+        3.779780972936238,
+        8.706515702847307
+      ],
+      "release_reset_net_degrees": 5.249679980977215,
+      "table_support_fraction": 1.0,
+      "non_gel_object_fraction": 0.0,
+      "two_object_gels_fraction": 0.68,
+      "max_gel_force_N": 1.025563359260559,
+      "touched_azimuth_bins_of_36": 35,
+      "azimuth_metric": "simulator contact locations; not observed shape reconstruction or full surface coverage",
+      "final_phase": "rotate",
+      "reason": ""
+    },
+    {
+      "cycles": 6,
+      "completed_pushes": 6,
+      "events": [
+        {
+          "time": 0.5000000260770321,
+          "source": "settle",
+          "target": "approach",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 1.8000000938773155,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 2.150000112131238,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 5.350000279024243,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 0,
+          "reason": "push_complete"
+        },
+        {
+          "time": 5.850000305101275,
+          "source": "release",
+          "target": "reset",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 6.800000354647636,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 8.10000042244792,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 8.400000438094139,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 12.400000646710396,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 1,
+          "reason": "lost_contact"
+        },
+        {
+          "time": 12.900000672787428,
+          "source": "release",
+          "target": "reset",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 13.900000724941492,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 15.200000792741776,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 15.500000808387995,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 19.050000993534923,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 2,
+          "reason": "push_complete"
+        },
+        {
+          "time": 19.550001019611955,
+          "source": "release",
+          "target": "reset",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 20.55000107176602,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 21.850001139566302,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 22.15000115521252,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 25.450001327320933,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 3,
+          "reason": "push_complete"
+        },
+        {
+          "time": 25.950001353397965,
+          "source": "release",
+          "target": "reset",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 26.95000140555203,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 4,
+          "reason": ""
+        },
+        {
+          "time": 28.20000147074461,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 4,
+          "reason": ""
+        },
+        {
+          "time": 28.600001491606236,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 4,
+          "reason": ""
+        },
+        {
+          "time": 31.900001663714647,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 4,
+          "reason": "push_complete"
+        },
+        {
+          "time": 32.40000168979168,
+          "source": "release",
+          "target": "reset",
+          "cycle": 4,
+          "reason": ""
+        },
+        {
+          "time": 33.35000173933804,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 5,
+          "reason": ""
+        },
+        {
+          "time": 34.70000180974603,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 5,
+          "reason": ""
+        },
+        {
+          "time": 35.20000183582306,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 5,
+          "reason": ""
+        },
+        {
+          "time": 38.50000200793147,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 5,
+          "reason": "push_complete"
+        },
+        {
+          "time": 39.0000020340085,
+          "source": "release",
+          "target": "reset",
+          "cycle": 5,
+          "reason": ""
+        },
+        {
+          "time": 40.00000208616257,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 6,
+          "reason": ""
+        },
+        {
+          "time": 41.25000215135515,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 6,
+          "reason": ""
+        },
+        {
+          "time": 41.65000217221677,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 6,
+          "reason": ""
+        },
+        {
+          "time": 44.950002344325185,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 6,
+          "reason": "push_complete"
+        }
+      ],
+      "cycle_metrics": [
+        {
+          "cycle": 1,
+          "start_seconds": 0.5000000260770321,
+          "end_seconds": 6.800000354647636,
+          "net_degrees": 20.72140570586988
+        },
+        {
+          "cycle": 2,
+          "start_seconds": 6.800000354647636,
+          "end_seconds": 13.900000724941492,
+          "net_degrees": 21.41957227490295
+        },
+        {
+          "cycle": 3,
+          "start_seconds": 13.900000724941492,
+          "end_seconds": 20.55000107176602,
+          "net_degrees": 21.915153725606153
+        },
+        {
+          "cycle": 4,
+          "start_seconds": 20.55000107176602,
+          "end_seconds": 26.95000140555203,
+          "net_degrees": 25.089019689506017
+        },
+        {
+          "cycle": 5,
+          "start_seconds": 26.95000140555203,
+          "end_seconds": 33.35000173933804,
+          "net_degrees": 23.416190248554006
+        },
+        {
+          "cycle": 6,
+          "start_seconds": 33.35000173933804,
+          "end_seconds": 40.00000208616257,
+          "net_degrees": 19.61491676787511
+        }
+      ],
+      "net_rotation_degrees": 155.4347686767578,
+      "last_half_rotation_degrees": 87.29326683829382,
+      "max_xy_drift_m": 0.006318406201899052,
+      "max_object_tilt_degrees": 2.1363418102264404,
+      "rotate_two_object_gels_fraction": 1.0,
+      "rotate_four_object_gels_fraction": 0.9686847599164927,
+      "rotate_gel_load_median_N": [
+        0.6547930240631104,
+        0.6896025538444519,
+        0.5442108511924744,
+        0.26782548427581787
+      ],
+      "rotate_sensor_tilt_p95_degrees": [
+        8.695129896259791,
+        1.8414383754553818,
+        3.634481837899712,
+        8.56036671903239
+      ],
+      "release_reset_net_degrees": 9.119851287361323,
+      "table_support_fraction": 0.9988888888888889,
+      "non_gel_object_fraction": 0.0,
+      "two_object_gels_fraction": 0.6744444444444444,
+      "max_gel_force_N": 0.9751174449920654,
+      "touched_azimuth_bins_of_36": 35,
+      "azimuth_metric": "simulator contact locations; not observed shape reconstruction or full surface coverage",
+      "final_phase": "release",
+      "reason": "push_complete"
+    }
+  ]
+}

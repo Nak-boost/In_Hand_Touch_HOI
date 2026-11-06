@@ -1,0 +1,188 @@
+{
+  "seed": 42,
+  "control_dt": 0.05000000260770321,
+  "recorded_steps": 600,
+  "max_kinematics_error_m": 1.946050315772081e-07,
+  "stop_reason": "duration_complete",
+  "environments": [
+    {
+      "cycles": 3,
+      "completed_pushes": 0,
+      "events": [
+        {
+          "time": 0.5000000260770321,
+          "source": "settle",
+          "target": "approach",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 2.850000148639083,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 3.150000164285302,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 7.0500003676861525,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 0,
+          "reason": "lost_contact"
+        },
+        {
+          "time": 7.5500003937631845,
+          "source": "release",
+          "target": "reset",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 8.350000435486436,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 10.75000056065619,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 11.05000057630241,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 14.65000076405704,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 1,
+          "reason": "lost_contact"
+        },
+        {
+          "time": 15.150000790134072,
+          "source": "release",
+          "target": "reset",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 15.90000082924962,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 18.300000954419374,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 18.700000975281,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 22.350001165643334,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 2,
+          "reason": "lost_contact"
+        },
+        {
+          "time": 22.850001191720366,
+          "source": "release",
+          "target": "reset",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 23.650001233443618,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 26.15000136382878,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 3,
+          "reason": ""
+        },
+        {
+          "time": 26.550001384690404,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 3,
+          "reason": ""
+        }
+      ],
+      "cycle_metrics": [
+        {
+          "cycle": 1,
+          "start_seconds": 0.5000000260770321,
+          "end_seconds": 8.350000435486436,
+          "net_degrees": 25.037298082016097
+        },
+        {
+          "cycle": 2,
+          "start_seconds": 8.350000435486436,
+          "end_seconds": 15.90000082924962,
+          "net_degrees": 22.059743707693446
+        },
+        {
+          "cycle": 3,
+          "start_seconds": 15.90000082924962,
+          "end_seconds": 23.650001233443618,
+          "net_degrees": 26.71950878779312
+        }
+      ],
+      "net_rotation_degrees": 97.21170043945312,
+      "last_half_rotation_degrees": 50.24377653467882,
+      "max_xy_drift_m": 0.00871176179498434,
+      "max_object_tilt_degrees": 1.143636703491211,
+      "rotate_two_object_gels_fraction": 1.0,
+      "rotate_four_object_gels_fraction": 0.8225255972696246,
+      "rotate_gel_load_median_N": [
+        0.6869177222251892,
+        0.5822997093200684,
+        0.5746963620185852,
+        0.22762741148471832
+      ],
+      "rotate_sensor_tilt_p95_degrees": [
+        4.022499023292819,
+        1.6577697500148822,
+        3.3214539623258337,
+        11.68920141979671
+      ],
+      "release_reset_net_degrees": 1.782937213014496,
+      "table_support_fraction": 0.99,
+      "non_gel_object_fraction": 0.0,
+      "two_object_gels_fraction": 0.7633333333333333,
+      "max_gel_force_N": 0.9226641058921814,
+      "touched_azimuth_bins_of_36": 30,
+      "azimuth_metric": "simulator contact locations; not observed shape reconstruction or full surface coverage",
+      "final_phase": "rotate",
+      "reason": ""
+    }
+  ]
+}

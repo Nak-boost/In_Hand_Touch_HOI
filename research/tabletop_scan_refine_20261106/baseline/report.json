@@ -1,0 +1,161 @@
+{
+  "seed": 42,
+  "control_dt": 0.05000000260770321,
+  "recorded_steps": 360,
+  "max_kinematics_error_m": 1.828981293926594e-07,
+  "stop_reason": "duration_complete",
+  "environments": [
+    {
+      "cycles": 3,
+      "completed_pushes": 3,
+      "events": [
+        {
+          "time": 0.5000000260770321,
+          "source": "settle",
+          "target": "approach",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 3.0500001590698957,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 3.350000174716115,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 4.850000252947211,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 0,
+          "reason": "push_complete"
+        },
+        {
+          "time": 5.350000279024243,
+          "source": "release",
+          "target": "reset",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 5.850000305101275,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 8.300000432878733,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 8.600000448524952,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 10.100000526756048,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 1,
+          "reason": "push_complete"
+        },
+        {
+          "time": 10.60000055283308,
+          "source": "release",
+          "target": "reset",
+          "cycle": 1,
+          "reason": ""
+        },
+        {
+          "time": 11.150000581517816,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 13.650000711902976,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 13.950000727549195,
+          "source": "hold",
+          "target": "rotate",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 15.450000805780292,
+          "source": "rotate",
+          "target": "release",
+          "cycle": 2,
+          "reason": "push_complete"
+        },
+        {
+          "time": 15.950000831857324,
+          "source": "release",
+          "target": "reset",
+          "cycle": 2,
+          "reason": ""
+        },
+        {
+          "time": 16.50000086054206,
+          "source": "reset",
+          "target": "approach",
+          "cycle": 3,
+          "reason": ""
+        }
+      ],
+      "cycle_metrics": [
+        {
+          "cycle": 1,
+          "start_seconds": 0.5000000260770321,
+          "end_seconds": 5.850000305101275,
+          "net_degrees": 9.321165990505571
+        },
+        {
+          "cycle": 2,
+          "start_seconds": 5.850000305101275,
+          "end_seconds": 11.150000581517816,
+          "net_degrees": 7.50017437853035
+        },
+        {
+          "cycle": 3,
+          "start_seconds": 11.150000581517816,
+          "end_seconds": 16.50000086054206,
+          "net_degrees": 9.739381888480038
+        }
+      ],
+      "net_rotation_degrees": 26.471649169921875,
+      "last_half_rotation_degrees": 16.051490964663564,
+      "max_xy_drift_m": 0.0019410455133765936,
+      "max_object_tilt_degrees": 1.5991209745407104,
+      "rotate_two_object_gels_fraction": 1.0,
+      "release_reset_net_degrees": 1.852615387832381,
+      "table_support_fraction": 1.0,
+      "non_gel_object_fraction": 0.0,
+      "two_object_gels_fraction": 0.37777777777777777,
+      "max_gel_force_N": 0.48832398653030396,
+      "touched_azimuth_bins_of_36": 15,
+      "azimuth_metric": "simulator contact locations; not observed shape reconstruction or full surface coverage",
+      "final_phase": "approach",
+      "reason": ""
+    }
+  ]
+}

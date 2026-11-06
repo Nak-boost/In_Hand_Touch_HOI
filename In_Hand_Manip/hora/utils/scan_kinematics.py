@@ -57,11 +57,17 @@ class ScanKinematics:
 
 
 def cartesian_joint_target(q, positions, normals, jacobians, desired, desired_normals,
-                           lower, upper, max_step=.026, normal_weight=.015, damping=.003):
+                           lower, upper, max_step=.026, normal_weight=.015, damping=.003,
+                           position_weights=(1., 1., 1.)):
     """Damped least squares, including the gel normal, respecting every joint limit."""
     j = jacobians.copy()
-    j[:, 3:] *= normal_weight
-    error = np.concatenate((desired-positions, normal_weight*np.cross(normals, desired_normals)), axis=1)
+    weights = np.broadcast_to(position_weights, positions.shape)
+    j[:, :3] *= weights[:, :, None]
+    # Constrain the sensing normal, not the full sensor orientation. Rotation
+    # around that normal is free; penalizing it overconstrains a 4-DoF finger.
+    j[:, 3:] = normal_weight*np.cross(jacobians[:, 3:].transpose(0, 2, 1),
+                                    normals[:, None, :]).transpose(0, 2, 1)
+    error = np.concatenate((weights*(desired-positions), normal_weight*(desired_normals-normals)), axis=1)
     a = j.reshape(-1, 16)
     dq = np.linalg.solve(a.T @ a + damping**2*np.eye(16), a.T @ error.ravel())
     dq = np.clip(dq, -max_step, max_step)

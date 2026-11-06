@@ -1,0 +1,156 @@
+{
+  "tests": "36 passed",
+  "long_run_exit_code": 0,
+  "source_hashes_match": true,
+  "baseline_hashes_match_before": true,
+  "duration_seconds": 120,
+  "envs": 4,
+  "seed": 44,
+  "placement_offset_mm": 2,
+  "config": "configs/tabletop_scan.yaml",
+  "runs": {
+    "baseline": {
+      "stop_reason": "duration_complete",
+      "environments": [
+        {
+          "net_degrees": 26.471649169921875,
+          "cycles": 3,
+          "completed_pushes": 3,
+          "four_contact_fraction": 0.35555555555555557,
+          "cycle_mean_degrees": 8.853574085838654,
+          "cycle_min_degrees": 7.50017437853035,
+          "early_release_count": 0
+        }
+      ]
+    },
+    "probe01": {
+      "stop_reason": "controller_fault",
+      "environments": [
+        {
+          "net_degrees": 2.2730154991149902,
+          "cycles": 0,
+          "completed_pushes": 0,
+          "four_contact_fraction": null,
+          "cycle_mean_degrees": null,
+          "cycle_min_degrees": null,
+          "early_release_count": 0
+        }
+      ]
+    },
+    "probe02": {
+      "stop_reason": "duration_complete",
+      "environments": [
+        {
+          "net_degrees": 102.7153549194336,
+          "cycles": 4,
+          "completed_pushes": 0,
+          "four_contact_fraction": 0.5234657039711191,
+          "cycle_mean_degrees": 25.678719012537876,
+          "cycle_min_degrees": 24.16326267959166,
+          "early_release_count": 4
+        }
+      ]
+    },
+    "probe03": {
+      "stop_reason": "duration_complete",
+      "environments": [
+        {
+          "net_degrees": 97.21170043945312,
+          "cycles": 3,
+          "completed_pushes": 0,
+          "four_contact_fraction": 0.8225255972696246,
+          "cycle_mean_degrees": 24.605516859167555,
+          "cycle_min_degrees": 22.059743707693446,
+          "early_release_count": 3
+        }
+      ]
+    },
+    "probe04_60_20": {
+      "stop_reason": "duration_complete",
+      "environments": [
+        {
+          "net_degrees": 145.09312438964844,
+          "cycles": 7,
+          "completed_pushes": 7,
+          "four_contact_fraction": 0.8354430379746836,
+          "cycle_mean_degrees": 20.581656864292164,
+          "cycle_min_degrees": 18.296369239171657,
+          "early_release_count": 0
+        },
+        {
+          "net_degrees": 133.5454559326172,
+          "cycles": 7,
+          "completed_pushes": 6,
+          "four_contact_fraction": 0.8217821782178217,
+          "cycle_mean_degrees": 18.516502577091256,
+          "cycle_min_degrees": 1.6853560078898164,
+          "early_release_count": 1
+        }
+      ]
+    },
+    "probe05_70_30": {
+      "stop_reason": "duration_complete",
+      "environments": [
+        {
+          "net_degrees": 150.79721069335938,
+          "cycles": 6,
+          "completed_pushes": 5,
+          "four_contact_fraction": 0.9684873949579832,
+          "cycle_mean_degrees": 22.029542318730943,
+          "cycle_min_degrees": 16.820525868977395,
+          "early_release_count": 1
+        },
+        {
+          "net_degrees": 155.4347686767578,
+          "cycles": 6,
+          "completed_pushes": 6,
+          "four_contact_fraction": 0.9686847599164927,
+          "cycle_mean_degrees": 22.02937640205235,
+          "cycle_min_degrees": 19.61491676787511,
+          "early_release_count": 1
+        }
+      ]
+    },
+    "final_70_long": {
+      "stop_reason": "duration_complete",
+      "environments": [
+        {
+          "net_degrees": 409.1697082519531,
+          "cycles": 17,
+          "completed_pushes": 12,
+          "four_contact_fraction": 0.9596899224806201,
+          "cycle_mean_degrees": 22.75219622082205,
+          "cycle_min_degrees": 18.840585051859932,
+          "early_release_count": 6
+        },
+        {
+          "net_degrees": 406.5340270996094,
+          "cycles": 18,
+          "completed_pushes": 15,
+          "four_contact_fraction": 0.9667458432304038,
+          "cycle_mean_degrees": 22.585207805197882,
+          "cycle_min_degrees": 18.88629950797483,
+          "early_release_count": 3
+        },
+        {
+          "net_degrees": 383.3235778808594,
+          "cycles": 17,
+          "completed_pushes": 13,
+          "four_contact_fraction": 0.9538341158059468,
+          "cycle_mean_degrees": 21.461636698014185,
+          "cycle_min_degrees": 16.554595868737536,
+          "early_release_count": 4
+        },
+        {
+          "net_degrees": 378.407470703125,
+          "cycles": 17,
+          "completed_pushes": 12,
+          "four_contact_fraction": 0.946051602814699,
+          "cycle_mean_degrees": 21.10533857418901,
+          "cycle_min_degrees": 16.709429427032553,
+          "early_release_count": 5
+        }
+      ]
+    }
+  }
+}

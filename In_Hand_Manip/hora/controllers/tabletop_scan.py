@@ -10,7 +10,7 @@ from hora.utils.mount_geometry import rotation
 class TabletopScanController:
     PHASES = ('settle', 'approach', 'hold', 'rotate', 'release', 'reset', 'fault')
 
-    def __init__(self, config, open_positions, open_normals, center, dt):
+    def __init__(self, config, open_positions, open_normals, center, dt, rest_normals=None):
         self.cfg = config
         self.open = np.asarray(open_positions).copy()
         self.open_normals = np.asarray(open_normals).copy()
@@ -20,7 +20,8 @@ class TabletopScanController:
         radial[:, 2] = 0
         self.radial = radial/np.maximum(np.linalg.norm(radial, axis=1, keepdims=True), 1e-9)
         self.desired = self.open.copy()
-        self.normals = self.open_normals.copy()
+        self.rest_normals = self.open_normals.copy() if rest_normals is None else np.asarray(rest_normals).copy()
+        self.normals = self.rest_normals.copy()
         self.phase = 'settle'
         self.age = 0.
         self.stable = 0.
@@ -31,25 +32,39 @@ class TabletopScanController:
         self.touch = np.zeros(4, dtype=bool)
         self.events = []
         self.clock = 0.
+        self.rotation_elapsed = 0.
+        self.lost_seconds = 0.
+        self.preloaded_seconds = 0.
 
     def transition(self, phase, reason=''):
         self.events.append(dict(time=self.clock, source=self.phase, target=phase,
                                 cycle=self.cycles, reason=reason))
         self.phase, self.age, self.stable = phase, 0., 0.
         self.reason = reason
+        self.preloaded_seconds = 0.
+        if phase == 'approach':
+            self.normals = self.open_normals.copy()
+        if phase == 'rotate':
+            self.rotation_elapsed = self.lost_seconds = 0.
 
-    def update(self, positions, load):
+    def update(self, positions, load, measured_normals=None):
         c = self.cfg
         self.clock += self.dt
         self.age += self.dt
         self.filtered = c['force_filter']*np.asarray(load)+(1-c['force_filter'])*self.filtered
         self.touch = np.where(self.touch, self.filtered > c['contact_off'], self.filtered > c['contact_on'])
-        if not np.isfinite(positions).all() or not np.isfinite(load).all():
+        normals = self.normals if measured_normals is None else np.asarray(measured_normals)
+        if not np.isfinite(positions).all() or not np.isfinite(load).all() or not np.isfinite(normals).all():
             self.transition('fault', 'nonfinite_sensor')
         elif np.max(load) > c['abort_force'] and self.phase not in ('release', 'reset', 'fault'):
             self.transition('release', 'overload')
         self.stable = self.stable+self.dt if self.touch.sum() >= c['required_contacts'] else 0.
         self.clear = self.clear+self.dt if not self.touch.any() else 0.
+        # Vertical sensing plane means a horizontal outward sensing normal.
+        vertical_ok = np.abs(normals[:, 2]) <= np.sin(np.deg2rad(c.get('max_preload_tilt_degrees', 12.)))
+        aligned = np.sum(normals*self.open_normals, axis=1) >= np.cos(np.deg2rad(c.get('max_preload_normal_error_degrees', 15.)))
+        loaded = self.touch & (self.filtered >= c.get('minimum_hold_force', .3)) & vertical_ok & aligned
+        self.preloaded_seconds = self.preloaded_seconds+self.dt if loaded.sum() >= c['required_contacts'] else 0.
         if self.phase == 'settle':
             if self.age >= c['settle_seconds']:
                 if self.touch.any():
@@ -65,7 +80,7 @@ class TabletopScanController:
                 self.transition('release', 'closure_limit')
             elif self.phase == 'approach' and self.stable >= c['contact_dwell']:
                 self.transition('hold')
-            elif self.phase == 'hold' and self.stable >= c['hold_seconds']:
+            elif self.phase == 'hold' and self.preloaded_seconds >= c['hold_seconds']:
                 self.anchor = self.desired.copy()
                 self.anchor_normals = self.normals.copy()
                 self.radial_offset = np.zeros(4)
@@ -73,7 +88,13 @@ class TabletopScanController:
             elif self.age >= c['approach_timeout']:
                 self.transition('release', 'contact_timeout')
         elif self.phase == 'rotate':
-            angle = np.deg2rad(c['rotation_degrees'])*min(1., self.age/c['rotate_seconds'])
+            supported = self.touch & (self.filtered >= c.get('minimum_rotation_force', c['contact_on']))
+            enough_contact = supported.sum() >= c['minimum_rotation_contacts']
+            self.lost_seconds = 0. if enough_contact else self.lost_seconds+self.dt
+            # Pause tangential progression while the load servo restores contact.
+            if enough_contact:
+                self.rotation_elapsed += self.dt
+            angle = np.deg2rad(c['rotation_degrees'])*min(1., self.rotation_elapsed/c['rotate_seconds'])
             r = rotation([0, 0, 1], angle)
             directions = self.radial @ r.T
             self.radial_offset += np.clip(c['force_gain']*(self.filtered-c['hold_force']),
@@ -81,9 +102,9 @@ class TabletopScanController:
             self.radial_offset = np.clip(self.radial_offset, -c['max_rotation_compliance'], c['max_rotation_compliance'])
             self.desired = (self.anchor-self.center) @ r.T+self.center+directions*self.radial_offset[:, None]
             self.normals = self.anchor_normals @ r.T
-            if self.age >= c['rotate_seconds']:
+            if self.rotation_elapsed >= c['rotate_seconds']:
                 self.transition('release', 'push_complete')
-            elif self.touch.sum() < c['minimum_rotation_contacts'] and self.age > c['loss_grace_seconds']:
+            elif self.lost_seconds >= c['loss_grace_seconds']:
                 self.transition('release', 'lost_contact')
         elif self.phase == 'release':
             radial = positions-self.center
@@ -98,7 +119,7 @@ class TabletopScanController:
             error = self.open-self.desired
             distance = np.linalg.norm(error, axis=1, keepdims=True)
             self.desired += error*np.minimum(1., c['reset_speed']*self.dt/np.maximum(distance, 1e-9))
-            self.normals = self.open_normals.copy()
+            self.normals = self.rest_normals.copy()
             if self.touch.any():
                 self.transition('release', 'reset_contact')
             elif np.max(np.linalg.norm(positions-self.open, axis=1)) < c['reset_tolerance']:

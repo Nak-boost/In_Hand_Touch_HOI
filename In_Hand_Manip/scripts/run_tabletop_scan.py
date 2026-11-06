@@ -56,7 +56,7 @@ def main():
     OmegaConf.save(OmegaConf.create(dict(task=task, scan=scan)), output/'config.yaml')
     env = AllegroDigitScan(task, args.device, -1 if args.headless else args.graphics_device_id, args.headless)
     records = {k: [] for k in ('q', 'qdot', 'targets', 'action', 'phase', 'desired_gel_positions',
-                              'gel_positions', 'gel_load', 'object_gel_load', 'object_state',
+                              'gel_positions', 'gel_normals', 'desired_gel_normals', 'gel_load', 'object_gel_load', 'object_state',
                               'axis_angle', 'table_contact', 'other_hand_contact', 'post_object_state', 'post_axis_angle')}
     contact_points = []
     stopped = ''
@@ -72,23 +72,30 @@ def main():
         q0 = np.array(task['env']['grasp']['canonical_q'])
         pos, normals, _ = kin.evaluate(q0)
         center = np.array(scan['center'])
-        radial = pos-center; radial[:, 2] = 0
+        # Select surrounding rays from the projected sensing normals, rather
+        # than arbitrary canonical tip locations that may face past the object.
+        radial = -normals.copy(); radial[:, 2] = 0
         radial /= np.linalg.norm(radial, axis=1, keepdims=True)
         diameter = task['env']['objects'][0]['size'][0]
         desired_open = center + radial*(diameter/2+scan['opening_clearance'])
         desired_open[:, 2] = pos[:, 2]
         q_open = kin.fit(q0, desired_open, -radial, scan['normal_weight'])
-        open_pos, open_normals, _ = kin.evaluate(q_open)
+        open_pos, actual_open_normals, _ = kin.evaluate(q_open)
+        open_normals = -radial  # retain the intended horizontal normal, not IK residual tilt
+        open_normal_error = np.rad2deg(np.arccos(np.clip(np.sum(actual_open_normals*open_normals, axis=1), -1, 1)))
+        if open_normal_error.max() > scan.get('max_preload_normal_error_degrees', 15.):
+            raise ValueError('Open-pose sensing normal exceeds the allowed error; revise reachable setup')
         if np.linalg.norm(open_pos-desired_open, axis=1).max() > .006:
             raise ValueError('Open-pose IK error exceeds 6 mm; revise object placement/hand reach before running')
         setup = dict(q_open=q_open.tolist(), desired_open=desired_open.tolist(), open_positions=open_pos.tolist(),
-                     open_normals=open_normals.tolist(), position_error_m=np.linalg.norm(open_pos-desired_open, axis=1).tolist(),
+                     open_normals=open_normals.tolist(), actual_open_normals=actual_open_normals.tolist(),
+                     normal_error_degrees=open_normal_error.tolist(), position_error_m=np.linalg.norm(open_pos-desired_open, axis=1).tolist(),
                      asset_sha256=env.asset_hash, collision_sha256=env.collision_hash,
                      collision_spec=env.collision_spec,
                      controller_inputs='URDF kinematics, joint state, unfiltered gel net-load magnitude; fixed placement centre',
                      privileged_evaluation_only='object state, object-specific contacts, object-frame contact samples',
                      tactile_rendering=False)
-        setup['schema_version'] = 1
+        setup['schema_version'] = 2
         setup['source_sha256'] = {path: hashlib.sha256((ROOT/path).read_bytes()).hexdigest() for path in (
             'scripts/run_tabletop_scan.py', 'hora/controllers/tabletop_scan.py', 'hora/utils/scan_kinematics.py',
             'hora/utils/primitive_assets.py', 'hora/utils/manip_control.py', 'hora/tasks/allegro_digit_scan.py',
@@ -107,7 +114,7 @@ def main():
         env.gym.set_dof_state_tensor(env.sim, gymtorch.unwrap_tensor(env.dof_states))
         env.gym.set_actor_root_state_tensor(env.sim, gymtorch.unwrap_tensor(env.root_states))
         env._refresh()
-        controllers = [TabletopScanController(scan, open_pos, open_normals, center, env.control_dt) for _ in range(args.num_envs)]
+        controllers = [TabletopScanController(scan, open_pos, open_normals, center, env.control_dt, actual_open_normals) for _ in range(args.num_envs)]
         axes = gymutil.AxesGeometry(.04)
         steps = math.ceil(args.seconds/env.control_dt)
         for step in range(steps):
@@ -115,15 +122,23 @@ def main():
                 stopped = 'user_interrupt'
                 break
             load = env.contact_forces[:, env.gel_ids].norm(dim=-1).numpy().copy()
-            targets, desired, poses = [], [], []
+            targets, desired, poses, sensed_normals, target_normals = [], [], [], [], []
             for i, control in enumerate(controllers):
                 q = env.q[i].numpy()[inverse]
                 p, n, j = kin.evaluate(q)
                 # Kinematics stay in each environment's local frame, matching configured placement.
-                d, dn = control.update(p, load[i])
+                d, dn = control.update(p, load[i], n)
+                weights = np.broadcast_to(scan.get('position_weights', [1., 1., 1.]), (4, 3)).copy()
+                # Do not use vertical compliance to escape above the side surface
+                # or approach the table. Restore full height correction at the band.
+                outside_height = (p[:, 2] < scan.get('contact_height_min', -np.inf)) | (p[:, 2] > scan.get('contact_height_max', np.inf))
+                weights[outside_height, 2] = 1.
+                if control.phase in ('settle', 'reset'):
+                    weights[:] = 1.
                 target = cartesian_joint_target(q, p, n, j, d, dn, kin.lower, kin.upper,
-                    scan['max_joint_step'], scan['normal_weight'], scan['ik_damping'])
+                    scan['max_joint_step'], scan['normal_weight'], scan['ik_damping'], weights)
                 targets.append(target[order]); desired.append(d); poses.append(p)
+                sensed_normals.append(n); target_normals.append(dn)
             if any(c.phase == 'fault' for c in controllers):
                 stopped = 'controller_fault'
                 break
@@ -132,6 +147,7 @@ def main():
             # Pre-action state, sensor readings and exact bounded action are aligned for future BC.
             for key, value in dict(q=env.q, qdot=env.qdot, targets=env.targets, action=action,
                 phase=np.array(phase), desired_gel_positions=np.array(desired), gel_positions=np.array(poses),
+                gel_normals=np.array(sensed_normals), desired_gel_normals=np.array(target_normals),
                 gel_load=load, object_gel_load=env.object_gel_normal_force if step else torch.zeros(args.num_envs, 4),
                 object_state=env.object_state, axis_angle=env.total_angle[:, 0]).items():
                 records[key].append(value.detach().cpu().numpy().copy() if isinstance(value, torch.Tensor) else value.copy())
@@ -188,6 +204,8 @@ def main():
             rotation_mask = phase == TabletopScanController.PHASES.index('rotate')
             return_mask = np.isin(phase, [TabletopScanController.PHASES.index('release'), TabletopScanController.PHASES.index('reset')])
             two_contact = (arrays['object_gel_load'][:, i] > scan['contact_on']).sum(-1) >= 2
+            four_contact = (arrays['object_gel_load'][:, i] > scan['contact_on']).sum(-1) == 4
+            sensor_tilt = np.rad2deg(np.arcsin(np.clip(np.abs(arrays['gel_normals'][:, i, :, 2]), 0, 1)))
             tilt = np.arccos(np.clip(1-2*(obj[:, 3]**2+obj[:, 4]**2), -1, 1))
             pushes = [e for e in c.events if e['target'] == 'release' and e['reason'] == 'push_complete']
             cycle_metrics = []
@@ -209,6 +227,9 @@ def main():
                 max_xy_drift_m=float(np.linalg.norm(obj[:, :2]-obj[0, :2], axis=1).max()),
                 max_object_tilt_degrees=float(np.rad2deg(tilt).max()),
                 rotate_two_object_gels_fraction=float(two_contact[rotation_mask].mean()) if rotation_mask.any() else None,
+                rotate_four_object_gels_fraction=float(four_contact[rotation_mask].mean()) if rotation_mask.any() else None,
+                rotate_gel_load_median_N=np.median(arrays['object_gel_load'][rotation_mask, i], axis=0).tolist() if rotation_mask.any() else None,
+                rotate_sensor_tilt_p95_degrees=np.quantile(sensor_tilt[rotation_mask], .95, axis=0).tolist() if rotation_mask.any() else None,
                 release_reset_net_degrees=float((post_angles-angles)[return_mask].sum()*180/math.pi),
                 table_support_fraction=float(arrays['table_contact'][:, i].mean()),
                 non_gel_object_fraction=float(arrays['other_hand_contact'][:, i].mean()),

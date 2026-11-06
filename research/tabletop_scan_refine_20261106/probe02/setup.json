@@ -1,0 +1,312 @@
+{
+  "q_open": [
+    0.17998732575628526,
+    1.4708430239466472,
+    0.43875452691742883,
+    0.17019036416742808,
+    0.05351607124401862,
+    1.1847733912915501,
+    0.001478893266690198,
+    0.30282606168004206,
+    -0.08124651803110988,
+    1.4481532896780753,
+    0.4366555844481518,
+    0.30258978620767657,
+    1.1648726664093612,
+    0.7899575517142501,
+    0.4947794495947433,
+    -0.16199508474415444
+  ],
+  "desired_open": [
+    [
+      0.038851593225747064,
+      0.0033990739652271233,
+      0.5500437834745128
+    ],
+    [
+      -4.591692630488094e-05,
+      -0.038999972969681385,
+      0.5490877639795994
+    ],
+    [
+      -0.038851593225747064,
+      0.003399073965227115,
+      0.552219393170777
+    ],
+    [
+      0.026952046712631583,
+      0.028188422765385888,
+      0.5391993820841443
+    ]
+  ],
+  "open_positions": [
+    [
+      0.037913614252589704,
+      0.0033169836368875842,
+      0.5498725438078946
+    ],
+    [
+      -0.00013098276971949157,
+      -0.03832551077862603,
+      0.5507482063611309
+    ],
+    [
+      -0.038413870910983416,
+      0.0033607860664086105,
+      0.5521835825075956
+    ],
+    [
+      0.026978352590985775,
+      0.028694309420826153,
+      0.539683467553344
+    ]
+  ],
+  "open_normals": [
+    [
+      -0.9961946980960785,
+      -0.08715574269813137,
+      -0.0
+    ],
+    [
+      0.001177357084740537,
+      0.9999993069149073,
+      -0.0
+    ],
+    [
+      0.9961946980960786,
+      -0.08715574269813116,
+      -0.0
+    ],
+    [
+      -0.6910781208367073,
+      -0.7227800709073304,
+      -0.0
+    ]
+  ],
+  "actual_open_normals": [
+    [
+      -0.9801021308620442,
+      -0.08574782549893083,
+      -0.1790171039367059
+    ],
+    [
+      0.004366274776494935,
+      0.9966629434713067,
+      -0.08151020031681505
+    ],
+    [
+      0.9929085673842283,
+      -0.08686824351414447,
+      -0.081157162861739
+    ],
+    [
+      -0.6849717698900079,
+      -0.7277267854745739,
+      0.03503427117257418
+    ]
+  ],
+  "normal_error_degrees": [
+    10.312514131681432,
+    4.678970881441413,
+    4.655082583316018,
+    2.0573064163776036
+  ],
+  "position_error_m": [
+    0.0009570090906128943,
+    0.001794214130828611,
+    0.00044085053208028555,
+    0.0007006797049142818
+  ],
+  "asset_sha256": "06349a40cb08c5e084bb62eb60a220e64053a546b74d4f1069f88b11bbbbe47e",
+  "collision_sha256": "acab4480f63cbf7bebc74814d08323b1329a127bbb1e4abf03642b51f359fc2d",
+  "collision_spec": {
+    "version": "scan_full_table_contacts_v1",
+    "excluded_pairs": [
+      [
+        "base_link",
+        "link_0.0"
+      ],
+      [
+        "base_link",
+        "link_12.0"
+      ],
+      [
+        "base_link",
+        "link_4.0"
+      ],
+      [
+        "base_link",
+        "link_8.0"
+      ],
+      [
+        "digit_index_gel",
+        "digit_index_housing"
+      ],
+      [
+        "digit_index_gel",
+        "link_3.0"
+      ],
+      [
+        "digit_index_housing",
+        "link_3.0"
+      ],
+      [
+        "digit_middle_gel",
+        "digit_middle_housing"
+      ],
+      [
+        "digit_middle_gel",
+        "link_7.0"
+      ],
+      [
+        "digit_middle_housing",
+        "link_7.0"
+      ],
+      [
+        "digit_ring_gel",
+        "digit_ring_housing"
+      ],
+      [
+        "digit_ring_gel",
+        "link_11.0"
+      ],
+      [
+        "digit_ring_housing",
+        "link_11.0"
+      ],
+      [
+        "digit_thumb_gel",
+        "digit_thumb_housing"
+      ],
+      [
+        "digit_thumb_gel",
+        "link_15.0"
+      ],
+      [
+        "digit_thumb_housing",
+        "link_15.0"
+      ],
+      [
+        "link_0.0",
+        "link_1.0"
+      ],
+      [
+        "link_1.0",
+        "link_2.0"
+      ],
+      [
+        "link_10.0",
+        "link_11.0"
+      ],
+      [
+        "link_10.0",
+        "link_9.0"
+      ],
+      [
+        "link_12.0",
+        "link_13.0"
+      ],
+      [
+        "link_13.0",
+        "link_14.0"
+      ],
+      [
+        "link_14.0",
+        "link_15.0"
+      ],
+      [
+        "link_2.0",
+        "link_3.0"
+      ],
+      [
+        "link_4.0",
+        "link_5.0"
+      ],
+      [
+        "link_5.0",
+        "link_6.0"
+      ],
+      [
+        "link_6.0",
+        "link_7.0"
+      ],
+      [
+        "link_8.0",
+        "link_9.0"
+      ]
+    ],
+    "body_masks": {
+      "base_link": 15,
+      "digit_index_gel": 48,
+      "digit_index_housing": 80,
+      "digit_middle_gel": 384,
+      "digit_middle_housing": 640,
+      "digit_ring_gel": 3072,
+      "digit_ring_housing": 5120,
+      "digit_thumb_gel": 24576,
+      "digit_thumb_housing": 40960,
+      "link_0.0": 65537,
+      "link_1.0": 196608,
+      "link_10.0": 786432,
+      "link_11.0": 268288,
+      "link_12.0": 1048578,
+      "link_13.0": 3145728,
+      "link_14.0": 6291456,
+      "link_15.0": 4243456,
+      "link_2.0": 8519680,
+      "link_3.0": 8388704,
+      "link_4.0": 16777220,
+      "link_5.0": 50331648,
+      "link_6.0": 100663296,
+      "link_7.0": 67109632,
+      "link_8.0": 134217736,
+      "link_9.0": 134742016
+    },
+    "table_filter": 0,
+    "external_excluded_pairs": [],
+    "scene": {
+      "size": [
+        0.8,
+        0.8,
+        0.04
+      ],
+      "surface_height": 0.5,
+      "friction": 0.1,
+      "gel_friction": 1.0,
+      "hand_friction": 0.6,
+      "hand_position": [
+        -0.006199626772404291,
+        -0.0040480773755077375,
+        0.6685000000000001
+      ],
+      "workspace_center": [
+        0.0,
+        0.0
+      ],
+      "workspace_radius": 0.1,
+      "contact_loss_seconds": 2.0,
+      "initialization": {
+        "close_steps": 30,
+        "hold_steps": 60,
+        "opening_delta": 0.12,
+        "min_gel_force": 0.15,
+        "max_gel_force": 2.0
+      }
+    }
+  },
+  "controller_inputs": "URDF kinematics, joint state, unfiltered gel net-load magnitude; fixed placement centre",
+  "privileged_evaluation_only": "object state, object-specific contacts, object-frame contact samples",
+  "tactile_rendering": false,
+  "schema_version": 2,
+  "source_sha256": {
+    "scripts/run_tabletop_scan.py": "f1f59a19ac1b82032dd5ef816247c984bb6096d984af984fa0f04f7a6561ac36",
+    "hora/controllers/tabletop_scan.py": "4a48755dc03d1cda8a5c3a19a0cd9fd8afcae93e072023883957f3c257bc33d1",
+    "hora/utils/scan_kinematics.py": "4d047553db8b6ea2bcc6d2f999afe3b894ec0bc2d01e0435f0b64233bd7fe602",
+    "hora/utils/primitive_assets.py": "0a1733a5a1cdae608a0052a626edd8b1326fccf7617c6c3ce060886e9a8190e2",
+    "hora/utils/manip_control.py": "e0637e8cde3e24e6af666e5d07cc53d15a3e4b8b48437ecfdff36557ca62b90f",
+    "hora/tasks/allegro_digit_scan.py": "6026c39c73af0a08ae97e0f28d21f1d28fcee066ee6a5f307e27ab4a114f7403",
+    "hora/tasks/allegro_digit_tabletop.py": "2e28ce2a2f0453add9ff81c7aa9145e05a0f52196e4b4f24cbf81b46d9c34287",
+    "hora/tasks/allegro_digit_two_axis.py": "abe34d8ceb12c79611743a487cf29150bd6f3cfd952524e6cc70c0302ee85161",
+    "hora/tasks/base/vec_task.py": "4fd8ce6cd72d7c8f2d89c8909f23d56df8a0b3fb98aefd00a8a0316e173422ae"
+  }
+}

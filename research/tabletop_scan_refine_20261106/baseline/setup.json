@@ -1,0 +1,284 @@
+{
+  "q_open": [
+    0.16363396151264106,
+    1.306367475928369,
+    0.4617474092644929,
+    0.30882177610054823,
+    0.05319497267092743,
+    1.1931792820580012,
+    0.0003265332218461187,
+    0.26440765884479295,
+    -0.08155327225709984,
+    1.38978162619705,
+    0.46410476632722125,
+    0.3278596461242754,
+    1.3959989999992777,
+    0.5902705167624008,
+    0.11112846374133543,
+    0.19600302321448315
+  ],
+  "desired_open": [
+    [
+      0.03747143429269059,
+      -0.010811642430665716,
+      0.5500437834745128
+    ],
+    [
+      -8.266263676864275e-05,
+      -0.03899991239590779,
+      0.5490877639795994
+    ],
+    [
+      -0.03898724525230534,
+      -0.000997350307862904,
+      0.552219393170777
+    ],
+    [
+      0.011933492737891347,
+      0.03712939201057155,
+      0.5391993820841443
+    ]
+  ],
+  "open_positions": [
+    [
+      0.03718360925938802,
+      -0.010836814980532511,
+      0.5499960377677122
+    ],
+    [
+      -0.0001260364932627768,
+      -0.03866025889917023,
+      0.5499432521158933
+    ],
+    [
+      -0.03883003330110091,
+      -0.0010110880418466184,
+      0.5522064321869965
+    ],
+    [
+      0.013082937714738826,
+      0.036458790060017635,
+      0.5375642297525678
+    ]
+  ],
+  "open_normals": [
+    [
+      -0.9828873399662023,
+      -0.08599149972095432,
+      -0.16290469271909963
+    ],
+    [
+      0.005989230093820054,
+      0.9936354934254049,
+      -0.11248393364447744
+    ],
+    [
+      0.9928837201006508,
+      -0.08686606965851329,
+      -0.0814629013795534
+    ],
+    [
+      -0.5038247853023736,
+      -0.8390170182862621,
+      0.20545322762382506
+    ]
+  ],
+  "position_error_m": [
+    0.0002928422093556674,
+    0.0009214693378582895,
+    0.00015834238231461967,
+    0.0021082347778050565
+  ],
+  "asset_sha256": "06349a40cb08c5e084bb62eb60a220e64053a546b74d4f1069f88b11bbbbe47e",
+  "collision_sha256": "acab4480f63cbf7bebc74814d08323b1329a127bbb1e4abf03642b51f359fc2d",
+  "collision_spec": {
+    "version": "scan_full_table_contacts_v1",
+    "excluded_pairs": [
+      [
+        "base_link",
+        "link_0.0"
+      ],
+      [
+        "base_link",
+        "link_12.0"
+      ],
+      [
+        "base_link",
+        "link_4.0"
+      ],
+      [
+        "base_link",
+        "link_8.0"
+      ],
+      [
+        "digit_index_gel",
+        "digit_index_housing"
+      ],
+      [
+        "digit_index_gel",
+        "link_3.0"
+      ],
+      [
+        "digit_index_housing",
+        "link_3.0"
+      ],
+      [
+        "digit_middle_gel",
+        "digit_middle_housing"
+      ],
+      [
+        "digit_middle_gel",
+        "link_7.0"
+      ],
+      [
+        "digit_middle_housing",
+        "link_7.0"
+      ],
+      [
+        "digit_ring_gel",
+        "digit_ring_housing"
+      ],
+      [
+        "digit_ring_gel",
+        "link_11.0"
+      ],
+      [
+        "digit_ring_housing",
+        "link_11.0"
+      ],
+      [
+        "digit_thumb_gel",
+        "digit_thumb_housing"
+      ],
+      [
+        "digit_thumb_gel",
+        "link_15.0"
+      ],
+      [
+        "digit_thumb_housing",
+        "link_15.0"
+      ],
+      [
+        "link_0.0",
+        "link_1.0"
+      ],
+      [
+        "link_1.0",
+        "link_2.0"
+      ],
+      [
+        "link_10.0",
+        "link_11.0"
+      ],
+      [
+        "link_10.0",
+        "link_9.0"
+      ],
+      [
+        "link_12.0",
+        "link_13.0"
+      ],
+      [
+        "link_13.0",
+        "link_14.0"
+      ],
+      [
+        "link_14.0",
+        "link_15.0"
+      ],
+      [
+        "link_2.0",
+        "link_3.0"
+      ],
+      [
+        "link_4.0",
+        "link_5.0"
+      ],
+      [
+        "link_5.0",
+        "link_6.0"
+      ],
+      [
+        "link_6.0",
+        "link_7.0"
+      ],
+      [
+        "link_8.0",
+        "link_9.0"
+      ]
+    ],
+    "body_masks": {
+      "base_link": 15,
+      "digit_index_gel": 48,
+      "digit_index_housing": 80,
+      "digit_middle_gel": 384,
+      "digit_middle_housing": 640,
+      "digit_ring_gel": 3072,
+      "digit_ring_housing": 5120,
+      "digit_thumb_gel": 24576,
+      "digit_thumb_housing": 40960,
+      "link_0.0": 65537,
+      "link_1.0": 196608,
+      "link_10.0": 786432,
+      "link_11.0": 268288,
+      "link_12.0": 1048578,
+      "link_13.0": 3145728,
+      "link_14.0": 6291456,
+      "link_15.0": 4243456,
+      "link_2.0": 8519680,
+      "link_3.0": 8388704,
+      "link_4.0": 16777220,
+      "link_5.0": 50331648,
+      "link_6.0": 100663296,
+      "link_7.0": 67109632,
+      "link_8.0": 134217736,
+      "link_9.0": 134742016
+    },
+    "table_filter": 0,
+    "external_excluded_pairs": [],
+    "scene": {
+      "size": [
+        0.8,
+        0.8,
+        0.04
+      ],
+      "surface_height": 0.5,
+      "friction": 0.1,
+      "gel_friction": 1.0,
+      "hand_friction": 0.6,
+      "hand_position": [
+        -0.006199626772404291,
+        -0.0040480773755077375,
+        0.6685000000000001
+      ],
+      "workspace_center": [
+        0.0,
+        0.0
+      ],
+      "workspace_radius": 0.1,
+      "contact_loss_seconds": 2.0,
+      "initialization": {
+        "close_steps": 30,
+        "hold_steps": 60,
+        "opening_delta": 0.12,
+        "min_gel_force": 0.15,
+        "max_gel_force": 2.0
+      }
+    }
+  },
+  "controller_inputs": "URDF kinematics, joint state, unfiltered gel net-load magnitude; fixed placement centre",
+  "privileged_evaluation_only": "object state, object-specific contacts, object-frame contact samples",
+  "tactile_rendering": false,
+  "schema_version": 1,
+  "source_sha256": {
+    "scripts/run_tabletop_scan.py": "4fc95171a285f244e7e42a118637f33be43a2c8500d7a8948afac94acde27bde",
+    "hora/controllers/tabletop_scan.py": "1310622888b979c54f3870f99f6615a23cc47faa36efc8e47ef7d24825b566c5",
+    "hora/utils/scan_kinematics.py": "1e605d3dcfb638426afee875c78e98a2d0b1b7c2335645cfa2645821775c48db",
+    "hora/utils/primitive_assets.py": "0a1733a5a1cdae608a0052a626edd8b1326fccf7617c6c3ce060886e9a8190e2",
+    "hora/utils/manip_control.py": "e0637e8cde3e24e6af666e5d07cc53d15a3e4b8b48437ecfdff36557ca62b90f",
+    "hora/tasks/allegro_digit_scan.py": "6026c39c73af0a08ae97e0f28d21f1d28fcee066ee6a5f307e27ab4a114f7403",
+    "hora/tasks/allegro_digit_tabletop.py": "2e28ce2a2f0453add9ff81c7aa9145e05a0f52196e4b4f24cbf81b46d9c34287",
+    "hora/tasks/allegro_digit_two_axis.py": "abe34d8ceb12c79611743a487cf29150bd6f3cfd952524e6cc70c0302ee85161",
+    "hora/tasks/base/vec_task.py": "4fd8ce6cd72d7c8f2d89c8909f23d56df8a0b3fb98aefd00a8a0316e173422ae"
+  }
+}

@@ -1,0 +1,68 @@
+# Smaller-cylinder comparison: reduced sweep for the fixed wrist.
+# Independent scripted baseline; does not override any saved RL experiment.
+base_config: manip_tabletop_inward90_hora16384_sphere55.yaml
+task:
+  env:
+    episodeLength: 1000000
+    asset:
+      handAsset: assets/allegro/allegro_digit_compact_inward90_thumb_visual_fixed.urdf
+    objects:
+      - name: cylinder60h70
+        shape: cylinder
+        size: [0.060, 0.060, 0.070]
+    grasp:
+      q_noise: 0.0
+      object_position: [0.0, 0.0, 0.536]
+    domain:
+      mass: [0.06, 0.06]
+      friction: [0.1, 0.1]
+      com: 0.0
+      gain_scale: [1.0, 1.0]
+    manipulation:
+      action_reference: actual_position
+      action_scale: 0.05  # scan-only preload authority; RL configurations are unchanged
+      action_smoothing: 0.5
+    digit:
+      dropout: 0.0
+      latency_steps: 0
+    tabletop:
+      friction: 0.1
+scan:
+  # Known placement centre and size used only to construct a non-contact setup.
+  center: [0.0, 0.0, 0.54]
+  opening_clearance: 0.009
+  normal_weight: 0.025
+  ik_damping: 0.003
+  position_weights: [1.0, 1.0, 0.4]  # allow small height adaptation on the cylindrical side
+  contact_height_min: 0.522
+  contact_height_max: 0.556
+  max_joint_step: 0.05
+  force_filter: 0.4
+  contact_on: 0.12
+  contact_off: 0.06
+  hold_force: 0.5
+  minimum_hold_force: 0.30
+  max_preload_tilt_degrees: 12.0
+  max_preload_normal_error_degrees: 15.0
+  abort_force: 3.0
+  force_gain: 0.008
+  approach_speed: 0.008
+  max_closure: 0.025
+  required_contacts: 4
+  minimum_rotation_contacts: 4
+  minimum_rotation_force: 0.20
+  contact_dwell: 0.15
+  settle_seconds: 0.5
+  hold_seconds: 0.3
+  approach_timeout: 8.0
+  rotation_degrees: 20.0
+  rotate_seconds: 1.7
+  max_rotation_compliance: 0.006
+  loss_grace_seconds: 0.6
+  release_speed: 0.02
+  release_min_seconds: 0.5
+  release_dwell: 0.15
+  release_timeout: 3.0
+  reset_speed: 0.025
+  reset_tolerance: 0.002
+  reset_timeout: 5.0

@@ -1,0 +1,68 @@
+{
+  "seed": 42,
+  "control_dt": 0.05000000260770321,
+  "recorded_steps": 202,
+  "max_kinematics_error_m": 1.6851303809571734e-07,
+  "stop_reason": "controller_fault",
+  "environments": [
+    {
+      "cycles": 0,
+      "completed_pushes": 0,
+      "events": [
+        {
+          "time": 0.5000000260770321,
+          "source": "settle",
+          "target": "approach",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 3.300000172108412,
+          "source": "approach",
+          "target": "hold",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 4.500000234693289,
+          "source": "hold",
+          "target": "release",
+          "cycle": 0,
+          "reason": "closure_limit"
+        },
+        {
+          "time": 5.1500002685934305,
+          "source": "release",
+          "target": "reset",
+          "cycle": 0,
+          "reason": ""
+        },
+        {
+          "time": 10.150000529363751,
+          "source": "reset",
+          "target": "fault",
+          "cycle": 0,
+          "reason": "reset_timeout"
+        }
+      ],
+      "cycle_metrics": [],
+      "net_rotation_degrees": 2.2730154991149902,
+      "last_half_rotation_degrees": -0.0733720264983926,
+      "max_xy_drift_m": 0.009143464267253876,
+      "max_object_tilt_degrees": 0.9448115825653076,
+      "rotate_two_object_gels_fraction": null,
+      "rotate_four_object_gels_fraction": null,
+      "rotate_gel_load_median_N": null,
+      "rotate_sensor_tilt_p95_degrees": null,
+      "release_reset_net_degrees": -0.2109435623266738,
+      "table_support_fraction": 1.0,
+      "non_gel_object_fraction": 0.0,
+      "two_object_gels_fraction": 0.3465346534653465,
+      "max_gel_force_N": 0.7861583828926086,
+      "touched_azimuth_bins_of_36": 6,
+      "azimuth_metric": "simulator contact locations; not observed shape reconstruction or full surface coverage",
+      "final_phase": "fault",
+      "reason": "reset_timeout"
+    }
+  ]
+}

@@ -89,3 +89,63 @@ def test_cylinder_asset_is_reproducible_and_rejects_invalid_size(tmp_path):
     assert cylinder_asset(tmp_path, [.06, .06, .07]).read_text() == text
     with pytest.raises(ValueError):
         cylinder_asset(tmp_path, [.06, .05, .07])
+
+
+def test_touch_threshold_alone_does_not_authorize_rotation():
+    control, p = controller()
+    control.transition('approach')
+    for _ in range(30):
+        control.update(p, [.18]*4)
+    assert control.touch.all()
+    assert control.phase == 'hold'  # touched, but not enough preload
+    for _ in range(7):
+        control.update(p, [.5]*4)
+    assert control.phase == 'rotate'
+
+
+def test_loaded_but_tilted_sensor_does_not_authorize_rotation():
+    control, p = controller()
+    control.transition('hold')
+    normals = control.open_normals.copy()
+    normals[0] = [-np.cos(np.pi/6), 0, np.sin(np.pi/6)]
+    for _ in range(20):
+        control.update(p, [.5]*4, normals)
+    assert control.phase == 'hold'
+    for _ in range(7):
+        control.update(p, [.5]*4, control.open_normals)
+    assert control.phase == 'rotate'
+
+
+def test_rotation_pauses_for_contact_recovery_and_counts_loss_duration():
+    control, p = controller()
+    control.anchor = p.copy()
+    control.anchor_normals = control.open_normals.copy()
+    control.radial_offset = np.zeros(4)
+    control.transition('rotate')
+    for _ in range(14):
+        control.update(p, [.5]*4)
+    previous = control.rotation_elapsed
+    for _ in range(3):
+        control.update(p, [.5, .5, .5, 0])
+    assert control.phase == 'rotate'  # grace is consecutive loss, not age of phase
+    assert control.rotation_elapsed == previous
+    control.update(p, [.5]*4)
+    assert control.rotation_elapsed > previous and control.lost_seconds == 0
+    for _ in range(14):
+        control.update(p, [.5, .5, .5, 0])
+        if control.phase != 'rotate':
+            break
+    assert control.phase == 'release' and control.reason == 'lost_contact'
+
+
+def test_normal_constraint_does_not_penalize_free_axial_rotation():
+    q = np.zeros(16)
+    positions = np.zeros((4, 3))
+    normals = np.tile([1., 0., 0.], (4, 1))
+    j = np.zeros((4, 6, 16))
+    j[0, 0, 0] = .1
+    desired = positions.copy(); desired[0, 0] = .001
+    without_spin = cartesian_joint_target(q, positions, normals, j, desired, normals, -np.ones(16), np.ones(16))
+    j[0, 3, 0] = 10.  # rotation about sensing normal cannot change that normal
+    with_spin = cartesian_joint_target(q, positions, normals, j, desired, normals, -np.ones(16), np.ones(16))
+    np.testing.assert_allclose(with_spin, without_spin, atol=1e-12)

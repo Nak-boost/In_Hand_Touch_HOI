@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-19T08:34:12.143803+00:00",
+  "frozen_root": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project",
+  "run_root": "/root/In_Hand_Reconstruction/runs/manip",
+  "from_scratch": true,
+  "jobs": [
+    {
+      "name": "air_six",
+      "gpu": 0,
+      "config": "manip_hora16384_six_objects_gel_rotation"
+    },
+    {
+      "name": "air_sphere55",
+      "gpu": 1,
+      "config": "manip_hora16384_sphere55_gel_rotation"
+    },
+    {
+      "name": "table_sphere55",
+      "gpu": 2,
+      "config": "manip_tabletop_inward90_hora16384_sphere55"
+    },
+    {
+      "name": "table_box45",
+      "gpu": 3,
+      "config": "manip_tabletop_inward90_hora16384_box45"
+    }
+  ],
+  "max_steps": 1500000000,
+  "num_envs": 16384,
+  "save_frequency": 500,
+  "max_restarts": 0,
+  "git_head": "4fba57049d53f0044621fee2a2066c037bd561f3"
+}

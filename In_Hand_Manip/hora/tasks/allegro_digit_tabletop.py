@@ -78,11 +78,13 @@ class AllegroDigitTabletop(AllegroDigitTwoAxis):
             raise FloatingPointError('Nonfinite tabletop simulation state')
         failed, self.missing_steps, self.outside_workspace, self.contact_lost = tabletop_failures(
             self.object_state[:, :3], gel, self.missing_steps, self.workspace_center,
-            self.table_cfg['workspace_radius'], self.missing_limit)
+            self.table_cfg['workspace_radius'], self.missing_limit,
+            terminate_on_contact_loss=self.cfg.get('terminate_on_contact_loss', False))
         return failed
 
     def _task_extras(self):
         return {'episode/outside_workspace': self.outside_workspace.float().mean(),
+                # Diagnostic threshold crossing, not necessarily a task failure.
                 'episode/contact_lost': self.contact_lost.float().mean(),
                 'contact/missing_seconds': self.missing_steps.float().mean()*self.control_dt}
 

@@ -1,0 +1,296 @@
+{
+  "source": "/root/In_Hand_Reconstruction/research/tabletop_hora16384_20261016/frozen_project",
+  "task": "AllegroDigitTabletop",
+  "num_envs": 16,
+  "runtime_hand_shapes": 27,
+  "checks": {
+    "body_order": true,
+    "forbidden_positive_contacts": 0,
+    "max_independent_contact_load_error_N": 0.0,
+    "reward_sum_and_contact_reward": true,
+    "loss_timeout_and_recontact_boundary": true
+  },
+  "modes": {
+    "track_cached_targets": {
+      "steps": 80,
+      "finite": true,
+      "mean_reward": -20.03867499558255,
+      "initial_states_ever_failed": 3,
+      "two_gel_fraction": 0.76484375,
+      "mean_pair_wall_ms": 0.7191449999999997,
+      "first_failure_examples": [
+        {
+          "env": 9,
+          "step": 45,
+          "object": "sphere55",
+          "mass_kg": 0.05262346565723419,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            -0.0019437074661254883,
+            -0.001138448715209961,
+            0.5274995565414429
+          ],
+          "gel_load_N": [
+            0.0,
+            0.056149452924728394,
+            0.05341164022684097,
+            0.0
+          ],
+          "target_increment_lost": 4.738361258915802e-09
+        },
+        {
+          "env": 5,
+          "step": 47,
+          "object": "sphere55",
+          "mass_kg": 0.060762468725442886,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            -0.0011464357376098633,
+            0.002501845359802246,
+            0.5274999737739563
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.04499024152755737,
+            0.028363261371850967
+          ],
+          "target_increment_lost": 9.975185608079862e-12
+        },
+        {
+          "env": 14,
+          "step": 48,
+          "object": "sphere55",
+          "mass_kg": 0.046252697706222534,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            0.00022840499877929688,
+            -0.0007760524749755859,
+            0.5274999737739563
+          ],
+          "gel_load_N": [
+            0.008729499764740467,
+            0.01979747600853443,
+            0.0,
+            0.0
+          ],
+          "target_increment_lost": 1.4290787220261336e-08
+        }
+      ]
+    },
+    "random_small": {
+      "steps": 80,
+      "finite": true,
+      "mean_reward": -43.7896750636166,
+      "initial_states_ever_failed": 10,
+      "two_gel_fraction": 0.0015625,
+      "mean_pair_wall_ms": 0.7597679874999999,
+      "first_failure_examples": [
+        {
+          "env": 4,
+          "step": 40,
+          "object": "sphere55",
+          "mass_kg": 0.07713570445775986,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            -0.003739533945918083,
+            0.033202528953552246,
+            0.5274994373321533
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.0,
+            0.036327335983514786
+          ],
+          "target_increment_lost": 3.750770019905758e-06
+        },
+        {
+          "env": 5,
+          "step": 40,
+          "object": "sphere55",
+          "mass_kg": 0.060762468725442886,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            0.00606381893157959,
+            0.07576370239257812,
+            0.5274998545646667
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "target_increment_lost": 6.635490990447579e-06
+        },
+        {
+          "env": 11,
+          "step": 40,
+          "object": "sphere55",
+          "mass_kg": 0.11088087409734726,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            -0.013256549835205078,
+            0.014581918716430664,
+            0.5274999141693115
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.0,
+            0.012973633594810963
+          ],
+          "target_increment_lost": 2.939305659310776e-06
+        },
+        {
+          "env": 7,
+          "step": 43,
+          "object": "sphere55",
+          "mass_kg": 0.04644625633955002,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            -0.023118972778320312,
+            0.02738654613494873,
+            0.5274999141693115
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "target_increment_lost": 9.687779311207123e-06
+        },
+        {
+          "env": 12,
+          "step": 53,
+          "object": "sphere55",
+          "mass_kg": 0.09999334067106247,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            0.02188018709421158,
+            0.02011561393737793,
+            0.5274999141693115
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.0,
+            0.04550399258732796
+          ],
+          "target_increment_lost": 6.2102599258651026e-06
+        },
+        {
+          "env": 0,
+          "step": 55,
+          "object": "sphere55",
+          "mass_kg": 0.042362429201602936,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            -0.027906600385904312,
+            0.041134268045425415,
+            0.5274999737739563
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "target_increment_lost": 4.002819423476467e-06
+        },
+        {
+          "env": 6,
+          "step": 66,
+          "object": "sphere55",
+          "mass_kg": 0.061272088438272476,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            -0.01738572120666504,
+            -0.013354897499084473,
+            0.5275000333786011
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.0378449484705925,
+            0.0
+          ],
+          "target_increment_lost": 7.533501957368571e-06
+        },
+        {
+          "env": 9,
+          "step": 68,
+          "object": "sphere55",
+          "mass_kg": 0.05262346565723419,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            -0.01743173599243164,
+            -0.0027790069580078125,
+            0.5274999737739563
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.030575040727853775,
+            0.0
+          ],
+          "target_increment_lost": 5.6084249990817625e-06
+        },
+        {
+          "env": 13,
+          "step": 77,
+          "object": "sphere55",
+          "mass_kg": 0.1019795686006546,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            -0.02925729751586914,
+            0.029217243194580078,
+            0.5275000333786011
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "target_increment_lost": 6.470234438893385e-06
+        },
+        {
+          "env": 10,
+          "step": 78,
+          "object": "sphere55",
+          "mass_kg": 0.08604677021503448,
+          "contact_lost": true,
+          "outside_workspace": false,
+          "object_position": [
+            0.0018284320831298828,
+            0.027139663696289062,
+            0.5274999737739563
+          ],
+          "gel_load_N": [
+            0.0,
+            0.0,
+            0.0,
+            0.009000061079859734
+          ],
+          "target_increment_lost": 5.485968813445652e-06
+        }
+      ]
+    }
+  },
+  "passed": true
+}

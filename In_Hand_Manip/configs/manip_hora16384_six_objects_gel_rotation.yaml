@@ -13,4 +13,4 @@ task:
       - {name: capsule70, shape: capsule, size: [0.070, 0.050, 0.050]}
       - {name: capsule80, shape: capsule, size: [0.080, 0.060, 0.060]}
     grasp:
-      cache: cache/digit_six_objects_inward90_checked_20261017.pt
+      cache: cache/digit_six_objects_inward90_robust_20261018.pt

@@ -59,4 +59,15 @@ def test_experiment_b_has_only_one_configuration_difference():
     assert base['task']['env']['manipulation']['position_weight']==2.0
     assert base['task']['env']['manipulation']['contact_weight']==.05
     assert rotation_contact_multipliers(base['task']['env']['manipulation']) is None
-    assert rotation_contact_multipliers(tabletop['task']['env']['manipulation']) is None
+    assert rotation_contact_multipliers(tabletop['task']['env']['manipulation']) == (.1,.5,1.)
+
+
+def test_hora_sampling_does_not_expand_the_project_network():
+    config_dir=Path(__file__).resolve().parents[1]/'configs'
+    with initialize_config_dir(version_base='1.3',config_dir=str(config_dir)):
+        for name in ('manip_hora16384_sphere55', 'manip_hora16384_six_objects_gel_rotation'):
+            cfg=compose(config_name=name)
+            assert list(cfg.train.network.mlp.units)==[256,256,128]
+            assert list(cfg.train.network.priv_mlp.units)==[128,64,8]
+            assert cfg.train.ppo.priv_info_dim==23
+            assert cfg.num_envs==16384 and cfg.train.ppo.horizon_length==8

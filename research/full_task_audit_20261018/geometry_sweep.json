@@ -1,0 +1,63 @@
+{
+  "poses": 467,
+  "asset": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/assets/allegro/allegro_digit_compact_inward90.urdf",
+  "method": "PyBullet zero margin, >0.1mm model penetration while corrected CAD convex envelopes are separated; both tasks share local geometry, tabletop additionally excludes gel-gel. Random configurations need not be reachable. This is not hardware ground truth; CAD envelopes overlap cannot prove real collision.",
+  "summary": {
+    "interpolation": {
+      "poses": 42,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    },
+    "thumb_grid": {
+      "poses": 169,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    },
+    "random": {
+      "poses": 128,
+      "poses_with_overlap": 63,
+      "poses_with_reference_disagreement": 0
+    },
+    "cache_AllegroDigitTwoAxis_sphere55": {
+      "poses": 16,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    },
+    "cache_AllegroDigitTwoAxis_sphere65": {
+      "poses": 16,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    },
+    "cache_AllegroDigitTwoAxis_box45": {
+      "poses": 16,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    },
+    "cache_AllegroDigitTwoAxis_box55": {
+      "poses": 16,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    },
+    "cache_AllegroDigitTwoAxis_capsule70": {
+      "poses": 16,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    },
+    "cache_AllegroDigitTwoAxis_capsule80": {
+      "poses": 16,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    },
+    "cache_AllegroDigitTabletop_sphere55": {
+      "poses": 16,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    },
+    "cache_AllegroDigitTabletop_box45": {
+      "poses": 16,
+      "poses_with_overlap": 0,
+      "poses_with_reference_disagreement": 0
+    }
+  },
+  "disagreements": []
+}

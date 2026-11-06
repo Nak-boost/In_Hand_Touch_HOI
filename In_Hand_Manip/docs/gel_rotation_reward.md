@@ -1,5 +1,8 @@
 # B 实验：正向旋转奖励关联胶面接触
 
+2026-10-18 更新：工作区桌面配置也启用相同的连续旋转接触门控；此前冻结的桌面运行不会自动变化。
+离散的 30° 进度奖励仍按原逻辑发放，本次未将它加入门控。新抓取缓存和网络修正见 [缓存复验](grasp_revalidation.md)。
+
 配置：`manip_hora16384_sphere55_gel_rotation`，继承原 `manip_hora16384_sphere55`。解析后的配置只增加 `task.env.manipulation.rotation_contact_multipliers: [0.1, 0.5, 1.0]`。
 
 令 `r_dir` 为原有方向旋转奖励（含 rotation_weight），`n` 为当前控制步经过碰撞对筛选、法向载荷超过原阈值0.1N的胶面数量：

@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-02",
+  "verification": "Fetched original HTML; examined task/method/appendix passages relevant to report. External experiments not reproduced.",
+  "sources": [
+    {
+      "key": "hora",
+      "url": "https://arxiv.org/html/2210.04887",
+      "status": 200,
+      "length": 62493,
+      "title": "In-Hand Object Rotation via Rapid Motor Adaptation",
+      "extracted_text_sha256": "f0d9ad53e38da5f20d533841d32fe230c68ea5401b17a68cb430406c07f6ed41"
+    },
+    {
+      "key": "anyrotate",
+      "url": "https://arxiv.org/html/2405.07391v3",
+      "status": 200,
+      "length": 78284,
+      "title": "AnyRotate: Gravity-Invariant In-Hand Object Rotation with Sim-to-Real Touch",
+      "extracted_text_sha256": "fb262e529e9a0ba46e589a163e0fbd3e4bd27f3692f167375738597fa3203a30"
+    },
+    {
+      "key": "rotateit",
+      "url": "https://arxiv.org/html/2309.09979v2",
+      "status": 200,
+      "length": 61471,
+      "title": "General In-Hand Object Rotation with Vision and Touch",
+      "extracted_text_sha256": "703346e41f7a1f07b62d70e3ec26f0d15f258f5404c718bd8b2543b17f6442ff"
+    },
+    {
+      "key": "rotating_without_seeing",
+      "url": "https://arxiv.org/html/2303.10880v4",
+      "status": 200,
+      "length": 69122,
+      "title": "Rotating without Seeing: Towards In-hand Dexterity through Touch",
+      "extracted_text_sha256": "60827aa3dffaaeeff05a6fe2982ce9d6607e10d95c2b8a34c73839bdd5ef5122"
+    },
+    {
+      "key": "visual_dexterity",
+      "url": "https://arxiv.org/html/2211.11744v3",
+      "status": 200,
+      "length": 124467,
+      "title": "Visual Dexterity: In-Hand Reorientation of Novel and Complex Object Shapes",
+      "extracted_text_sha256": "25516a30cf3e87fca1d491fb9fac49ac45b37163bd4b666d2381d50fea6fce29"
+    },
+    {
+      "key": "sampling_exploration",
+      "url": "https://arxiv.org/html/2303.03486",
+      "status": 200,
+      "length": 56998,
+      "title": "Sampling-based Exploration forReinforcement Learning of Dexterous Manipulation",
+      "extracted_text_sha256": "b62a95ba873db2943ff7a852f35f257c466211e659450b988f44c1fc39ec184b"
+    },
+    {
+      "key": "demostart",
+      "url": "https://arxiv.org/html/2409.06613v2",
+      "status": 200,
+      "length": 80874,
+      "title": "DemoStart: Demonstration-led auto-curriculum applied to sim-to-real with multi-fingered robots",
+      "extracted_text_sha256": "25cc64a6afa1b37d026ad0520383547c9e5c74388c29cd7a429937f2b0a28369"
+    },
+    {
+      "key": "dexhier",
+      "url": "https://arxiv.org/html/2501.05439",
+      "status": 200,
+      "length": 61677,
+      "title": "From Simple to Complex Skills: The Case of In-Hand Object Reorientation",
+      "extracted_text_sha256": "92378f79dd21e2c8c95e1169fb4ae04509f2c9018f63a1a1edac142e4b220e02"
+    },
+    {
+      "key": "dexteritygen",
+      "url": "https://arxiv.org/html/2502.04307",
+      "status": 200,
+      "length": 67177,
+      "title": "DexterityGen:Foundation Controller for Unprecedented Dexterity",
+      "extracted_text_sha256": "77eaec8d0f9e44f7346d339c31a43ee3d2bd1e74f7a89ed3fe2b6a7909e618cc"
+    },
+    {
+      "key": "ptld",
+      "url": "https://arxiv.org/html/2603.04531v3",
+      "status": 200,
+      "length": 57755,
+      "title": "PTLD: Sim-to-Real Privileged Tactile Latent Distillation for Dexterous Manipulation",
+      "extracted_text_sha256": "124dd66c9368614e6fefe35efbb54bac2b211d88074ab9b2d5475e990819d54c"
+    },
+    {
+      "key": "poise",
+      "url": "https://arxiv.org/html/2609.13761v1",
+      "status": 200,
+      "length": 47946,
+      "title": "Learning In-Hand Object Reaching to General 6D Poses",
+      "extracted_text_sha256": "8d551b19c25281f678c34f6e307ed196d1fb55ae7ec0d9dbcdc46cb28bd94ba3"
+    },
+    {
+      "key": "neuralfeels",
+      "url": "https://arxiv.org/html/2312.13469v1",
+      "status": 200,
+      "title": "Neural feels with neural fields: Visuo-tactile perception for in-hand manipulation",
+      "extracted_text_sha256": "ce6468d884e48e0969ebb83cbc9ba4eddc29383b732910e3dda51d9e93940da1"
+    }
+  ]
+}

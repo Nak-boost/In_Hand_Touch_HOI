@@ -1,0 +1,15 @@
+{
+  "scripts/revalidate_grasp_cache.py": "599d84b5d14753a86fa37178e8dcb0e830a875d75c40daf09d081d30111c89c6",
+  "scripts/check_grasp_cache.py": "f6f483a5e33ff184b29ddd361921ccbd363a87e55d49c7186cb2585063b7637d",
+  "scripts/evaluate_tabletop_grasps.py": "41c1e668a441e6a2b44437f873611d3a446b924b7c68815bd95d0fde49cdfb42",
+  "hora/utils/grasp_validation.py": "702b8831f330df232e9053f772215136b4b907a49d60ed03771c44861c584819",
+  "hora/tasks/allegro_digit_two_axis.py": "17b99c776605b3a39c5fcd6db933bafcf1b384b24085788939cb6adcba0e5357",
+  "configs/manip_hora16384_sphere55.yaml": "788ae0e0870978c1c0a0dc6f5f49e72ee8c05f97f1ff15e66c1a321f9f25d344",
+  "configs/manip_hora16384_six_objects_gel_rotation.yaml": "bf1c030ffb612b39dd0d96f85bdccd109f59c7ffc02b4e1a3e89df41de539312",
+  "configs/manip_scale2560_sphere55.yaml": "ecac361db23f38092de90e847af622a6c77a3603fa3a54bf98c08def2bbde145",
+  "configs/manip_tabletop_box45.yaml": "642828b65d753ef17db96050a0b67ae6afbde58f208719964ef0ded2e1506111",
+  "configs/manip_tabletop_inward90_scale2560_sphere55.yaml": "af6bdefae8bb0b6f0cbdd83b8779a7aadae21628632052803a2ef12795d43c59",
+  "configs/manip_tabletop_inward90_scale2560_box45.yaml": "d141e683a0947b5491f85b86fd88379456cee0789f1dc6249409774de9ed5571",
+  "configs/manip_tabletop_inward90_hora16384_sphere55.yaml": "95a945e3c100f362845b499bce553e0d28bcb81bff35638e07cb82c8972d9120",
+  "configs/manip_tabletop_inward90_hora16384_box45.yaml": "760d0dabee2d5a171dca66594cb7e2fe8e5c6e66ecf8347e301160ad5a80e20f"
+}

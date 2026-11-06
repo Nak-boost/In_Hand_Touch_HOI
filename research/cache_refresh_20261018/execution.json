@@ -1,0 +1,101 @@
+[
+  {
+    "job": {
+      "tag": "table_sphere",
+      "config": "manip_tabletop_inward90_hora16384_sphere55",
+      "cache": "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt",
+      "seed": 901,
+      "name": "table_sphere_901"
+    },
+    "exit_code": 0,
+    "seconds": 85.09189748764038
+  },
+  {
+    "job": {
+      "tag": "table_sphere",
+      "config": "manip_tabletop_inward90_hora16384_sphere55",
+      "cache": "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt",
+      "seed": 1701,
+      "name": "table_sphere_1701"
+    },
+    "exit_code": 0,
+    "seconds": 57.94280934333801
+  },
+  {
+    "job": {
+      "tag": "table_sphere",
+      "config": "manip_tabletop_inward90_hora16384_sphere55",
+      "cache": "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt",
+      "seed": 2901,
+      "name": "table_sphere_2901"
+    },
+    "exit_code": 0,
+    "seconds": 57.10185527801514
+  },
+  {
+    "job": {
+      "tag": "table_box",
+      "config": "manip_tabletop_inward90_hora16384_box45",
+      "cache": "cache/digit_tabletop_box45_inward90_checked_20261016.pt",
+      "seed": 901,
+      "name": "table_box_901"
+    },
+    "exit_code": 0,
+    "seconds": 83.47720241546631
+  },
+  {
+    "job": {
+      "tag": "table_box",
+      "config": "manip_tabletop_inward90_hora16384_box45",
+      "cache": "cache/digit_tabletop_box45_inward90_checked_20261016.pt",
+      "seed": 1701,
+      "name": "table_box_1701"
+    },
+    "exit_code": 0,
+    "seconds": 58.73633861541748
+  },
+  {
+    "job": {
+      "tag": "table_box",
+      "config": "manip_tabletop_inward90_hora16384_box45",
+      "cache": "cache/digit_tabletop_box45_inward90_checked_20261016.pt",
+      "seed": 2901,
+      "name": "table_box_2901"
+    },
+    "exit_code": 0,
+    "seconds": 62.146002769470215
+  },
+  {
+    "job": {
+      "tag": "air_six",
+      "config": "manip_hora16384_six_objects_gel_rotation",
+      "cache": "cache/digit_six_objects_inward90_checked_20261017.pt",
+      "seed": 901,
+      "name": "air_six_901"
+    },
+    "exit_code": 0,
+    "seconds": 335.71840357780457
+  },
+  {
+    "job": {
+      "tag": "air_six",
+      "config": "manip_hora16384_six_objects_gel_rotation",
+      "cache": "cache/digit_six_objects_inward90_checked_20261017.pt",
+      "seed": 1701,
+      "name": "air_six_1701"
+    },
+    "exit_code": 0,
+    "seconds": 250.71549081802368
+  },
+  {
+    "job": {
+      "tag": "air_six",
+      "config": "manip_hora16384_six_objects_gel_rotation",
+      "cache": "cache/digit_six_objects_inward90_checked_20261017.pt",
+      "seed": 2901,
+      "name": "air_six_2901"
+    },
+    "exit_code": 0,
+    "seconds": 216.49928998947144
+  }
+]

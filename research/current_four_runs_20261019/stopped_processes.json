@@ -1,0 +1,22 @@
+[
+  {
+    "pid": 197358,
+    "cmd": "/root/conda_envs/inhand_hoi/bin/python /root/In_Hand_Reconstruction/research/tabletop_hora16384_20261016/frozen_project/scripts/supervise_tabletop_stages.py --plan /root/In_Hand_Reconstruction/research/tabletop_hora16384_20261016/plan.json "
+  },
+  {
+    "pid": 215125,
+    "cmd": "/root/conda_envs/inhand_hoi/bin/python /root/In_Hand_Reconstruction/research/tabletop_hora16384_20261016/frozen_project/scripts/supervise_tabletop_stages.py --plan /root/In_Hand_Reconstruction/research/tabletop_hora16384_20261016/box45_recovery_20261017/plan.json "
+  },
+  {
+    "pid": 224934,
+    "cmd": "/root/conda_envs/inhand_hoi/bin/python /root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/train_manip.py --config-name manip_hora16384_six_objects_gel_rotation stage=teacher run_root=/root/In_Hand_Reconstruction/runs/manip run_name=teacher_six_objects_gel16384_direct_20261017_152146 train.ppo.max_agent_steps=1500000000 train.ppo.save_frequency=50 checkpoint=/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_20261017_resumed_attempt00/stage1_nn/best.pth "
+  },
+  {
+    "pid": 354488,
+    "cmd": "/root/conda_envs/inhand_hoi/bin/python /root/In_Hand_Reconstruction/research/tabletop_hora16384_20261016/frozen_project/train_manip.py --config-name manip_tabletop_inward90_hora16384_sphere55 stage=teacher run_root=/root/In_Hand_Reconstruction/runs/manip run_name=teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m train.ppo.max_agent_steps=1500000000 checkpoint=/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s500m/stage1_nn/last.pth "
+  },
+  {
+    "pid": 366939,
+    "cmd": "/root/conda_envs/inhand_hoi/bin/python /root/In_Hand_Reconstruction/research/tabletop_hora16384_20261016/frozen_project/train_manip.py --config-name manip_tabletop_inward90_hora16384_box45_retry1 stage=teacher run_root=/root/In_Hand_Reconstruction/runs/manip run_name=teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m train.ppo.max_agent_steps=1500000000 checkpoint=/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s500m/stage1_nn/last.pth "
+  }
+]

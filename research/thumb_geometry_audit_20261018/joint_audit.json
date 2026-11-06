@@ -1,0 +1,101 @@
+{
+  "hora_internal": [],
+  "vendor": [
+    {
+      "joint": "joint_0.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.47\" upper=\"0.47\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.47\" upper=\"0.47\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_1.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.196\" upper=\"1.61\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.196\" upper=\"1.61\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_2.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.174\" upper=\"1.709\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.174\" upper=\"1.709\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_3.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.227\" upper=\"1.618\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.227\" upper=\"1.618\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_4.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.47\" upper=\"0.47\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.47\" upper=\"0.47\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_5.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.196\" upper=\"1.61\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.196\" upper=\"1.61\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_6.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.174\" upper=\"1.709\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.174\" upper=\"1.709\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_7.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.227\" upper=\"1.618\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.227\" upper=\"1.618\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_8.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.47\" upper=\"0.47\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.47\" upper=\"0.47\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_9.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.196\" upper=\"1.61\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.196\" upper=\"1.61\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_10.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.174\" upper=\"1.709\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.174\" upper=\"1.709\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_11.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.227\" upper=\"1.618\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.227\" upper=\"1.618\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_12.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"0.263\" upper=\"1.396\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"0.263\" upper=\"1.396\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_13.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.105\" upper=\"1.163\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.105\" upper=\"1.163\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_14.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.189\" upper=\"1.644\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.189\" upper=\"1.644\" velocity=\"7\" />\n    "
+    },
+    {
+      "joint": "joint_15.0",
+      "field": "limit",
+      "current": "<limit effort=\"0.35\" lower=\"-0.162\" upper=\"1.719\" velocity=\"6.283\" />\n    ",
+      "reference": "<limit effort=\"15\" lower=\"-0.162\" upper=\"1.719\" velocity=\"7\" />\n    "
+    }
+  ]
+}

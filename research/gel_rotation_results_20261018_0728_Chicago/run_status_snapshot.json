@@ -1,0 +1,27 @@
+{
+  "single": {
+    "status": "failed",
+    "pid": 211460,
+    "steps": 613416960,
+    "stop_reason": "memory_pressure",
+    "exit_code": -11,
+    "finished_unix": 1792306750.9322438,
+    "last_resource": {
+      "time": 1792306746.5111258,
+      "gpu": 1,
+      "uuid": "GPU-90a24841-4ca6-bae5-8c5e-d58970023b27",
+      "total_mib": 24564,
+      "used_mib": 22788,
+      "utilization": 0,
+      "temperature_c": 37,
+      "process_mib": 7748,
+      "proc_status": "State:\tR (running)\nVmSize:\t23296152 kB\nVmRSS:\t 6721584 kB\nThreads:\t11"
+    }
+  },
+  "multi": {
+    "pid": 224934,
+    "alive": true,
+    "steps_at_scalar_snapshot": 601882624
+  },
+  "single_reference_status_file": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/single_resume_monitor/status.json"
+}

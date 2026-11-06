@@ -1,4 +1,4 @@
-# HORA upstream 410d958 PPO/network scale, with current DIGIT task semantics.
+# HORA upstream 410d958 sampling/optimization; preserve the project's network.
 defaults:
   - manip_scale2560_sphere55
   - _self_
@@ -7,8 +7,8 @@ num_envs: 16384
 
 train:
   network:
-    mlp: {units: [512, 256, 128]}
-    priv_mlp: {units: [256, 128, 8]}
+    mlp: {units: [256, 256, 128]}
+    priv_mlp: {units: [128, 64, 8]}
   ppo:
     normalize_input: true
     normalize_value: true

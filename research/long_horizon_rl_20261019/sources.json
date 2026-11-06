@@ -1,0 +1,79 @@
+[
+  {
+    "key": "anyrotate",
+    "url": "https://arxiv.org/html/2405.07391v3",
+    "status": 200,
+    "title": "AnyRotate: Gravity-Invariant In-Hand Object Rotation with Sim-to-Real Touch",
+    "abstract": "AnyRotate: Gravity-Invariant In-Hand Object Rotation with Sim-to-Real Touch Report GitHub Issue × Title: Content selection saved. Describe the issue below: Description: Submit without GitHub Submit in GitHub arXiv is now an independent nonprofit! Learn more × Back to arXiv Why HTML? Report Issue Back to Abstract Download PDF Abstract 1 Introduction 2 Related Work 3 Method 3.1 Multi-axis In-hand Object Rotation 3.2 Teacher-Student Policy Distillation 3.3 Sim-to-Real Dense Featured Touch 4 System "
+  },
+  {
+    "key": "rotateit",
+    "url": "https://arxiv.org/html/2309.09979v2",
+    "status": 200,
+    "title": "General In-Hand Object Rotation with Vision and Touch",
+    "abstract": "General In-Hand Object Rotation with Vision and Touch Report GitHub Issue × Title: Content selection saved. Describe the issue below: Description: Submit without GitHub Submit in GitHub arXiv is now an independent nonprofit! Learn more × Back to arXiv Why HTML? Report Issue Back to Abstract Download PDF Abstract 1 Introduction 2 Related Work 3 General In-hand Object Rotation with Vision and Touch 3.1 Oracle Policy Training 3.2 Visuotactile Policy Training with Transformers. 4 Evaluation Setup 5 "
+  },
+  {
+    "key": "dapg",
+    "url": "https://arxiv.org/abs/1709.10087",
+    "status": 200,
+    "title": "[1709.10087] Learning Complex Dexterous Manipulation with Deep Reinforcement Learning and Demonstrations",
+    "abstract": "Abstract: Dexterous multi-fingered hands are extremely versatile and provide a generic way to perform a multitude of tasks in human-centric environments. However, effectively controlling them remains challenging due to their high dimensionality and large number of potential contacts. Deep reinforcement learning (DRL) provides a model-agnostic approach to control complex dynamical systems, but has not been shown to scale to high-dimensional dexterous manipulation. Furthermore, deployment of DRL on physical systems remains challenging due to sample inefficiency. Consequently, the success of DRL in robotics has thus far been limited to simpler manipulators and tasks. In this work, we show that model-free DRL can effectively scale up to complex manipulation tasks with a high-dimensional 24-DoF hand, and solve them from scratch in simulated experiments. Furthermore, with the use of a small number of human demonstrations, the sample complexity can be significantly reduced, which enables learning with sample sizes equivalent to a few hours of robot experience. The use of demonstrations result in policies that exhibit very natural movements and, surprisingly, are also substantially more robust."
+  },
+  {
+    "key": "reverse_curriculum",
+    "url": "https://arxiv.org/abs/1707.05300",
+    "status": 200,
+    "title": "[1707.05300] Reverse Curriculum Generation for Reinforcement Learning",
+    "abstract": "Abstract: Many relevant tasks require an agent to reach a certain state, or to manipulate objects into a desired configuration. For example, we might want a robot to align and assemble a gear onto an axle or insert and turn a key in a lock. These goal-oriented tasks present a considerable challenge for reinforcement learning, since their natural reward function is sparse and prohibitive amounts of exploration are required to reach the goal and receive some learning signal. Past approaches tackle these problems by exploiting expert demonstrations or by manually designing a task-specific reward shaping function to guide the learning agent. Instead, we propose a method to learn these tasks without requiring any prior knowledge other than obtaining a single state in which the task is achieved. The robot is trained in reverse, gradually learning to reach the goal from a set of start states increasingly far from the goal. Our method automatically generates a curriculum of start states that adapts to the agent's performance, leading to efficient training on goal-oriented tasks. We demonstrate our approach on difficult simulated navigation and fine-grained manipulation problems, not solvable by state-of-the-art reinforcement learning methods."
+  },
+  {
+    "key": "backplay",
+    "url": "https://arxiv.org/abs/1807.06919",
+    "status": 200,
+    "title": "[1807.06919] Backplay: \"Man muss immer umkehren\"",
+    "abstract": "Abstract: Model-free reinforcement learning (RL) requires a large number of trials to learn a good policy, especially in environments with sparse rewards. We explore a method to improve the sample efficiency when we have access to demonstrations. Our approach, Backplay, uses a single demonstration to construct a curriculum for a given task. Rather than starting each training episode in the environment's fixed initial state, we start the agent near the end of the demonstration and move the starting point backwards during the course of training until we reach the initial state. Our contributions are that we analytically characterize the types of environments where Backplay can improve training speed, demonstrate the effectiveness of Backplay both in large grid worlds and a complex four player zero-sum game (Pommerman), and show that Backplay compares favorably to other competitive methods known to improve sample efficiency. This includes reward shaping, behavioral cloning, and reverse curriculum generation."
+  },
+  {
+    "key": "relay",
+    "url": "https://arxiv.org/abs/1910.11956",
+    "status": 200,
+    "title": "[1910.11956] Relay Policy Learning: Solving Long-Horizon Tasks via Imitation and Reinforcement Learning",
+    "abstract": "Abstract: We present relay policy learning, a method for imitation and reinforcement learning that can solve multi-stage, long-horizon robotic tasks. This general and universally-applicable, two-phase approach consists of an imitation learning stage that produces goal-conditioned hierarchical policies, and a reinforcement learning phase that finetunes these policies for task performance. Our method, while not necessarily perfect at imitation learning, is very amenable to further improvement via environment interaction, allowing it to scale to challenging long-horizon tasks. We simplify the long-horizon policy learning problem by using a novel data-relabeling algorithm for learning goal-conditioned hierarchical policies, where the low-level only acts for a fixed number of steps, regardless of the goal achieved. While we rely on demonstration data to bootstrap policy learning, we do not assume access to demonstrations of every specific tasks that is being solved, and instead leverage unstructured and unsegmented demonstrations of semantically meaningful behaviors that are not only less burdensome to provide, but also can greatly facilitate further improvement using reinforcement learning. We demonstrate the effectiveness of our method on a number of multi-stage, long-horizon manipulation tasks in a challenging kitchen simulation environment. Videos are available at this https URL"
+  },
+  {
+    "key": "goexplore",
+    "url": "https://arxiv.org/abs/2004.12919",
+    "status": 200,
+    "title": "[2004.12919] First return, then explore",
+    "abstract": "Abstract: The promise of reinforcement learning is to solve complex sequential decision problems autonomously by specifying a high-level reward function only. However, reinforcement learning algorithms struggle when, as is often the case, simple and intuitive rewards provide sparse and deceptive feedback. Avoiding these pitfalls requires thoroughly exploring the environment, but creating algorithms that can do so remains one of the central challenges of the field. We hypothesise that the main impediment to effective exploration originates from algorithms forgetting how to reach previously visited states (\"detachment\") and from failing to first return to a state before exploring from it (\"derailment\"). We introduce Go-Explore, a family of algorithms that addresses these two challenges directly through the simple principles of explicitly remembering promising states and first returning to such states before intentionally exploring. Go-Explore solves all heretofore unsolved Atari games and surpasses the state of the art on all hard-exploration games, with orders of magnitude improvements on the grand challenges Montezuma's Revenge and Pitfall. We also demonstrate the practical potential of Go-Explore on a sparse-reward pick-and-place robotics task. Additionally, we show that adding a goal-conditioned policy can further improve Go-Explore's exploration efficiency and enable it to handle stochasticity throughout training. The substantial performance gains from Go-Explore suggest that the simple principles of remembering states, returning to them, and exploring from them are a powerful and general approach to exploration, an insight that may prove critical to the creation of truly intelligent learning agents."
+  },
+  {
+    "key": "deepmimic",
+    "url": "https://arxiv.org/abs/1804.02717",
+    "status": 200,
+    "title": "[1804.02717] DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills",
+    "abstract": "Abstract: A longstanding goal in character animation is to combine data-driven specification of behavior with a system that can execute a similar behavior in a physical simulation, thus enabling realistic responses to perturbations and environmental variation. We show that well-known reinforcement learning (RL) methods can be adapted to learn robust control policies capable of imitating a broad range of example motion clips, while also learning complex recoveries, adapting to changes in morphology, and accomplishing user-specified goals. Our method handles keyframed motions, highly-dynamic actions such as motion-captured flips and spins, and retargeted motions. By combining a motion-imitation objective with a task objective, we can train characters that react intelligently in interactive settings, e.g., by walking in a desired direction or throwing a ball at a user-specified target. This approach thus combines the convenience and motion quality of using motion clips to define the desired style and appearance, with the flexibility and generality afforded by RL methods and physics-based animation. We further explore a number of methods for integrating multiple clips into the learning process to develop multi-skilled agents capable of performing a rich repertoire of diverse skills. We demonstrate results using multiple characters (human, Atlas robot, bipedal dinosaur, dragon) and a large variety of skills, including locomotion, acrobatics, and martial arts."
+  },
+  {
+    "key": "dactyl",
+    "url": "https://arxiv.org/abs/1808.00177",
+    "status": 200,
+    "title": "[1808.00177] Learning Dexterous In-Hand Manipulation",
+    "abstract": "Abstract: We use reinforcement learning (RL) to learn dexterous in-hand manipulation policies which can perform vision-based object reorientation on a physical Shadow Dexterous Hand. The training is performed in a simulated environment in which we randomize many of the physical properties of the system like friction coefficients and an object's appearance. Our policies transfer to the physical robot despite being trained entirely in simulation. Our method does not rely on any human demonstrations, but many behaviors found in human manipulation emerge naturally, including finger gaiting, multi-finger coordination, and the controlled use of gravity. Our results were obtained using the same distributed RL system that was used to train OpenAI Five. We also include a video of our results: this https URL"
+  },
+  {
+    "key": "her",
+    "url": "https://arxiv.org/abs/1707.01495",
+    "status": 200,
+    "title": "[1707.01495] Hindsight Experience Replay",
+    "abstract": "Abstract: Dealing with sparse rewards is one of the biggest challenges in Reinforcement Learning (RL). We present a novel technique called Hindsight Experience Replay which allows sample-efficient learning from rewards which are sparse and binary and therefore avoid the need for complicated reward engineering. It can be combined with an arbitrary off-policy RL algorithm and may be seen as a form of implicit curriculum. We demonstrate our approach on the task of manipulating objects with a robotic arm. In particular, we run experiments on three different tasks: pushing, sliding, and pick-and-place, in each case using only binary rewards indicating whether or not the task is completed. Our ablation studies show that Hindsight Experience Replay is a crucial ingredient which makes training possible in these challenging environments. We show that our policies trained on a physics simulation can be deployed on a physical robot and successfully complete the task."
+  },
+  {
+    "key": "ddpg_search",
+    "url": "https://html.duckduckgo.com/html/?q=reinforcement%20learning%20long%20horizon%20dexterous%20manipulation%202025",
+    "status": 202,
+    "title": "\n        DuckDuckGo\n    ",
+    "abstract": "DuckDuckGo DuckDuckGo Unfortunately, bots use DuckDuckGo too. Please complete the following challenge to confirm this search was made by a human. Select all squares containing a duck: Submit Images not loading? Please email the following code to: error-lite+7b7b@duckduckgo.com Code: 7b7b"
+  }
+]

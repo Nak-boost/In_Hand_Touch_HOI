@@ -1,0 +1,32 @@
+{
+  "source": "/root/In_Hand_Reconstruction/research/tabletop_hora16384_20261016/frozen_project",
+  "task": "AllegroDigitTabletop",
+  "num_envs": 16,
+  "runtime_hand_shapes": 27,
+  "checks": {
+    "body_order": true,
+    "forbidden_positive_contacts": 0,
+    "max_independent_contact_load_error_N": 7.450580596923828e-09,
+    "reward_sum_and_contact_reward": true,
+    "loss_timeout_and_recontact_boundary": true
+  },
+  "modes": {
+    "track_cached_targets": {
+      "steps": 80,
+      "finite": true,
+      "mean_reward": 0.0986115021049045,
+      "initial_states_ever_failed": 0,
+      "two_gel_fraction": 1.0,
+      "mean_pair_wall_ms": 0.9101848000000002
+    },
+    "random_small": {
+      "steps": 80,
+      "finite": true,
+      "mean_reward": -105.22785477433354,
+      "initial_states_ever_failed": 16,
+      "two_gel_fraction": 0.0,
+      "mean_pair_wall_ms": 1.0802480125
+    }
+  },
+  "passed": true
+}

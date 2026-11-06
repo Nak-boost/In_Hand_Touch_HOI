@@ -1,0 +1,3 @@
+# Optional offline diagnostics. The live Isaac Gym viewer does not require matplotlib.
+-r requirements-scan.txt
+matplotlib==3.7.5

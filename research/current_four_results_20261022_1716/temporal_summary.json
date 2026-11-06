@@ -1,0 +1,312 @@
+{
+  "timeline_air_six_last_215": {
+    "sphere55": {
+      "n": 64,
+      "survivors": 49,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.3974921703338623,
+          "fraction_survivors_net_ge_30deg": 1.0,
+          "two_gels_survivor_frames": 0.36959183673469387,
+          "no_gel_survivor_frames": 0.3377551020408163
+        },
+        "10-20s": {
+          "net_turns_survivors": 0.008018030785024166,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.0,
+          "no_gel_survivor_frames": 0.7687755102040816
+        },
+        "20-30s": {
+          "net_turns_survivors": -0.0009803990833461285,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.0,
+          "no_gel_survivor_frames": 0.7813265306122449
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 13,
+        "episodes": 10,
+        "events_with_next1s_net_ge10deg": 0,
+        "episodes_with_next1s_net_ge10deg": 0
+      }
+    },
+    "sphere65": {
+      "n": 64,
+      "survivors": 62,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.3475477397441864,
+          "fraction_survivors_net_ge_30deg": 1.0,
+          "two_gels_survivor_frames": 0.38903225806451613,
+          "no_gel_survivor_frames": 0.31911290322580643
+        },
+        "10-20s": {
+          "net_turns_survivors": 0.007338370196521282,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.0,
+          "no_gel_survivor_frames": 0.7193548387096774
+        },
+        "20-30s": {
+          "net_turns_survivors": -0.0008786301477812231,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.0,
+          "no_gel_survivor_frames": 0.7499193548387096
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 21,
+        "episodes": 15,
+        "events_with_next1s_net_ge10deg": 0,
+        "episodes_with_next1s_net_ge10deg": 0
+      }
+    },
+    "box45": {
+      "n": 64,
+      "survivors": 62,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.3091614246368408,
+          "fraction_survivors_net_ge_30deg": 0.9516129032258065,
+          "two_gels_survivor_frames": 0.36362903225806453,
+          "no_gel_survivor_frames": 0.33379032258064517
+        },
+        "10-20s": {
+          "net_turns_survivors": 0.007360339164733887,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.019596774193548386,
+          "no_gel_survivor_frames": 0.8229032258064516
+        },
+        "20-30s": {
+          "net_turns_survivors": -0.0019945288076996803,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.036774193548387096,
+          "no_gel_survivor_frames": 0.7495161290322581
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 18,
+        "episodes": 12,
+        "events_with_next1s_net_ge10deg": 1,
+        "episodes_with_next1s_net_ge10deg": 1
+      }
+    },
+    "box55": {
+      "n": 64,
+      "survivors": 64,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.2630518972873688,
+          "fraction_survivors_net_ge_30deg": 0.96875,
+          "two_gels_survivor_frames": 0.42625,
+          "no_gel_survivor_frames": 0.185859375
+        },
+        "10-20s": {
+          "net_turns_survivors": 0.005947901401668787,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.105703125,
+          "no_gel_survivor_frames": 0.4253125
+        },
+        "20-30s": {
+          "net_turns_survivors": -0.0009296303614974022,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.0521875,
+          "no_gel_survivor_frames": 0.4234375
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 26,
+        "episodes": 14,
+        "events_with_next1s_net_ge10deg": 0,
+        "episodes_with_next1s_net_ge10deg": 0
+      }
+    },
+    "capsule70": {
+      "n": 64,
+      "survivors": 62,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.3638024628162384,
+          "fraction_survivors_net_ge_30deg": 1.0,
+          "two_gels_survivor_frames": 0.3710483870967742,
+          "no_gel_survivor_frames": 0.4125
+        },
+        "10-20s": {
+          "net_turns_survivors": 0.005201615858823061,
+          "fraction_survivors_net_ge_30deg": 0.03225806451612903,
+          "two_gels_survivor_frames": 0.0,
+          "no_gel_survivor_frames": 0.787741935483871
+        },
+        "20-30s": {
+          "net_turns_survivors": -0.0031692255288362503,
+          "fraction_survivors_net_ge_30deg": 0.03225806451612903,
+          "two_gels_survivor_frames": 0.0,
+          "no_gel_survivor_frames": 0.847741935483871
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 18,
+        "episodes": 15,
+        "events_with_next1s_net_ge10deg": 0,
+        "episodes_with_next1s_net_ge10deg": 0
+      }
+    },
+    "capsule80": {
+      "n": 64,
+      "survivors": 63,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.3386826813220978,
+          "fraction_survivors_net_ge_30deg": 1.0,
+          "two_gels_survivor_frames": 0.4007936507936508,
+          "no_gel_survivor_frames": 0.33015873015873015
+        },
+        "10-20s": {
+          "net_turns_survivors": -6.918395956745371e-05,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.03428571428571429,
+          "no_gel_survivor_frames": 0.8211904761904761
+        },
+        "20-30s": {
+          "net_turns_survivors": -7.104968244675547e-05,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.035555555555555556,
+          "no_gel_survivor_frames": 0.8462698412698413
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 23,
+        "episodes": 16,
+        "events_with_next1s_net_ge10deg": 0,
+        "episodes_with_next1s_net_ge10deg": 0
+      }
+    }
+  },
+  "timeline_air_sphere55_best_215": {
+    "sphere55": {
+      "n": 64,
+      "survivors": 62,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.4392596483230591,
+          "fraction_survivors_net_ge_30deg": 0.9838709677419355,
+          "two_gels_survivor_frames": 0.7956451612903226,
+          "no_gel_survivor_frames": 0.020887096774193547
+        },
+        "10-20s": {
+          "net_turns_survivors": 0.010658933781087399,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.38975806451612904,
+          "no_gel_survivor_frames": 0.1042741935483871
+        },
+        "20-30s": {
+          "net_turns_survivors": 0.0010267470497637987,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.30798387096774194,
+          "no_gel_survivor_frames": 0.1057258064516129
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 54,
+        "episodes": 23,
+        "events_with_next1s_net_ge10deg": 0,
+        "episodes_with_next1s_net_ge10deg": 0
+      }
+    }
+  },
+  "timeline_air_sphere55_last_215": {
+    "sphere55": {
+      "n": 64,
+      "survivors": 60,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.511029839515686,
+          "fraction_survivors_net_ge_30deg": 0.9833333333333333,
+          "two_gels_survivor_frames": 0.7804166666666666,
+          "no_gel_survivor_frames": 0.04683333333333333
+        },
+        "10-20s": {
+          "net_turns_survivors": 0.02495737001299858,
+          "fraction_survivors_net_ge_30deg": 0.016666666666666666,
+          "two_gels_survivor_frames": 0.124,
+          "no_gel_survivor_frames": 0.5705
+        },
+        "20-30s": {
+          "net_turns_survivors": -0.0035035957116633654,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.03333333333333333,
+          "no_gel_survivor_frames": 0.7185833333333334
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 20,
+        "episodes": 13,
+        "events_with_next1s_net_ge10deg": 0,
+        "episodes_with_next1s_net_ge10deg": 0
+      }
+    }
+  },
+  "timeline_old_baseline_best_215": {
+    "sphere55": {
+      "n": 64,
+      "survivors": 61,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.8637368679046631,
+          "fraction_survivors_net_ge_30deg": 0.9672131147540983,
+          "two_gels_survivor_frames": 0.8987704918032787,
+          "no_gel_survivor_frames": 0.024098360655737706
+        },
+        "10-20s": {
+          "net_turns_survivors": 0.6509822010993958,
+          "fraction_survivors_net_ge_30deg": 0.7704918032786885,
+          "two_gels_survivor_frames": 0.7022131147540983,
+          "no_gel_survivor_frames": 0.10836065573770491
+        },
+        "20-30s": {
+          "net_turns_survivors": 0.6188669800758362,
+          "fraction_survivors_net_ge_30deg": 0.639344262295082,
+          "two_gels_survivor_frames": 0.5861475409836066,
+          "no_gel_survivor_frames": 0.13
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 878,
+        "episodes": 52,
+        "events_with_next1s_net_ge10deg": 858,
+        "episodes_with_next1s_net_ge10deg": 43
+      }
+    }
+  },
+  "timeline_table_box45_last_215": {
+    "box45": {
+      "n": 64,
+      "survivors": 64,
+      "segments": {
+        "0-10s": {
+          "net_turns_survivors": 0.014681356027722359,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.00015625,
+          "no_gel_survivor_frames": 0.996953125
+        },
+        "10-20s": {
+          "net_turns_survivors": -4.4485204853117466e-08,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.0,
+          "no_gel_survivor_frames": 1.0
+        },
+        "20-30s": {
+          "net_turns_survivors": -1.0128132998943329e-08,
+          "fraction_survivors_net_ge_30deg": 0.0,
+          "two_gels_survivor_frames": 0.0,
+          "no_gel_survivor_frames": 1.0
+        }
+      },
+      "after10s_sustained_contact_returns": {
+        "events": 0,
+        "episodes": 0,
+        "events_with_next1s_net_ge10deg": 0,
+        "episodes_with_next1s_net_ge10deg": 0
+      }
+    }
+  }
+}

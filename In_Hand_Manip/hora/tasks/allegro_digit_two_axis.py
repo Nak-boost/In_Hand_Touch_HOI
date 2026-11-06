@@ -22,6 +22,7 @@ from hora.utils.object_contacts import GelObjectContactReader, validate_object_c
 from hora.utils.hand_collision import (collision_spec, collision_signature, configure_asset_collisions,
                              verify_actor_collisions, require_collision_signature)
 from hora.utils.asset_geometry import verify_geometry_manifest
+from hora.utils.grasp_validation import require_validation_contract
 
 ROOT = Path(__file__).resolve().parents[2]
 FINGERS = ('index', 'middle', 'ring', 'thumb')
@@ -59,6 +60,7 @@ class AllegroDigitTwoAxis(VecTask):
             if not self.cache_path.is_file():
                 raise FileNotFoundError('Generate DIGIT-specific grasps first with stage=grasps')
             self.grasp_cache = torch.load(self.cache_path, map_location='cpu')
+            require_validation_contract(self.grasp_cache, config)
             require_collision_signature(self.grasp_cache, self.collision_hash, 'Grasp cache')
             if self.grasp_cache['asset_sha256'] != self.asset_hash or self.grasp_cache['objects'] != self.catalog:
                 raise ValueError('Grasp cache asset/catalog mismatch; regenerate grasps')
@@ -178,6 +180,10 @@ class AllegroDigitTwoAxis(VecTask):
             elif obj['shape'] == 'capsule':
                 # PhysX capsule local axis is X; Gym's width argument is half cylinder length.
                 asset = self.gym.create_capsule(self.sim, size[1]/2, max(0, (size[0]-size[1])/2), opt)
+            elif obj['shape'] == 'cylinder':
+                from hora.utils.primitive_assets import cylinder_asset
+                path = cylinder_asset(ROOT / 'cache/primitives', size, opt.density)
+                asset = self.gym.load_asset(self.sim, str(path.parent), path.name, opt)
             else:
                 raise ValueError('Unsupported primitive: '+obj['shape'])
             assets.append(asset)

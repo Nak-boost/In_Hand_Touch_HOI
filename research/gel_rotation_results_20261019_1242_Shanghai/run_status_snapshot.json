@@ -1,0 +1,18 @@
+{
+  "time": "2026-10-19T12:46:04.457905+08:00",
+  "multi_process": {
+    "returncode": 0,
+    "output": "    PID     ELAPSED COMMAND\n 224934  1-21:24:18 /root/conda_envs/inhand_hoi/bin/python /root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project/train_manip.py --config-name manip_hora16384_six_objects_gel_rotation stage=teacher run_root=/root/In_Hand_Reconstruction/runs/manip run_name=teacher_six_objects_gel16384_direct_20261017_152146 train.ppo.max_agent_steps=1500000000 train.ppo.save_frequency=50 checkpoint=/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_20261017_resumed_attempt00/stage1_nn/best.pth\n",
+    "stderr": ""
+  },
+  "gpu": {
+    "returncode": 0,
+    "output": "0, 7797 MiB, 16295 MiB, 0 %\n1, 0 MiB, 24091 MiB, 0 %\n2, 6601 MiB, 17491 MiB, 0 %\n3, 6493 MiB, 17599 MiB, 0 %\n",
+    "stderr": ""
+  },
+  "multi_log_tail": {
+    "returncode": 0,
+    "output": "Agent Steps: 0924M | FPS: 5655.4 | Last FPS: 5780.0 | Collect Time: 2701.7 min | Train RL Time: 19.8 min | Current Best: 21.11\nAgent Steps: 0924M | FPS: 5655.5 | Last FPS: 6073.3 | Collect Time: 2702.1 min | Train RL Time: 19.8 min | Current Best: 21.11\nAgent Steps: 0924M | FPS: 5655.5 | Last FPS: 5980.0 | Collect Time: 2702.5 min | Train RL Time: 19.8 min | Current Best: 21.11\n",
+    "stderr": ""
+  }
+}

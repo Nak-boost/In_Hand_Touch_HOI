@@ -59,3 +59,19 @@ papers/
 /research/tactile_policy_sources_20261015/*
 !/research/tactile_policy_sources_20261015/report.md
 !/research/tactile_policy_sources_20261015/verification.json
+
+# Downloaded literature text and pages (authored reports/source metadata stay tracked).
+/research/long_horizon_rl_20261019/*.html
+/research/long_horizon_rl_20261019/*.txt
+/research/contact_region_review_20261022/anyrotate_excerpts.txt
+
+# Raw per-grasp validation dumps, redundant source snapshots and runtime monitors.
+/research/cache_refresh_20261018/air_six_[0-9]*.json
+/research/cache_refresh_20261018/table_box_[0-9]*.json
+/research/cache_refresh_20261018/table_sphere_[0-9]*.json
+/research/cache_refresh_20261018/source_review/
+/research/**/*_monitor/
+/research/**/*.status.json
+/research/**/workspace_before.patch
+/research/**/workspace_status.txt
+/research/**/*.jsonlog

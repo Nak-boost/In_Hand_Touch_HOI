@@ -1,0 +1,298 @@
+{
+  "time": "2026-10-20T17:28:11.503125+08:00",
+  "runs": {
+    "air_six": {
+      "status": "running",
+      "supervisor_pid": 585674,
+      "started": 1792398874.3011446,
+      "source_sha256": "40665412abb4a23f8aef499169862509b49111fd3455576a32435852d75b1119",
+      "runtime": {
+        "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:52:49) \n[GCC 13.3.0]",
+        "executable": "/root/conda_envs/inhand_hoi/bin/python",
+        "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.17",
+        "packages": {
+          "torch": "2.0.1",
+          "numpy": "1.23.5",
+          "hydra-core": "1.3.2"
+        }
+      },
+      "attempts": [
+        {
+          "attempt": 0,
+          "pid": 585722,
+          "run_dir": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/runs/manip/teacher_air_six_current_20261019_attempt00",
+          "command": [
+            "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/run_manip.sh",
+            "--config-name",
+            "manip_hora16384_six_objects_gel_rotation",
+            "stage=teacher",
+            "run_root=/root/In_Hand_Reconstruction/research/current_four_runs_20261019/runs/manip",
+            "run_name=teacher_air_six_current_20261019_attempt00",
+            "train.ppo.max_agent_steps=1500000000",
+            "train.ppo.save_frequency=500"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/air_six_monitor/attempt00/console.log",
+          "started": 1792398874.5578358,
+          "last_resource": {
+            "time": 1792488487.9767609,
+            "gpu": 0,
+            "uuid": "GPU-fb826cc1-700d-41ee-b5fa-a29619b96195",
+            "total_mib": 24564,
+            "used_mib": 7739,
+            "utilization": 0,
+            "temperature_c": 41,
+            "process_mib": 7726,
+            "proc_status": "State:\tR (running)\nVmSize:\t23474192 kB\nVmRSS:\t 6647696 kB\nThreads:\t11"
+          },
+          "heartbeat": {
+            "pid": 585722,
+            "agent_steps": 559022080,
+            "epoch_num": 4266,
+            "phase": "collect",
+            "time": 1792488470.1228585,
+            "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_six_current_20261019_attempt00/stage1_nn/last.pth"
+          },
+          "last_checked": 1792488488.2027495
+        }
+      ],
+      "options": {
+        "config": "manip_hora16384_six_objects_gel_rotation",
+        "gpu": 0,
+        "output": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/air_six_monitor",
+        "run_prefix": "teacher_air_six_current_20261019",
+        "checkpoint": null,
+        "max_steps": 1500000000,
+        "save_frequency": 500,
+        "max_restarts": 0,
+        "poll_seconds": 10,
+        "stall_seconds": 600,
+        "startup_seconds": 1800,
+        "minimum_free_mib": 2048,
+        "start_free_mib": 12000,
+        "minimum_disk_gib": 5,
+        "overrides": []
+      }
+    },
+    "air_sphere55": {
+      "status": "running",
+      "supervisor_pid": 585675,
+      "started": 1792398874.2982183,
+      "source_sha256": "40665412abb4a23f8aef499169862509b49111fd3455576a32435852d75b1119",
+      "runtime": {
+        "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:52:49) \n[GCC 13.3.0]",
+        "executable": "/root/conda_envs/inhand_hoi/bin/python",
+        "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.17",
+        "packages": {
+          "torch": "2.0.1",
+          "numpy": "1.23.5",
+          "hydra-core": "1.3.2"
+        }
+      },
+      "attempts": [
+        {
+          "attempt": 0,
+          "pid": 585715,
+          "run_dir": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/runs/manip/teacher_air_sphere55_current_20261019_attempt00",
+          "command": [
+            "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/run_manip.sh",
+            "--config-name",
+            "manip_hora16384_sphere55_gel_rotation",
+            "stage=teacher",
+            "run_root=/root/In_Hand_Reconstruction/research/current_four_runs_20261019/runs/manip",
+            "run_name=teacher_air_sphere55_current_20261019_attempt00",
+            "train.ppo.max_agent_steps=1500000000",
+            "train.ppo.save_frequency=500"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/air_sphere55_monitor/attempt00/console.log",
+          "started": 1792398874.5335958,
+          "last_resource": {
+            "time": 1792488487.933935,
+            "gpu": 1,
+            "uuid": "GPU-90a24841-4ca6-bae5-8c5e-d58970023b27",
+            "total_mib": 24564,
+            "used_mib": 7619,
+            "utilization": 44,
+            "temperature_c": 43,
+            "process_mib": 7606,
+            "proc_status": "State:\tR (running)\nVmSize:\t23212040 kB\nVmRSS:\t 6636656 kB\nThreads:\t11"
+          },
+          "heartbeat": {
+            "pid": 585715,
+            "agent_steps": 566099968,
+            "epoch_num": 4320,
+            "phase": "collect",
+            "time": 1792488484.2953808,
+            "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_sphere55_current_20261019_attempt00/stage1_nn/last.pth"
+          },
+          "last_checked": 1792488488.1318364
+        }
+      ],
+      "options": {
+        "config": "manip_hora16384_sphere55_gel_rotation",
+        "gpu": 1,
+        "output": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/air_sphere55_monitor",
+        "run_prefix": "teacher_air_sphere55_current_20261019",
+        "checkpoint": null,
+        "max_steps": 1500000000,
+        "save_frequency": 500,
+        "max_restarts": 0,
+        "poll_seconds": 10,
+        "stall_seconds": 600,
+        "startup_seconds": 1800,
+        "minimum_free_mib": 2048,
+        "start_free_mib": 12000,
+        "minimum_disk_gib": 5,
+        "overrides": []
+      }
+    },
+    "table_sphere55": {
+      "status": "stopped",
+      "supervisor_pid": 585676,
+      "started": 1792398874.2955854,
+      "source_sha256": "40665412abb4a23f8aef499169862509b49111fd3455576a32435852d75b1119",
+      "runtime": {
+        "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:52:49) \n[GCC 13.3.0]",
+        "executable": "/root/conda_envs/inhand_hoi/bin/python",
+        "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.17",
+        "packages": {
+          "torch": "2.0.1",
+          "numpy": "1.23.5",
+          "hydra-core": "1.3.2"
+        }
+      },
+      "attempts": [
+        {
+          "attempt": 0,
+          "pid": 585732,
+          "run_dir": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/runs/manip/teacher_table_sphere55_current_20261019_attempt00",
+          "command": [
+            "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/run_manip.sh",
+            "--config-name",
+            "manip_tabletop_inward90_hora16384_sphere55",
+            "stage=teacher",
+            "run_root=/root/In_Hand_Reconstruction/research/current_four_runs_20261019/runs/manip",
+            "run_name=teacher_table_sphere55_current_20261019_attempt00",
+            "train.ppo.max_agent_steps=1500000000",
+            "train.ppo.save_frequency=500"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/table_sphere55_monitor/attempt00/console.log",
+          "started": 1792398874.5750108,
+          "last_resource": {
+            "time": 1792422878.160412,
+            "gpu": 2,
+            "uuid": "GPU-d9a864ad-b027-8517-cc01-abb729c52604",
+            "total_mib": 24564,
+            "used_mib": 23803,
+            "utilization": 49,
+            "temperature_c": 41,
+            "process_mib": 6904,
+            "proc_status": "State:\tS (sleeping)\nVmSize:\t22309280 kB\nVmRSS:\t 6709352 kB\nThreads:\t11"
+          },
+          "heartbeat": {
+            "pid": 585732,
+            "agent_steps": 179699712,
+            "epoch_num": 1372,
+            "phase": "destroy_sim",
+            "time": 1792422879.5097501,
+            "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_sphere55_current_20261019_attempt00/stage1_nn/best.pth",
+            "exception": "Traceback (most recent call last):\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/train_manip.py\", line 168, in main\n    agent.train()\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/hora/algo/ppo/ppo.py\", line 178, in train\n    a_losses, c_losses, b_losses, entropies, kls = self.train_epoch()\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/train_manip.py\", line 48, in train_epoch\n    result = super().train_epoch()\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/hora/algo/ppo/ppo.py\", line 250, in train_epoch\n    self.play_steps()\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/train_manip.py\", line 43, in play_steps\n    result = super().play_steps()\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/hora/algo/ppo/ppo.py\", line 334, in play_steps\n    self.obs, rewards, self.dones, infos = self.env.step(actions)\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/hora/tasks/allegro_digit_two_axis.py\", line 455, in step\n    _, reward, done, info = super().step(actions)\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/hora/tasks/base/vec_task.py\", line 279, in step\n    self.post_physics_step()\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/hora/tasks/allegro_digit_two_axis.py\", line 359, in post_physics_step\n    self.object_gel_normal_force = self.object_contact_reader.refresh(self)\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/hora/utils/object_contacts.py\", line 77, in refresh\n    self.loads[i] = gel_object_normal_load(contacts, self.object_bodies[i], self.gel_lookup)\n  File \"/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/hora/utils/object_contacts.py\", line 48, in gel_object_normal_load\n    loads[:] = np.bincount(slots[positive], weights=force[positive], minlength=4)\n  File \"<__array_function__ internals>\", line 180, in bincount\nKeyboardInterrupt\n"
+          },
+          "last_checked": 1792422878.5049634,
+          "exit_code": -2,
+          "reason": "memory_pressure",
+          "finished": 1792422883.429943
+        }
+      ],
+      "options": {
+        "config": "manip_tabletop_inward90_hora16384_sphere55",
+        "gpu": 2,
+        "output": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/table_sphere55_monitor",
+        "run_prefix": "teacher_table_sphere55_current_20261019",
+        "checkpoint": null,
+        "max_steps": 1500000000,
+        "save_frequency": 500,
+        "max_restarts": 0,
+        "poll_seconds": 10,
+        "stall_seconds": 600,
+        "startup_seconds": 1800,
+        "minimum_free_mib": 2048,
+        "start_free_mib": 12000,
+        "minimum_disk_gib": 5,
+        "overrides": []
+      },
+      "finished": 1792422883.9161267
+    },
+    "table_box45": {
+      "status": "running",
+      "supervisor_pid": 585677,
+      "started": 1792398874.2944357,
+      "source_sha256": "40665412abb4a23f8aef499169862509b49111fd3455576a32435852d75b1119",
+      "runtime": {
+        "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:52:49) \n[GCC 13.3.0]",
+        "executable": "/root/conda_envs/inhand_hoi/bin/python",
+        "platform": "Linux-5.15.0-191-generic-x86_64-with-glibc2.17",
+        "packages": {
+          "torch": "2.0.1",
+          "numpy": "1.23.5",
+          "hydra-core": "1.3.2"
+        }
+      },
+      "attempts": [
+        {
+          "attempt": 0,
+          "pid": 585706,
+          "run_dir": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/runs/manip/teacher_table_box45_current_20261019_attempt00",
+          "command": [
+            "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/run_manip.sh",
+            "--config-name",
+            "manip_tabletop_inward90_hora16384_box45",
+            "stage=teacher",
+            "run_root=/root/In_Hand_Reconstruction/research/current_four_runs_20261019/runs/manip",
+            "run_name=teacher_table_box45_current_20261019_attempt00",
+            "train.ppo.max_agent_steps=1500000000",
+            "train.ppo.save_frequency=500"
+          ],
+          "log": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/table_box45_monitor/attempt00/console.log",
+          "started": 1792398874.4565594,
+          "last_resource": {
+            "time": 1792488487.89653,
+            "gpu": 3,
+            "uuid": "GPU-82e289c8-0e7e-9e01-3e8a-ff1e4f64ea2d",
+            "total_mib": 24564,
+            "used_mib": 7367,
+            "utilization": 0,
+            "temperature_c": 37,
+            "process_mib": 7354,
+            "proc_status": "State:\tR (running)\nVmSize:\t22950264 kB\nVmRSS:\t 6899692 kB\nThreads:\t11"
+          },
+          "heartbeat": {
+            "pid": 585706,
+            "agent_steps": 706478080,
+            "epoch_num": 5391,
+            "phase": "collect",
+            "time": 1792488476.677493,
+            "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_box45_current_20261019_attempt00/stage1_nn/last.pth"
+          },
+          "last_checked": 1792488488.075165
+        }
+      ],
+      "options": {
+        "config": "manip_tabletop_inward90_hora16384_box45",
+        "gpu": 3,
+        "output": "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/table_box45_monitor",
+        "run_prefix": "teacher_table_box45_current_20261019",
+        "checkpoint": null,
+        "max_steps": 1500000000,
+        "save_frequency": 500,
+        "max_restarts": 0,
+        "poll_seconds": 10,
+        "stall_seconds": 600,
+        "startup_seconds": 1800,
+        "minimum_free_mib": 2048,
+        "start_free_mib": 12000,
+        "minimum_disk_gib": 5,
+        "overrides": []
+      }
+    }
+  }
+}

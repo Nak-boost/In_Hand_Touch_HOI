@@ -1,0 +1,50 @@
+{
+  "reference": "410d95824dd28b198f6d6910cb4c09330a6303be:assets/allegro/allegro_internal.urdf",
+  "hand_link_differences": {
+    "base_link": [
+      "collision"
+    ],
+    "link_3.0": [
+      "collision"
+    ],
+    "link_7.0": [
+      "collision"
+    ],
+    "link_11.0": [
+      "collision"
+    ],
+    "link_12.0": [
+      "visual_origin"
+    ],
+    "link_15.0": [
+      "collision"
+    ]
+  },
+  "hand_mesh_bytes_match_hora": {
+    "meshes/allegro/base_link.obj": true,
+    "meshes/allegro/link_0.0.obj": true,
+    "meshes/allegro/link_1.0.obj": true,
+    "meshes/allegro/link_2.0.obj": true,
+    "meshes/allegro/link_3.0.obj": true,
+    "meshes/allegro/link_12.0_right.obj": true,
+    "meshes/allegro/link_13.0.obj": true,
+    "meshes/allegro/link_14.0.obj": true,
+    "meshes/allegro/link_15.0.obj": true
+  },
+  "removed_links": [
+    "link_11.0_tip",
+    "link_15.0_tip",
+    "link_3.0_tip",
+    "link_7.0_tip"
+  ],
+  "added_links": [
+    "digit_index_gel",
+    "digit_index_housing",
+    "digit_middle_gel",
+    "digit_middle_housing",
+    "digit_ring_gel",
+    "digit_ring_housing",
+    "digit_thumb_gel",
+    "digit_thumb_housing"
+  ]
+}

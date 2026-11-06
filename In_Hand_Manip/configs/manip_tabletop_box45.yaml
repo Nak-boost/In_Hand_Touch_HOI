@@ -33,6 +33,8 @@ task:
       required_per_object: 64
       max_batches: 20
     manipulation:
+      terminate_on_contact_loss: false  # tabletop support permits release and re-approach
+      rotation_contact_multipliers: [0.1, 0.5, 1.0]
       off_axis_weight: 0.0
       overspeed_weight: 0.0
       # Other reward terms inherit the existing baseline, including joint-pose regularization.

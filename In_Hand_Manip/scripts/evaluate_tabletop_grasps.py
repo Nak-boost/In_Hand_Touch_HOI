@@ -10,6 +10,7 @@ from omegaconf import OmegaConf
 from train_manip import ROOT
 from hora.tasks.allegro_digit_tabletop import AllegroDigitTabletop
 from hora.utils.manip_control import tracking_action
+from hora.utils.grasp_validation import duration_steps, withdrawal_fraction, validation_contract
 from hora.utils.tabletop_contacts import object_contact_summary
 from hora.utils.misc import set_seed
 from scripts.check_grasp_cache import install
@@ -21,11 +22,12 @@ def main():
     parser.add_argument('--cache', required=True)
     parser.add_argument('--output', required=True)
     parser.add_argument('--output-cache')
-    parser.add_argument('--hold-steps', type=int, default=200)
+    parser.add_argument('--hold-steps', type=int, help='Explicit override of --hold-seconds')
+    parser.add_argument('--hold-seconds', type=float, default=30.)
     parser.add_argument('--zero-steps', type=int, default=100)
     parser.add_argument('--seed', type=int, default=215)
     args = parser.parse_args()
-    if min(args.hold_steps, args.zero_steps) < 1:
+    if (args.hold_steps is not None and args.hold_steps < 1) or args.zero_steps < 1:
         parser.error('Step counts must be positive')
     source = (ROOT/args.cache).resolve()
     output = Path(args.output).resolve()
@@ -49,6 +51,7 @@ def main():
     set_seed(args.seed)
     env = AllegroDigitTabletop(task, 'cuda:0', -1, True)
     env.stage = 'grasps'  # disable auto-reset; retain every failure for diagnostics
+    args.hold_steps = args.hold_steps or duration_steps(args.hold_seconds, env.control_dt)
 
     def rollout(mode, steps, joint=None, finger=None):
         install(env, states, targets)
@@ -61,9 +64,10 @@ def main():
         regained = torch.zeros(n)
         forbidden, saturated, count = 0, 0., 0
         for step in range(steps):
+            t = (step+1)*env.control_dt
             desired = targets.clone()
             if joint is not None:
-                amount = 0 if step < 20 else min((step-19)/10, 1) if step < 40 else max(1-(step-39)/10, 0)
+                amount = withdrawal_fraction(t)
                 desired[:, joint] = (desired[:, joint]-.06*amount).clamp(env.lower[joint], env.upper[joint])
             action = torch.zeros_like(env.actions) if mode == 'zero' else tracking_action(
                 env.q, env.targets, desired, env.actions, env.cfg)
@@ -82,13 +86,13 @@ def main():
             drift = torch.maximum(drift, (env.object_state[:, :2]-states[:, 16:18]).norm(dim=-1))
             forbidden += len(pairs['forbidden'])
             if joint is not None:
-                if step == 19:
+                if abs(t-1) < env.control_dt/2:
                     initial_contact = effective[:, finger].clone()
                     base_q = env.q[:, joint].clone()
-                if 20 <= step < 40:
+                if 1 < t <= 2:
                     actual_open = torch.maximum(actual_open, base_q-env.q[:, joint])
-                if step >= 70:
-                    regained += (effective.sum(-1) >= 2).float()
+                if t > 3.5:
+                    regained += (effective.sum(-1) >= 2).float()*env.control_dt
         passed = (~failed & (support/steps >= .9) & (two/steps >= .9) &
                   (other/steps <= .1) & (force <= 2.0))
         if forbidden:
@@ -100,8 +104,8 @@ def main():
             action_saturated_fraction=saturated/count, passed=passed.tolist())
         if joint is not None:
             result.update(initial_contact=initial_contact.tolist(), actual_open_rad=actual_open.tolist(),
-                          recovered_two_contacts=(regained >= 9).tolist(),
-                          retraction_success=(~failed & initial_contact & (actual_open >= .015) & (regained >= 9)).tolist())
+                          recovered_two_contacts=(regained >= .45-1e-6).tolist(),
+                          retraction_success=(~failed & initial_contact & (actual_open >= .015) & (regained >= .45-1e-6)).tolist())
         print(json.dumps(dict(mode=mode, passed=int(passed.sum()), retained=int((~failed).sum()))), flush=True)
         return result, passed
 
@@ -110,7 +114,7 @@ def main():
         hold, selected = rollout('track_cached_targets', args.hold_steps)
         retract = []
         for finger, number in enumerate([1, 5, 9, 13]):
-            result, _ = rollout('retract_'+str(number), 80, env.canonical_order.index(number), finger)
+            result, _ = rollout('retract_'+str(number), duration_steps(4., env.control_dt), env.canonical_order.index(number), finger)
             retract.append(result)
         report = dict(input_cache=str(source), input_cache_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
             action_reference=env.action_reference, seed=args.seed, count=len(states), accepted=int(selected.sum()),
@@ -123,6 +127,7 @@ def main():
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(json.dumps(report, indent=2)+'\n')
         if dest and selected.any():
+            bank['validation_contract'] = validation_contract(task)
             bank['states'] = {name: states[selected].clone()}
             bank['targets'] = {name: targets[selected].clone()}
             bank['quality_validation'] = dict(report=str(output), report_sha256=hashlib.sha256(output.read_bytes()).hexdigest(),

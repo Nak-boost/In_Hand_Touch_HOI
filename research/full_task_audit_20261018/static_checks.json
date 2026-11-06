@@ -1,0 +1,93 @@
+{
+  "runs": [
+    {
+      "pid": 224934,
+      "mesh_manifest": true,
+      "mask_truth_table": true,
+      "cache_checks": [
+        {
+          "object": "sphere55",
+          "n": 246,
+          "mean_target_preload_rad": 0.004666672088205814,
+          "quality_hash_valid": true
+        },
+        {
+          "object": "sphere65",
+          "n": 237,
+          "mean_target_preload_rad": 0.004911242518573999,
+          "quality_hash_valid": true
+        },
+        {
+          "object": "box45",
+          "n": 177,
+          "mean_target_preload_rad": 0.004877630155533552,
+          "quality_hash_valid": true
+        },
+        {
+          "object": "box55",
+          "n": 163,
+          "mean_target_preload_rad": 0.005258547142148018,
+          "quality_hash_valid": true
+        },
+        {
+          "object": "capsule70",
+          "n": 232,
+          "mean_target_preload_rad": 0.005088706500828266,
+          "quality_hash_valid": true
+        },
+        {
+          "object": "capsule80",
+          "n": 240,
+          "mean_target_preload_rad": 0.004945921711623669,
+          "quality_hash_valid": true
+        }
+      ],
+      "best_checkpoint": {
+        "agent_steps": 595197952,
+        "epoch_num": 4541,
+        "best_rewards": 10.107081007636431
+      },
+      "original_link_positive_mass": true
+    },
+    {
+      "pid": 354488,
+      "mesh_manifest": true,
+      "mask_truth_table": true,
+      "cache_checks": [
+        {
+          "object": "sphere55",
+          "n": 123,
+          "mean_target_preload_rad": 0.0060709440149366856,
+          "quality_hash_valid": true
+        }
+      ],
+      "best_checkpoint": {
+        "agent_steps": null,
+        "epoch_num": null,
+        "best_rewards": null
+      },
+      "original_link_positive_mass": true
+    },
+    {
+      "pid": 366939,
+      "mesh_manifest": true,
+      "mask_truth_table": true,
+      "cache_checks": [
+        {
+          "object": "box45",
+          "n": 128,
+          "mean_target_preload_rad": 0.002189587103202939,
+          "quality_hash_valid": true
+        }
+      ],
+      "best_checkpoint": {
+        "agent_steps": null,
+        "epoch_num": null,
+        "best_rewards": null
+      },
+      "original_link_positive_mass": true
+    }
+  ],
+  "empty_meter_best_bug_reproduced": true,
+  "old_retraction_ignored_under_actual_position": true
+}

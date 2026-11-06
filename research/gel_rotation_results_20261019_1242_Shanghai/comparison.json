@@ -1,0 +1,38 @@
+{
+  "first": {
+    "n": 384,
+    "steps": 445644800,
+    "retained_30s": 0.8958333333333334,
+    "one_turn_retained": 0.0,
+    "mean_turns": 0.38546756903330487,
+    "last5s_speed_survivors": 0.002298299499036444,
+    "last5s_abs_speed_lt_005_survivors": 0.9796511726670487
+  },
+  "previous": {
+    "n": 384,
+    "steps": 596377600,
+    "retained_30s": 0.9661458333333334,
+    "one_turn_retained": 0.0,
+    "mean_turns": 0.3860522558291753,
+    "last5s_speed_survivors": 0.0016370970500313685,
+    "last5s_abs_speed_lt_005_survivors": 0.9865229065527492
+  },
+  "best": {
+    "n": 384,
+    "steps": 656015360,
+    "retained_30s": 0.9479166666666666,
+    "one_turn_retained": 0.0,
+    "mean_turns": 0.40388507147630054,
+    "last5s_speed_survivors": 0.0024534367245336057,
+    "last5s_abs_speed_lt_005_survivors": 0.980769232406721
+  },
+  "last": {
+    "n": 384,
+    "steps": 917504000,
+    "retained_30s": 0.9479166666666666,
+    "one_turn_retained": 0.0,
+    "mean_turns": 0.4248013099034627,
+    "last5s_speed_survivors": 0.002272517966288193,
+    "last5s_abs_speed_lt_005_survivors": 0.978021984735688
+  }
+}

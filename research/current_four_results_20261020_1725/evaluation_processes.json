@@ -1,0 +1,82 @@
+[
+  {
+    "group": "air_six",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792488408.2190845,
+    "pid": 707667,
+    "returncode": 0,
+    "finished": 1792488461.8356733,
+    "result_saved": true
+  },
+  {
+    "group": "air_six",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792488461.8362753,
+    "pid": 707968,
+    "returncode": 0,
+    "finished": 1792488509.5389166,
+    "result_saved": true
+  },
+  {
+    "group": "air_sphere55",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792488509.5394475,
+    "pid": 708134,
+    "returncode": 0,
+    "finished": 1792488542.109974,
+    "result_saved": true
+  },
+  {
+    "group": "air_sphere55",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792488542.1108437,
+    "pid": 708364,
+    "returncode": 0,
+    "finished": 1792488573.2764585,
+    "result_saved": true
+  },
+  {
+    "group": "table_sphere55",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792488573.2769847,
+    "pid": 708496,
+    "returncode": 0,
+    "finished": 1792488604.2695434,
+    "result_saved": true
+  },
+  {
+    "group": "table_sphere55",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792488604.2700472,
+    "pid": 708622,
+    "returncode": 0,
+    "finished": 1792488631.773636,
+    "result_saved": true
+  },
+  {
+    "group": "table_box45",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792488631.7741241,
+    "pid": 708745,
+    "returncode": 0,
+    "finished": 1792488659.6876068,
+    "result_saved": true
+  },
+  {
+    "group": "table_box45",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792488659.688266,
+    "pid": 708860,
+    "returncode": 0,
+    "finished": 1792488685.3677266,
+    "result_saved": true
+  }
+]

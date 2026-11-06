@@ -1,0 +1,9 @@
+{
+  "analysis_time": "2026-10-19T12:44:18.660766+08:00",
+  "timezone": "Asia/Shanghai",
+  "previous_report": "/root/In_Hand_Reconstruction/research/gel_rotation_results_20261018_0728_Chicago/report.md",
+  "scope": "GPU0 six-object and GPU1 single-sphere in-hand runs; no training changes",
+  "multi_training_pid": 224934,
+  "single_evaluation": "Reused after checkpoint SHA256 match; provenance in evaluation_processes.json",
+  "evaluation_gpu": 1
+}

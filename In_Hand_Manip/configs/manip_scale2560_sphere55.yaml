@@ -16,7 +16,7 @@ task:
     asset:
       handAsset: assets/allegro/allegro_digit_compact_inward90.urdf
     grasp:
-      cache: cache/digit_sphere55_scale2560_inward90_checked_20261016.pt
+      cache: cache/digit_sphere55_inward90_robust_20261018.pt
     manipulation:
       object_contact_filter: true
       action_reference: actual_position

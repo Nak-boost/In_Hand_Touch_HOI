@@ -1,0 +1,23 @@
+{
+  "config": "manip_hora16384_six_objects_gel_rotation",
+  "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_six_objects_inward90_robust_20261018.pt",
+  "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+  "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+  "control_dt": 0.05000000260770321,
+  "network": [
+    256,
+    256,
+    128
+  ],
+  "priv_network": [
+    128,
+    64,
+    8
+  ],
+  "output_shape": [
+    6,
+    16
+  ],
+  "contact_gate_verified": true,
+  "steps": 10
+}

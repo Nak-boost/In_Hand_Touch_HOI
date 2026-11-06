@@ -57,8 +57,8 @@ def test_self_contact_cannot_reset_object_loss_timer():
     effective = torch.from_numpy(gel_object_normal_load(contacts([(6, 12, 8)]), 25, lookup()) > .1)[None]
     assert bool(raw.sum(-1) >= 2) and not bool(effective.sum(-1) >= 2)
     position, center, missing = torch.zeros(1, 3), torch.zeros(2), torch.tensor([39])
-    raw_failed, raw_missing, _, _ = maths.tabletop_failures(position, raw, missing, center, .1, 40)
-    failed, effective_missing, _, lost = maths.tabletop_failures(position, effective, missing, center, .1, 40)
+    raw_failed, raw_missing, _, _ = maths.tabletop_failures(position, raw, missing, center, .1, 40, terminate_on_contact_loss=True)
+    failed, effective_missing, _, lost = maths.tabletop_failures(position, effective, missing, center, .1, 40, terminate_on_contact_loss=True)
     assert not raw_failed.item() and raw_missing.item() == 0
     assert failed.item() and lost.item() and effective_missing.item() == 40
 

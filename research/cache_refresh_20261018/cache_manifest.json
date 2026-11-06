@@ -1,0 +1,96 @@
+{
+  "table_sphere": {
+    "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_tabletop_sphere55_inward90_robust_20261018.pt",
+    "sha256": "192c7b734840315197153efa298ae4693975731fa7e2d6b2094c11587d880a7a",
+    "quality": "/root/In_Hand_Reconstruction/research/cache_refresh_20261018/table_sphere_quality.json",
+    "counts": {
+      "sphere55": {
+        "before": 123,
+        "accepted": 116,
+        "per_seed": [
+          117,
+          117,
+          118
+        ]
+      }
+    }
+  },
+  "table_box": {
+    "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_tabletop_box45_inward90_robust_20261018.pt",
+    "sha256": "fa414761f1bbf2fa2fe595a77b763d060b302c5fc319cf2586d9f4fd4520a4dd",
+    "quality": "/root/In_Hand_Reconstruction/research/cache_refresh_20261018/table_box_quality.json",
+    "counts": {
+      "box45": {
+        "before": 128,
+        "accepted": 96,
+        "per_seed": [
+          109,
+          106,
+          108
+        ]
+      }
+    }
+  },
+  "air_six": {
+    "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_six_objects_inward90_robust_20261018.pt",
+    "sha256": "75ebae06c3862cdc62b942946471b3c7405e68f1b36c273339590d2662d5bb9b",
+    "quality": "/root/In_Hand_Reconstruction/research/cache_refresh_20261018/air_six_quality.json",
+    "counts": {
+      "sphere55": {
+        "before": 246,
+        "accepted": 225,
+        "per_seed": [
+          241,
+          231,
+          237
+        ]
+      },
+      "sphere65": {
+        "before": 237,
+        "accepted": 217,
+        "per_seed": [
+          228,
+          225,
+          227
+        ]
+      },
+      "box45": {
+        "before": 177,
+        "accepted": 77,
+        "per_seed": [
+          120,
+          125,
+          128
+        ]
+      },
+      "box55": {
+        "before": 163,
+        "accepted": 70,
+        "per_seed": [
+          119,
+          105,
+          110
+        ]
+      },
+      "capsule70": {
+        "before": 232,
+        "accepted": 207,
+        "per_seed": [
+          221,
+          219,
+          215
+        ]
+      },
+      "capsule80": {
+        "before": 240,
+        "accepted": 221,
+        "per_seed": [
+          233,
+          232,
+          231
+        ]
+      }
+    },
+    "single_sphere_cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_sphere55_inward90_robust_20261018.pt"
+  }
+}

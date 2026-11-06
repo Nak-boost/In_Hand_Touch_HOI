@@ -1,5 +1,9 @@
 # 掌心朝下、桌面旋转实验
 
+2026-10-18 当前实验入口为 `manip_tabletop_inward90_hora16384_sphere55` / `manip_tabletop_inward90_hora16384_box45`，
+启用连续旋转奖励接触门控，使用跨随机参数复验的新缓存，见 [缓存复验](grasp_revalidation.md)。
+下文 `manip_tabletop_box45` 是较早的场景位置/初始化示例，其缓存不能与当前场景互换。
+
 独立入口配置：`configs/manip_tabletop_box45.yaml`；任务 `AllegroDigitTabletop`。
 当前采用 45 mm 立方体，目标为世界坐标 +Z 轴旋转，固定手腕。
 这是桌面辅助操作，不是悬空手内操作的等价验证。
@@ -38,11 +42,15 @@
 因此胶面碰到其他手指/外壳仍可能有信号；共用屏蔽位只解决桌面及胶面相互接触。
 初始化检查用 CPU PhysX 接触对确认物体接触身份，该信息不进入策略。
 
-只有两项任务失败：
+当前桌面任务只在物体中心 XY 距操作区中心超过 10 cm 时判定任务失败。
+四指可以全部离开物体，再重新接近；持续失触不会触发失败扣分或提前重置。
 
-1. 四路原始胶面信号连续全部为零达到 2 秒（20 Hz 下 40 步）；任意一路恢复即清零计时。
-   判定在观测延迟/随机漏检之前，避免人为漏检触发失败。
-2. 物体中心 XY 距操作区中心超过 10 cm。
+`task.env.manipulation.terminate_on_contact_loss: false` 是当前所有桌面配置的设置；
+显式设为 `true` 可以恢复旧的连续失触失败对照。
+`tabletop.contact_loss_seconds: 2.0` 现在仅定义失触统计阈值：
+`episode/contact_lost` 记录达到该阈值的环境比例，`contact/missing_seconds` 记录连续失触时长，
+前者不再等于失触失败率。启用物体接触筛选时，计时依据胶面—物体有效接触；恢复任意一路即清零。
+两指接触奖励和旋转接触门控仍保留，因此失触仍可能降低这些奖励，但不会因失触本身扣失败代价。
 
 不按物体高度、翻倒、离轴角度或停转判失败。30 秒时间上限用于截断回合，不记为任务失败。
 数值 NaN/Inf 抛错停止运行，不把数值损坏当正常回合失败。
@@ -75,3 +83,9 @@ CUDA_VISIBLE_DEVICES=1 scripts/run_manip.sh --config-name manip_tabletop_box45 \
 短程流水线检查使用 `num_envs=32 train.ppo.minibatch_size=512 train.ppo.max_agent_steps=4096`。
 实际验证结果见 `../research/tabletop_setup_20261014/report.md`（相对项目代码根目录）。
 旧的通用可视化脚本可能直接构造掌心朝上的任务，不应拿来回放本实验；本任务入口可使用 `headless=false`。
+
+### 2026-10-19 桌面释放条件更新
+
+此次只放宽桌面任务的失触终止条件；碰撞、控制、网络、奖励权重和抓取物理状态没有改变。
+开关放在 manipulation 中，不改变缓存记录的场景碰撞签名或控制验证契约，现有有效缓存可继续加载。
+已有冻结源码训练进程不会自动加载工作区修改；采用该条件需要以当前源码启动新的实验。

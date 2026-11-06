@@ -1,0 +1,85 @@
+{
+  "configs/manip_hora16384_sphere55.yaml": [
+    {
+      "field": "train.network.mlp.units",
+      "before": [
+        512,
+        256,
+        128
+      ],
+      "after": [
+        256,
+        256,
+        128
+      ]
+    },
+    {
+      "field": "train.network.priv_mlp.units",
+      "before": [
+        256,
+        128,
+        8
+      ],
+      "after": [
+        128,
+        64,
+        8
+      ]
+    }
+  ],
+  "configs/manip_tabletop_box45.yaml": [
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "configs/manip_tabletop_inward90_hora16384_box45.yaml": [
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "configs/manip_tabletop_inward90_hora16384_sphere55.yaml": [
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "configs/manip_tabletop_inward90_scale2560_box45.yaml": [
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "configs/manip_tabletop_inward90_scale2560_sphere55.yaml": [
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ]
+}

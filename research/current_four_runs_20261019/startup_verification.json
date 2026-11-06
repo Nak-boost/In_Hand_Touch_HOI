@@ -1,0 +1,245 @@
+{
+  "checked_unix": 1792398991.4985747,
+  "jobs": [
+    {
+      "name": "air_six",
+      "gpu": 0,
+      "pid": 585722,
+      "monitor_pid": 585674,
+      "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_six_current_20261019_attempt00",
+      "status": "running",
+      "heartbeat": {
+        "pid": 585722,
+        "agent_steps": 786432,
+        "epoch_num": 7,
+        "phase": "collect",
+        "time": 1792398985.854634,
+        "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_six_current_20261019_attempt00/stage1_nn/best.pth"
+      },
+      "gpu_resource": {
+        "gpu": 0,
+        "memory_mib": 6422
+      },
+      "checkpoint": {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_six_current_20261019_attempt00/stage1_nn/best.pth",
+        "agent_steps": 131072,
+        "epoch_num": 1,
+        "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+        "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+        "action_reference": "actual_position"
+      },
+      "control_dt": 0.05000000260770321,
+      "collision_bodies": 25,
+      "metrics": {
+        "losses/actor_loss": {
+          "step": 786432,
+          "value": 0.003086990211158991
+        },
+        "losses/bounds_loss": {
+          "step": 786432,
+          "value": 0.0
+        },
+        "losses/critic_loss": {
+          "step": 786432,
+          "value": 0.19963523745536804
+        },
+        "losses/entropy": {
+          "step": 786432,
+          "value": 22.735979080200195
+        },
+        "info/kl": {
+          "step": 786432,
+          "value": 0.03041684441268444
+        },
+        "rotation/speed": {
+          "step": 786432,
+          "value": 0.020174723118543625
+        },
+        "performance/contact_pair_cpu_ms": {
+          "step": 655360,
+          "value": 527.2880859375
+        }
+      }
+    },
+    {
+      "name": "air_sphere55",
+      "gpu": 1,
+      "pid": 585715,
+      "monitor_pid": 585675,
+      "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_sphere55_current_20261019_attempt00",
+      "status": "running",
+      "heartbeat": {
+        "pid": 585715,
+        "agent_steps": 786432,
+        "epoch_num": 7,
+        "phase": "collect",
+        "time": 1792398982.6523173,
+        "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_sphere55_current_20261019_attempt00/stage1_nn/best.pth"
+      },
+      "gpu_resource": {
+        "gpu": 1,
+        "memory_mib": 5884
+      },
+      "checkpoint": {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_sphere55_current_20261019_attempt00/stage1_nn/best.pth",
+        "agent_steps": 131072,
+        "epoch_num": 1,
+        "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+        "collision_sha256": "f7ed7d82cb2b18269df3d3c925ef008f2fa714ed97b5e92228301137063a4052",
+        "action_reference": "actual_position"
+      },
+      "control_dt": 0.05000000260770321,
+      "collision_bodies": 25,
+      "metrics": {
+        "losses/actor_loss": {
+          "step": 786432,
+          "value": 0.005173938348889351
+        },
+        "losses/bounds_loss": {
+          "step": 786432,
+          "value": 0.0
+        },
+        "losses/critic_loss": {
+          "step": 786432,
+          "value": 0.41987547278404236
+        },
+        "losses/entropy": {
+          "step": 786432,
+          "value": 22.752206802368164
+        },
+        "info/kl": {
+          "step": 786432,
+          "value": 0.02930888533592224
+        },
+        "rotation/speed": {
+          "step": 786432,
+          "value": 0.018720440566539764
+        },
+        "performance/contact_pair_cpu_ms": {
+          "step": 655360,
+          "value": 513.8189697265625
+        }
+      }
+    },
+    {
+      "name": "table_sphere55",
+      "gpu": 2,
+      "pid": 585732,
+      "monitor_pid": 585676,
+      "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_sphere55_current_20261019_attempt00",
+      "status": "running",
+      "heartbeat": {
+        "pid": 585732,
+        "agent_steps": 786432,
+        "epoch_num": 7,
+        "phase": "collect",
+        "time": 1792398977.6592052,
+        "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_sphere55_current_20261019_attempt00/stage1_nn/best.pth"
+      },
+      "gpu_resource": {
+        "gpu": 2,
+        "memory_mib": 5916
+      },
+      "checkpoint": {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_sphere55_current_20261019_attempt00/stage1_nn/best.pth",
+        "agent_steps": 131072,
+        "epoch_num": 1,
+        "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+        "collision_sha256": "f322782572493b945fb69f8009531f99c8d6d673b76f39cb89095aec9caf8084",
+        "action_reference": "actual_position"
+      },
+      "control_dt": 0.05000000260770321,
+      "collision_bodies": 25,
+      "metrics": {
+        "losses/actor_loss": {
+          "step": 655360,
+          "value": -0.0018334264168515801
+        },
+        "losses/bounds_loss": {
+          "step": 655360,
+          "value": 0.0
+        },
+        "losses/critic_loss": {
+          "step": 655360,
+          "value": 0.15626093745231628
+        },
+        "losses/entropy": {
+          "step": 655360,
+          "value": 22.813390731811523
+        },
+        "info/kl": {
+          "step": 655360,
+          "value": 0.02060084231197834
+        },
+        "rotation/speed": {
+          "step": 655360,
+          "value": 0.07453872263431549
+        },
+        "performance/contact_pair_cpu_ms": {
+          "step": 655360,
+          "value": 539.2449951171875
+        }
+      }
+    },
+    {
+      "name": "table_box45",
+      "gpu": 3,
+      "pid": 585706,
+      "monitor_pid": 585677,
+      "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_box45_current_20261019_attempt00",
+      "status": "running",
+      "heartbeat": {
+        "pid": 585706,
+        "agent_steps": 786432,
+        "epoch_num": 7,
+        "phase": "collect",
+        "time": 1792398984.3701103,
+        "checkpoint": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_box45_current_20261019_attempt00/stage1_nn/best.pth"
+      },
+      "gpu_resource": {
+        "gpu": 3,
+        "memory_mib": 5904
+      },
+      "checkpoint": {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_box45_current_20261019_attempt00/stage1_nn/best.pth",
+        "agent_steps": 131072,
+        "epoch_num": 1,
+        "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+        "collision_sha256": "1c6f5ca8b3ca3a5fbe37f92e911ec4afdc6bc2f59153f6482175c18b8ffbe0f9",
+        "action_reference": "actual_position"
+      },
+      "control_dt": 0.05000000260770321,
+      "collision_bodies": 25,
+      "metrics": {
+        "losses/actor_loss": {
+          "step": 655360,
+          "value": -0.015246856026351452
+        },
+        "losses/bounds_loss": {
+          "step": 655360,
+          "value": 0.0020414828322827816
+        },
+        "losses/critic_loss": {
+          "step": 655360,
+          "value": 0.1199273094534874
+        },
+        "losses/entropy": {
+          "step": 655360,
+          "value": 22.45113182067871
+        },
+        "info/kl": {
+          "step": 655360,
+          "value": 0.031278252601623535
+        },
+        "rotation/speed": {
+          "step": 655360,
+          "value": 0.04231451451778412
+        },
+        "performance/contact_pair_cpu_ms": {
+          "step": 655360,
+          "value": 550.4760131835938
+        }
+      }
+    }
+  ]
+}

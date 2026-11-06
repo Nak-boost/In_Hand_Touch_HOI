@@ -24,9 +24,11 @@ def tabletop_collision_spec(base, table_config):
     return spec
 
 
-def tabletop_failures(position, gel_contact, previous_missing, center, radius, missing_limit):
-    """No orientation, height, speed, or no-progress failure in this experiment."""
+def tabletop_failures(position, gel_contact, previous_missing, center, radius, missing_limit,
+                      terminate_on_contact_loss=False):
+    """Workspace-only failure by default; track contact loss independently."""
     missing = torch.where(gel_contact.any(-1), torch.zeros_like(previous_missing), previous_missing + 1)
     outside = (position[:, :2] - center).square().sum(-1) > radius * radius
     lost = missing >= missing_limit
-    return outside | lost, missing, outside, lost
+    failed = outside | lost if terminate_on_contact_loss else outside
+    return failed, missing, outside, lost

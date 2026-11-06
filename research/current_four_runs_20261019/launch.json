@@ -1,0 +1,102 @@
+[
+  {
+    "name": "air_six",
+    "gpu": 0,
+    "config": "manip_hora16384_six_objects_gel_rotation",
+    "supervisor_pid": 585674,
+    "command": [
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/python_manip.sh",
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/monitor_manip.py",
+      "--config",
+      "manip_hora16384_six_objects_gel_rotation",
+      "--gpu",
+      "0",
+      "--output",
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/air_six_monitor",
+      "--run-prefix",
+      "teacher_air_six_current_20261019",
+      "--max-steps",
+      "1500000000",
+      "--save-frequency",
+      "500",
+      "--max-restarts",
+      "0"
+    ],
+    "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_six_current_20261019_attempt00"
+  },
+  {
+    "name": "air_sphere55",
+    "gpu": 1,
+    "config": "manip_hora16384_sphere55_gel_rotation",
+    "supervisor_pid": 585675,
+    "command": [
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/python_manip.sh",
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/monitor_manip.py",
+      "--config",
+      "manip_hora16384_sphere55_gel_rotation",
+      "--gpu",
+      "1",
+      "--output",
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/air_sphere55_monitor",
+      "--run-prefix",
+      "teacher_air_sphere55_current_20261019",
+      "--max-steps",
+      "1500000000",
+      "--save-frequency",
+      "500",
+      "--max-restarts",
+      "0"
+    ],
+    "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_air_sphere55_current_20261019_attempt00"
+  },
+  {
+    "name": "table_sphere55",
+    "gpu": 2,
+    "config": "manip_tabletop_inward90_hora16384_sphere55",
+    "supervisor_pid": 585676,
+    "command": [
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/python_manip.sh",
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/monitor_manip.py",
+      "--config",
+      "manip_tabletop_inward90_hora16384_sphere55",
+      "--gpu",
+      "2",
+      "--output",
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/table_sphere55_monitor",
+      "--run-prefix",
+      "teacher_table_sphere55_current_20261019",
+      "--max-steps",
+      "1500000000",
+      "--save-frequency",
+      "500",
+      "--max-restarts",
+      "0"
+    ],
+    "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_sphere55_current_20261019_attempt00"
+  },
+  {
+    "name": "table_box45",
+    "gpu": 3,
+    "config": "manip_tabletop_inward90_hora16384_box45",
+    "supervisor_pid": 585677,
+    "command": [
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/python_manip.sh",
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/frozen_project/scripts/monitor_manip.py",
+      "--config",
+      "manip_tabletop_inward90_hora16384_box45",
+      "--gpu",
+      "3",
+      "--output",
+      "/root/In_Hand_Reconstruction/research/current_four_runs_20261019/table_box45_monitor",
+      "--run-prefix",
+      "teacher_table_box45_current_20261019",
+      "--max-steps",
+      "1500000000",
+      "--save-frequency",
+      "500",
+      "--max-restarts",
+      "0"
+    ],
+    "run_dir": "/root/In_Hand_Reconstruction/runs/manip/teacher_table_box45_current_20261019_attempt00"
+  }
+]

@@ -12,10 +12,12 @@ def test_hora_training_parameters_and_tabletop_contract(obj):
     reference=OmegaConf.load(ROOT/'configs/train/AllegroHandHora.yaml')
     assert c.num_envs==c.task.env.numEnvs==c.train.ppo.num_actors==16384
     assert c.task.name=='AllegroDigitTabletop'
+    assert c.task.env.manipulation.terminate_on_contact_loss is False
     assert c.task.env.objects[0].name==obj
     assert c.task.env.asset.handAsset.endswith('compact_inward90.urdf')
     assert c.task.env.manipulation.action_reference=='actual_position'
     assert c.task.env.manipulation.object_contact_filter
+    assert list(c.task.env.manipulation.rotation_contact_multipliers)==[.1,.5,1.]
     assert not c.task.sim.use_gpu_pipeline and c.task.sim.physx.use_gpu
     baseline=OmegaConf.load(ROOT/'configs'/('manip_tabletop_inward90_scale2560_'+obj+'.yaml'))
     assert c.train.network==baseline.train.network
@@ -55,3 +57,9 @@ def test_only_authorized_training_fields_differ(obj):
             assert before == after, path
 
     check(baseline, candidate)
+
+
+@pytest.mark.parametrize('path', sorted((ROOT/'configs').glob('manip_tabletop*.yaml')))
+def test_all_tabletop_configs_allow_release(path):
+    config = OmegaConf.load(path)
+    assert config.task.env.manipulation.terminate_on_contact_loss is False

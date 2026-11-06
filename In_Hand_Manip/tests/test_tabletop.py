@@ -36,12 +36,12 @@ def test_contact_loss_duration_and_independent_reset():
     contact = torch.zeros(2,4,dtype=torch.bool)
     for step in range(40):
         contact[1,2] = step == 20
-        failed, missing, outside, lost = maths.tabletop_failures(position,contact,missing,center,.1,40)
+        failed, missing, outside, lost = maths.tabletop_failures(position,contact,missing,center,.1,40, terminate_on_contact_loss=True)
         assert bool(failed[0]) == (step == 39)
         assert not bool(failed[1])
         assert not outside.any()
     contact[0,0] = True
-    failed, missing, _, _ = maths.tabletop_failures(position,contact,missing,center,.1,40)
+    failed, missing, _, _ = maths.tabletop_failures(position,contact,missing,center,.1,40, terminate_on_contact_loss=True)
     assert not failed.any() and missing[0] == 0
 
 
@@ -51,3 +51,21 @@ def test_workspace_is_xy_circle_not_orientation_or_height():
         p,torch.ones(3,4,dtype=torch.bool),torch.zeros(3,dtype=torch.long),torch.zeros(2),.1,40)
     assert failed.tolist() == [False,True,True]
     assert not lost.any()
+
+
+def test_workspace_only_allows_prolonged_release_but_still_fails_outside():
+    position = torch.zeros(2, 3)
+    missing = torch.zeros(2, dtype=torch.long)
+    contact = torch.zeros(2, 4, dtype=torch.bool)
+    for _ in range(200):  # Ten seconds without any gel contact at 20 Hz.
+        failed, missing, outside, lost = maths.tabletop_failures(
+            position, contact, missing, torch.zeros(2), .1, 40)
+        assert not failed.any() and not outside.any()
+    assert lost.all() and missing.tolist() == [200, 200]
+    position[1, 0] = .101
+    contact[0, 2] = True
+    failed, missing, outside, lost = maths.tabletop_failures(
+        position, contact, missing, torch.zeros(2), .1, 40)
+    assert failed.tolist() == outside.tolist() == [False, True]
+    assert missing.tolist() == [0, 201]
+    assert lost.tolist() == [False, True]

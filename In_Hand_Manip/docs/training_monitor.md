@@ -7,11 +7,14 @@ scripts/python_manip.sh scripts/monitor_manip.py \
   --config manip_hora16384_sphere55 --gpu 1 \
   --output ../research/hora16384_monitored_next \
   --run-prefix teacher_sphere55_hora16384_monitored \
-  --max-steps 1500000000 --save-frequency 50 --max-restarts 2 \
-  --checkpoint ../runs/manip/teacher_sphere55_z_hora16384_pairfilter_20261016/stage1_nn/best.pth
+  --max-steps 1500000000 --save-frequency 50 --max-restarts 2
 ```
 
 这是下次手动启动示例，本次实现不自动启动正式训练。省略 `--checkpoint` 为从头训练。恢复旧权重前仍须检查任务、手模型和控制兼容性。输出目录及每次尝试的 run 目录必须不存在，避免覆盖历史结果。终端断开时需用 tmux 或 nohup 保持 supervisor 存活；整个主机/容器退出后的自动拉起需要外部服务管理，不在此脚本范围内。
+
+2026-10-18：悬空配置已恢复项目网络 256/256/128、特权编码器 128/64/8。
+此前 512/256/128、256/128/8 的教师权重不能直接恢复到这个网络；该例从头训练。
+新缓存的控制频率、PD、动作转换、触觉阈值及随机化范围也会在加载时核对，见 [缓存复验](grasp_revalidation.md)。
 
 ## 监测内容
 

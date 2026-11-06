@@ -1,0 +1,65 @@
+[
+  {
+    "tag": "table_sphere",
+    "config": "manip_tabletop_inward90_hora16384_sphere55",
+    "cache": "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt",
+    "seed": 901,
+    "name": "table_sphere_901"
+  },
+  {
+    "tag": "table_sphere",
+    "config": "manip_tabletop_inward90_hora16384_sphere55",
+    "cache": "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt",
+    "seed": 1701,
+    "name": "table_sphere_1701"
+  },
+  {
+    "tag": "table_sphere",
+    "config": "manip_tabletop_inward90_hora16384_sphere55",
+    "cache": "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt",
+    "seed": 2901,
+    "name": "table_sphere_2901"
+  },
+  {
+    "tag": "table_box",
+    "config": "manip_tabletop_inward90_hora16384_box45",
+    "cache": "cache/digit_tabletop_box45_inward90_checked_20261016.pt",
+    "seed": 901,
+    "name": "table_box_901"
+  },
+  {
+    "tag": "table_box",
+    "config": "manip_tabletop_inward90_hora16384_box45",
+    "cache": "cache/digit_tabletop_box45_inward90_checked_20261016.pt",
+    "seed": 1701,
+    "name": "table_box_1701"
+  },
+  {
+    "tag": "table_box",
+    "config": "manip_tabletop_inward90_hora16384_box45",
+    "cache": "cache/digit_tabletop_box45_inward90_checked_20261016.pt",
+    "seed": 2901,
+    "name": "table_box_2901"
+  },
+  {
+    "tag": "air_six",
+    "config": "manip_hora16384_six_objects_gel_rotation",
+    "cache": "cache/digit_six_objects_inward90_checked_20261017.pt",
+    "seed": 901,
+    "name": "air_six_901"
+  },
+  {
+    "tag": "air_six",
+    "config": "manip_hora16384_six_objects_gel_rotation",
+    "cache": "cache/digit_six_objects_inward90_checked_20261017.pt",
+    "seed": 1701,
+    "name": "air_six_1701"
+  },
+  {
+    "tag": "air_six",
+    "config": "manip_hora16384_six_objects_gel_rotation",
+    "cache": "cache/digit_six_objects_inward90_checked_20261017.pt",
+    "seed": 2901,
+    "name": "air_six_2901"
+  }
+]

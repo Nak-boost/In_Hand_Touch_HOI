@@ -1,0 +1,119 @@
+[
+  {
+    "end_M": 100,
+    "episode_rewards/step": -23.40031449898685,
+    "rotation/speed": 0.07950288140656132,
+    "contact/task_gel_count": 1.0581897936369244,
+    "control/target_increment_lost": 0.055813044162565155,
+    "losses/entropy": 2.99618220956702,
+    "info/last_lr": 0.00021940743298680325
+  },
+  {
+    "end_M": 200,
+    "episode_rewards/step": -47.54630671049419,
+    "rotation/speed": 0.09822448695960798,
+    "contact/task_gel_count": 0.7951363011410362,
+    "control/target_increment_lost": 0.05860503449251777,
+    "losses/entropy": -4.490458682963722,
+    "info/last_lr": 8.89049188596178e-05
+  },
+  {
+    "end_M": 300,
+    "episode_rewards/step": -60.71959972381592,
+    "rotation/speed": 0.10306498300480216,
+    "contact/task_gel_count": 0.7578060752467105,
+    "control/target_increment_lost": 0.05191656873610459,
+    "losses/entropy": -8.39943548252708,
+    "info/last_lr": 6.124185624924537e-05
+  },
+  {
+    "end_M": 400,
+    "episode_rewards/step": -40.309388763026185,
+    "rotation/speed": 0.09384612788103129,
+    "contact/task_gel_count": 1.1014123213918585,
+    "control/target_increment_lost": 0.0562996057989566,
+    "losses/entropy": -10.941832329097547,
+    "info/last_lr": 5.317815760607022e-05
+  },
+  {
+    "end_M": 500,
+    "episode_rewards/step": -31.032567915163543,
+    "rotation/speed": 0.08337751256400033,
+    "contact/task_gel_count": 1.180519505550987,
+    "control/target_increment_lost": 0.06725555383845379,
+    "losses/entropy": -12.914165296052632,
+    "info/last_lr": 5.298800926156171e-05
+  },
+  {
+    "end_M": 600,
+    "episode_rewards/step": -11.137411599366093,
+    "rotation/speed": 0.08321159842767213,
+    "contact/task_gel_count": 1.1099965948807566,
+    "control/target_increment_lost": 0.0697631882013459,
+    "losses/entropy": -14.695811773601331,
+    "info/last_lr": 7.071406047256652e-05
+  },
+  {
+    "end_M": 650,
+    "episode_rewards/step": -1.622195097146096,
+    "rotation/speed": 0.0889528069596786,
+    "contact/task_gel_count": 1.1683095956777598,
+    "control/target_increment_lost": 0.048482169143178246,
+    "losses/entropy": -15.587753778928287,
+    "info/last_lr": 7.933604010522922e-05
+  },
+  {
+    "end_M": 700,
+    "episode_rewards/step": 0.7517394584260488,
+    "rotation/speed": 0.09281812176892631,
+    "contact/task_gel_count": 1.197954679790296,
+    "control/target_increment_lost": 0.04198632649097003,
+    "losses/entropy": -16.329464636350934,
+    "info/last_lr": 7.558397086732409e-05
+  },
+  {
+    "end_M": 750,
+    "episode_rewards/step": -5.622286184799749,
+    "rotation/speed": 0.09130652819748049,
+    "contact/task_gel_count": 1.1565662730823865,
+    "control/target_increment_lost": 0.040194325778004414,
+    "losses/entropy": -17.08684928695877,
+    "info/last_lr": 6.506201769935886e-05
+  },
+  {
+    "end_M": 800,
+    "episode_rewards/step": -12.347868952311968,
+    "rotation/speed": 0.09508671817418776,
+    "contact/task_gel_count": 1.0682365015933388,
+    "control/target_increment_lost": 0.05128383013958994,
+    "losses/entropy": -17.692540620502673,
+    "info/last_lr": 7.76861670122966e-05
+  },
+  {
+    "end_M": 850,
+    "episode_rewards/step": -24.088673337509757,
+    "rotation/speed": 0.09559114228345846,
+    "contact/task_gel_count": 1.0387806139494244,
+    "control/target_increment_lost": 0.05612986137796389,
+    "losses/entropy": -18.286280180278577,
+    "info/last_lr": 6.717518868084114e-05
+  },
+  {
+    "end_M": 900,
+    "episode_rewards/step": -20.528622040623112,
+    "rotation/speed": 0.0940261137132582,
+    "contact/task_gel_count": 1.0840550472861843,
+    "control/target_increment_lost": 0.051805506999555384,
+    "losses/entropy": -18.801571293881064,
+    "info/last_lr": 7.879536544925558e-05
+  },
+  {
+    "end_M": 923,
+    "episode_rewards/step": -22.11461244758807,
+    "rotation/speed": 0.09382915065476768,
+    "contact/task_gel_count": 1.0304685893811678,
+    "control/target_increment_lost": 0.056133690339170005,
+    "losses/entropy": -18.953458108400042,
+    "info/last_lr": 8.338005289643709e-05
+  }
+]

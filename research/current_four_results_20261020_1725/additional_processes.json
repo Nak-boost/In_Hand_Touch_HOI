@@ -1,0 +1,22 @@
+[
+  {
+    "group": "table_box45",
+    "checkpoint": "selected",
+    "seed": 215,
+    "started": 1792488690.6386476,
+    "pid": 708991,
+    "returncode": 0,
+    "finished": 1792488717.7928214,
+    "result_saved": true
+  },
+  {
+    "group": "old_baseline",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792488717.7933936,
+    "pid": 709114,
+    "returncode": 0,
+    "finished": 1792488749.89442,
+    "result_saved": true
+  }
+]

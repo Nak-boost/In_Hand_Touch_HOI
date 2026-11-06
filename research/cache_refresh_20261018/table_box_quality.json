@@ -1,0 +1,173 @@
+{
+  "validation_kind": "multi_seed_contact_margin_v1",
+  "passed": true,
+  "action_reference": "actual_position",
+  "control_dt": 0.05000000260770321,
+  "validation_contract": {
+    "version": 1,
+    "physics_dt": 0.008333333333333333,
+    "substeps": 1,
+    "controller": {
+      "torque_control": true,
+      "controlFrequencyInv": 6,
+      "pgain": 3.0,
+      "dgain": 0.1
+    },
+    "action_reference": "actual_position",
+    "action_scale": 0.026,
+    "action_smoothing": 0.5,
+    "contact_threshold": 0.1,
+    "domain": {
+      "mass": [
+        0.03,
+        0.12
+      ],
+      "friction": [
+        0.1,
+        0.1
+      ],
+      "com": 0.003,
+      "gain_scale": [
+        0.9,
+        1.1
+      ]
+    }
+  },
+  "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+  "collision_sha256": "1c6f5ca8b3ca3a5fbe37f92e911ec4afdc6bc2f59153f6482175c18b8ffbe0f9",
+  "input_cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_tabletop_box45_inward90_checked_20261016.pt",
+  "input_cache_sha256": "920690b8ec4c38c138479afb97e6f5e30febd48812c63d3ad389308e4389900c",
+  "seeds": [
+    901,
+    1701,
+    2901
+  ],
+  "hold_seconds": 30.000001564621925,
+  "margin_force_N": 0.15,
+  "accepted_indices": {
+    "box45": [
+      0,
+      1,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      15,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      38,
+      39,
+      41,
+      44,
+      45,
+      46,
+      47,
+      48,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      57,
+      59,
+      60,
+      62,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      81,
+      82,
+      83,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      94,
+      95,
+      97,
+      100,
+      101,
+      103,
+      104,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      126,
+      127
+    ]
+  },
+  "counts": {
+    "box45": {
+      "before": 128,
+      "accepted": 96,
+      "per_seed": [
+        109,
+        106,
+        108
+      ]
+    }
+  },
+  "trials": [
+    {
+      "path": "/root/In_Hand_Reconstruction/research/cache_refresh_20261018/table_box_901.json",
+      "sha256": "8a626daf48363ca7b9876057a487de753b8c9f6721d794a5a466e120cdabd15a"
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/research/cache_refresh_20261018/table_box_1701.json",
+      "sha256": "fb495bc859ab3dec3ecdba95b6c3ff233dd70e64ec41c54e59dab5e5336a4c14"
+    },
+    {
+      "path": "/root/In_Hand_Reconstruction/research/cache_refresh_20261018/table_box_2901.json",
+      "sha256": "d65bbda83cb75b95eb5fd39472786139245ac13d50ef1e9f8a50ea6a5069b031"
+    }
+  ],
+  "criteria": "Each state passes all 3 seeds: 30s bounded tracking, no task failure, >=2 object-gel loads >0.15N on >=90% frames, nongel support <=10%; tabletop >=90% table support and max net gel force <=2N; in-hand <=2 joints within .03rad of limits. Single-finger withdrawals are diagnostics, not a gait feasibility guarantee."
+}

@@ -1,0 +1,23 @@
+{
+  "config": "manip_tabletop_inward90_hora16384_box45",
+  "cache": "/root/In_Hand_Reconstruction/In_Hand_Manip/cache/digit_tabletop_box45_inward90_robust_20261018.pt",
+  "asset_sha256": "c9693d6fa850ea1acb0cb0cd3b5ba2cce77f0e08867c2724a7d668e614552b24",
+  "collision_sha256": "1c6f5ca8b3ca3a5fbe37f92e911ec4afdc6bc2f59153f6482175c18b8ffbe0f9",
+  "control_dt": 0.05000000260770321,
+  "network": [
+    256,
+    256,
+    128
+  ],
+  "priv_network": [
+    128,
+    64,
+    8
+  ],
+  "output_shape": [
+    6,
+    16
+  ],
+  "contact_gate_verified": true,
+  "steps": 10
+}

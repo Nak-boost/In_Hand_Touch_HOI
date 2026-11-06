@@ -1,0 +1,54 @@
+[
+  {
+    "group": "single",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792384998.871609,
+    "reused_from": "/root/In_Hand_Reconstruction/research/gel_rotation_results_20261018_0728_Chicago/eval_single_last_215.json",
+    "result_saved": true
+  },
+  {
+    "group": "single",
+    "checkpoint": "last",
+    "seed": 216,
+    "started": 1792384998.8769333,
+    "reused_from": "/root/In_Hand_Reconstruction/research/gel_rotation_results_20261018_0728_Chicago/eval_single_last_216.json",
+    "result_saved": true
+  },
+  {
+    "group": "single",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792384998.881624,
+    "reused_from": "/root/In_Hand_Reconstruction/research/gel_rotation_results_20261018_0728_Chicago/eval_single_best_215.json",
+    "result_saved": true
+  },
+  {
+    "group": "single",
+    "checkpoint": "best",
+    "seed": 216,
+    "started": 1792384998.8850627,
+    "reused_from": "/root/In_Hand_Reconstruction/research/gel_rotation_results_20261018_0728_Chicago/eval_single_best_216.json",
+    "result_saved": true
+  },
+  {
+    "group": "multi",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792384998.8879275,
+    "pid": 558057,
+    "returncode": 0,
+    "finished": 1792385062.965387,
+    "result_saved": true
+  },
+  {
+    "group": "multi",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792385062.9659114,
+    "pid": 558375,
+    "returncode": 0,
+    "finished": 1792385118.7648835,
+    "result_saved": true
+  }
+]

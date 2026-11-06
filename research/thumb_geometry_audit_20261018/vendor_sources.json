@@ -1,0 +1,47 @@
+{
+  "base_link": {
+    "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/base_link.STL",
+    "sha256": "4060e1ae52bca21367e15a1dfab16bc7c2e81849566631b7f55e2cf376b7bc85",
+    "bytes": 163884
+  },
+  "link_0.0": {
+    "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/link_0.0.STL",
+    "sha256": "32b90a6744d472a6ffaee02cbf32eb8a5600b1da0944e86aeb9f53503a9f8ac9",
+    "bytes": 57584
+  },
+  "link_1.0": {
+    "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/link_1.0.STL",
+    "sha256": "e3dfb35b6682f62f18ca6ed0b39cb94ff627b68e0e3373cf7212390574604680",
+    "bytes": 70084
+  },
+  "link_2.0": {
+    "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/link_2.0.STL",
+    "sha256": "9c98477c65b45f5a3de1df0e1b54281da2385f4eafd057d103ab40893771c2d0",
+    "bytes": 52884
+  },
+  "link_3.0": {
+    "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/link_3.0.STL",
+    "sha256": "fe333088176395aa7d8a913aa953d3cd649c4c77753224239b78b2c99e3e314c",
+    "bytes": 18084
+  },
+  "link_12.0_right": {
+    "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/link_12.0_right.STL",
+    "sha256": "c5418fc127311eefee1d8ee69dfcfde2157d038286900bee91608d2701b00f13",
+    "bytes": 204284
+  },
+  "link_13.0": {
+    "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/link_13.0.STL",
+    "sha256": "e906896afc078a12c9c377e3a2b07f375583d3b869581f9962030cabc888be29",
+    "bytes": 22484
+  },
+  "link_14.0": {
+    "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/link_14.0.STL",
+    "sha256": "a9e4983e4bff7fc7d868b4965c9865edb2669b946434095703766202b5de01ff",
+    "bytes": 46884
+  },
+  "link_15.0": {
+    "url": "https://raw.githubusercontent.com/simlabrobotics/allegro_hand_ros_v4/b19b18ea130c4fbe343f2c178eec6cb55186a4ac/src/allegro_hand_description/meshes/link_15.0.STL",
+    "sha256": "bf963adb775b79b27649f4f5dff4ced58ef676ce86cc677de49d3810382d11e0",
+    "bytes": 43284
+  }
+}

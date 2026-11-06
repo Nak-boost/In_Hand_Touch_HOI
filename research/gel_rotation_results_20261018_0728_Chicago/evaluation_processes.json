@@ -1,0 +1,58 @@
+[
+  {
+    "group": "single",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792326532.361889,
+    "pid": 453900,
+    "returncode": 0,
+    "finished": 1792326582.5442514,
+    "result_saved": true
+  },
+  {
+    "group": "single",
+    "checkpoint": "last",
+    "seed": 216,
+    "started": 1792326582.5450768,
+    "pid": 454183,
+    "returncode": 0,
+    "finished": 1792326631.975376,
+    "result_saved": true
+  },
+  {
+    "group": "single",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792326631.975896,
+    "reused_from": "/root/In_Hand_Reconstruction/research/gel_rotation_results_20261018/eval_single_best_215.json",
+    "result_saved": true
+  },
+  {
+    "group": "single",
+    "checkpoint": "best",
+    "seed": 216,
+    "started": 1792326631.9792726,
+    "reused_from": "/root/In_Hand_Reconstruction/research/gel_rotation_results_20261018/eval_single_best_216.json",
+    "result_saved": true
+  },
+  {
+    "group": "multi",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792326631.9834416,
+    "pid": 454832,
+    "returncode": 0,
+    "finished": 1792326716.1103582,
+    "result_saved": true
+  },
+  {
+    "group": "multi",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792326716.1109304,
+    "pid": 455862,
+    "returncode": 0,
+    "finished": 1792326802.3469841,
+    "result_saved": true
+  }
+]

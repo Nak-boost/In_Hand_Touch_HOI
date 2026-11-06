@@ -1,0 +1,12 @@
+[
+  {
+    "group": "old_baseline",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792660757.5472736,
+    "pid": 872710,
+    "returncode": 0,
+    "finished": 1792660786.0339546,
+    "result_saved": true
+  }
+]

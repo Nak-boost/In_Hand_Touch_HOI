@@ -99,6 +99,7 @@ task:
       dropout: 0.02
       latency_steps: 1
     manipulation:
+      terminate_on_contact_loss: false  # tabletop support permits release and re-approach
       axes:
       - - 0
         - 0
@@ -124,6 +125,7 @@ task:
       goal_weight: 0.25
       contact_weight: 0.05
       object_contact_filter: true
+      rotation_contact_multipliers: [0.1, 0.5, 1.0]
       fingertip_distance_weight: 0.1
       housing_weight: 0.05
       position_weight: 2.0
@@ -142,7 +144,7 @@ task:
       - 0.045
       - 0.045
     grasp:
-      cache: cache/digit_tabletop_box45_inward90_checked_20261016.pt
+      cache: cache/digit_tabletop_box45_inward90_robust_20261018.pt
       required_per_object: 64
       candidate_steps: 80
       warmup_steps: 25

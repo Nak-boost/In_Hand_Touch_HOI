@@ -1,0 +1,930 @@
+[
+  {
+    "pid": 224934,
+    "run_name": "teacher_six_objects_gel16384_direct_20261017_152146",
+    "checkpoints": [
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/best.pth",
+        "bytes": 2992775,
+        "mtime": 1792337731.771978
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1600_step_0209M_reward_-29.49.pth",
+        "bytes": 2992775,
+        "mtime": 1792260411.9495618
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_50_step_0006M_reward_-358.62.pth",
+        "bytes": 2992775,
+        "mtime": 1792222847.0336561
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/last.pth",
+        "bytes": 2992775,
+        "mtime": 1792398196.7911098
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1650_step_0216M_reward_-37.76.pth",
+        "bytes": 2992775,
+        "mtime": 1792261442.3279173
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_100_step_0013M_reward_-290.84.pth",
+        "bytes": 2992775,
+        "mtime": 1792224221.7275841
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1700_step_0222M_reward_-36.44.pth",
+        "bytes": 2992775,
+        "mtime": 1792262462.0183334
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_150_step_0019M_reward_-391.03.pth",
+        "bytes": 2992775,
+        "mtime": 1792225694.7650213
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1750_step_0229M_reward_-34.28.pth",
+        "bytes": 2992775,
+        "mtime": 1792263495.5124516
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_200_step_0026M_reward_-246.09.pth",
+        "bytes": 2992775,
+        "mtime": 1792227112.358403
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1800_step_0235M_reward_-34.29.pth",
+        "bytes": 2992775,
+        "mtime": 1792264525.618687
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_250_step_0032M_reward_-177.28.pth",
+        "bytes": 2992775,
+        "mtime": 1792228563.5975924
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1850_step_0242M_reward_-52.79.pth",
+        "bytes": 2992775,
+        "mtime": 1792265555.257394
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_300_step_0039M_reward_-195.37.pth",
+        "bytes": 2992775,
+        "mtime": 1792229654.8542244
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2400_step_0314M_reward_-49.81.pth",
+        "bytes": 2992775,
+        "mtime": 1792277518.9472225
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_350_step_0045M_reward_-120.80.pth",
+        "bytes": 2992775,
+        "mtime": 1792230816.3689272
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1900_step_0249M_reward_-34.69.pth",
+        "bytes": 2992775,
+        "mtime": 1792266588.4167092
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_400_step_0052M_reward_-105.91.pth",
+        "bytes": 2992775,
+        "mtime": 1792232090.0647187
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1950_step_0255M_reward_-52.73.pth",
+        "bytes": 2992775,
+        "mtime": 1792267634.0753798
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_450_step_0058M_reward_-96.73.pth",
+        "bytes": 2992775,
+        "mtime": 1792233255.4691126
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2000_step_0262M_reward_-56.80.pth",
+        "bytes": 2992775,
+        "mtime": 1792268681.4585092
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_500_step_0065M_reward_-118.89.pth",
+        "bytes": 2992775,
+        "mtime": 1792234356.5902548
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2050_step_0268M_reward_-49.19.pth",
+        "bytes": 2992775,
+        "mtime": 1792269745.1040728
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_550_step_0072M_reward_-39.50.pth",
+        "bytes": 2992775,
+        "mtime": 1792235469.1878781
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2100_step_0275M_reward_-57.00.pth",
+        "bytes": 2992775,
+        "mtime": 1792270802.6012115
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_600_step_0078M_reward_-35.27.pth",
+        "bytes": 2992775,
+        "mtime": 1792236618.6971583
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2150_step_0281M_reward_-56.87.pth",
+        "bytes": 2992775,
+        "mtime": 1792271864.8850117
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_650_step_0085M_reward_-16.29.pth",
+        "bytes": 2992775,
+        "mtime": 1792237704.8254623
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2200_step_0288M_reward_-50.08.pth",
+        "bytes": 2992775,
+        "mtime": 1792272942.4193487
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_700_step_0091M_reward_-18.55.pth",
+        "bytes": 2992775,
+        "mtime": 1792239001.8726163
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2450_step_0321M_reward_-50.10.pth",
+        "bytes": 2992775,
+        "mtime": 1792278695.9452953
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_750_step_0098M_reward_-23.77.pth",
+        "bytes": 2992775,
+        "mtime": 1792240355.3603077
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2500_step_0327M_reward_-29.05.pth",
+        "bytes": 2992775,
+        "mtime": 1792279869.8429315
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_800_step_0104M_reward_-24.04.pth",
+        "bytes": 2992775,
+        "mtime": 1792241677.5905445
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2550_step_0334M_reward_-35.76.pth",
+        "bytes": 2992775,
+        "mtime": 1792281045.378977
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_850_step_0111M_reward_-34.59.pth",
+        "bytes": 2992775,
+        "mtime": 1792242830.0922008
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2600_step_0340M_reward_-44.22.pth",
+        "bytes": 2992775,
+        "mtime": 1792282217.104536
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_900_step_0117M_reward_-21.19.pth",
+        "bytes": 2992775,
+        "mtime": 1792244135.0141783
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2650_step_0347M_reward_-34.85.pth",
+        "bytes": 2992775,
+        "mtime": 1792283373.0006924
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_950_step_0124M_reward_-23.28.pth",
+        "bytes": 2992775,
+        "mtime": 1792245302.2250605
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2700_step_0353M_reward_-35.18.pth",
+        "bytes": 2992775,
+        "mtime": 1792284542.6430864
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1000_step_0131M_reward_-20.98.pth",
+        "bytes": 2992775,
+        "mtime": 1792246496.1569583
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2750_step_0360M_reward_-36.10.pth",
+        "bytes": 2992775,
+        "mtime": 1792285702.5083432
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1050_step_0137M_reward_-31.04.pth",
+        "bytes": 2992775,
+        "mtime": 1792247765.9567482
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2800_step_0367M_reward_-38.26.pth",
+        "bytes": 2992775,
+        "mtime": 1792286866.9659069
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1100_step_0144M_reward_-42.88.pth",
+        "bytes": 2992775,
+        "mtime": 1792249128.6318421
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2850_step_0373M_reward_-32.55.pth",
+        "bytes": 2992775,
+        "mtime": 1792288027.5139425
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1150_step_0150M_reward_-32.07.pth",
+        "bytes": 2992775,
+        "mtime": 1792250384.6219418
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2900_step_0380M_reward_-57.18.pth",
+        "bytes": 2992775,
+        "mtime": 1792289192.1063707
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1200_step_0157M_reward_-25.34.pth",
+        "bytes": 2992775,
+        "mtime": 1792251688.4123456
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2950_step_0386M_reward_-24.27.pth",
+        "bytes": 2992775,
+        "mtime": 1792290286.6686022
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1250_step_0163M_reward_-41.01.pth",
+        "bytes": 2992775,
+        "mtime": 1792252853.1614587
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3000_step_0393M_reward_-32.99.pth",
+        "bytes": 2992775,
+        "mtime": 1792291414.3791764
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1300_step_0170M_reward_-49.42.pth",
+        "bytes": 2992775,
+        "mtime": 1792254093.5615478
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3050_step_0399M_reward_-44.47.pth",
+        "bytes": 2992775,
+        "mtime": 1792292560.0372677
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1350_step_0176M_reward_-47.82.pth",
+        "bytes": 2992775,
+        "mtime": 1792255280.2592592
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3100_step_0406M_reward_-29.77.pth",
+        "bytes": 2992775,
+        "mtime": 1792293649.117839
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1400_step_0183M_reward_-60.72.pth",
+        "bytes": 2992775,
+        "mtime": 1792256314.800679
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3150_step_0412M_reward_-29.50.pth",
+        "bytes": 2992775,
+        "mtime": 1792294734.7385426
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1450_step_0190M_reward_-46.58.pth",
+        "bytes": 2992775,
+        "mtime": 1792257342.2834587
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3200_step_0419M_reward_-27.24.pth",
+        "bytes": 2992775,
+        "mtime": 1792295875.1595962
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1500_step_0196M_reward_-39.25.pth",
+        "bytes": 2992775,
+        "mtime": 1792258375.4026494
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3250_step_0425M_reward_-22.49.pth",
+        "bytes": 2992775,
+        "mtime": 1792297040.5585606
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_1550_step_0203M_reward_-50.45.pth",
+        "bytes": 2992775,
+        "mtime": 1792259389.860257
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2250_step_0294M_reward_-58.44.pth",
+        "bytes": 2992775,
+        "mtime": 1792274022.9414928
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3300_step_0432M_reward_-40.01.pth",
+        "bytes": 2992775,
+        "mtime": 1792298261.354757
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2300_step_0301M_reward_-64.85.pth",
+        "bytes": 2992775,
+        "mtime": 1792275157.3744862
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3350_step_0439M_reward_-17.97.pth",
+        "bytes": 2992775,
+        "mtime": 1792299405.7042716
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_2350_step_0308M_reward_-52.05.pth",
+        "bytes": 2992775,
+        "mtime": 1792276328.5848987
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3400_step_0445M_reward_-31.22.pth",
+        "bytes": 2992775,
+        "mtime": 1792300545.8839543
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3450_step_0452M_reward_-28.33.pth",
+        "bytes": 2992775,
+        "mtime": 1792301675.905524
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3500_step_0458M_reward_-29.68.pth",
+        "bytes": 2992775,
+        "mtime": 1792302916.7254198
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3550_step_0465M_reward_-13.15.pth",
+        "bytes": 2992775,
+        "mtime": 1792304160.3301866
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3600_step_0471M_reward_-41.09.pth",
+        "bytes": 2992775,
+        "mtime": 1792305452.009258
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3650_step_0478M_reward_-28.19.pth",
+        "bytes": 2992775,
+        "mtime": 1792306627.922998
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3700_step_0484M_reward_-32.38.pth",
+        "bytes": 2992775,
+        "mtime": 1792307810.676679
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3750_step_0491M_reward_-44.91.pth",
+        "bytes": 2992775,
+        "mtime": 1792309077.9837747
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3800_step_0498M_reward_-26.59.pth",
+        "bytes": 2992775,
+        "mtime": 1792310159.9586415
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3850_step_0504M_reward_-9.92.pth",
+        "bytes": 2992775,
+        "mtime": 1792311222.5629683
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3900_step_0511M_reward_-14.88.pth",
+        "bytes": 2992775,
+        "mtime": 1792312250.1662395
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_3950_step_0517M_reward_-27.86.pth",
+        "bytes": 2992775,
+        "mtime": 1792313264.5754106
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4000_step_0524M_reward_-19.15.pth",
+        "bytes": 2992775,
+        "mtime": 1792314294.9617653
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4050_step_0530M_reward_-17.67.pth",
+        "bytes": 2992775,
+        "mtime": 1792315312.1870105
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4100_step_0537M_reward_-0.48.pth",
+        "bytes": 2992775,
+        "mtime": 1792316334.1107342
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4150_step_0543M_reward_-15.80.pth",
+        "bytes": 2992775,
+        "mtime": 1792317357.8530414
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4200_step_0550M_reward_-10.41.pth",
+        "bytes": 2992775,
+        "mtime": 1792318385.867981
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4250_step_0557M_reward_-1.82.pth",
+        "bytes": 2992775,
+        "mtime": 1792319413.7438982
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4300_step_0563M_reward_-6.98.pth",
+        "bytes": 2992775,
+        "mtime": 1792320444.439305
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4350_step_0570M_reward_-6.48.pth",
+        "bytes": 2992775,
+        "mtime": 1792321469.308628
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4400_step_0576M_reward_-4.72.pth",
+        "bytes": 2992775,
+        "mtime": 1792322489.3149927
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4450_step_0583M_reward_-6.27.pth",
+        "bytes": 2992775,
+        "mtime": 1792323514.4935455
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4500_step_0589M_reward_-5.91.pth",
+        "bytes": 2992775,
+        "mtime": 1792324535.0481231
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4550_step_0596M_reward_2.74.pth",
+        "bytes": 2992775,
+        "mtime": 1792325553.414319
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4600_step_0602M_reward_-4.05.pth",
+        "bytes": 2992775,
+        "mtime": 1792326704.819454
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4650_step_0609M_reward_-22.01.pth",
+        "bytes": 2992775,
+        "mtime": 1792328099.507484
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4700_step_0616M_reward_1.22.pth",
+        "bytes": 2992775,
+        "mtime": 1792329479.1909685
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4750_step_0622M_reward_-18.31.pth",
+        "bytes": 2992775,
+        "mtime": 1792330841.7681537
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4800_step_0629M_reward_-1.79.pth",
+        "bytes": 2992775,
+        "mtime": 1792332180.464239
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4850_step_0635M_reward_-12.59.pth",
+        "bytes": 2992775,
+        "mtime": 1792333518.7608538
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4900_step_0642M_reward_-0.46.pth",
+        "bytes": 2992775,
+        "mtime": 1792334880.018282
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_4950_step_0648M_reward_5.42.pth",
+        "bytes": 2992775,
+        "mtime": 1792336239.9353952
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5000_step_0655M_reward_6.42.pth",
+        "bytes": 2992775,
+        "mtime": 1792337591.1032724
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5050_step_0661M_reward_-9.22.pth",
+        "bytes": 2992775,
+        "mtime": 1792338954.427816
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5100_step_0668M_reward_-6.11.pth",
+        "bytes": 2992775,
+        "mtime": 1792340262.567131
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5150_step_0675M_reward_-0.63.pth",
+        "bytes": 2992775,
+        "mtime": 1792341492.876348
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5200_step_0681M_reward_-17.78.pth",
+        "bytes": 2992775,
+        "mtime": 1792342665.9333422
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5250_step_0688M_reward_-6.92.pth",
+        "bytes": 2992775,
+        "mtime": 1792343836.3167617
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5300_step_0694M_reward_3.14.pth",
+        "bytes": 2992775,
+        "mtime": 1792345092.1034236
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5350_step_0701M_reward_0.75.pth",
+        "bytes": 2992775,
+        "mtime": 1792346270.9755974
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5400_step_0707M_reward_13.25.pth",
+        "bytes": 2992775,
+        "mtime": 1792347511.2149048
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5450_step_0714M_reward_3.79.pth",
+        "bytes": 2992775,
+        "mtime": 1792348756.0614805
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5500_step_0720M_reward_-15.79.pth",
+        "bytes": 2992775,
+        "mtime": 1792349940.3763125
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5550_step_0727M_reward_13.38.pth",
+        "bytes": 2992775,
+        "mtime": 1792351122.8141978
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5600_step_0734M_reward_0.47.pth",
+        "bytes": 2992775,
+        "mtime": 1792352271.6877947
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5650_step_0740M_reward_-7.11.pth",
+        "bytes": 2992775,
+        "mtime": 1792353517.0119927
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5700_step_0747M_reward_2.83.pth",
+        "bytes": 2992775,
+        "mtime": 1792354789.692974
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5750_step_0753M_reward_-19.56.pth",
+        "bytes": 2992775,
+        "mtime": 1792355935.3071308
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5800_step_0760M_reward_-16.03.pth",
+        "bytes": 2992775,
+        "mtime": 1792357061.4607823
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5850_step_0766M_reward_-4.75.pth",
+        "bytes": 2992775,
+        "mtime": 1792358316.7886765
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5900_step_0773M_reward_-19.61.pth",
+        "bytes": 2992775,
+        "mtime": 1792359572.2013137
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_5950_step_0779M_reward_-18.89.pth",
+        "bytes": 2992775,
+        "mtime": 1792360826.8645046
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6000_step_0786M_reward_-1.46.pth",
+        "bytes": 2992775,
+        "mtime": 1792362039.168965
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6050_step_0792M_reward_-7.77.pth",
+        "bytes": 2992775,
+        "mtime": 1792363203.9051344
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6100_step_0799M_reward_-19.10.pth",
+        "bytes": 2992775,
+        "mtime": 1792364328.353413
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6150_step_0806M_reward_-2.13.pth",
+        "bytes": 2992775,
+        "mtime": 1792365423.0972555
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6200_step_0812M_reward_-14.48.pth",
+        "bytes": 2992775,
+        "mtime": 1792366535.8608205
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6250_step_0819M_reward_-20.75.pth",
+        "bytes": 2992775,
+        "mtime": 1792367701.0928962
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6300_step_0825M_reward_-18.33.pth",
+        "bytes": 2992775,
+        "mtime": 1792368836.8638759
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6350_step_0832M_reward_-20.74.pth",
+        "bytes": 2992775,
+        "mtime": 1792369912.4346912
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6400_step_0838M_reward_-22.90.pth",
+        "bytes": 2992775,
+        "mtime": 1792370997.3610914
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6450_step_0845M_reward_-19.14.pth",
+        "bytes": 2992775,
+        "mtime": 1792372077.8881896
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6500_step_0851M_reward_-29.80.pth",
+        "bytes": 2992775,
+        "mtime": 1792373152.6394198
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6550_step_0858M_reward_-31.78.pth",
+        "bytes": 2992775,
+        "mtime": 1792374233.4542203
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6600_step_0865M_reward_-29.74.pth",
+        "bytes": 2992775,
+        "mtime": 1792375291.3528507
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6650_step_0871M_reward_-24.54.pth",
+        "bytes": 2992775,
+        "mtime": 1792376364.2150435
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6700_step_0878M_reward_-33.40.pth",
+        "bytes": 2992775,
+        "mtime": 1792377449.3533864
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6750_step_0884M_reward_-19.29.pth",
+        "bytes": 2992775,
+        "mtime": 1792378538.4160242
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6800_step_0891M_reward_-23.70.pth",
+        "bytes": 2992775,
+        "mtime": 1792379601.4345345
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6850_step_0897M_reward_-22.21.pth",
+        "bytes": 2992775,
+        "mtime": 1792380704.2231035
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6900_step_0904M_reward_-11.30.pth",
+        "bytes": 2992775,
+        "mtime": 1792381808.266881
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_6950_step_0910M_reward_-14.89.pth",
+        "bytes": 2992775,
+        "mtime": 1792382925.1357155
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7000_step_0917M_reward_-12.64.pth",
+        "bytes": 2992775,
+        "mtime": 1792384009.9235055
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7050_step_0924M_reward_-31.06.pth",
+        "bytes": 2992775,
+        "mtime": 1792385116.628
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7100_step_0930M_reward_-33.03.pth",
+        "bytes": 2992775,
+        "mtime": 1792386211.4637108
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7150_step_0937M_reward_-15.13.pth",
+        "bytes": 2992775,
+        "mtime": 1792387301.5018039
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7200_step_0943M_reward_-23.51.pth",
+        "bytes": 2992775,
+        "mtime": 1792388398.6946135
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7250_step_0950M_reward_-30.46.pth",
+        "bytes": 2992775,
+        "mtime": 1792389478.0255487
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7300_step_0956M_reward_-44.26.pth",
+        "bytes": 2992775,
+        "mtime": 1792390548.8384602
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7350_step_0963M_reward_-26.42.pth",
+        "bytes": 2992775,
+        "mtime": 1792391636.019268
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7400_step_0969M_reward_-29.63.pth",
+        "bytes": 2992775,
+        "mtime": 1792392745.0493934
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7450_step_0976M_reward_-34.30.pth",
+        "bytes": 2992775,
+        "mtime": 1792393828.2315147
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7500_step_0983M_reward_-33.11.pth",
+        "bytes": 2992775,
+        "mtime": 1792394916.0696025
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7550_step_0989M_reward_-40.58.pth",
+        "bytes": 2992775,
+        "mtime": 1792395992.7775633
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7600_step_0996M_reward_-35.01.pth",
+        "bytes": 2992775,
+        "mtime": 1792397083.9355114
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_six_objects_gel16384_direct_20261017_152146/stage1_nn/ep_7650_step_1002M_reward_-28.21.pth",
+        "bytes": 2992775,
+        "mtime": 1792398196.7831097
+      }
+    ]
+  },
+  {
+    "pid": 354488,
+    "run_name": "teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m",
+    "checkpoints": [
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_4000_step_0524M_reward_396.19.pth",
+        "bytes": 1624435,
+        "mtime": 1792286975.4305809
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/last.pth",
+        "bytes": 1619171,
+        "mtime": 1792390496.9300373
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_4500_step_0589M_reward_445.64.pth",
+        "bytes": 1624435,
+        "mtime": 1792294875.2221696
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_5000_step_0655M_reward_465.62.pth",
+        "bytes": 1624435,
+        "mtime": 1792303057.7144012
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_5500_step_0720M_reward_408.41.pth",
+        "bytes": 1624435,
+        "mtime": 1792311827.5032806
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_6000_step_0786M_reward_464.81.pth",
+        "bytes": 1624435,
+        "mtime": 1792320219.1177008
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_6500_step_0851M_reward_512.74.pth",
+        "bytes": 1624435,
+        "mtime": 1792329385.1938133
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_7000_step_0917M_reward_543.05.pth",
+        "bytes": 1624435,
+        "mtime": 1792339512.3145401
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_7500_step_0983M_reward_521.54.pth",
+        "bytes": 1624435,
+        "mtime": 1792348327.4988265
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_8000_step_1048M_reward_526.05.pth",
+        "bytes": 1624435,
+        "mtime": 1792356781.4985125
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_8500_step_1114M_reward_514.85.pth",
+        "bytes": 1624435,
+        "mtime": 1792365177.6395123
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_9000_step_1179M_reward_546.87.pth",
+        "bytes": 1624435,
+        "mtime": 1792373725.9032094
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_9500_step_1245M_reward_543.83.pth",
+        "bytes": 1624435,
+        "mtime": 1792382114.8371913
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_sphere55_z_inward90_hora16384_20261016_s1500m/stage1_nn/ep_10000_step_1310M_reward_481.99.pth",
+        "bytes": 1624511,
+        "mtime": 1792390496.918037
+      }
+    ]
+  },
+  {
+    "pid": 366939,
+    "run_name": "teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m",
+    "checkpoints": [
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_4000_step_0524M_reward_-196.45.pth",
+        "bytes": 1624511,
+        "mtime": 1792293588.6820707
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/last.pth",
+        "bytes": 1619171,
+        "mtime": 1792392946.7502835
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_4500_step_0589M_reward_-134.31.pth",
+        "bytes": 1624511,
+        "mtime": 1792302810.4166944
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_5000_step_0655M_reward_-78.04.pth",
+        "bytes": 1624435,
+        "mtime": 1792312158.7216012
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_5500_step_0720M_reward_-48.48.pth",
+        "bytes": 1624435,
+        "mtime": 1792321186.0989985
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_6000_step_0786M_reward_-22.15.pth",
+        "bytes": 1624435,
+        "mtime": 1792331083.853011
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_6500_step_0851M_reward_-1.61.pth",
+        "bytes": 1624359,
+        "mtime": 1792341948.2519786
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_7000_step_0917M_reward_-2.11.pth",
+        "bytes": 1624359,
+        "mtime": 1792350580.4018297
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_7500_step_0983M_reward_-52.54.pth",
+        "bytes": 1624435,
+        "mtime": 1792359232.4231336
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_8000_step_1048M_reward_-61.12.pth",
+        "bytes": 1624435,
+        "mtime": 1792367808.6934807
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_8500_step_1114M_reward_-77.18.pth",
+        "bytes": 1624435,
+        "mtime": 1792375970.817037
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_9000_step_1179M_reward_-37.21.pth",
+        "bytes": 1624435,
+        "mtime": 1792384242.8613458
+      },
+      {
+        "path": "/root/In_Hand_Reconstruction/runs/manip/teacher_tabletop_box45_z_inward90_hora16384_20261017_retry1_s1500m/stage1_nn/ep_9500_step_1245M_reward_-74.61.pth",
+        "bytes": 1624435,
+        "mtime": 1792392946.7382834
+      }
+    ]
+  }
+]

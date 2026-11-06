@@ -1,0 +1,58 @@
+{
+  "air_six": {
+    "latest_steps": 1500119040,
+    "last10M": {
+      "rotation/speed": 0.07371336308779655,
+      "contact/task_gel_count": 0.5946480887276786,
+      "contact/gel_count": 1.2452154778814934,
+      "contact/housing_count": 2.0253327605012177,
+      "rotation/contact_multiplier": 0.3306575378814301,
+      "reward/rotation": 0.09734008683786764,
+      "reward/pose_penalty": -0.16728480469870877,
+      "reward/contact": 0.00736833553664483,
+      "episode_lengths/step": 578.7066697950487
+    }
+  },
+  "air_sphere55": {
+    "latest_steps": 1500119040,
+    "last10M": {
+      "rotation/speed": 0.11267632836258257,
+      "contact/task_gel_count": 0.9580403117390422,
+      "contact/gel_count": 1.1134540508319806,
+      "contact/housing_count": 2.1849777419845777,
+      "rotation/contact_multiplier": 0.46244568793804613,
+      "reward/rotation": 0.19153132454141394,
+      "reward/pose_penalty": -0.09710721245833806,
+      "reward/contact": 0.014665118684726102,
+      "episode_lengths/step": 582.5784063958503
+    }
+  },
+  "table_sphere55": {
+    "latest_steps": 179699712,
+    "last10M": {
+      "rotation/speed": 0.15035901712132738,
+      "contact/task_gel_count": 0.6012589095474837,
+      "contact/gel_count": 0.6949217164671266,
+      "contact/housing_count": 2.3632780793425323,
+      "rotation/contact_multiplier": 0.348951212384484,
+      "reward/rotation": 0.1333967898669955,
+      "reward/pose_penalty": -0.09140263057567856,
+      "reward/contact": 0.004958834308622913,
+      "episode_lengths/step": 583.9511369977679
+    }
+  },
+  "table_box45": {
+    "latest_steps": 1500119040,
+    "last10M": {
+      "rotation/speed": 0.0017338992587066036,
+      "contact/task_gel_count": 0.0012230811181006493,
+      "contact/gel_count": 0.25047163529829547,
+      "contact/housing_count": 1.1707058200588474,
+      "rotation/contact_multiplier": 0.10049091347239235,
+      "reward/rotation": -0.0031813656205958506,
+      "reward/pose_penalty": -0.49802175650445674,
+      "reward/contact": 3.031941205690246e-06,
+      "episode_lengths/step": 600.0
+    }
+  }
+}

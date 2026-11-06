@@ -1,0 +1,18 @@
+{
+  "allegro_digit_compact_inward90.urdf": {
+    "root_visual_z_bounds_mm": [
+      -41.499999984249826,
+      8.00000004295504
+    ],
+    "next_link_min_z_mm": 39.733,
+    "z_interval_gap_mm": 31.732999957044957
+  },
+  "allegro_digit_compact_inward90_thumb_visual_fixed.urdf": {
+    "root_visual_z_bounds_mm": [
+      -8.0,
+      41.5
+    ],
+    "next_link_min_z_mm": 39.733,
+    "z_interval_gap_mm": -1.7670000000000048
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "source": "/root/In_Hand_Reconstruction/research/gel_rotation_pair_20261017/frozen_project",
+  "task": "AllegroDigitTwoAxis",
+  "num_envs": 12,
+  "runtime_hand_shapes": 27,
+  "checks": {
+    "body_order": true,
+    "forbidden_positive_contacts": 0,
+    "max_independent_contact_load_error_N": 5.960464477539063e-08,
+    "reward_sum_and_contact_reward": true
+  },
+  "modes": {
+    "track_cached_targets": {
+      "steps": 80,
+      "finite": true,
+      "mean_reward": 0.07168285537045449,
+      "initial_states_ever_failed": 0,
+      "two_gel_fraction": 0.9197916666666667,
+      "mean_pair_wall_ms": 0.7032200125
+    },
+    "random_small": {
+      "steps": 80,
+      "finite": true,
+      "mean_reward": -0.3195910383015871,
+      "initial_states_ever_failed": 0,
+      "two_gel_fraction": 0.04895833333333333,
+      "mean_pair_wall_ms": 0.6216524499999999
+    }
+  },
+  "passed": true
+}

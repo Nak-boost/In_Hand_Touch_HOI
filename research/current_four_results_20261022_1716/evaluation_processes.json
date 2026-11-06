@@ -1,0 +1,74 @@
+[
+  {
+    "group": "air_six",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792660737.5291712,
+    "pid": 872598,
+    "returncode": 0,
+    "finished": 1792660800.4642165,
+    "result_saved": true
+  },
+  {
+    "group": "air_six",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792660800.4648259,
+    "reused_from": "/root/In_Hand_Reconstruction/research/current_four_results_20261020_1725/eval_air_six_best_215.json",
+    "result_saved": true
+  },
+  {
+    "group": "air_sphere55",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792660800.4686623,
+    "pid": 872900,
+    "returncode": 0,
+    "finished": 1792660829.9804611,
+    "result_saved": true
+  },
+  {
+    "group": "air_sphere55",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792660829.9810882,
+    "pid": 873010,
+    "returncode": 0,
+    "finished": 1792660858.4078534,
+    "result_saved": true
+  },
+  {
+    "group": "table_sphere55",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792660858.4085758,
+    "reused_from": "/root/In_Hand_Reconstruction/research/current_four_results_20261020_1725/eval_table_sphere55_last_215.json",
+    "result_saved": true
+  },
+  {
+    "group": "table_sphere55",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792660858.4114015,
+    "reused_from": "/root/In_Hand_Reconstruction/research/current_four_results_20261020_1725/eval_table_sphere55_best_215.json",
+    "result_saved": true
+  },
+  {
+    "group": "table_box45",
+    "checkpoint": "last",
+    "seed": 215,
+    "started": 1792660858.41665,
+    "pid": 873175,
+    "returncode": 0,
+    "finished": 1792660883.0698137,
+    "result_saved": true
+  },
+  {
+    "group": "table_box45",
+    "checkpoint": "best",
+    "seed": 215,
+    "started": 1792660883.0703,
+    "reused_from": "/root/In_Hand_Reconstruction/research/current_four_results_20261020_1725/eval_table_box45_best_215.json",
+    "result_saved": true
+  }
+]

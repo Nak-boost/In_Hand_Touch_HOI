@@ -1,0 +1,119 @@
+{
+  "configs/manip_hora16384_sphere55.yaml": [
+    {
+      "field": "train.network.mlp.units",
+      "before": [
+        512,
+        256,
+        128
+      ],
+      "after": [
+        256,
+        256,
+        128
+      ]
+    },
+    {
+      "field": "train.network.priv_mlp.units",
+      "before": [
+        256,
+        128,
+        8
+      ],
+      "after": [
+        128,
+        64,
+        8
+      ]
+    }
+  ],
+  "configs/manip_hora16384_six_objects_gel_rotation.yaml": [
+    {
+      "field": "task.env.grasp.cache",
+      "before": "cache/digit_six_objects_inward90_checked_20261017.pt",
+      "after": "cache/digit_six_objects_inward90_robust_20261018.pt"
+    }
+  ],
+  "configs/manip_scale2560_sphere55.yaml": [
+    {
+      "field": "task.env.grasp.cache",
+      "before": "cache/digit_sphere55_scale2560_inward90_checked_20261016.pt",
+      "after": "cache/digit_sphere55_inward90_robust_20261018.pt"
+    }
+  ],
+  "configs/manip_tabletop_box45.yaml": [
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "configs/manip_tabletop_inward90_scale2560_sphere55.yaml": [
+    {
+      "field": "task.env.grasp.cache",
+      "before": "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt",
+      "after": "cache/digit_tabletop_sphere55_inward90_robust_20261018.pt"
+    },
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "configs/manip_tabletop_inward90_scale2560_box45.yaml": [
+    {
+      "field": "task.env.grasp.cache",
+      "before": "cache/digit_tabletop_box45_inward90_checked_20261016.pt",
+      "after": "cache/digit_tabletop_box45_inward90_robust_20261018.pt"
+    },
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "configs/manip_tabletop_inward90_hora16384_sphere55.yaml": [
+    {
+      "field": "task.env.grasp.cache",
+      "before": "cache/digit_tabletop_sphere55_inward90_checked_20261016.pt",
+      "after": "cache/digit_tabletop_sphere55_inward90_robust_20261018.pt"
+    },
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ],
+  "configs/manip_tabletop_inward90_hora16384_box45.yaml": [
+    {
+      "field": "task.env.grasp.cache",
+      "before": "cache/digit_tabletop_box45_inward90_checked_20261016.pt",
+      "after": "cache/digit_tabletop_box45_inward90_robust_20261018.pt"
+    },
+    {
+      "field": "task.env.manipulation.rotation_contact_multipliers",
+      "before": null,
+      "after": [
+        0.1,
+        0.5,
+        1.0
+      ]
+    }
+  ]
+}
